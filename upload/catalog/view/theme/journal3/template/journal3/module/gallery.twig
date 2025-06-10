@@ -1,0 +1,62 @@
+{% macro renderGallery(context) %}
+  {% set journal3 = context.journal3 %}
+  {% set index = 0 %}
+  {% for item in context.items[:context.thumbsLimit] %}
+    <div class="{{ journal3.classes(item.classes) }}">
+      <a {% if item.type == 'link' %}href="{{ item.popup }}" {{ journal3.linkAttrs(item.link) }}{% else %}href="javascript:;" data-gallery="#{{ context.id }} .lightgallery" data-index="{{ index }}"{% set index = index + 1 %}{% endif %} title="{{ item.alt }}">
+        <span class="gallery-image">
+          {% if journal3.get('performanceLazyLoadImagesStatus') %}
+            <img src="{{ context.dummy_image }}" data-src="{{ item.thumb }}" {% if item.thumb2x %}data-srcset="{{ item.thumb }} 1x, {{ item.thumb2x }} 2x"{% endif %} alt="{{ item.alt }}" width="{{ context.thumbDimensions.width }}" height="{{ context.thumbDimensions.height }}" class="lazyload"/>
+          {% else %}
+            <img src="{{ item.thumb }}" {% if item.thumb2x %}srcset="{{ item.thumb }} 1x, {{ item.thumb2x }} 2x"{% endif %} alt="{{ item.alt }}" width="{{ context.thumbDimensions.width }}" height="{{ context.thumbDimensions.height }}"/>
+          {% endif %}
+        </span>
+      </a>
+      {% if item.alt %}
+        <span class="gallery-image-caption">
+          {{ item.alt }}
+        </span>
+      {% endif %}
+    </div>
+  {% endfor %}
+{% endmacro %}
+<div id="{{ id }}" class="{{ journal3.classes(classes) }}">
+  <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+  {% if title %}
+    <h3 class="title module-title">{{ title }}</h3>
+  {% endif %}
+  <div class="module-body">
+    {% if button %}
+      <a class="btn open-btn" data-gallery="#{{ id }} .lightgallery" data-index="0" role="button">{{ buttonText }}</a>
+    {% else %}
+      {# grid #}
+      {% if gridType == 'ipr' and carousel %}
+        <div class="swiper" data-items-per-row='{{ itemsPerRow|json_encode(constant('JSON_FORCE_OBJECT')) }}' data-options='{{ carouselOptions|json_encode }}'>
+          <div class="swiper-container" {% if journal3.is_rtl %}dir="rtl"{% endif %}>
+            <div class="swiper-wrapper">
+              {{ _self.renderGallery(_context) }}
+            </div>
+          </div>
+          <div class="swiper-buttons">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      {% else %}
+        <div class="gallery-grid no-scroll {{ gridType }}-grid">
+          {% if gridType == 'auto' %}
+            <div class="auto-grid-items">
+              {{ _self.renderGallery(_context) }}
+            </div>
+            <div class="auto-carousel-bar auto-carousel-controls"><div class="auto-carousel-thumb"></div><div class="auto-carousel-fill"></div></div>
+            <div class="auto-carousel-buttons auto-carousel-controls"><div class="auto-carousel-prev"><span></span></div><div class="auto-carousel-next"><span></span></div></div>
+          {% else %}
+            {{ _self.renderGallery(_context) }}
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+  <div class="lightgallery" data-images='{{ images|json_encode|e }}' data-options='{{ options|json_encode }}'></div>
+</div>

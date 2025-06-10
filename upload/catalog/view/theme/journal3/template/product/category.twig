@@ -1,0 +1,157 @@
+{{ header }}
+{% if journal3.get('pageTitlePosition') == 'top' %}
+  <h1 class="title page-title {{ journal3.get('title_color_scheme') }}"><span class="page-title-text">{{ heading_title }}</span></h1>
+{% endif %}
+<div class="breadcrumbs {{ journal3.get('breadcrumbs_color_scheme') }}">
+  <ul class="breadcrumb">
+    {% for breadcrumb in breadcrumbs %}
+      <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{{ journal3_top }}
+<div id="product-category" class="container">
+  <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}">
+      {% if journal3.get('pageTitlePosition') == 'default' %}
+      <h1 class="title page-title {{ journal3.get('title_color_scheme') }}">{{ heading_title }}</h1>
+      {% endif %}
+      {{ content_top }}
+      {% if journal3.get('categoryPageDescStatus') %}
+      {% if thumb or description %}
+      <div class="category-description">
+        {% if thumb and journal3.get('categoryPageCategoryImageStatus') %}
+        <img src="{{ thumb }}" {% if thumb2x %}srcset="{{ thumb }} 1x, {{ thumb2x }} 2x"{% endif %} alt="{{ heading_title }}" title="{{ heading_title }}" class="category-image" width="{{ journal3.get('image_dimensions_category.width') }}" height="{{ journal3.get('image_dimensions_category.height') }}"/>
+        {% endif %}
+        {% if description and journal3.get('categoryPageCategoryDescriptionStatus') %}
+        <div class="category-text">{{ description }}</div>
+        {% endif %}
+      </div>
+      {% endif %}
+      {% endif %}
+      {% if journal3.get('subcategoriesStatus') %}
+      {% if categories %}
+      <div class="refine-categories refine-{{ journal3.get('subcategoriesDisplay') }}">
+      {% if journal3.get('refineTitle') %}
+      <h3 class="refine-title title">{{ journal3.get('refineTitleText') }}</h3>
+      {% endif %}
+      {% if journal3.get('subcategoriesGridType') == 'ipr' and journal3.get('subcategoriesDisplay') == 'carousel' %}
+      <div class="swiper" data-items-per-row='{{ journal3.get('subcategoriesItemsPerRow')|json_encode(constant('JSON_FORCE_OBJECT')) }}' data-options='{{ journal3.jsonAttrs(journal3_images_carousel) }}'>
+        <div class="swiper-container" {% if journal3.is_rtl %}dir="rtl"{% endif %}>
+          <div class="swiper-wrapper ipr-grid">
+            {% for category in categories %}
+            <div class="refine-item swiper-slide">
+              <a href="{{ category.href }}">
+                {% if journal3.get('subcategoriesDisplay') != 'links' %}
+                <img src="{{ category.image }}" {% if category.image2x %}srcset="{{ category.image }} 1x, {{ category.image2x }} 2x"{% endif %} alt="{{ category.alt }}" width="{{ journal3.get('image_dimensions_subcategory.width') }}" height="{{ journal3.get('image_dimensions_subcategory.height') }}"/>
+                {% endif %}
+                <span class="refine-name">{{ category.name }}</span>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="swiper-buttons">
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      {% else %}
+      <div class="refine-items no-scroll {{ journal3.get('subcategoriesGridType') }}-grid">
+      {% if journal3.get('subcategoriesGridType') == 'auto' %}
+        <div class="auto-grid-items">
+          {% for category in categories %}
+            <div class="refine-item">
+              <a href="{{ category.href }}">
+                {% if journal3.get('subcategoriesDisplay') != 'links' %}
+                  <img src="{{ category.image }}" {% if category.image2x %}srcset="{{ category.image }} 1x, {{ category.image2x }} 2x"{% endif %} alt="{{ category.alt }}" width="{{ journal3.get('image_dimensions_subcategory.width') }}" height="{{ journal3.get('image_dimensions_subcategory.height') }}"/>
+                {% endif %}
+                <span class="refine-name">{{ category.name }}</span>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="auto-carousel-bar auto-carousel-controls"><div class="auto-carousel-thumb"></div><div class="auto-carousel-fill"></div></div>
+        <div class="auto-carousel-buttons auto-carousel-controls"><div class="auto-carousel-prev"><span></span></div><div class="auto-carousel-next"><span></span></div></div>
+      {% else %}
+        {% for category in categories %}
+          <div class="refine-item">
+            <a href="{{ category.href }}">
+              {% if journal3.get('subcategoriesDisplay') != 'links' %}
+                <img src="{{ category.image }}" {% if category.image2x %}srcset="{{ category.image }} 1x, {{ category.image2x }} 2x"{% endif %} alt="{{ category.alt }}" width="{{ journal3.get('image_dimensions_subcategory.width') }}" height="{{ journal3.get('image_dimensions_subcategory.height') }}"/>
+              {% endif %}
+              <span class="refine-name">{{ category.name }}</span>
+            </a>
+          </div>
+        {% endfor %}
+      {% endif %}
+      </div>
+      {% endif %}
+      </div>
+      {% endif %}
+      {% endif %}
+      <div class="main-products-wrapper">
+      {% if products %}
+      {% if journal3.get('sortBarStatus') %}
+      <div class="products-filter">
+        <div class="grid-list">
+          <button id="btn-grid-view" class="view-btn {% if journal3.get('globalProductView') == 'grid' %}active{% endif %}" {% if journal3.is_desktop %}data-toggle="tooltip-hover"{% endif%} title="{{ button_grid }}" data-view="grid" aria-label="{{ button_grid }}"></button>
+          <button id="btn-list-view" class="view-btn {% if journal3.get('globalProductView') == 'list' %}active{% endif %}" {% if journal3.is_desktop %}data-toggle="tooltip-hover"{% endif%} title="{{ button_list }}" data-view="list" aria-label="{{ button_list }}"></button>
+          <a href="{{ compare }}" id="compare-total" class="compare-btn" title="{{ text_compare }}">{{ journal3_text_compare }}</a>
+        </div>
+        <div class="select-group">
+          <div class="input-group input-group-sm sort-by">
+            <label class="input-group-addon" for="input-sort">{{ text_sort }}</label>
+            <select id="input-sort" class="form-control" data-filter-sort="{{ journal3_filter_sort }}" data-filter-order="{{ journal3_filter_order }}">
+              {% for sorts in sorts %}
+              {% if sorts.value == '%s-%s'|format(sort, order) %}
+              <option value="{{ sorts.href }}" selected="selected">{{ sorts.text }}</option>
+              {% else %}
+              <option value="{{ sorts.href }}">{{ sorts.text }}</option>
+              {% endif %}
+              {% endfor %}
+            </select>
+          </div>
+          <div class="input-group input-group-sm per-page">
+            <label class="input-group-addon" for="input-limit">{{ text_limit }}</label>
+            <select id="input-limit" class="form-control" data-filter-limit="{{ journal3_filter_limit }}">
+              {% for limits in limits %}
+              {% if limits.value == limit %}
+              <option value="{{ limits.href }}" selected="selected">{{ limits.text }}</option>
+              {% else %}
+              <option value="{{ limits.href }}">{{ limits.text }}</option>
+              {% endif %}
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      <div class="main-products main-products-style product-{{ journal3.get('globalProductView') }} {{ journal3.get('globalProductGridType') }}-grid" data-product-count="{{ journal3_products_count }}">
+        {{ products }}
+      </div>
+      <div class="row pagination-results">
+        <div class="col-sm-6 text-left">{{ pagination }}</div>
+        <div class="col-sm-6 text-right">{{ results }}</div>
+      </div>
+      {% endif %}
+      {% if not categories and not products %}
+      <p>{{ text_empty }}</p>
+      <div class="buttons">
+        <div class="pull-right"><a href="{{ continue }}" class="btn btn-primary">{{ button_continue }}</a></div>
+      </div>
+      {% endif %}
+      </div>
+      {{ content_bottom }}</div>
+    {{ column_right }}</div>
+</div>
+{{ journal3_rich_snippets }}
+{{ footer }} 

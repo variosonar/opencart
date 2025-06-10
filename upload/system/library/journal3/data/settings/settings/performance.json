@@ -1,0 +1,103 @@
+{
+  "performanceSeoUrlEngine": {
+    "type": "Radio",
+    "value": "all",
+    "php": true
+  },
+  "performanceJQuery": {
+    "type": "Toggle",
+    "value": "true",
+    "php": true
+  },
+  "performanceBootstrap": {
+    "type": "Toggle",
+    "value": "true",
+    "php": true
+  },
+  "performanceFontAwesome": {
+    "type": "Toggle",
+    "value": "true",
+    "php": true
+  },
+  "performanceHTMLMinify": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "performanceCSSMinify": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "performanceJSMinify": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "performanceCSSDefer": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true,
+    "js": true
+  },
+  "performanceCSSInline": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true,
+    "js": true
+  },
+  "performanceJSDefer": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true,
+    "js": true
+  },
+  "performancePushCSS": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "performancePushIcons": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "performanceLazyLoadImagesStatus": {
+    "type": "Toggle",
+    "value": "true",
+    "php": true
+  },
+  "performanceCompressImagesWebpStatus": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "performanceCompressImagesJpegStatus": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "performanceCompressImagesPngStatus": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "performanceGoogleFontsDisplay": {
+    "type": "Radio",
+    "value": "swap",
+    "php": true
+  },
+  "performanceCDNStatus": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "performanceCDNHttp": {
+    "type": "Input",
+    "php": true
+  },
+  "performanceCDNHttps": {
+    "type": "Input",
+    "php": true
+  }
+}

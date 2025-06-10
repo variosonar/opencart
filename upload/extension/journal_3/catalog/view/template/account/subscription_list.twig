@@ -1,0 +1,54 @@
+{{ header }}
+{% if journal3.get('pageTitlePosition') == 'top' %}
+  <h1 class="title page-title {{ journal3.get('title_color_scheme') }}"><span class="page-title-text">{{ heading_title }}</span></h1>
+{% endif %}
+<div class="breadcrumbs {{ journal3.get('breadcrumbs_color_scheme') }}">
+  <ul class="breadcrumb">
+    {% for breadcrumb in breadcrumbs %}
+      <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{{ journal3_top }}
+<div id="account-subscription" class="container">
+  <div class="row">{{ column_left }}
+    <div id="content" class="col">{{ content_top }}
+      {% if journal3.get('pageTitlePosition') == 'default' %}
+        <h1 class="title page-title {{ journal3.get('title_color_scheme') }}">{{ heading_title }}</h1>
+      {% endif %}
+      {% if subscriptions %}
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <td class="text-end">{{ column_subscription_id }}</td>
+                <td class="text-start">{{ column_product }}</td>
+                <td class="text-start">{{ column_status }}</td>
+                <td class="text-start">{{ column_date_added }}</td>
+                <td class="text-end"></td>
+              </tr>
+            </thead>
+            <tbody>
+              {% for subscription in subscriptions %}
+                <tr>
+                  <td class="text-end">#{{ subscription.subscription_id }}</td>
+                  <td class="text-start">{{ subscription.product }}</td>
+                  <td class="text-start">{{ subscription.status }}</td>
+                  <td class="text-start">{{ subscription.date_added }}</td>
+                  <td class="text-end"><a href="{{ subscription.view }}" data-bs-toggle="tooltip" title="{{ button_view }}" class="btn btn-info"><i class="fa-solid fa-eye"></i></a></td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <div class="text-end">{{ pagination }}</div>
+      {% else %}
+        <p>{{ text_no_results }}</p>
+      {% endif %}
+      <div class="d-inline-block pt-2 pd-2 w-100 buttons">
+        <div class="float-end pull-right"><a href="{{ continue }}" class="btn btn-primary">{{ button_continue }}</a></div>
+      </div>
+      {{ content_bottom }}</div>
+    {{ column_right }}</div>
+</div>
+{{ footer }}

@@ -1,0 +1,108 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Item"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "title": {
+    "type": "InputLang",
+    "php": true
+  },
+  "icon": {
+    "type": "Icon",
+    "selector": "div.links-menu-%s .links-menu-item-%s > a::before"
+  },
+  "itemPadding": {
+    "type": "Padding",
+    "selector": "div.links-menu-%s .links-menu-item-%s a"
+  },
+  "isTitle": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "iconHover": {
+    "type": "Color",
+    "selector": "div.links-menu-%s .links-menu-item-%s:hover a::before",
+    "property": "color"
+  },
+  "iconBG": {
+    "type": "Background",
+    "selector": "div.links-menu-%s .links-menu-item-%s a::before"
+  },
+  "iconBGHover": {
+    "type": "Background",
+    "selector": "div.links-menu-%s .links-menu-item-%s:hover a::before"
+  },
+  "link": {
+    "type": "Link",
+    "php": true
+  },
+  "itemBackground": {
+    "type": "Background",
+    "selector": "div.links-menu-%s .links-menu-item-%s > a"
+  },
+  "itemBackgroundHover": {
+    "type": "Background",
+    "selector": "div.links-menu-%s .links-menu-item-%s:hover > a"
+  },
+  "itemFont": {
+    "type": "Font",
+    "selector": "div.links-menu-%s .links-menu-item-%s > a .links-text"
+  },
+  "itemFontHover": {
+    "type": "Font",
+    "selector": "div.links-menu-%s .links-menu-item-%s:hover > a .links-text"
+  },
+
+  "itemShadow": {
+    "type": "Shadow",
+    "selector": "div.links-menu-%s .links-menu-item-%s.menu-item > a"
+  },
+  "itemShadowHover": {
+    "type": "Shadow",
+    "selector": "div.links-menu-%s .links-menu-item-%s.menu-item:hover > a"
+  },
+  "itemBorder": {
+    "type": "Border",
+    "selector": "div.links-menu-%s .links-menu-item-%s.menu-item > a"
+  },
+  "itemBorderHover": {
+    "type": "Color",
+    "property": "border-color",
+    "selector": "div.links-menu-%s .links-menu-item-%s.menu-item:hover > a"
+  },
+  "itemBorderRadius": {
+    "type": "BorderRadius",
+    "selector": "div.links-menu-%s .links-menu-item-%s.menu-item > a"
+  },
+  "label": {
+    "type": "InputLang",
+    "php": true
+  },
+  "labelStyle": {
+    "type": "Variable",
+    "variable": "menu_label",
+    "selector_prefix": "div.links-menu.links-menu-%s .module-body .links-menu-item.links-menu-item-%s"
+  },
+  "labelOffset": {
+    "type": "InputPair",
+    "selector": "div.links-menu.links-menu-%s .module-body .links-menu-item.links-menu-item-%s .menu-label",
+    "properties": {
+      "first": "margin-inline-end:calc(0px - (%spx))",
+      "second": "margin-top:%spx"
+    },
+    "rtlProperties": {
+      "first": "margin-inline-start:calc(0px - (%spx))",
+      "second": "margin-top:%spx"
+    }
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "Icon": {
+    "type": "Icon",
+    "selector": "> .j-menu > li > a::before"
+  },
+  "IconHover": {
+    "type": "Color",
+    "selector": "> .j-menu > li:hover > a::before",
+    "property": "color"
+  },
+  "ItemDivider": {
+    "type": "Divider",
+    "selector": "> .j-menu > li.accordion-menu-item.is-divider",
+    "important": "true"
+  },
+  "IconWidth": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        "> .j-menu > li.accordion-menu-item > a::before": "min-width:%spx"
+      }
+    }
+  },
+  "IconSize": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        "> .j-menu > li.accordion-menu-item > a::before": "font-size:%spx !important"
+      }
+    }
+  },
+  "IconMargin": {
+    "type": "Margin",
+    "selector":"> .j-menu > li.accordion-menu-item > a::before"
+  },
+  "SubIconAlign": {
+    "type": "Radio",
+    "selector": "&.accordion-menu.accordion-menu > .j-menu > li > a::before",
+    "property": "align-self",
+    "value": ""
+  },
+
+  "Border": {
+    "type": "Border",
+    "selector": "> .j-menu"
+  },
+  "Padding": {
+    "type": "Padding",
+    "selector": "> .j-menu"
+  },
+  "Background": {
+    "type": "Background",
+    "selector": "> .j-menu"
+  },
+  "BorderRadius": {
+    "type": "BorderRadius",
+    "selector": "> .j-menu"
+  },
+  "ModuleShadow": {
+    "type": "Shadow",
+    "selector": "> .j-menu"
+  },
+
+  "ModuleBorder": {
+    "type": "Border",
+    "selector": ""
+  },
+  "ModulePadding": {
+    "type": "Padding",
+    "selector": ""
+  },
+  "ModuleBackground": {
+    "type": "Background",
+    "selector": ""
+  },
+  "ModuleBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ""
+  },
+  "ModuleModuleShadow": {
+    "type": "Shadow",
+    "selector": ""
+  },
+
+
+  "SubIcon": {
+    "type": "Icon",
+    "selector": "&.accordion-menu.accordion-menu > .j-menu > li.accordion-menu-item li > a::before"
+  },
+  "SubIconHover": {
+    "type": "Color",
+    "selector": "&.accordion-menu.accordion-menu > .j-menu > li.accordion-menu-item li:hover > a::before",
+    "property": "color"
+  },
+  "SubIconWidth": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        "&.accordion-menu.accordion-menu > .j-menu > li.accordion-menu-item li > a::before": "min-width:%spx"
+      }
+    }
+  },
+  "SubIconPosition": {
+    "type": "Radio",
+    "value": "start",
+    "rules": {
+      "start": {
+        "": ""
+      },
+      "end": {
+        "": ""
+      }
+    }
+  },
+  "VerticalHeight": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        "&.accordion-menu.accordion-menu > .j-menu": "max-height: %spx; overflow-y: auto"
+      }
+    }
+  },
+  "ScrollColor": {
+    "type": "Color",
+    "selector": "&.accordion-menu.accordion-menu > .j-menu::-webkit-scrollbar-thumb",
+    "property": "background-color"
+  },
+  "TrackColor": {
+    "type": "Color",
+    "selector": "&.accordion-menu.accordion-menu > .j-menu::-webkit-scrollbar-track",
+    "property": "background-color"
+  },
+  "TrackHeight": {
+    "type": "InputNumber",
+    "value": "",
+    "rules":{
+      "@":{
+        "&.accordion-menu.accordion-menu > .j-menu::-webkit-scrollbar": "height:%spx; width: %spx"
+      }
+    }
+  }
+}

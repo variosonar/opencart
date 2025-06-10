@@ -1,0 +1,67 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Item"
+  },
+  "title": {
+    "type": "InputLang",
+    "php": true
+  },
+  "status": {
+    "type": "Status"
+  },
+  "icon": {
+    "type": "Icon",
+    "selector": ".side-menu-%s .side-menu-item-%s > a::before"
+  },
+  "font": {
+    "type": "Font",
+    "selector": ".side-menu-%s > ul .side-menu-item-%s > a"
+  },
+  "fontHover": {
+    "type": "Font",
+    "selector": ".side-menu-%s > ul .side-menu-item-%s > a:hover"
+  },
+  "fontActive": {
+    "type": "Font",
+    "selector": ".side-menu-%s > ul .side-menu-item-%s > a:active"
+  },
+  "itemGap": {
+    "type": "Margin",
+    "selector": ".side-menu-%s > ul .side-menu-item.side-menu-item-%s"
+  },
+  "rotation": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "default": {
+        ".side-menu-%s > ul .side-menu-item.side-menu-item-%s": "writing-mode: horizontal-tb;"
+      },
+      "vertical": {
+        ".side-menu-%s > ul .side-menu-item.side-menu-item-%s": "writing-mode: vertical-lr;"
+      }
+    }
+  },
+  "background": {
+    "type": "Background",
+    "selector": ".side-menu-%s > ul .side-menu-item-%s > a"
+  },
+  "backgroundHover": {
+    "type": "Background",
+    "selector": ".side-menu-%s > ul .side-menu-item-%s > a:hover"
+  },
+  "backgroundActive": {
+    "type": "Background",
+    "selector": ".side-menu-%s > ul .side-menu-item-%s > a:active"
+  },
+  "link": {
+    "type": "Link",
+    "php": true
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

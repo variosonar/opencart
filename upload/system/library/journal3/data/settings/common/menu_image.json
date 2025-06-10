@@ -1,0 +1,60 @@
+{
+  "ImageMaxWidth": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".menu-image": "max-width:%spx"
+      }
+    }
+  },
+  "ImageBackground": {
+    "type": "Background",
+    "selector": ".menu-image > img"
+  },
+  "ImageBackgroundHover": {
+    "type": "Background",
+    "selector": "&:hover > a > img, &.active > a > span > img, &.active > a > img,  &.open > a > img, &.panel-active .menu-image > img"
+  },
+  "ImageBackgroundActive": {
+    "type": "Background",
+    "selector": "&.open > a > img, &.active > a > span > img, &.panel-active .menu-image > img"
+  },
+  "ImageMargin": {
+    "type": "Margin",
+    "selector": ".menu-image"
+  },
+  "ImagePadding": {
+    "type": "Padding",
+    "selector": ".menu-image"
+  },
+  "ImageBorder": {
+    "type": "Border",
+    "selector": ".menu-image"
+  },
+  "ImageBorderHover": {
+    "type": "Color",
+    "selector": "&:hover > a > .menu-image, &.active > a > .menu-image, &.panel-active .menu-image > img",
+    "property": "border-color"
+  },
+  "ImageBorderActive": {
+    "type": "Color",
+    "selector": "&.open > a > .menu-image, &.panel-active .menu-image > img",
+    "property": "border-color"
+  },
+  "ImageShadow": {
+    "type": "Shadow",
+    "selector": ".menu-image > img"
+  },
+  "ImageShadowHover": {
+    "type": "Shadow",
+    "selector": "&:hover > a > img, &.active > a > img, &.panel-active .menu-image > img"
+  },
+  "ImageShadowActive": {
+    "type": "Shadow",
+    "selector": "&.open > a > img, &.panel-active .menu-image > img"
+  },
+  "ImageBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".menu-image"
+  }
+}

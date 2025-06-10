@@ -1,0 +1,26 @@
+{% for manufacturer in manufacturers %}
+  <div class="manufacturer-layout {{ journal3.classes(manufacturer.classes) }} {{ color_scheme_content }}">
+    <div class="manufacturer-thumb">
+      <div class="image">
+        <a href="{{ manufacturer.href }}">
+          {% if journal3.get('performanceLazyLoadImagesStatus') %}
+            <img src="{{ dummy_image }}" data-src="{{ manufacturer.thumb }}" {% if manufacturer.thumb2x %}data-srcset="{{ manufacturer.thumb }} 1x, {{ manufacturer.thumb2x }} 2x" {% endif %} width="{{ image_width }}" height="{{ image_height }}" alt="{{ manufacturer.name }}" title="{{ manufacturer.name }}" class="lazyload"/>
+          {% else %}
+            <img src="{{ manufacturer.thumb }}" {% if manufacturer.thumb2x %} srcset="{{ manufacturer.thumb }} 1x, {{ manufacturer.thumb2x }} 2x" {% endif %} width="{{ image_width }}" height="{{ image_height }}" alt="{{ manufacturer.name }}" title="{{ manufacturer.name }}"/>
+          {% endif %}
+        </a>
+      </div>
+
+      <div class="caption">
+        <div class="name"><a href="{{ manufacturer.href }}">{{ manufacturer.name }}</a></div>
+        {% if viewMoreText %}
+        <div class="button-group">
+          <a class="btn btn-view-more" href="{{ manufacturer.href }}" title="{{ viewMoreText }}">
+            <span class="btn-text">{{ viewMoreText }}</span>
+          </a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endfor %}

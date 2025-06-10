@@ -1,0 +1,181 @@
+{
+  "MarginTop": {
+    "type": "Gap",
+    "variableType": "gap",
+    "rules": {
+      "@": {
+        "html": "--popup-height-margin:%s"
+      }
+    }
+  },
+  "MarginSide": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        "html": "--popup-width-margin:%spx"
+      }
+    }
+  },
+  "Backdrop": {
+    "type": "Background",
+    "selector": ".popup-bg",
+    "value": {
+      "background-color": "rgba(0,0,0,.8)"
+    }
+  },
+  "Background": {
+    "type": "Background",
+    "selector": ".popup-inner-body, .popup"
+  },
+  "Padding": {
+    "type": "Padding",
+    "selector": ".popup-content, .popup-inner-body > .grid-rows, .popup .site-wrapper"
+  },
+  "PopupBorder": {
+    "type": "Border",
+    "selector": ".popup-inner-body"
+  },
+  "PopupBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".popup-inner-body"
+  },
+  "PopupContentBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".popup-inner-body .popup-content, .popup-inner-body iframe, .popup-inner-body > .grid-rows"
+  },
+  "PopupShadow": {
+    "type": "Shadow",
+    "selector": ".popup-inner-body"
+  },
+  "dontShowFont": {
+    "type": "Font",
+    "selector": ".popup-dont-show"
+  },
+  "doNotShowAgainPosition": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        ".popup-dont-show": "justify-content: start; position: absolute; inset-inline-end: auto;",
+        ".popup-buttons + .popup-dont-show": "margin-top: 0;"
+      },
+      "center": {
+        ".popup-dont-show": "justify-content: center; position: relative; inset-inline-end: auto;",
+        ".popup-buttons + .popup-dont-show": "margin-top: 16px;"
+      },
+      "right": {
+        ".popup-dont-show": "justify-content: end; position: absolute; inset-inline-end: 0;",
+        ".popup-buttons + .popup-dont-show": "margin-top: 0;"
+      }
+    }
+  },
+  "doNotShowAgainMargin": {
+    "type": "Margin",
+    "selector": ".popup-dont-show"
+  },
+  "dontShowPadding": {
+    "type": "Padding",
+    "selector": ".popup-dont-show"
+  },
+  "CloseIcon": {
+    "type": "Icon",
+    "selector": ".popup-container .popup-close::before",
+    "value": {
+      "icon": {
+        "name": "close2",
+        "code": "e5cd"
+      }
+    }
+  },
+  "CloseSize": {
+    "type": "InputPair",
+    "selector": ".popup-container .popup-close",
+    "properties": {
+      "first": "width:%spx",
+      "second": "height:%spx",
+      "value": {
+        "first": "30",
+        "second": "30"
+      }
+    }
+  },
+  "CloseOffset": {
+    "type": "InputPair",
+    "selector": ".popup-container .popup-close",
+    "properties": {
+      "first": "margin-inline-end:%spx",
+      "second": "margin-top:%spx"
+    },
+    "rtlProperties": {
+      "first": "margin-inline-start:%spx",
+      "second": "margin-top:%spx"
+    }
+  },
+  "CloseBorderRadius": {
+    "type": "BorderRadius",
+    "selector": "div.popup-container .btn.popup-close",
+    "important": true
+  },
+  "ClosePadding": {
+    "type": "Padding",
+    "selector": "div.popup-container .btn.popup-close",
+    "important": true
+  },
+  "CloseStyle": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": ".popup-container .popup-close&"
+  },
+  "headerTitle": {
+    "type": "Variable",
+    "variable": "title",
+    "selector_prefix": ".popup-header"
+  },
+  "headerTitleBG": {
+    "type": "Background",
+    "selector": ".popup-header"
+  },
+  "headerMargin": {
+    "type": "Margin",
+    "selector": ".popup-header",
+    "important": true
+  },
+  "headerPadding": {
+    "type": "Padding",
+    "selector": ".popup-header"
+  },
+  "headerBorder": {
+    "type": "Border",
+    "selector": ".popup-header"
+  },
+  "footerBG": {
+    "type": "Background",
+    "selector": ".popup-footer"
+  },
+  "footerMargin": {
+    "type": "Margin",
+    "selector": ".popup-footer"
+  },
+  "footerPadding": {
+    "type": "Padding",
+    "selector": ".popup-footer"
+  },
+  "footerBorder": {
+    "type": "Border",
+    "selector": ".popup-footer"
+  },
+  "footerShadow": {
+    "type": "Shadow",
+    "selector": ".popup-footer"
+  },
+  "btn1Style": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": ".btn-popup-1&"
+  },
+  "btn2Style": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": ".btn-popup-2&"
+  }
+}

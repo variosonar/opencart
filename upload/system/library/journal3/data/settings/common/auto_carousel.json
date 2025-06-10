@@ -1,0 +1,365 @@
+{
+  "AutoCarouselScrollerType": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "default-hold": {
+        ".auto-carousel-controls.auto-carousel-bar": "max-height:0; margin: 0",
+        ".auto-carousel-thumb::before": "display:none",
+        ".auto-grid-items:not(.flex-grid)": "scrollbar-width: thin;",
+        ".auto-grid-items::-webkit-scrollbar": "display:block"
+      },
+      "custom": {
+        ".auto-grid": "--scrollbar-top-space: var(--scrollbar-top-spacing, 0px); --scrollbar-bottom-space: var(--scrollbar-bottom-spacing, 0px)",
+        ".auto-carousel-bar": "display:flex; margin: var(--scrollbar-top-spacing, 0) max(0px, var(--scroll-padding, 0px)) var(--scrollbar-bottom-spacing, 0) max(0px, var(--scroll-padding, 0px))",
+        ".auto-carousel-controls.auto-carousel-bar": "max-height: none"
+      },
+      "none": {
+        ".auto-grid": "--scrollbar-top-space: 0px; --scrollbar-bottom-space: 0px",
+        ".auto-carousel-bar": "display:none; margin: 0;",
+        ".auto-carousel-controls.auto-carousel-bar": "max-height: 0"
+      }
+    }
+  },
+  "AutoScrollbarStyle": {
+    "type": "Variable",
+    "variable": "auto_scrollbar",
+    "selector_prefix": ""
+  },
+  "DefaultScrollbarStyle-hold": {
+    "type": "Variable",
+    "variable": "default_scrollbar",
+    "selector_prefix": ".auto-grid-items"
+  },
+  "AutoCarouselSnapAlign": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "start": {
+        ".auto-grid-items:not(.is-dragging) > *": "scroll-snap-align:start"
+      },
+      "center": {
+        ".auto-grid-items:not(.is-dragging) > *": "scroll-snap-align:center"
+      },
+      "end": {
+        ".auto-grid-items:not(.is-dragging) > *": "scroll-snap-align:end"
+      },
+      "none": {
+        ".auto-grid-items:not(.is-dragging) > *": "scroll-snap-align:none"
+      }
+    },
+    "touchevents": true
+  },
+  "AutoCarouselScrollerMaxWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".auto-grid",
+    "property": "--scroller-max-width: %spx;"
+  },
+
+  "AutoCarouselSnapPaddingCustom": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "selector": ".auto-grid",
+    "property": "--scroll-padding-custom: %s;"
+  },
+
+  "AutoCarouselSnapPadding": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "auto": {
+        ".auto-grid": "--scroll-padding: var(--scroll-padding-custom, var(--element-padding, 0px));"
+      },
+      "gap": {
+        ".auto-grid": "--scroll-padding: var(--scroll-padding-custom, var(--grid-gap, 0px));"
+      },
+      "true": {
+        ".auto-grid": "--scroll-padding: var(--scroll-padding-custom, var(--content-gutter, 0px));"
+      },
+      "false": {
+        ".auto-grid": "--scroll-padding: var(--scroll-padding-custom, 0px);"
+      }
+    }
+  },
+  "AutoCarouselPadding": {
+    "type": "InputPair",
+    "selector": ".auto-grid",
+    "properties": {
+      "first": "--top-padding:%spx",
+      "second": "--bottom-padding:%spx",
+      "value": {
+        "first": "",
+        "second": ""
+      }
+    }
+  },
+  "AutoCarouselPaddingLR": {
+    "type": "InputPair",
+    "selector": ".auto-grid",
+    "properties": {
+      "first": "--left-padding:%spx",
+      "second": "--right-padding:%spx",
+      "value": {
+        "first": "",
+        "second": ""
+      }
+    }
+  },
+  "AutoCarouselScrollBy": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".auto-grid-items",
+    "property": "--scroll-by:%s"
+  },
+
+  "AutoCarouselIconButtonsStyle": {
+    "type": "Variable",
+    "variable": "icon_button",
+    "selector_prefix": ".auto-carousel-buttons&"
+  },
+
+  "AutoCarouselFlipIcon": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".auto-carousel-prev span::before": "transform: scaleX(-1)"
+      },
+      "false": {
+        ".auto-carousel-prev span::before": "transform: none"
+      }
+    }
+  },
+
+  "AutoCarouselButtonsVisibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".auto-carousel-buttons": "visibility:visible;"
+      },
+      "false": {
+        ".auto-carousel-buttons": "visibility:hidden;"
+      }
+    }
+  },
+  "AutoCarouselButtonSize": {
+    "type": "InputPair",
+    "selector": ".auto-grid",
+    "properties": {
+      "first": "--auto-carousel-button-width:%spx",
+      "second": "--auto-carousel-button-height:%spx",
+      "value": {
+        "first": "40",
+        "second": "40"
+      }
+    }
+  },
+  "AutoCarouselButtonGap": {
+    "type": "InputNumber",
+    "selector": ".auto-grid",
+    "property": "--auto-carousel-button-gap:%spx"
+  },
+  "AutoCarouselButtonOffset": {
+    "type": "InputPair",
+    "selector": ".auto-grid",
+    "properties": {
+      "first": "--auto-carousel-button-x: %spx",
+      "second": "--auto-carousel-button-y: %spx"
+    },
+    "rtlProperties": {
+      "first": "--auto-carousel-button-x: calc(%spx * -1)",
+      "second": "--auto-carousel-button-y: %spx"
+    }
+  },
+  "AutoCarouselButtonPrevVisibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".no-scroll-prev .auto-carousel-prev": "visibility: visible"
+      },
+      "false": {
+        ".no-scroll-prev .auto-carousel-prev": "visibility: hidden"
+      }
+    }
+  },
+  "FaderGlobalStatus": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".auto-grid-items::before": "visibility: visible",
+        ".auto-grid-items::after": "visibility: visible"
+      },
+      "false": {
+        ".auto-grid-items::before": "visibility: hidden",
+        ".auto-grid-items::after": "visibility: hidden"
+      }
+    }
+  },
+  "FaderColor": {
+    "type": "Color",
+    "selector": ".auto-grid-items::before, .auto-grid-items::after",
+    "property": "--fader-color: %s"
+  },
+  "FaderWidth": {
+    "type": "InputPair",
+    "selector": ".auto-grid-items::before, .auto-grid-items::after",
+    "properties": {
+      "first": "--fader-width-left:%spx",
+      "second": "--fader-width-right:%spx",
+      "value": {
+        "first": "",
+        "second": ""
+      }
+    }
+  },
+  "AutoCarouselButtonPosition": {
+    "type": "Select",
+    "value": "",
+    "rules": {
+      "tl": {
+        ".auto-carousel-buttons": "align-items:center; justify-content:flex-start; flex-direction:row; position:relative; height:0; transform: translate3d(0,calc(var(--auto-carousel-button-height,40px) / 2 * -1), 0); top:0; margin-top: 0px;",
+        ".auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        ".auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "tc": {
+        ".auto-carousel-buttons": "align-items:center; justify-content:center; flex-direction:row; position:relative; height:0; transform: translate3d(0,calc(var(--auto-carousel-button-height,40px) / 2 * -1), 0); top:0; margin-top: 0px;",
+        ".auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        ".auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "tr": {
+        ".auto-carousel-buttons": "align-items:center; justify-content:flex-end; flex-direction:row; position:relative; height:0; transform: translate3d(0,calc(var(--auto-carousel-button-height,40px) / 2 * -1), 0); top:0; margin-top: 0px;",
+        ".auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        ".auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "ta": {
+        ".auto-carousel-buttons": "align-items:center; justify-content:space-between; flex-direction:row; position:relative; height:0; transform: translate3d(0,calc(var(--auto-carousel-button-height,40px) / 2 * -1), 0); top:0; margin-top: 0px;",
+        ".auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        ".auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(calc(var(--auto-carousel-button-x, 0px) * -1), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "cl": {
+        ".auto-carousel-buttons": "align-items:flex-start; justify-content:flex-start; flex-direction:column; position:absolute; top:50%; height:auto; transform: translate3d(0,-50%,0); margin-top: var(--buttons-offset, 0px)",
+        ".auto-carousel-buttons .auto-carousel-prev": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        ".auto-carousel-buttons .auto-carousel-next": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "cr": {
+        ".auto-carousel-buttons": "align-items:flex-end; justify-content:flex-start; flex-direction:column; position:absolute; top:50%; height:auto; transform: translate3d(0,-50%,0); margin-top: var(--buttons-offset, 0px)",
+        ".auto-carousel-buttons .auto-carousel-prev": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        ".auto-carousel-buttons .auto-carousel-next": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "ca": {
+        ".auto-carousel-buttons": "align-items:center; justify-content:space-between; flex-direction:row; position:absolute; top:50%; height:auto; transform: translate3d(0,-50%,0); margin-top: var(--buttons-offset, 0px)",
+        ".auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        ".auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(calc(var(--auto-carousel-button-x, 0px) * -1), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      }
+    }
+  },
+  "AutoCarouselButtonDisabled": {
+    "type": "InputNumber",
+    "value": "",
+    "rules": {
+      "@": {
+        ".no-scroll-prev .auto-carousel-prev, .no-scroll-next .auto-carousel-next": "opacity:%s"
+      }
+    }
+  },
+  "AutoCarouselButtonDisabledScale": {
+    "type": "InputNumber",
+    "value": "",
+    "rules": {
+      "@": {
+        ".no-scroll-prev .auto-carousel-prev, .no-scroll-next .auto-carousel-next": "--scale:%s"
+      }
+    }
+  },
+  "AutoCarouselButtonIcon": {
+    "type": "Icon",
+    "selector": ".auto-carousel-prev span::before"
+  },
+  "AutoCarouselButtonIconHover": {
+    "type": "Color",
+    "selector": ".auto-carousel-prev:hover span::before",
+    "property": "color"
+  },
+  "AutoCarouselButtonIconActive": {
+    "type": "Color",
+    "selector": ".auto-carousel-prev:active span::before",
+    "property": "color"
+  },
+  "AutoCarouselButtonIconNext": {
+    "type": "Icon",
+    "selector": ".auto-carousel-next span::before"
+  },
+  "AutoCarouselButtonIconNextHover": {
+    "type": "Color",
+    "selector": ".auto-carousel-next:hover span::before",
+    "property": "color"
+  },
+  "AutoCarouselButtonIconNextActive": {
+    "type": "Color",
+    "selector": ".auto-carousel-next:active span::before",
+    "property": "color"
+  },
+  "AutoCarouselButtonBackground": {
+    "type": "Background",
+    "selector": ".auto-carousel-buttons > div > span"
+  },
+  "AutoCarouselButtonBackgroundHover": {
+    "type": "Background",
+    "selector": ".auto-carousel-buttons > div:hover > span"
+  },
+  "AutoCarouselButtonBackgroundActive": {
+    "type": "Background",
+    "selector": ".auto-carousel-buttons > div:active > span"
+  },
+  "AutoCarouselButtonBorder": {
+    "type": "Border",
+    "selector": ".auto-carousel-buttons > div > span"
+  },
+  "AutoCarouselButtonBorderHover": {
+    "type": "Color",
+    "selector": ".auto-carousel-buttons > div:hover > span",
+    "property": "border-color"
+  },
+  "AutoCarouselButtonBorderActive": {
+    "type": "Color",
+    "selector": ".auto-carousel-buttons > div:active > span",
+    "property": "border-color"
+  },
+  "AutoCarouselButtonBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".auto-carousel-buttons > div > span"
+  },
+  "AutoCarouselButtonShadow": {
+    "type": "Shadow",
+    "selector": ".auto-carousel-buttons > div > span"
+  },
+  "AutoCarouselButtonShadowHover": {
+    "type": "Shadow",
+    "selector": ".auto-carousel-buttons > div:hover > span"
+  },
+  "AutoCarouselButtonShadowActive": {
+    "type": "Shadow",
+    "selector": ".auto-carousel-buttons > div:active > span"
+  },
+  "AutoCarouselCursor": {
+    "type": "Select",
+    "value": "",
+    "rules": {
+      "auto": {
+        ".auto-grid-items": "--cursor: auto"
+      },
+      "grab": {
+        ".auto-grid-items": "--cursor: grab",
+        ".auto-grid-items:active": "--cursor: grabbing"
+      },
+      "ew-resize": {
+        ".auto-grid-items": "--cursor: ew-resize"
+      }
+    }
+  }
+}

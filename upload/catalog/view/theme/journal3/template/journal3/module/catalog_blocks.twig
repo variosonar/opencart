@@ -1,0 +1,237 @@
+{% macro renderCatalogBlocks(context, item) %}
+  {% set journal3 = context.journal3 %}
+  {% if item.blockLink.href %}
+    <a class="block-link" href="{{ item.blockLink.href }}" {{ journal3.linkAttrs(item.blockLink) }} aria-hidden="true" tabindex="-1"></a>
+  {% endif %}
+  {% if context.display == 'grid' and item.title and context.titlePosition == 'block' %}
+    <h3 class="title module-title block-title">
+      <span>{{ item.title }}</span>
+      {% if item.href %}
+        <a href="{{ item.href }}" class="item-all-link"><span>{{ context.allLinkText }}</span></a>
+      {% endif %} </h3>
+  {% endif %}
+  <div class="block-body">
+    {% if item.header != 'none' %}
+    <div class="block-header">
+      <div class="block-header-data">
+        <a class="block-header-link" href="{{ item.blockHeaderLink.href ? item.blockHeaderLink.href : item.href }}" {{ journal3.linkAttrs(item.blockHeaderLink) }}>
+          {% if item.header == 'image' %}
+            <div class="block-header-image">
+              {% if journal3.get('performanceLazyLoadImagesStatus') and context.lazyLoad %}
+                <img src="{{ context.dummy_image }}" data-src="{{ item.image }}" {% if item.image2x %}data-srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" {% endif %} alt="{{ item.alt }}" width="{{ context.imageDimensionsFeatured.width }}" height="{{ context.imageDimensionsFeatured.height }}" class="block-image lazyload"/>
+              {% else %}
+                <img src="{{ item.image }}" {% if item.image2x %}srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" {% endif %} alt="{{ item.alt }}" width="{{ context.imageDimensionsFeatured.width }}" height="{{ context.imageDimensionsFeatured.height }}" class="block-image"/>
+              {% endif %}
+              {% if context.display == 'grid' and item.title and context.titlePosition == 'before' %}
+                <h3 class="title module-title block-title">{{ item.title }}</h3>
+              {% endif %}
+            </div>
+          {% elseif item.header == 'icon' %}
+            <div class="block-head-icon">
+              <em class="icon icon-block"></em>
+              {% if context.display == 'grid' and item.title and context.titlePosition == 'before' %}
+                <h3 class="title module-title block-title">{{ item.title }}</h3>
+              {% endif %}
+            </div>
+          {% elseif item.header == 'text' %}
+            <div class="block-head-text">
+              <span class="block-header-text">{{ item.text }}</span>
+              {% if context.display == 'grid' and item.title and context.titlePosition == 'before' %}
+                <h3 class="title module-title block-title">{{ item.title }}</h3>
+              {% endif %}
+            </div>
+          {% endif %}
+        </a>
+        <div class="block-category-data">
+          <div class="block-category-name">{{ item.title }}</div>
+          <div class="block-category-description">{{ item.description }}</div>
+        </div>
+      </div>
+      {% if item.footer == 'button' %}
+        <div class="block-footer"><a class="btn" href="{{ item.footerButtonLink.href ? item.footerButtonLink.href : item.href }}" {{ journal3.linkAttrs(item.footerButtonLink) }}><span>{{ item.footerButton ? item.footerButton : item.title }}</span></a></div>
+      {% endif %}
+    </div>
+    {% endif %}
+    <div class="block-wrapper">
+      {% if context.display == 'grid' and item.title and context.titlePosition == 'body' %}
+        <h3 class="title module-title block-title">{{ item.title }}</h3>
+      {% endif %}
+      {% if item.subtype != 'none' %}
+        <div class="block-content block-catalog">{% if item.items %}
+            <div class="catalog-blocks {{ context.gridType }}-grid no-scroll">
+            {% if context.gridType == 'auto' %}
+              <div class="auto-grid-items">
+                {% for subitems in item.items %}
+                  <div class="{{ journal3.classes(subitems.classes) }}">
+                    <div class="item-content">
+                      <a href="{{ subitems.href }}" class="catalog-title">{{ subitems.name }}</a>
+                      <div class="item-assets image-left">
+                        {% if subitems.image %}
+                          <a href="{{ subitems.href }}" class="catalog-image">
+                            {% if journal3.get('performanceLazyLoadImagesStatus') %}
+                              <img src="{{ context.dummy_image }}" data-src="{{ subitems.image }}" data-image="{{ subitems.image }}" {% if subitems.image2x %}data-srcset="{{ subitems.image }} 1x, {{ subitems.image2x }} 2x"{% endif %} alt="{{ subitems.name }}" width="{{ context.imageDimensions.width }}" height="{{ context.imageDimensions.height }}" class="lazyload">
+                            {% else %}
+                              <img src="{{ subitems.image }}" data-image="{{ subitems.image }}" {% if subitems.image2x %}srcset="{{ subitems.image }} 1x, {{ subitems.image2x }} 2x" data-image2x="{{ subitems.image2x }}"{% endif %} alt="{{ subitems.name }}" width="{{ context.imageDimensions.width }}" height="{{ context.imageDimensions.height }}">
+                            {% endif %}
+                          </a>
+                        {% endif %}
+                        <div class="subitems">
+                          {% for sub_item in subitems.items %}
+                            <div class="subitem" data-image="{{ sub_item.image }}" {% if sub_item.image2x %}data-image2x="{{ sub_item.image }} 1x, {{ sub_item.image2x }} 2x"{% endif %}>
+                              <a href="{{ sub_item.href }}"><span>{{ sub_item.name }}</span></a>
+                            </div>
+                          {% endfor %}
+                          {% if context.viewMoreAlwaysShow or subitems.total > subitems.items|length %}
+                            <div class="subitem view-more">
+                              <a href="{{ subitems.href }}"><span>{{ context.viewMoreText }}</span></a>
+                            </div>
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+              <div class="auto-carousel-bar auto-carousel-controls">
+                <div class="auto-carousel-thumb"></div>
+                <div class="auto-carousel-fill"></div>
+              </div>
+              <div class="auto-carousel-buttons auto-carousel-controls">
+                <div class="auto-carousel-prev"><span></span></div>
+                <div class="auto-carousel-next"><span></span></div>
+              </div>
+            {% elseif context.gridType == 'masonry' %}
+              {% for subitems in item.items %}
+                <div class="{{ journal3.classes(subitems.classes) }}">
+                  <div class="item-content">
+                    <a href="{{ subitems.href }}" class="catalog-title">{{ subitems.name }}</a>
+                    <div class="item-assets image-left">
+                      {% if subitems.image %}
+                        <a href="{{ subitems.href }}" class="catalog-image">
+                          {% if journal3.get('performanceLazyLoadImagesStatus') %}
+                            <img src="{{ context.dummy_image }}" data-src="{{ subitems.image }}" data-image="{{ subitems.image }}" {% if subitems.image2x %}data-srcset="{{ subitems.image }} 1x, {{ subitems.image2x }} 2x"{% endif %} alt="{{ subitems.name }}" width="{{ context.imageDimensions.width }}" height="{{ context.imageDimensions.height }}" class="lazyload"/>
+                          {% else %}
+                            <img src="{{ subitems.image }}" data-image="{{ subitems.image }}" {% if subitems.image2x %}srcset="{{ subitems.image }} 1x, {{ subitems.image2x }} 2x" data-image2x="{{ subitems.image2x }}"{% endif %} alt="{{ subitems.name }}" width="{{ context.imageDimensions.width }}" height="{{ context.imageDimensions.height }}"/>
+                          {% endif %}
+                        </a>
+                      {% endif %}
+                      <div class="subitems">
+                        {% for sub_item in subitems.items %}
+                          <div class="subitem" data-image="{{ sub_item.image }}" {% if sub_item.image2x %}data-image2x="{{ sub_item.image }} 1x, {{ sub_item.image2x }} 2x"{% endif %}>
+                            <a href="{{ sub_item.href }}"><span>{{ sub_item.name }}</span></a>
+                          </div>
+                        {% endfor %}
+                        {% if context.viewMoreAlwaysShow or subitems.total > subitems.items|length %}
+                          <div class="subitem view-more">
+                            <a href="{{ subitems.href }}"><span>{{ context.viewMoreText }}</span></a>
+                          </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            {% endif %}
+            </div>{% elseif item.subtype == 'custom' %}{{ item.catalog }}{% else %}{{ context.noItemsText }}{% endif %}</div>
+      {% endif %}
+      {% if item.products and context.productsPosition == 'body' %}
+        <div class="block-products">
+          {{ item.products }}
+        </div>
+      {% endif %}
+      {% if item.manufacturers %}
+        <div class="block-manufacturers">
+          {{ item.manufacturers }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  {% if item.products and context.productsPosition == 'block' %}
+    <div class="block-products">
+      {{ item.products }}
+    </div>
+  {% endif %}
+{% endmacro %}
+<div class="{{ journal3.classes(classes) }}">
+  <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+  {% if title %}
+    <h3 class="title module-title">{{ title }}</h3>
+  {% endif %}
+  <div class="module-body">
+    {# grid #}
+    {% if display == 'grid' %}
+      {% for item in items %}
+        <div class="{{ journal3.classes(item.classes) }}">
+          {{ _self.renderCatalogBlocks(_context, item) }}
+        </div>
+      {% endfor %}
+    {% endif %}
+    {# tabs #}
+    {% if display == 'tabs' %}
+      <div class="tab-container {% if changeTabOnHover %}tab-on-hover{% endif %}">
+        <div class="full-tabs-bg"></div>
+        <ul class="nav nav-tabs">
+          {% for item in items %}
+            <li class="{{ journal3.classes(item.tab_classes) }}">
+              {% if item.tabType == 'link' %}
+                <a href="{{ item.link.href }}" {{ journal3.linkAttrs(item.link) }}>{{ item.title }}</a>
+              {% else %}
+                <a href="#{{ id }}-tab-{{ loop.index }}" class="{% if item.image_tab %} has-image {% endif %}" data-toggle="tab">
+                  {% if item.image_tab %}
+                    {% if journal3.get('performanceLazyLoadImagesStatus') and lazyLoad %}
+                      <span class="menu-image"><img src="{{ dummy_image }}" data-src="{{ item.image_tab }}" {% if item.image_tab2x %}data-srcset="{{ item.image_tab }} 1x, {{ item.image_tab2x }} 2x" {% endif %} alt="{{ item.alt }}" width="{{ imageDimensionsTab.width }}" height="{{ imageDimensionsTab.height }}" class="catalog-block-image lazyload"/></span>
+                    {% else %}
+                      <span class="menu-image"><img src="{{ item.image_tab }}" {% if item.image_tab2x %}srcset="{{ item.image_tab }} 1x, {{ item.image_tab2x }} 2x" {% endif %} alt="{{ item.alt }}" width="{{ imageDimensionsTab.width }}" height="{{ imageDimensionsTab.height }}" class="catalog-block-image"/></span>
+                    {% endif %}
+                  {% endif %}
+                  <span>{{ item.title }}</span>
+                </a>
+                {% if item.href %}
+                  <a href="{{ item.href }}" class="item-all-link" title="{{ allLinkText }}" data-toggle="tooltip-hover"><span>{{ allLinkText }}</span></a>
+                {% endif %}
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+        <div class="tab-content">
+          {% for item in items %}
+            {% if item.tabType != 'link' %}
+              <div class="{{ journal3.classes(item.classes) }}" id="{{ id }}-tab-{{ loop.index }}">
+                {{ _self.renderCatalogBlocks(_context, item) }}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+    {# accordion #}
+    {% if display == 'accordion' %}
+      <div class="panel-group" id="{{ id }}-collapse">
+        {% for item in items %}
+          <div class="{{ journal3.classes(item.classes) }}">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a href="#{{ id }}-collapse-{{ loop.index }}" class="accordion-toggle collapsed {% if item.image_tab %} has-image {% endif %}" data-toggle="collapse" data-parent="#{{ id }}-collapse" aria-expanded="false">
+                  {% if item.image_tab %}
+                    {% if journal3.get('performanceLazyLoadImagesStatus') and context.lazyLoad %}
+                      <span class="menu-image"><img src="{{ context.dummy_image }}" data-src="{{ item.image_tab }}" {% if item.image_tab2x %}data-srcset="{{ item.image_tab }} 1x, {{ item.image_tab2x }} 2x" {% endif %} alt="{{ item.alt }}" width="{{ context.imageDimensionsTab.width }}" height="{{ context.imageDimensionsTab.height }}" class="catalog-block-image lazyload"/></span>
+                    {% else %}
+                      <span class="menu-image"><img src="{{ item.image_tab }}" {% if item.image_tab2x %}srcset="{{ item.image_tab }} 1x, {{ item.image_tab2x }} 2x" {% endif %} alt="{{ item.alt }}" width="{{ context.imageDimensionsTab.width }}" height="{{ context.imageDimensionsTab.height }}" class="catalog-block-image"/></span>
+                    {% endif %}
+                  {% endif %}
+                  <span>{{ item.title }}</span>
+                  <i class="fa fa-caret-down"></i>
+                </a>
+              </h4>
+            </div>
+            <div class="{{ journal3.classes(item.panel_classes) }}" id="{{ id }}-collapse-{{ loop.index }}">
+              <div class="panel-body">
+                {{ _self.renderCatalogBlocks(_context, item) }}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</div>

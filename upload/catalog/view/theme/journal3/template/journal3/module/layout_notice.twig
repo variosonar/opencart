@@ -1,0 +1,25 @@
+<div class="notice-module {{ journal3.classes(classes) }}" data-options='{{ options|json_encode }}'>
+  <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+  <div class="module-body">
+    <div class="hn-body">
+      <div class="hn-content">{{ content }}</div>
+    </div>
+    {% if closeButton %}
+      <div class="layout-notice-close-button">
+        {% if closeLink.href %}
+          <a class="btn hn-close" href="{{ closeLink.href }}" {{ journal3.linkAttrs(closeLink) }}>
+            {% if closeText %}
+              <span class="btn-text">{{ closeText }}</span>
+            {% endif %}
+          </a>
+        {% else %}
+          <button class="btn hn-close">
+            {% if closeText %}
+              <span class="btn-text">{{ closeText }}</span>
+            {% endif %}
+          </button>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>

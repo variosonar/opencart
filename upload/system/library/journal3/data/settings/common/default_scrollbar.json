@@ -1,0 +1,81 @@
+{
+  "Status": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        "&::-webkit-scrollbar": "display: block",
+        "": "scrollbar-width: var(--scrollbar-width, auto);",
+        "&.desktop": "--scrollW:15px",
+        "&.mac.desktop.firefox": "--scrollW:11px"
+      },
+      "false": {
+        "&::-webkit-scrollbar": "display: none",
+        "": "scrollbar-width: none;",
+        "&.desktop": "--scrollW:0px",
+        "&.desktop.mac.firefox": "--scrollW:0px"
+      }
+    }
+  },
+  "Width": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "auto": {
+        "": "--scrollbar-width: auto;",
+        "&::-webkit-scrollbar": "width:%spx; height: %spx; background-color: var(--scrollbar-track-color, #C0C0C0)",
+        "&::-webkit-scrollbar-thumb": "background-color: var(--scrollbar-thumb-color, #C0C0C0)",
+        "&.mac.desktop": "--scrollW:15px",
+        "&": "scrollbar-width: auto; scrollbar-color: var(--scrollbar-thumb-color, #C0C0C0) var(--scrollbar-track-color, #F9F9F9)"
+      },
+      "thin": {
+        "": "--scrollbar-width: thin;",
+        "&::-webkit-scrollbar": "width:%spx; height: %spx; background-color: var(--scrollbar-track-color, #C0C0C0)",
+        "&::-webkit-scrollbar-thumb": "background-color: var(--scrollbar-thumb-color, #C0C0C0)",
+        "&.mac.desktop": "--scrollW:11px",
+        "&": "scrollbar-width: thin; scrollbar-color: var(--scrollbar-thumb-color, #C0C0C0) var(--scrollbar-track-color, #F9F9F9)"
+      }
+    }
+  },
+  "Size": {
+    "type": "InputNumber",
+    "value": "",
+    "rules":{
+      "@":{
+        "&::-webkit-scrollbar": "width:%spx; height: %spx; background-color: var(--scrollbar-track-color, #C0C0C0)",
+        "&::-webkit-scrollbar-thumb": "background-color: var(--scrollbar-thumb-color, #C0C0C0)",
+        "&.desktop": "--scrollW:%spx",
+        "&.mac.desktop.firefox": "--scrollW:11px",
+        "&": "scrollbar-width: thin; scrollbar-color: var(--scrollbar-thumb-color, #C0C0C0) var(--scrollbar-track-color, #F9F9F9)"
+      }
+    }
+  },
+  "TrackColor": {
+    "type": "Color",
+    "selector": "&, &::-webkit-scrollbar",
+    "property": "--scrollbar-track-color: %s;"
+  },
+  "ThumbColor": {
+    "type": "Color",
+    "selector": "&, &::-webkit-scrollbar-thumb",
+    "property": "--scrollbar-thumb-color: %s;"
+  },
+  "ThumbColorHover": {
+    "type": "Color",
+    "selector": "&::-webkit-scrollbar-thumb",
+    "property": "--scrollbar-thumb-color-hover: %s"
+  },
+  "ThumbColorActive": {
+    "type": "Color",
+    "selector": "&::-webkit-scrollbar-thumb",
+    "property": "--scrollbar-thumb-color-active: %s"
+  },
+  "ThumbBorder": {
+    "type": "Border",
+    "selector": "&::-webkit-scrollbar-thumb"
+  },
+  "ThumbBorderRadius": {
+    "type": "BorderRadius",
+    "selector": "&::-webkit-scrollbar-thumb"
+  }
+}

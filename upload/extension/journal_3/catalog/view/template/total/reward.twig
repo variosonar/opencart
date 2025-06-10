@@ -1,0 +1,20 @@
+<div class="panel panel-default panel-reward">
+  <div class="panel-heading">
+    <h4 class="panel-title"><a href="#collapse-reward" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion">{{ heading_title }} <i class="fa fa-caret-down"></i></a></h4>
+  </div>
+  <div id="collapse-reward" class="panel-collapse collapse">
+    <div class="panel-body">
+      <form id="form-reward" action="{{ save }}" method="post" data-oc-toggle="ajax" data-oc-load="{{ list }}" data-oc-target="#shopping-cart">
+        <div class="row mb-3 form-group">
+          <label for="input-reward" class="control-label col-md-4 col-form-label">{{ entry_reward }}</label>
+          <div class="input-group">
+            <input type="text" name="reward" value="{{ reward }}" placeholder="{{ entry_reward }}" id="input-reward" class="form-control" >
+            <span class="input-group-btn">
+              <button id="button-reward" type="submit" class="btn btn-primary">{{ button_reward }}</button>
+            </span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

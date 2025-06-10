@@ -1,0 +1,527 @@
+{
+  "ListSpacing": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "20",
+    "rules":{
+      "@":{
+        "&.post-list .post-layout": "--post-list-spacing: %s"
+      }
+    }
+  },
+  "ImageWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "rules":{
+      "@":{
+        "&.post-list .post-thumb .image": "--list-image:%s%"
+      }
+    }
+  },
+  "DetailsStack": {
+    "type": "InputNumber",
+    "value": "",
+    "rules":{
+      "@":{
+        ".post-thumb": "--details-stack:%spx"
+      }
+    }
+  },
+  "DetailsAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "@": {
+        "&.post-list .post-thumb .caption": "justify-content: %s"
+      }
+    }
+  },
+  "StatsGap": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "--post-stats-gap: %spx",
+    "selector": ".post-thumb .post-stats"
+  },
+  "DetailsGap": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "property": "--details-gap: %s",
+    "selector": ".post-layout"
+  },
+  "PostDateImagePositionSize": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "selector": ".post-thumb .p-date-image",
+    "property": "--p-date-size:%s"
+  },
+  "DateImagePosition": {
+    "type": "Radio",
+    "value": "ts",
+    "rules": {
+      "ts": {
+        ".post-thumb .p-date-image": "top: 0; left: 0; right: auto; bottom: auto;"
+      },
+      "te": {
+        ".post-thumb .p-date-image": "top: 0; left: auto; right: 0; bottom: auto;"
+      },
+      "bs": {
+        ".post-thumb .p-date-image": "top: auto; left: 0; right: auto; bottom: 0;"
+      },
+      "be": {
+        ".post-thumb .p-date-image": "top: auto; left: auto; right: 0; bottom: 0;"
+      }
+    },
+    "rtlRules": {
+      "ts": {
+        ".post-thumb .p-date-image": "top: 0; left: autp; right: 0; bottom: auto;"
+      },
+      "te": {
+        ".post-thumb .p-date-image": "top: 0; left: 0; right: auto; bottom: auto;"
+      },
+      "bs": {
+        ".post-thumb .p-date-image": "top: auto; left: auto; right: 0; bottom: 0;"
+      },
+      "be": {
+        ".post-thumb .p-date-image": "top: auto; left: 0; right: auto; bottom: 0;"
+      }
+    }
+  },
+
+  "ImageVisibility": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".post-thumb .image": "display:block"
+      },
+      "false": {
+        ".post-thumb .image": "display:none"
+      }
+    }
+  },
+  "Background": {
+    "type": "Background",
+    "selector": ".post-layout"
+  },
+  "BackgroundHover": {
+    "type": "Background",
+    "selector": ".post-layout:hover"
+  },
+  "Shadow": {
+    "type": "Shadow",
+    "selector": ".post-layout"
+  },
+  "ShadowHover": {
+    "type": "Shadow",
+    "selector": ".post-layout:hover"
+  },
+  "Border": {
+    "type": "Border",
+    "selector": ".post-layout"
+  },
+  "BorderHover": {
+    "type": "Color",
+    "property": "border-color:%s",
+    "selector": ".post-layout:hover"
+  },
+  "BorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".post-layout"
+  },
+  "ItemPadding": {
+    "type": "Padding",
+    "selector": ".post-layout"
+  },
+
+
+  "ImageBorder": {
+    "type": "Border",
+    "selector": ".post-thumb .image a"
+  },
+  "ImageBorderHover": {
+    "type": "Color",
+    "property": "border-color:%s",
+    "selector": ".post-thumb:hover .image a"
+  },
+  "ImageBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".post-thumb .image a"
+  },
+  "ImageShadow": {
+    "type": "Shadow",
+    "selector": ".post-thumb .image a"
+  },
+  "ImageShadowHover": {
+    "type": "Shadow",
+    "selector": ".post-thumb:hover .image a"
+  },
+
+  "ImageScale": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".post-thumb:hover .image img": "transform:scale(1.15)"
+      },
+      "false": {
+        ".post-thumb:hover .image img": "transform:scale(1)"
+      }
+    }
+  },
+
+  "Grayscale": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "none": {
+        ".post-thumb .image img": "filter: grayscale(0)"
+      },
+      "always": {
+        ".post-thumb .image img": "filter: grayscale(1)"
+      },
+      "hover": {
+        ".post-thumb .image img": "filter: grayscale(1)",
+        ".post-thumb:hover .image img": "filter: grayscale(0)"
+      }
+    }
+  },
+  "DetailsBG": {
+    "type": "Background",
+    "selector": ".post-thumb .caption"
+  },
+  "DetailsBGHover": {
+    "type": "Background",
+    "selector": ".post-thumb:hover .caption"
+  },
+  "DetailsShadow": {
+    "type": "Shadow",
+    "selector": ".post-thumb .caption"
+  },
+  "DetailsShadowHover": {
+    "type": "Shadow",
+    "selector": ".post-thumb:hover .caption"
+  },
+  "DetailsBorder": {
+    "type": "Border",
+    "selector": ".post-thumb .caption"
+  },
+  "DetailsBorderHover": {
+    "type": "Color",
+    "property": "border-color:%s",
+    "selector": ".post-thumb:hover .caption"
+  },
+  "DetailsBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".post-thumb .caption"
+  },
+  "DetailsPadding": {
+    "type": "Padding",
+    "selector": ".post-thumb .caption"
+  },
+  "DetailsMargin": {
+    "type": "Margin",
+    "selector": ".post-thumb .caption"
+  },
+
+
+  "NameStatus": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "true": {
+        ".post-thumb .name": "display:flex"
+      },
+      "false": {
+        ".post-thumb .name": "display:none"
+      }
+    }
+  },
+  "NameOverflow": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".post-thumb .name a": "white-space: nowrap; overflow: hidden; text-overflow: ellipsis"
+      },
+      "false": {
+        ".post-thumb .name a": "white-space: normal; overflow: initial; text-overflow: initial"
+      },
+      "multi": {
+        ".post-thumb .name a": " display: -webkit-box; -webkit-box-orient: vertical;  -webkit-line-clamp: 2; overflow:hidden"
+      }
+    }
+  },
+
+  "TruncateLines": {
+    "type": "Input",
+    "value": "2",
+    "rules":{
+      "@":{
+        ".post-thumb .name a": "-webkit-line-clamp: %s"
+      }
+    }
+  },
+  "NameFont": {
+    "type": "Font",
+    "selector": ".post-thumb .name a"
+  },
+  "NameFontHover": {
+    "type": "Font",
+    "selector": ".post-thumb .name a:hover"
+  },
+  "NameWidth": {
+    "type": "Radio",
+    "value": "auto",
+    "rules": {
+      "auto": {
+        ".post-thumb .name": "width:auto; margin-inline-start: auto; margin-inline-end: auto"
+      },
+      "full": {
+        ".post-thumb .name": "width:100%; margin-inline-start: 0; margin-inline-end: 0"
+      }
+    }
+  },
+  "NameAlign": {
+    "type": "Radio",
+    "value": "start",
+    "rules": {
+      "start": {
+        ".post-thumb .name": "justify-content:flex-start; margin-inline-start: 0; margin-inline-end: auto"
+      },
+      "center": {
+        ".post-thumb .name": "justify-content:center; margin-inline-start: auto; margin-inline-end: auto"
+      },
+      "end": {
+        ".post-thumb .name": "justify-content:flex-end; margin-inline-start: auto; margin-inline-end: 0"
+      }
+    }
+  },
+  "NameContainer": {
+    "include": "common",
+    "selector_prefix": ".post-thumb .name"
+  },
+
+
+  "DescriptionStatus": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".post-thumb .description": "display:block"
+      },
+      "false": {
+        ".post-thumb .description": "display:none"
+      }
+    }
+  },
+  "DescriptionFont": {
+    "type": "Font",
+    "selector": ".post-thumb .description"
+  },
+  "DescriptionContainer": {
+    "include": "common",
+    "selector_prefix": ".post-thumb .description"
+  },
+
+
+  "ButtonStatus": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "true": {
+        ".post-thumb .button-group": "display:flex"
+      },
+      "false": {
+        ".post-thumb .button-group": "display:none"
+      }
+    }
+  },
+  "ButtonAlign": {
+    "type": "Radio",
+    "value": "start",
+    "rules": {
+      "start": {
+        ".post-thumb .button-group": "justify-content:flex-start"
+      },
+      "center": {
+        ".post-thumb .button-group": "justify-content:center"
+      },
+      "end": {
+        ".post-thumb .button-group": "justify-content:flex-end"
+      }
+    }
+  },
+  "ButtonDisplay": {
+    "type": "Radio",
+    "value": "icon",
+    "rules": {
+      "icon": {
+        ".post-thumb .btn-read-more .btn-text": "display:none",
+        ".post-thumb .btn-read-more::before": "display:inline-block"
+      },
+      "text": {
+        ".post-thumb .btn-read-more::before": "display:none",
+        ".post-thumb .btn-read-more .btn-text": "display:inline-block; padding:0;"
+      },
+      "both": {
+        ".post-thumb .btn-read-more::before": "display:inline-block",
+        ".post-thumb .btn-read-more .btn-text": "display:inline-block; padding:0 .4em"
+      }
+    },
+    "php": true
+  },
+  "ButtonIcon": {
+    "type": "Icon",
+    "selector": ".post-thumb .btn-read-more::before"
+  },
+  "ButtonIconHover": {
+    "type": "Color",
+    "property": "color:%s",
+    "selector": ".post-thumb .btn-read-more:hover::before"
+  },
+  "ButtonRightIcon": {
+    "type": "Icon",
+    "selector": ".post-thumb .btn-read-more::after"
+  },
+  "ButtonRightIconHover": {
+    "type": "Color",
+    "property": "color:%s",
+    "selector": ".post-thumb .btn-read-more:hover::after"
+  },
+  "ButtonButton": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": ".post-thumb .btn-read-more&"
+  },
+  "ButtonContainer": {
+    "include": "common",
+    "selector_prefix": ".post-thumb .button-group"
+  },
+  "ButtonTooltipStatus": {
+    "type": "Toggle",
+    "php": true
+  },
+  "ButtonTooltipPosition": {
+    "type": "Radio",
+    "value": "top",
+    "php": true
+  },
+  "ButtonTooltip": {
+    "type": "Variable",
+    "variable": "tooltip",
+    "selector_prefix": "&.read-more-tooltip"
+  },
+
+
+  "StatStatus": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".post-thumb .post-stats": "display:flex"
+      },
+      "false": {
+        ".post-thumb .post-stats": "display:none"
+      }
+    }
+  },
+  "StatFont": {
+    "type": "Font",
+    "selector": ".post-thumb .post-stats"
+  },
+  "StatAlign": {
+    "type": "Radio",
+    "value": "start",
+    "rules": {
+      "start": {
+        ".post-thumb .post-stats": "justify-content:flex-start"
+      },
+      "center": {
+        ".post-thumb .post-stats": "justify-content:center"
+      },
+      "end": {
+        ".post-thumb .post-stats": "justify-content:flex-end"
+      }
+    }
+  },
+  "AuthorIcon": {
+    "type": "Icon",
+    "selector": ".post-thumb .post-stats .p-author::before"
+  },
+  "DateIcon": {
+    "type": "Icon",
+    "selector": ".post-thumb .post-stats .p-date::before"
+  },
+  "CommentsIcon": {
+    "type": "Icon",
+    "selector": ".post-thumb .post-stats .p-comment::before"
+  },
+  "StatContainer": {
+    "include": "common",
+    "selector_prefix": ".post-thumb .post-stats"
+  },
+  "AuthorVisibility": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".post-thumb .post-stats .p-author": "display:block"
+      },
+      "false": {
+        ".post-thumb .post-stats .p-author": "display:none"
+      }
+    }
+  },
+  "DateVisibility": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".post-thumb .p-date": "display:flex"
+      },
+      "false": {
+        ".post-thumb .p-date": "display:none"
+      }
+    }
+  },
+  "CommentsVisibility": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".post-thumb .post-stats .p-comment": "display:block"
+      },
+      "false": {
+        ".post-thumb .post-stats .p-comment": "display:none"
+      }
+    }
+  },
+  "ViewsVisibility": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".post-thumb .post-stats .p-view": "display:flex"
+      },
+      "false": {
+        ".post-thumb .post-stats .p-view": "display:none"
+      }
+    }
+  },
+  "ViewsIcon": {
+    "type": "Icon",
+    "selector": ".post-thumb .post-stats .p-view::before"
+  },
+  "DateDayFont": {
+    "type": "Font",
+    "selector": ".post-thumb .p-date-image"
+  },
+  "DateMonthFont": {
+    "type": "Font",
+    "selector": ".post-thumb .p-date-image em"
+  },
+  "DateBox": {
+    "include": "common",
+    "selector_prefix": ".post-thumb .p-date-image"
+  }
+}
+
+
+
+

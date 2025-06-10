@@ -1,0 +1,40 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Section"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "title": {
+    "type": "InputLang",
+    "php": true
+  },
+  "tabType": {
+    "type": "Radio",
+    "value": "content",
+    "php": true
+  },
+  "type": {
+    "type": "Radio",
+    "value": "top",
+    "php": true
+  },
+  "limit": {
+    "type": "Input",
+    "value": "20",
+    "php": true
+  },
+  "category": {
+    "type": "Catalog"
+  },
+  "categories": {
+    "type": "Input"
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "manufacturersImageStatus": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".route-product-manufacturer #content a img": "display: block"
+      },
+      "false": {
+        ".route-product-manufacturer #content a img": "display: none"
+      }
+    }
+  },
+
+  "manufacturerItemsGrid": {
+    "type": "InputPair",
+    "selector": ".route-product-manufacturer .manufacturer",
+    "properties": {
+      "first": "grid-template-columns: repeat(auto-fill, minmax(%spx, 1fr));",
+      "second": "grid-gap:%spx"
+    },
+    "value": {
+      "first":"130",
+      "second":"20"
+    }
+  },
+
+  "manufacturerItemFont": {
+    "type": "Font",
+    "selector": ".route-product-manufacturer #content .image-card"
+  },
+  "manufacturerItemFontHover": {
+    "type": "Font",
+    "selector": ".route-product-manufacturer #content .image-card:hover"
+  },
+
+
+  "manufacturerBrandBG": {
+    "type": "Background",
+    "selector": ".route-product-manufacturer .brand-index"
+  },
+  "manufacturerBrandShadow": {
+    "type": "Shadow",
+    "selector": ".route-product-manufacturer .brand-index"
+  },
+  "manufacturerBrandBorder": {
+    "type": "Border",
+    "selector": ".route-product-manufacturer .brand-index"
+  },
+  "manufacturerBrandBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".route-product-manufacturer .brand-index"
+  },
+  "manufacturerBrandPadding": {
+    "type": "Padding",
+    "selector": ".route-product-manufacturer .brand-index"
+  },
+  "manufacturerBrandFont": {
+    "type": "Font",
+    "selector": ".route-product-manufacturer .brand-index strong"
+  },
+
+  "manufacturerLetterFont": {
+    "type": "Font",
+    "selector": ".route-product-manufacturer .brand-index p > a"
+  },
+  "manufacturerLetterFontHover": {
+    "type": "Font",
+    "selector": "&.route-product-manufacturer .brand-index p > a:hover"
+  },
+
+  "manufacturerBox": {
+    "include": "common_hover",
+    "selector_prefix": ".route-product-manufacturer .manufacturer a"
+  },
+  "manufacturerTitle": {
+    "type": "Variable",
+    "variable": "title",
+    "selector_prefix": ".route-product-manufacturer h2.title"
+  },
+  "manufacturerTitleFont": {
+    "type": "Font",
+    "selector": ".route-product-manufacturer h2.title"
+  },
+  "manufacturerLinkFont": {
+    "type": "Font",
+    "selector": ".route-product-manufacturer #content a"
+  },
+  "manufacturerLinkFontHover": {
+    "type": "Font",
+    "selector": ".route-product-manufacturer #content a:hover"
+  }
+}

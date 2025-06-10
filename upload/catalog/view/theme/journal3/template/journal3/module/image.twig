@@ -1,0 +1,22 @@
+<div id="{{ id }}" class="{{ journal3.classes(classes) }}">
+  <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+  {% if title %}
+    <h3 class="title module-title">{{ title }}</h3>
+  {% endif %}
+  <div class="module-body">
+    <a href="{{ link.href | default('javascript:;') }}" {{ journal3.linkAttrs(link) }}>
+      {% if type != 'icon' %}
+        {% if journal3.get('performanceLazyLoadImagesStatus') and lazyLoad %}
+          <img src="{{ dummy_image }}" data-src="{{ image }}" {% if image2x %}data-srcset="{{ image }} 1x, {{ image2x }} 2x" {% endif %} alt="{{ alt }}" width="{{ image_width }}" height="{{ image_height }}" class="lazyload"/>
+        {% else %}
+          <img src="{{ image }}" {% if image2x %}srcset="{{ image }} 1x, {{ image2x }} 2x" {% endif %} alt="{{ alt }}" width="{{ image_width }}" height="{{ image_height }}"/>
+        {% endif %}
+      {% else %}
+        <em class="image-icon"></em>
+      {% endif %}
+    </a>
+    {% if caption %}
+      <span class="image-caption">{{ caption }}</span>
+    {% endif %}
+  </div>
+</div>

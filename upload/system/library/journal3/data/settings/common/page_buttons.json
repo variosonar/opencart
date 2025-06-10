@@ -1,0 +1,247 @@
+{
+
+  "Buttons": {
+    "include": "common_hover",
+    "selector_prefix": ".buttons"
+  },
+
+  "BackButton": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": ".buttons .pull-left"
+  },
+
+  "BackButtonIcon": {
+    "type": "Icon",
+    "selector": ".pull-left .btn::before"
+  },
+
+  "BackButtonIconHover": {
+    "type": "Color",
+    "selector": ".pull-left .btn:hover::before",
+    "property": "color"
+  },
+
+  "BackButtonIconActive": {
+    "type": "Color",
+    "selector": ".pull-left .btn:active::before",
+    "property": "color"
+  },
+
+  "ContinueButton": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": ".buttons .pull-right"
+  },
+
+  "ContinueButtonIcon": {
+    "type": "Icon",
+    "selector": ".pull-right .btn::before"
+  },
+
+  "ContinueButtonIconHover": {
+    "type": "Color",
+    "selector": ".pull-right .btn:hover::before",
+    "property": "color"
+  },
+
+  "ContinueButtonIconActive": {
+    "type": "Color",
+    "selector": ".pull-right .btn:active::before",
+    "property": "color"
+  },
+
+  "ButtonWidth": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "auto": {
+        ".buttons > div": "flex-grow:0"
+      },
+      "full": {
+        ".buttons > div": "flex-grow:1",
+        ".buttons.dual-agree .pull-right .btn": "width:100%"
+      }
+    }
+  },
+
+  "ButtonsFullAt": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        ".buttons": "--page-buttons-width:%spx"
+      }
+    }
+  },
+  "ButtonGap": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        ".buttons": "--page-buttons-gap:%spx"
+      }
+    }
+  },
+  "ButtonsAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        ".buttons": "justify-content: flex-start"
+      },
+      "center": {
+        ".buttons": "justify-content: center"
+      },
+      "right": {
+        ".buttons": "justify-content: flex-end"
+      },
+      "apart": {
+        ".buttons": "justify-content: space-between"
+      }
+    }
+  },
+  "ButtonAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        ".buttons .pull-right:only-child": "margin-inline-end: auto; margin-inline-start:0"
+      },
+      "center": {
+        ".buttons .pull-right:only-child": "margin-inline-end: auto; margin-inline-start:auto"
+      },
+      "right": {
+        ".buttons .pull-right:only-child": "margin-inline-end: 0; margin-inline-start:auto;"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        ".buttons .pull-right:only-child": "margin-inline-end: 0; margin-inline-start:auto"
+      },
+      "center": {
+        ".buttons .pull-right:only-child": "margin-inline-end: auto; margin-inline-start:auto"
+      },
+      "right": {
+        ".buttons .pull-right:only-child": "margin-inline-end: auto; margin-inline-start:0;"
+      }
+    }
+  },
+
+  "PaddingOverrideLeft": {
+    "type": "Padding",
+    "selector": ".buttons .btn"
+  },
+
+  "PaddingOverrideRight": {
+    "type": "Padding",
+    "selector": "div.buttons .pull-right .btn"
+  },
+
+  "FontOverrideLeft": {
+    "type": "Font",
+    "selector": ".buttons .btn"
+  },
+
+  "FontOverrideRight": {
+    "type": "Font",
+    "selector": ".buttons .pull-right .btn"
+  },
+
+  "LeftButtonVisibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".buttons .pull-left .btn": "display: inline-flex"
+      },
+      "false": {
+        ".buttons .pull-left .btn": "display: none"
+      }
+    }
+  },
+
+  "SingleButtonWidth": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "auto": {
+        ".buttons .pull-right:only-child": "max-width:max-content;",
+        ".buttons .pull-right:only-child .btn": "width:auto;"
+
+      },
+      "full": {
+        ".buttons .pull-right:only-child": "max-width:100%;",
+        ".buttons .pull-right:only-child .btn": "width:100%;"
+      }
+    }
+  },
+  "SingleButtonMaxWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".buttons .pull-right:only-child",
+    "property": "max-width: %spx"
+  },
+  "AgreeButtonPosition": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "before": {
+        ".buttons .pull-right input[type='checkbox'] + .btn": "order:-5;"
+      },
+      "after": {
+        ".buttons .pull-right input[type='checkbox'] + .btn": "order:5;"
+      }
+    }
+  },
+  "AgreeInputPosition": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "before": {
+        ".buttons .pull-right input[type='checkbox']": "order:-1;"
+      },
+      "after": {
+        ".buttons .pull-right input[type='checkbox']": "order:1;"
+      }
+    }
+  },
+  "AgreeTextAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "start": {
+        ".buttons .pull-right": "justify-content: flex-start"
+      },
+      "center": {
+        ".buttons .pull-right": "justify-content: center"
+      },
+      "end": {
+        ".buttons .pull-right": "justify-content: flex-end"
+      }
+    }
+  },
+
+  "AgreeFont": {
+    "type": "Font",
+    "selector": ".buttons"
+  },
+  "AgreeLink": {
+    "type": "Font",
+    "selector": ".buttons a:not(.btn)"
+  },
+  "AgreeLinkHover": {
+    "type": "Font",
+    "selector": ".buttons a:not(.btn):hover"
+  },
+  "AgreeLinkActive": {
+    "type": "Font",
+    "selector": ".buttons a:not(.btn):active"
+  },
+  "AgreeButtonMargin": {
+    "type": "Margin",
+    "selector": ".buttons input + .btn, .buttons .pull-right > span + .btn"
+  },
+  "AgreeCheckMargin": {
+    "type": "Margin",
+    "selector": ".buttons .pull-right input[type='checkbox']"
+  }
+}

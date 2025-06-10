@@ -1,0 +1,153 @@
+{
+  "AutoScrollbarTrackHeight": {
+    "type": "InputNumber",
+    "selector": ".auto-carousel-bar",
+    "property": "--auto-carousel-height:%spx"
+  },
+  "AutoScrollbarAlign": {
+    "type": "Toggle",
+    "value": "center",
+    "rules": {
+      "start": {
+        ".auto-carousel-bar": "margin-inline-start:max(0px, var(--scroll-padding,0px)); margin-inline-end: auto;"
+      },
+      "center": {
+        ".auto-carousel-bar": "margin-inline-start:max(0px, var(--scroll-padding,0px)); margin-inline-end: max(0px, var(--scroll-padding,0px));"
+      },
+      "end": {
+        ".auto-carousel-bar": "margin-inline-start:auto; margin-inline-end: max(0px, var(--scroll-padding,0px));"
+      }
+    }
+  },
+  "AutoScrollbarTrackMaxWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".auto-carousel-bar",
+    "property": "--auto-scroll-max-width:%spx"
+  },
+  "AutoScrollbarTrackWidth": {
+    "type": "InputNumber",
+    "selector": ".auto-carousel-bar",
+    "property": "--width-reduction:%spx"
+  },
+  "AutoScrollbarTrackBackground": {
+    "type": "Background",
+    "selector": ".auto-carousel-bar"
+  },
+  "AutoScrollbarTrackSpacing": {
+    "type": "InputPair",
+    "selector": ".auto-grid",
+    "properties": {
+      "first": "--scrollbar-top-spacing: %spx",
+      "second": "--scrollbar-bottom-spacing: %spx"
+    },
+    "value": {
+      "first": "",
+      "second": ""
+    }
+  },
+  "AutoScrollbarTrackBorder": {
+    "type": "Border",
+    "selector": ".auto-carousel-bar"
+  },
+  "AutoScrollbarTrackRadius": {
+    "type": "BorderRadius",
+    "selector": ".auto-carousel-bar"
+  },
+  "AutoScrollbarIcon": {
+    "type": "Icon",
+    "selector": ".auto-carousel-thumb::before"
+  },
+  "AutoScrollbarIconHover": {
+    "type": "Color",
+    "property": "color",
+    "selector": ".auto-carousel-thumb:hover::before"
+  },
+  "AutoScrollbarIconActive": {
+    "type": "Color",
+    "property": "color",
+    "selector": ".auto-carousel-thumb:active::before"
+  },
+  "AutoScrollbarThumbVisibility": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "true": {
+        ".auto-carousel-thumb": "display:flex"
+      },
+      "false": {
+        ".auto-carousel-thumb": "display:none"
+      }
+    }
+  },
+  "AutoScrollbarThumbWidth": {
+    "type": "InputNumber",
+    "selector": ".auto-carousel-thumb",
+    "property": "width:%spx !important"
+  },
+  "AutoScrollbarThumbHeight": {
+    "type": "InputNumber",
+    "selector": ".auto-carousel-bar",
+    "property": "--auto-carousel-thumb-height:%spx"
+  },
+  "AutoScrollbarThumbBackground": {
+    "type": "Background",
+    "selector": ".auto-carousel-thumb"
+  },
+  "AutoScrollbarThumbBackgroundHover": {
+    "type": "Background",
+    "selector": ".auto-carousel-thumb:hover"
+  },
+  "AutoScrollbarThumbBackgroundActive": {
+  "type": "Background",
+  "selector": ".auto-carousel-thumb:active"
+},
+  "AutoScrollbarThumbBorder": {
+    "type": "Border",
+    "selector": ".auto-carousel-thumb"
+  },
+  "AutoScrollbarThumbRadius": {
+    "type": "BorderRadius",
+    "selector": ".auto-carousel-thumb"
+  },
+  "AutoScrollbarFillVisibility": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".auto-carousel-fill": "display:block"
+      },
+      "false": {
+        ".auto-carousel-fill": "display:none"
+      }
+    }
+  },
+  "AutoScrollbarFillBackground": {
+    "type": "Background",
+    "selector": ".auto-carousel-fill"
+  },
+  "AutoScrollbarIconBackground": {
+    "type": "Background",
+    "selector": ".auto-carousel-thumb::before"
+  },
+  "AutoScrollbarIconBackgroundHover": {
+    "type": "Background",
+    "selector": ".auto-carousel-thumb:hover::before"
+  },
+  "AutoScrollbarIconBackgroundActive": {
+    "type": "Background",
+    "selector": ".auto-carousel-thumb:active::before"
+  },
+  "AutoScrollbarIconRadius": {
+    "type": "BorderRadius",
+    "selector": ".auto-carousel-thumb:active::before"
+  },
+  "AutoScrollbarIconSize": {
+    "type": "InputPair",
+    "selector": ".auto-carousel-thumb:active::before",
+    "properties": {
+      "first": "min-width:%spx",
+      "second": "min-height: %spx"
+    }
+  }
+}

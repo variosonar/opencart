@@ -1,0 +1,36 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "Field",
+    "php": true
+  },
+  "status": {
+    "type": "Status"
+  },
+  "label": {
+    "type": "InputLang",
+    "value": "Field",
+    "php": true
+  },
+  "placeholder": {
+    "type": "InputLang",
+    "value": "",
+    "php": true
+  },
+  "type": {
+    "type": "Select",
+    "value": "text",
+    "php": true
+  },
+  "required": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

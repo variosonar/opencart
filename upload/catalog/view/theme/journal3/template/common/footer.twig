@@ -1,0 +1,40 @@
+{% if journal3 is not defined %}
+<style>body { display: none !important; }</style>
+<script>window.location = 'index.php?route=journal3/startup/error_not_installed';</script>
+{% endif %}
+
+{{ journal3_bottom }}
+
+{{ '</div>' }}{# .site-wrapper #}
+
+{% if journal3_footer_menu %}
+  <footer class="{{ journal3.get('footer_color_scheme') }}">{{ journal3_footer_menu }}</footer>
+{% endif %}
+
+{{ '</div>' }} {# .global-wrapper #}
+
+{% for script in scripts %}
+{% if journal3.js_defer %}
+<script src="{{ script }}" defer></script>
+{% else %}
+<script src="{{ script }}"></script>
+{% endif %}
+{% endfor %}
+
+{% if journal3.get('customJS') %}
+<script type="text/javascript">{{ journal3.get('customJS') }}</script>
+{% endif %}
+
+{% if not journal3.is_popup and journal3.get('customCodeFooter') %}
+{{ journal3.get('customCodeFooter') }}
+{% endif %}
+
+{% if not journal3.is_popup and journal3.get('scrollTop') %}
+<div class="scroll-top"><em class="fa fa-angle-up"></em></div>
+{% endif %}
+
+{% if not journal3.is_popup and journal3.get('filterActive') %}
+<a class="mobile-filter-trigger btn" data-off-canvas="mobile-filter-container" role="button" title="{{ journal3.get('mobileFilterButtonText') }}">{{ journal3.get('mobileFilterButtonText') }}</a>
+{% endif %}
+
+</body></html>

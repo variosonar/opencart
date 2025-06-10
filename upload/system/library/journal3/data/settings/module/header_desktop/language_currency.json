@@ -1,0 +1,299 @@
+{
+  "langPosition": {
+    "type": "Radio",
+    "value": "top",
+    "php": true
+  },
+  "languageCurrencySpaceBetween": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "--language-currency-spacing: %spx",
+    "selector": ".desktop-header-active .language-currency"
+  },
+  "headerLangPosition": {
+    "type": "Radio",
+    "value": "center",
+    "rules": {
+      "left": {
+        ".desktop-header-active .header .top-bar .language-currency": "margin-inline-end:auto; height:100%;"
+      },
+      "center": {
+        ".desktop-header-active .header .top-bar .language-currency": "position: absolute; inset-inline-start: 50%; transform: translateX(var(--transform-50-rtl, -50%)); height: var(--desktop-top-bar, 35px)"
+      },
+      "right": {
+        ".desktop-header-active .header .top-bar .language-currency": "margin-inline-start:auto"
+      }
+    }
+  },
+  "headerLangTopMenuPosition": {
+    "type": "Radio",
+    "value": "default",
+    "rules": {
+      "cart": {
+        ".desktop-header-active .header .mid-bar .language-currency": "order: 3"
+      }
+    }
+  },
+  "headerLangTopMenuAlign": {
+    "type": "Radio",
+    "value": "left",
+    "rules": {
+      "left": {
+        ".desktop-header-active .header .top-bar": "justify-content: space-between"
+      },
+      "center": {
+        ".desktop-header-active .header .top-bar": "justify-content: center"
+      },
+      "right": {
+        ".desktop-header-active .header .top-bar": "justify-content: flex-end"
+      }
+    }
+  },
+  "languageMargin": {
+    "type": "Margin",
+    "selector": ".desktop-header-active .header .mid-bar .language-currency"
+  },
+  "languageDirection": {
+    "type": "Radio",
+    "value": "horizontal",
+    "rules": {
+      "horizontal": {
+        ".header-cart-group .language-currency": "flex-direction: row; align-items: center; justify-content: normal;"
+      },
+      "vertical": {
+        ".header-cart-group .language-currency": "flex-direction: column; align-items: flex-start; justify-content: center;"
+      }
+    }
+  },
+  "languageDropdownAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        "div.language-currency.top-menu .drop-menu > .j-dropdown": "left: calc(var(--menu-item-gap, 0px) / 2); right: auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "div.language-currency.top-menu .drop-menu:first-child > .j-dropdown": "left: 0px; right: auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "div.language-currency.top-menu .drop-menu:last-child > .j-dropdown": "left: calc(var(--menu-item-gap, 0px) / 2); right: auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "div.language-currency.top-menu .drop-menu > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      },
+      "center": {
+        "div.language-currency.top-menu .drop-menu > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "div.language-currency.top-menu .drop-menu:first-child > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "div.language-currency.top-menu .drop-menu:last-child > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "div.language-currency.top-menu .drop-menu > .j-dropdown::before": "--triangle-right: 0px; --triangle-left: 0px"
+      },
+      "right": {
+        "div.language-currency.top-menu .drop-menu > .j-dropdown": "right:calc(var(--menu-item-gap, 0px) / 2); left:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "div.language-currency.top-menu .drop-menu:first-child > .j-dropdown": "right:calc(var(--menu-item-gap, 0px) / 2); left:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "div.language-currency.top-menu .drop-menu:last-child > .j-dropdown": "right:0px; left:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "div.language-currency.top-menu .drop-menu > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        "div.language-currency.top-menu .drop-menu > .j-dropdown": "left: auto; right: calc(var(--menu-item-gap, 0px) / 2); transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "div.language-currency.top-menu .drop-menu:first-child > .j-dropdown": "left: auto; right: 0px; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "div.language-currency.top-menu .drop-menu:last-child > .j-dropdown": "left: auto; right: calc(var(--menu-item-gap, 0px) / 2); transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "div.language-currency.top-menu .drop-menu > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      },
+      "center": {
+        "div.language-currency.top-menu .drop-menu > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "div.language-currency.top-menu .drop-menu:first-child > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "div.language-currency.top-menu .drop-menu:last-child > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "div.language-currency.top-menu .drop-menu > .j-dropdown::before": "--triangle-right: 0px; --triangle-left: 0px"
+      },
+      "right": {
+        "div.language-currency.top-menu .drop-menu > .j-dropdown": "left:calc(var(--menu-item-gap, 0px) / 2); right:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "div.language-currency.top-menu .drop-menu:first-child > .j-dropdown": "left:calc(var(--menu-item-gap, 0px) / 2); right:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "div.language-currency.top-menu .drop-menu:last-child > .j-dropdown": "left:0px; right:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "div.language-currency.top-menu .drop-menu > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      }
+    }
+
+  },
+  "currencyDropdownAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        "div.language-currency.top-menu .currency .drop-menu > .j-dropdown": "left: calc(var(--menu-item-gap, 0px) / 2); right: auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "div.language-currency.top-menu .currency .drop-menu:first-child > .j-dropdown": "left: 0px; right: auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "div.language-currency.top-menu .currency .drop-menu:last-child > .j-dropdown": "left: calc(var(--menu-item-gap, 0px) / 2); right: auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "div.language-currency.top-menu .currency .drop-menu > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      },
+      "center": {
+        "div.language-currency.top-menu .currency .drop-menu > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "div.language-currency.top-menu .currency .drop-menu:first-child > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "div.language-currency.top-menu .currency .drop-menu:last-child > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "div.language-currency.top-menu .currency .drop-menu > .j-dropdown::before": "--triangle-right: 0px; --triangle-left: 0px"
+      },
+      "right": {
+        "div.language-currency.top-menu .currency .drop-menu > .j-dropdown": "right:calc(var(--menu-item-gap, 0px) / 2); left:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "div.language-currency.top-menu .currency .drop-menu:first-child > .j-dropdown": "right:calc(var(--menu-item-gap, 0px) / 2); left:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "div.language-currency.top-menu .currency .drop-menu:last-child > .j-dropdown": "right:0px; left:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "div.language-currency.top-menu .currency .drop-menu > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        "div.language-currency.top-menu .currency .drop-menu > .j-dropdown": "left: auto; right: calc(var(--menu-item-gap, 0px) / 2); transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "div.language-currency.top-menu .currency .drop-menu:first-child > .j-dropdown": "left: auto; right: 0px; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "div.language-currency.top-menu .currency .drop-menu:last-child > .j-dropdown": "left: auto; right: calc(var(--menu-item-gap, 0px) / 2); transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "div.language-currency.top-menu .currency .drop-menu > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      },
+      "center": {
+        "div.language-currency.top-menu .currency .drop-menu > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "div.language-currency.top-menu .currency .drop-menu:first-child > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "div.language-currency.top-menu .currency .drop-menu:last-child > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "div.language-currency.top-menu .currency .drop-menu > .j-dropdown::before": "--triangle-right: 0px; --triangle-left: 0px"
+      },
+      "right": {
+        "div.language-currency.top-menu .currency .drop-menu > .j-dropdown": "left:calc(var(--menu-item-gap, 0px) / 2); right:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "div.language-currency.top-menu .currency .drop-menu:first-child > .j-dropdown": "left:calc(var(--menu-item-gap, 0px) / 2); right:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "div.language-currency.top-menu .currency .drop-menu:last-child > .j-dropdown": "left:0px; right:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "div.language-currency.top-menu .currency .drop-menu > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      }
+    }
+  },
+  "languageStyle": {
+    "type": "Variable",
+    "variable": "language_currency",
+    "selector_prefix": ".desktop-header-active .header .language-currency [class*=-wrapper] form",
+    "important": "true"
+  },
+  "currencyStyle": {
+    "type": "Variable",
+    "variable": "language_currency",
+    "selector_prefix": ".desktop-header-active .header .language-currency [class*=-wrapper] .currency form"
+  },
+  "languageDropdownStyle": {
+    "type": "Variable",
+    "variable": "dropdown",
+    "selector_prefix": ".language-currency.top-menu .dropdown"
+  },
+  "currencyDropdownStyle": {
+    "type": "Variable",
+    "variable": "dropdown",
+    "selector_prefix": ".language-currency.top-menu .currency .dropdown"
+  },
+  "LanguageItemDisplay": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "symbol": {
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-toggle .symbol": "display:flex;",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-toggle .symbol ~ span": "display:none",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-toggle .currency-code ": "display:none"
+      },
+      "text": {
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-toggle .symbol": "display:none",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-toggle .symbol + span": "display:block;",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-toggle .currency-code ": "display:none"
+      },
+      "code": {
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-toggle .symbol": "display:none",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-toggle .language-title": "display:block;",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-toggle .currency-title ": "display:none",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-toggle .currency-code ": "display:block"
+      },
+      "full": {
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-toggle .symbol": "display:flex",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-toggle .symbol + span": "display:block;",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-toggle .currency-code ": "display:none"
+      }
+    }
+  },
+  "LanguageDropdownDisplay": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "symbol": {
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-menu .language-flag": "display:inline-flex",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-menu .currency-symbol": "display:inline-flex",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-menu .language-flag ~ span": "display:none",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-menu .currency-symbol ~ span": "display:none"
+      },
+      "text": {
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-menu .language-flag": "display:none",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-menu .currency-symbol": "display:none",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-menu .language-title-dropdown": "display:inline-flex",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-menu .currency-title-dropdown": "display:inline-flex",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-menu .currency-code-dropdown": "display:none"
+      },
+      "code": {
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-menu .language-flag": "display:none",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-menu .currency-symbol": "display:none",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-menu .language-title-dropdown": "display:inline-flex",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-menu .currency-code-dropdown": "display:inline-flex",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-menu .currency-title-dropdown": "display:none"
+      },
+      "full": {
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-menu .language-flag": "display:inline-flex",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-menu .currency-symbol": "display:inline-flex",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-menu .language-title-dropdown": "display:inline-flex",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-menu .currency-title-dropdown": "display:inline-flex",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] form .dropdown-menu .currency-code-dropdown": "display:none"
+      }
+    }
+  },
+  "CurrencyItemDisplay": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "symbol": {
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-toggle .symbol": "display:flex;",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-toggle .symbol ~ span": "display:none",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-toggle .currency-code ": "display:none"
+      },
+      "text": {
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-toggle .symbol": "display:none",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-toggle .symbol + span": "display:block;",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-toggle .currency-code ": "display:none"
+      },
+      "code": {
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-toggle .symbol": "display:none",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-toggle .language-title": "display:block;",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-toggle .currency-title ": "display:none",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-toggle .currency-code ": "display:block"
+      },
+      "full": {
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-toggle .symbol": "display:flex",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-toggle .symbol + span": "display:block;",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-toggle .currency-code ": "display:none"
+      }
+    }
+  },
+  "CurrencyDropdownDisplay": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "symbol": {
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-menu .language-flag": "display:inline-flex",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-menu .currency-symbol": "display:inline-flex",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-menu .language-flag ~ span": "display:none",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-menu .currency-symbol ~ span": "display:none"
+      },
+      "text": {
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-menu .language-flag": "display:none",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-menu .currency-symbol": "display:none",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-menu .language-title-dropdown": "display:inline-flex",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-menu .currency-title-dropdown": "display:inline-flex",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-menu .currency-code-dropdown": "display:none"
+      },
+      "code": {
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-menu .language-flag": "display:none",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-menu .currency-symbol": "display:none",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-menu .language-title-dropdown": "display:inline-flex",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-menu .currency-code-dropdown": "display:inline-flex",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-menu .currency-title-dropdown": "display:none"
+      },
+      "full": {
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-menu .language-flag": "display:inline-flex",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-menu .currency-symbol": "display:inline-flex",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-menu .language-title-dropdown": "display:inline-flex",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-menu .currency-title-dropdown": "display:inline-flex",
+        ".desktop-header-active .header div.language-currency [class*=-wrapper] .currency form .dropdown-menu .currency-code-dropdown": "display:none"
+      }
+    }
+  }
+}
+

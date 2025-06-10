@@ -1,0 +1,33 @@
+<div class="{{ journal3.classes(classes) }} {{ color_scheme_module }}">
+  <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+  {% if title %}
+    <h3 class="title module-title">{{ title }}</h3>
+  {% endif %}
+  <div class="module-body">
+    {% if text %}
+      <div class="newsletter-text">{{ text }}</div>
+    {% endif %}
+    <div class="newsletter-form">
+      <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+        <div class="input-group {{ color_scheme_input }}">
+          <label class="sr-only" for="newsletter-input-el-{{ id }}">{{ placeholder }}</label>
+          <input id="newsletter-input-el-{{ id }}" type="text" name="email" placeholder="{{ placeholder }}" class="form-control newsletter-email"/>
+          <span class="input-group-btn">
+              <button type="submit" class="btn btn-primary" {% if (buttonType == "icon") and (journal3.is_desktop and tooltipStatus) %}data-toggle="tooltip-hover" data-tooltip-class="newsletter-tooltip-{{ module_id }}" data-placement="{{ tooltipPosition }}" title="{{ tooltipText }}"{% endif %} data-loading-text="<span>{{ buttonText }}</span>"><span>{{ buttonText }}</span></button>
+          </span>
+        </div>
+        {% if captcha %}
+        <div class="input-captcha">{{ captcha }}</div>
+        {% endif %}
+        {% if agree_data %}
+          <div class="checkbox">
+            <label for="newsletter-checkbox-el-{{ id }}">
+              <input id="newsletter-checkbox-el-{{ id }}" type="checkbox" name="agree" value="1"/>
+              {{ agree_data.text }}
+            </label>
+          </div>
+        {% endif %}
+      </form>
+    </div>
+  </div>
+</div>

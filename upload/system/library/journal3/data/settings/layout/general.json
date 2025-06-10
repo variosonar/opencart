@@ -1,0 +1,316 @@
+{
+  "pageStyle": {
+    "type": "Variable",
+    "variable": "page",
+    "selector_prefix": ".layout-%s",
+    "php": true
+  },
+  "breadcrumbsStyle": {
+    "type": "Variable",
+    "variable": "breadcrumbs",
+    "selector_prefix": ".layout-%s"
+  },
+  "formStyle": {
+    "type": "Variable",
+    "variable": "form",
+    "selector_prefix": ".layout-%s"
+  },
+  "typographyStyle": {
+    "type": "Variable",
+    "variable": "typography",
+    "selector_prefix": ".layout-%s"
+  },
+  "tableStyle": {
+    "type": "Variable",
+    "variable": "table",
+    "selector_prefix": ".layout-%s"
+  },
+  "pageButtonStyle": {
+    "type": "Variable",
+    "variable": "page_buttons",
+    "selector_prefix": ".layout-%s"
+  },
+  "titleStyle": {
+    "type": "Variable",
+    "variable": "title",
+    "selector_prefix": "html:not(.popup).layout-%s .page-title"
+  },
+  "bodyBackground": {
+    "type": "Background",
+    "selector": "html.layout-%s body"
+  },
+  "siteBackground": {
+    "type": "Background",
+    "selector": "html.layout-%s .global-wrapper"
+  },
+  "containerBackground": {
+    "type": "Background",
+    "selector": "html.layout-%s .site-wrapper > .container > .row"
+  },
+  "siteTopSpacing": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "property": "--site-top-spacing:%s",
+    "selector": "html.layout-%s body"
+  },
+  "topSpacing": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "property": "--content-top-spacing:%s",
+    "selector": "html.layout-%s body"
+  },
+  "bottomSpacing": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "property": "--content-bottom-spacing:%s",
+    "selector": "html.layout-%s body"
+  },
+  "containerMaxWidth": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "property": "--container-max-width: %s",
+    "selector": "html.layout-%s body"
+  },
+  "pageTitleMaxWidth": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "property": "max-width: %s",
+    "selector": "html:not(.popup).layout-%s .site-wrapper > .page-title .page-title-text, .layout-%s .breadcrumbs > .breadcrumb"
+  },
+  "ContentWidth": {
+    "type": "InputValue",
+    "variableType": "breakpoint",
+    "value": "",
+    "php": true,
+    "rules": {
+      "@": {
+        "html.layout-%s body": "--content-max-width: %spx"
+      }
+    }
+  },
+  "SecondaryBackground": {
+    "type": "Background",
+    "selector": "html.layout-%s:not(.boxed-layout) .global-wrapper::before"
+  },
+
+  "SecondaryBackgroundMaxHeight": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": "html.layout-%s:not(.boxed-layout) .global-wrapper::before",
+    "property": "max-height: %spx"
+  },
+  "columnLeftWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "--col-l-width:%spx",
+    "selector": "html.layout-%s body"
+  },
+  "columnRightWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "--col-l-width:%spx",
+    "selector": "html.layout-%s body"
+  },
+  "columnLeftSticky": {
+    "type": "Gap",
+    "variableType":"gap",
+    "value": "",
+    "rules": {
+      "@": {
+        "html.layout-%s #column-left > .grid-rows": "--sticky-top-distance-custom: %s"
+      }
+    }
+  },
+  "columnRightSticky": {
+    "type": "Gap",
+    "variableType":"gap",
+    "value": "",
+    "rules": {
+      "@": {
+        "html.layout-%s #column-right > .grid-rows": "--sticky-top-distance-custom: %s"
+      }
+    }
+  },
+
+  "LeftColumnMaxWindowHeight": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        "html.layout-%s.desktop #column-left > .grid-rows": "max-height: calc(100vh - var(--sticky-top-distance-custom, var(--sticky-top-distance, 0))); overflow-y: auto;"
+      },
+      "false": {
+        "html.layout-%s.desktop #column-left > .grid-rows": "max-height: none; overflow-y: initial;"
+      }
+    }
+  },
+  "RightColumnMaxWindowHeight": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        "html.layout-%s.desktop #column-right > .grid-rows": "max-height: calc(100vh - var(--sticky-top-distance-custom, var(--sticky-top-distance, 0))); overflow-y: auto;"
+      },
+      "false": {
+        "html.layout-%s.desktop #column-right > .grid-rows": "max-height: none; overflow-y: initial;"
+      }
+    }
+  },
+
+  "containerGapOffset": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        "html.layout-%s body": "--side-cols-gap-offset: var(--side-cols-gap, 0px)"
+      },
+      "false": {
+        "html.layout-%s body": "--side-cols-gap-offset:0px"
+      }
+    }
+  },
+  "containerPadding": {
+    "type": "Padding",
+    "selector": "html.layout-%s .site-wrapper > .container > .row"
+  },
+  "ContentGutter": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "selector": "html.layout-%s body .site-wrapper > .container",
+    "property": "--content-gutter: %s",
+    "php": true
+  },
+
+  "breadcrumbsStatus": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".layout-%s .breadcrumbs": "display: flex"
+      },
+      "false": {
+        ".layout-%s .breadcrumbs": "display: none"
+      }
+    }
+  },
+  "contentStatus": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".layout-%s .site-wrapper #content > *:not(#content-top):not(#content-bottom):not(.page-title)": "display: block !important"
+      },
+      "false": {
+        ".layout-%s .site-wrapper #content > *:not(#content-top):not(#content-bottom):not(.page-title)": "display: none !important"
+      }
+    }
+  },
+  "bottomMenuStatus": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "false": {
+        ".layout-%s.has-bottom-menu": "--bottom-menu-margin-display: 0px; --bottom-menu-height: 0px;",
+        ".layout-%s.has-bottom-menu .bottom-menu": "display:none !important"
+      }
+    }
+  },
+  "headerNoticeStatus": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".layout-%s body > .module-header_notice": "display: block"
+      },
+      "false": {
+        ".layout-%s body > .module-header_notice": "display: none"
+      }
+    }
+  },
+  "containerStatus": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".layout-%s .site-wrapper > .container": "display: block !important"
+      },
+      "false": {
+        ".layout-%s .site-wrapper > .container": "display: none !important"
+      }
+    }
+  },
+  "titleStatus": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".layout-%s:not(.popup) .page-title": "display: block !important",
+        ".layout-%s:not(.popup) div.site-wrapper > .page-title + .breadcrumbs": "padding: var(--breadcrumbs-top-padding, 0) 0 var(--breadcrumbs-bottom-padding, 0) 0 !important"
+
+      },
+      "false": {
+        ".layout-%s:not(.popup) .page-title": "display: none !important",
+        ".layout-%s:not(.popup) div.site-wrapper > .page-title + .breadcrumbs": "padding: 0 !important"
+      }
+    }
+  },
+  "headerStatus": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".layout-%s header": "display: block !important"
+      },
+      "false": {
+        ".layout-%s header": "display: none !important",
+        ".layout-%s body": "padding:0 !important"
+      }
+    }
+  },
+  "stickyFullHomePaddingLayout": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".desktop-header-active.layout-%s.over-content-all:not(.route-common-home) header + .site-wrapper": "margin-top: calc(0px - (var(--desktop-header, 80px) + var(--desktop-main-menu, 40px)));"
+      },
+      "false": {
+        ".desktop-header-active.layout-%s.over-content-all:not(.route-common-home) header + .site-wrapper": "margin-top: var(--site-top-spacing, 0px);"
+      }
+    }
+  },
+  "footerStatus": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".layout-%s footer": "display: block !important"
+      },
+      "false": {
+        ".layout-%s footer": "display: none !important"
+      }
+    }
+  },
+  "headerDesktop": {
+    "type": "Module",
+    "php": true
+  },
+  "headerMobile": {
+    "type": "Module",
+    "php": true
+  },
+  "footerMenu": {
+    "type": "Module",
+    "php": true
+  },
+  "footerMenuPhone": {
+    "type": "Module",
+    "php": true
+  }
+}

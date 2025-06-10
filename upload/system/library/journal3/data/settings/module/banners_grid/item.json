@@ -1,0 +1,574 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Block"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "color_scheme": {
+    "type": "ColorScheme",
+    "php": true
+  },
+  "type": {
+    "type": "Radio",
+    "value": "image",
+    "php": true
+  },
+  "link": {
+    "type": "Link",
+    "php": true
+  },
+  "linkZIndex": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-link": "z-index:3"
+      },
+      "false": {
+        ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-link": "z-index:2"
+      }
+    }
+  },
+  "align": {
+    "type": "Input",
+    "value": "",
+    "rules": {
+      "top": {
+        ".module-banners_grid-%s .module-item-%s .slide-content": "--object-position-h: left; justify-content: flex-start"
+      },
+      "center": {
+        ".module-banners_grid-%s .module-item-%s .slide-content": "--object-position-h: center; justify-content: center"
+      },
+      "bottom": {
+        ".module-banners_grid-%s .module-item-%s .slide-content": "--object-position-h: right; justify-content: flex-end"
+      },
+      "custom": {
+        ".module-banners_grid-%s .module-item-%s .slide-content": "--object-position-h: var(--custom-align-h); justify-content: flex-end"
+      }
+    },
+    "rtlRules": {
+      "top": {
+        ".module-banners_grid-%s .module-item-%s .slide-content": "--object-position-h: right; justify-content: flex-start"
+      },
+      "center": {
+        ".module-banners_grid-%s .module-item-%s .slide-content": "--object-position-h: center; justify-content: center"
+      },
+      "bottom": {
+        ".module-banners_grid-%s .module-item-%s .slide-content": "--object-position-h: left; justify-content: flex-end"
+      },
+      "custom": {
+        ".module-banners_grid-%s .module-item-%s .slide-content": "--object-position-h: var(--custom-align-h); justify-content: flex-end"
+      }
+    }
+  },
+  "alignV": {
+    "type": "Input",
+    "value": "",
+    "rules": {
+      "top": {
+        ".module-banners_grid-%s .module-item-%s .slide-content": "--object-position-v: top; align-self: flex-start",
+        ".module-banners_grid-%s .module-item-%s .slide-content > img": "align-self: flex-start",
+        ".module-banners_grid-%s .module-item-%s .slide-content > video": "align-self: flex-start"
+      },
+      "center": {
+        ".module-banners_grid-%s .module-item-%s .slide-content": "--object-position-v: center",
+        ".module-banners_grid-%s .module-item-%s .slide-content > img": "align-self: center",
+        ".module-banners_grid-%s .module-item-%s .slide-content > video": "align-self: center"
+      },
+      "bottom": {
+        ".module-banners_grid-%s .module-item-%s .slide-content": "--object-position-v: bottom",
+        ".module-banners_grid-%s .module-item-%s .slide-content > img": "align-self: flex-end",
+        ".module-banners_grid-%s .module-item-%s .slide-content > video": "align-self: flex-end"
+      },
+      "custom": {
+        ".module-banners_grid-%s .module-item-%s .slide-content": "--object-position-v: var(--custom-align-v)",
+        ".module-banners_grid-%s .module-item-%s .slide-content > img": "align-self: center",
+        ".module-banners_grid-%s .module-item-%s .slide-content > video": "align-self: center"
+      }
+    }
+  },
+  "slideFillType": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "auto": {
+        ".module-banners_grid-%s .module-item-%s .slide-content > img": "width: min(calc(var(--image-width) * 1px), 100%); height: auto",
+        ".module-banners_grid-%s .module-item-%s .slide-content > video": "width: min(calc(var(--image-width) * 1px), 100%); height: auto; aspect-ratio: var(--image-width) / var(--image-height)"
+      },
+      "fill": {
+        ".module-banners_grid-%s .module-item-%s .slide-content > img": "width: 100%; height: 100%",
+        ".module-banners_grid-%s .module-item-%s .slide-content > video": "width: 100%; height: 100%"
+      }
+    }
+  },
+  "slideMediaMaxWidth": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "selector": ".module-banners_grid-%s .module-item-%s .slide-content > img, .module-banners_grid-%s .module-item-%s .slide-content > video",
+    "property": "max-width: %s"
+  },
+  "bannerOverlay": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-banners_grid-%s .module-item-%s .slide-content::before": "display: block"
+      },
+      "false": {
+        ".module-banners_grid-%s .module-item-%s .slide-content::before": "display: none"
+      }
+    }
+  },
+  "slideOverlay": {
+    "type": "Background",
+    "selector": ".module-banners_grid-%s .module-item-%s .slide-content::before"
+  },
+  "slideOverlayHover": {
+    "type": "Background",
+    "selector": ".module-banners_grid-%s .module-item-%s .slide-content:hover::before"
+  },
+  "slideOverlayBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-banners_grid-%s .module-item-%s .slide-content::before"
+  },
+  "slideOverlayOpacity": {
+    "type": "Input",
+    "property": "opacity",
+    "selector": ".module-banners_grid-%s .module-item-%s .slide-content::before"
+  },
+  "slideOverlayOpacityHover": {
+    "type": "Input",
+    "property": "opacity",
+    "selector": ".module-banners_grid-%s .module-item-%s .slide-content:hover::before"
+  },
+  "slideOverlayBlend": {
+    "value": "",
+    "type": "Select",
+    "selector": ".module-banners_grid-%s .module-item-%s .slide-content::before",
+    "property": "mix-blend-mode"
+  },
+  "image": {
+    "type": "ImageLang"
+  },
+  "imageDimensions": {
+    "type": "ImageDimensions",
+    "value": {
+      "resize": "fill"
+    }
+  },
+  "alt": {
+    "type": "InputLang",
+    "value":  "",
+    "php": true
+  },
+  "videoHtml5Url": {
+    "type": "InputLang",
+    "device": true
+  },
+  "videoHtml5Poster": {
+    "type": "ImageLang"
+  },
+  "custom": {
+    "type": "Background",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-content"
+  },
+  "customHover": {
+    "type": "Background",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s:hover .slide-content"
+  },
+  "imageBackground": {
+    "type": "Background",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-content-image"
+  },
+  "imageBackgroundHover": {
+    "type": "Background",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s:hover .slide-content-image"
+  },
+  "flexItemMaxWidth-hold": {
+    "type": "InputNumber",
+    "value": "",
+    "rules": {
+      "@": {
+        ".module-banners_grid-%s > .module-body > .banners-grid > .flex-grid > .swiper-slide.module-item-%s": "max-width: %spx"
+      }
+    }
+  },
+  "flexItemCustom": {
+    "type": "InputPair",
+    "selector": ".module-banners_grid-%s > .module-body > .banners-grid > .flex-grid > .swiper-slide.module-item-%s",
+    "properties": {
+      "first": "--flex-grid-width: %spx",
+      "second": "--flex-grid-max-col: calc((100% - (%s - 1) * var(--flex-grid-gap, 0px)) / %s)"
+    },
+    "value": {
+      "first": "",
+      "second": ""
+    }
+  },
+  "itemSpanRows": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".module-banners_grid-%s > .module-body > .banners-grid.auto-grid > .auto-grid-items > .module-item-%s": "grid-row-end: span var(--grid-rows, 1)"
+      },
+      "false": {
+        ".module-banners_grid-%s > .module-body > .banners-grid.auto-grid > .auto-grid-items > .module-item-%s": "grid-row-end: auto"
+      }
+    }
+  },
+  "itemOrder": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".module-banners_grid-%s .auto-grid .module-item-%s",
+    "property": "order: %s"
+  },
+  "slidesLayersAlignHLeft": {
+    "value": "",
+    "type": "Radio",
+    "rules": {
+      "flex-start": {
+        ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-col-left .slide-layers": "align-items: %s",
+        ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-col-left .slide-text": "text-align: start"
+      },
+      "center": {
+        ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-col-left .slide-layers": "align-items: %s",
+        ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-col-left .slide-text": "text-align: center"
+      },
+      "flex-end": {
+        ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-col-left .slide-layers": "align-items: %s",
+        ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-col-left .slide-text": "text-align: end"
+      }
+    }
+  },
+  "slidesLayersAlignVLeft": {
+    "value": "",
+    "type": "Radio",
+    "selector": ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-col-left .slide-layers",
+    "property": "justify-content"
+  },
+
+  "slidesColRightWidth": {
+    "type": "InputValue",
+    "value": "",
+    "property": "--slides-cols-width:%s%",
+    "selector": ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-col"
+  },
+  "slidesColFixedWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-col",
+    "property": "--col-left-fixed-width:%spx"
+  },
+  "slidesColsGap": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "property": "--cols-gap:%s",
+    "selector": ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-cols"
+  },
+  "slidesColsStack": {
+    "type": "InputValue",
+    "value": "",
+    "property": "--slides-cols-auto-stack:%spx",
+    "selector": ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-cols"
+  },
+  "slidesColsStackBase": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "%": {
+        ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-col": "--stack-unit: 1%s"
+      },
+      "vw": {
+        ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-col": "--stack-unit: 1%s"
+      }
+    }
+  },
+  "colsOrder": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-col-right": "order: 1",
+        ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-col-left": "order: 2"
+      },
+      "false": {
+        ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-col-right": "order: 2",
+        ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-col-left": "order: 1"
+      }
+    }
+  },
+  "colsOrderEven": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-banners_grid-%s .module-item-%s.swiper-slide:nth-child(even) .slide-col-right": "order: 1",
+        ".module-banners_grid-%s .module-item-%s.swiper-slide:nth-child(even) .slide-col-left": "order: 2"
+      },
+      "false": {
+        ".module-banners_grid-%s .module-item-%s.swiper-slide:nth-child(even) .slide-col-right": "order: 2",
+        ".module-banners_grid-%s .module-item-%s.swiper-slide:nth-child(even) .slide-col-left": "order: 1"
+      }
+    }
+  },
+
+  "slidesColRightAlignH": {
+    "value": "",
+    "type": "Radio",
+    "rules": {
+      "flex-start": {
+        ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-col-right .slide-layers": "align-items: %s",
+        ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-col-right .slide-text": "text-align: start"
+      },
+      "center": {
+        ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-col-right .slide-layers": "align-items: %s",
+        ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-col-right .slide-text": "text-align: center"
+      },
+      "flex-end": {
+        ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-col-right .slide-layers": "align-items: %s",
+        ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-col-right .slide-text": "text-align: end"
+      }
+    }
+  },
+  "slidesLayersAlignVRight": {
+    "value": "",
+    "type": "Radio",
+    "selector": ".module-banners_grid-%s .module-item-%s.swiper-slide .slide-col-right .slide-layers",
+    "property": "justify-content"
+  },
+  "slideColumnLeftPadding": {
+    "type": "Padding",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col.slide-col-left"
+  },
+  "slideColumnLeftBackground": {
+    "type": "Background",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-left"
+  },
+  "bannerColOverlayLeftStatus": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-left::after": "display: block;"
+      },
+      "false": {
+        ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-left::after": "display: none;"
+      }
+    }
+  },
+  "bannerColOverlayLeftMaxSize": {
+    "type": "InputPair",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-left::after",
+    "properties": {
+      "first": "--overlay-max-width: %s%",
+      "second": "--overlay-max-height: %s%"
+    }
+  },
+  "bannerColOverlayLeftScaleRotate": {
+    "type": "InputPair",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-left::after",
+    "properties": {
+      "first": "--overlay-scale: %s",
+      "second": "--overlay-rotate: %sdeg"
+    }
+  },
+  "bannerColOverlayLeftOffset": {
+    "type": "InputPair",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-left::after",
+    "properties": {
+      "first": "--overlay-x: %s%",
+      "second": "--overlay-y: %s%"
+    }
+  },
+  "bannerColOverlayLeftMaxSizeHover": {
+    "type": "InputPair",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-left::after",
+    "properties": {
+      "first": "--overlay-max-width-hover: %s%",
+      "second": "--overlay-max-height-hover: %s%"
+    }
+  },
+  "bannerColOverlayLeftScaleRotateHover": {
+    "type": "InputPair",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-left::after",
+    "properties": {
+      "first": "--overlay-scale-hover: %s",
+      "second": "--overlay-rotate-hover: %sdeg"
+    }
+  },
+  "bannerColOverlayLeftOffsetHover": {
+    "type": "InputPair",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-left::after",
+    "properties": {
+      "first": "--overlay-x-hover: %s%",
+      "second": "--overlay-y-hover: %s%"
+    }
+  },
+  "bannerColOverlayLeftSpeed": {
+    "type": "InputNumber",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-left::after",
+    "value": "",
+    "property": "--overlay-speed: %sms"
+  },
+  "bannerColOverlayLeftEase": {
+    "type": "Radio",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-left::after",
+    "value": "",
+    "property": "--overlay-ease: %s"
+  },
+  "bannerColOverlayLeftBackground": {
+    "type": "Background",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-left::after"
+  },
+  "bannerColOverlayLeftBorder": {
+    "type": "Border",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-left::after"
+  },
+  "bannerColOverlayLeftBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-left::after"
+  },
+  "bannerColOverlayLeftShadow": {
+    "type": "Shadow",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-left::after"
+  },
+  "bannerColOverlayLeftHoverBackground": {
+    "type": "Background",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-content:hover .slide-col-left::after"
+  },
+  "bannerColOverlayLeftHoverBorder": {
+    "type": "Border",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-content:hover .slide-col-left::after"
+  },
+  "bannerColOverlayLeftHoverBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-content:hover .slide-col-left::after"
+  },
+  "bannerColOverlayLeftHoverShadow": {
+    "type": "Shadow",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-content:hover .slide-col-left::after"
+  },
+  "slideColumnRightPadding": {
+    "type": "Padding",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col.slide-col-right"
+  },
+  "slideColumnRightBackground": {
+    "type": "Background",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-right"
+  },
+  "bannerColOverlayRightStatus": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-right::after": "display: block;"
+      },
+      "false": {
+        ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-right::after": "display: none;"
+      }
+    }
+  },
+  "bannerColOverlayRightMaxSize": {
+    "type": "InputPair",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-right::after",
+    "properties": {
+      "first": "--overlay-max-width: %s%",
+      "second": "--overlay-max-height: %s%"
+    }
+  },
+  "bannerColOverlayRightOffset": {
+    "type": "InputPair",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-right::after",
+    "properties": {
+      "first": "--overlay-x: %s%",
+      "second": "--overlay-y: %s%"
+    }
+  },
+  "bannerColOverlayRightScaleRotate": {
+    "type": "InputPair",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-right::after",
+    "properties": {
+      "first": "--overlay-scale: %s",
+      "second": "--overlay-rotate: %sdeg"
+    }
+  },
+  "bannerColOverlayRightMaxSizeHover": {
+    "type": "InputPair",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-right::after",
+    "properties": {
+      "first": "--overlay-max-width-hover: %s%",
+      "second": "--overlay-max-height-hover: %s%"
+    }
+  },
+  "bannerColOverlayRightScaleRotateHover": {
+    "type": "InputPair",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-right::after",
+    "properties": {
+      "first": "--overlay-scale-hover: %s",
+      "second": "--overlay-rotate-hover: %sdeg"
+    }
+  },
+  "bannerColOverlayRightOffsetHover": {
+    "type": "InputPair",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-right::after",
+    "properties": {
+      "first": "--overlay-x-hover: %s%",
+      "second": "--overlay-y-hover: %s%"
+    }
+  },
+  "bannerColOverlayRightSpeed": {
+    "type": "InputNumber",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-right::after",
+    "value": "",
+    "property": "--overlay-speed: %sms"
+  },
+  "bannerColOverlayRightEase": {
+    "type": "Radio",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-right::after",
+    "value": "ease-out",
+    "property": "--overlay-ease: %s"
+  },
+  "bannerColOverlayRightBackground": {
+    "type": "Background",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-right::after"
+  },
+  "bannerColOverlayRightBorder": {
+    "type": "Border",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-right::after"
+  },
+  "bannerColOverlayRightBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-right::after"
+  },
+  "bannerColOverlayRightShadow": {
+    "type": "Shadow",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-col-right::after"
+  },
+  "bannerColOverlayRightHoverBackground": {
+    "type": "Background",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-content:hover .slide-col-right::after"
+  },
+  "bannerColOverlayRightHoverBorder": {
+    "type": "Border",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-content:hover .slide-col-right::after"
+  },
+  "bannerColOverlayRightHoverBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-content:hover .slide-col-right::after"
+  },
+  "bannerColOverlayRightHoverShadow": {
+    "type": "Shadow",
+    "selector": ".module-banners_grid-%s .swiper-slide.module-item-%s .slide-content:hover .slide-col-right::after"
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

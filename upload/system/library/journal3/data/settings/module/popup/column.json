@@ -1,0 +1,239 @@
+{
+  "status": {
+    "type": "Status"
+  },
+  "width": {
+    "type": "Input",
+    "value": "100",
+    "selector": ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s",
+ "property": "min-width: %s%"
+  },
+  "colMinWidth-hold": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s",
+    "property": "--min-width-px: %spx"
+  },
+  "name": {
+    "type": "InputLang",
+    "value": "New Column",
+    "php": true
+  },
+  "background": {
+    "type": "Background",
+    "selector": ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-items"
+  },
+  "padding": {
+    "type": "Padding",
+    "selector": ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-items"
+  },
+  "border": {
+    "type": "Border",
+    "selector": ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-items"
+  },
+  "borderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-items"
+  },
+
+  "shadow": {
+    "type": "Shadow",
+    "selector": ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-items"
+  },
+  "outline": {
+    "type": "Outline",
+    "selector": ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-items"
+  },
+  "autoHeight": {
+    "type": "Radio",
+    "value": "true",
+    "rules": {
+      "true": {
+        ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-items > .grid-item:not(:empty)": "height: auto"
+      },
+      "false": {
+        ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-items > .grid-item": "height: 100%",
+        ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-items > .grid-item > .module": "height: 100%",
+        ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-items > .grid-item > .module > .module-body": "height: 100%"
+      }
+    }
+  },
+  "align": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "top": {
+        ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-items": "justify-content: flex-start"
+      },
+      "middle": {
+        ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-items": "justify-content: center"
+      },
+      "bottom": {
+        ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-items": "justify-content: flex-end"
+      }
+    }
+  },
+  "containerStyle": {
+    "type": "Variable",
+    "variable": "container",
+    "selector_prefix": ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-items > .grid-item"
+  },
+  "colsVerticalRhythm": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "rules": {
+      "@": {
+        ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-items > .grid-item:not(:first-child):not(:only-child)": "margin-top:%s"
+      }
+    }
+  },
+  "itemsBackground": {
+    "type": "Background",
+    "selector": ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-items > .grid-item"
+  },
+  "itemsPadding": {
+    "type": "Padding",
+    "selector": ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-items > .grid-item"
+  },
+  "itemsMargin": {
+    "type": "Margin",
+    "selector": ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-items > .grid-item"
+  },
+
+  "autoGrowColumn": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s": "flex-grow: 1"
+      },
+      "false": {
+        ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s": "flex-grow: 0"
+      }
+    }
+  },
+  "visibility": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "true": {
+        ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s": "display: block"
+      },
+      "false": {
+        ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s": "display:none"
+      }
+    }
+  },
+  "order": {
+    "type": "Input",
+    "value": "",
+    "property": "order: %s",
+    "selector": ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s"
+  },
+  "minHeight": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s": "min-height:%spx"
+      }
+    }
+  },
+
+  "colOverflow": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-cols > .grid-items": "overflow: hidden;"
+      },
+      "false": {
+        ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-cols > .grid-items": "overflow: initial;"
+      }
+    }
+  },
+  "colOverlayVisibility": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-cols > .grid-items::before": "display: block"
+      },
+      "false": {
+        ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-cols > .grid-items::before": "display: none"
+      }
+    }
+  },
+  "colOverlayOpacity": {
+    "type": "Input",
+    "property": "opacity:%s",
+    "selector": ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-cols > .grid-items::before"
+  },
+  "colOverlayBackground": {
+    "type": "Background",
+    "selector": ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-cols > .grid-items::before"
+  },
+  "colOverlayBlend": {
+    "type": "Select",
+    "selector": ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-cols > .grid-items::before",
+    "property": "mix-blend-mode"
+  },
+
+  "stackColumn-HOLD": {
+    "type": "InputValue",
+    "rules": {
+      "@": {
+        ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s": "flex-basis: calc((%spx - 100%) * 9999);"
+      }
+    }
+  },
+
+  "zIndex": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s": "z-index: %s;"
+      }
+    }
+  },
+
+  "alignH": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "start": {
+        ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-items": "align-items: flex-start;"
+      },
+      "center": {
+        ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-items": "align-items: center;"
+      },
+      "end": {
+        ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .grid-items": "align-items: flex-end;"
+      }
+    }
+  },
+  "videoColStatus": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "videoCol": {
+    "type": "Input",
+    "php": true
+  },
+  "videoOutline": {
+    "type": "Outline",
+    "selector": ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .video-col-bg"
+  },
+  "videoOpacity": {
+    "type": "Input",
+    "property": "opacity: %s",
+    "selector": ".module-popup-%s .grid-row-%s > .grid-cols-wrapper > .grid-cols > .grid-col-%s > .video-col-bg"
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

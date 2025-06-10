@@ -1,0 +1,112 @@
+{% macro renderTestimonials(context, item) %}
+  {% set journal3 = context.journal3 %}
+  <div class="block-body">
+    {% if item.header == 'image' %}
+      <div class="block-header"><img src="{{ item.image }}" alt="" class="block-image" width="{{ context.imageDimensions.width }}" height="{{ context.imageDimensions.height }}"/></div>
+    {% elseif item.header == 'icon' %}
+      <div class="block-header"><em class="icon icon-block"></em></div>
+    {% endif %}
+    <div class="block-content block-{{ item.contentType }}">{{ item.content }}</div>
+    {% if item.expandButton %}
+      <div class="block-expand-overlay"><a class="block-expand btn" role="button" aria-label="{{ journal3.get('globalExpandButtonText') }}"></a></div>
+    {% endif %}
+  </div>
+  {% if item.footerText %}
+    <div class="block-footer">{{ item.footerText }}</div>
+  {% endif %}
+{% endmacro %}
+<div class="{{ journal3.classes(classes) }} {{ color_scheme_module }}">
+  <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+  {% if title %}
+    <h3 class="title module-title">{{ title }}</h3>
+  {% endif %}
+  <div class="module-body">
+  {# grid #}
+  {% if display == 'grid' %}
+    {% if gridType == 'ipr' and carousel %}
+      <div class="swiper" data-items-per-row='{{ itemsPerRow|json_encode(constant('JSON_FORCE_OBJECT')) }}' data-options='{{ carouselOptions|json_encode(constant('JSON_FORCE_OBJECT')) }}'>
+        <div class="swiper-container" {% if journal3.is_rtl %}dir="rtl"{% endif %}>
+          <div class="swiper-wrapper ipr-grid">
+            {% for item in items %}
+              <div class="{{ journal3.classes(item.classes) }}">
+                {{ _self.renderTestimonials(_context, item) }}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="swiper-buttons">
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    {% else %}
+      <div class="no-scroll {{ gridType }}-grid">
+        {% if gridType == 'auto' %}
+          <div class="auto-grid-items">
+            {% for item in items %}
+              <div class="{{ journal3.classes(item.classes) }}">
+                {{ _self.renderTestimonials(_context, item) }}
+              </div>
+            {% endfor %}
+          </div>
+          <div class="auto-carousel-bar auto-carousel-controls"><div class="auto-carousel-thumb"></div><div class="auto-carousel-fill"></div></div>
+          <div class="auto-carousel-buttons auto-carousel-controls"><div class="auto-carousel-prev"><span></span></div><div class="auto-carousel-next"><span></span></div></div>
+        {% else %}
+          {% for item in items %}
+            <div class="{{ journal3.classes(item.classes) }}">
+              {{ _self.renderTestimonials(_context, item) }}
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+    {% endif %}
+  {% endif %}
+  {# tabs #}
+  {% if display == 'tabs' %}
+    <div class="tab-container">
+      <div class="full-tabs-bg"></div>
+      <ul class="nav nav-tabs">
+        {% for item in items %}
+          <li class="{{ journal3.classes(item.tab_classes) }}">
+            {% if item.tabType == 'link' %}
+              <a href="{{ item.link.href }}">{{ item.title }}</a>
+            {% else %}
+              <a href="#{{ id }}-tab-{{ loop.index }}" data-toggle="tab">{{ item.title }}</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="tab-content">
+        {% for item in items %}
+          <div class="{{ journal3.classes(item.classes) }}" id="{{ id }}-tab-{{ loop.index }}">
+            {{ _self.renderTestimonials(_context, item) }}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+  {# accordion #}
+  {% if display == 'accordion' %}
+    <div class="panel-group" id="{{ id }}-collapse">
+      {% for item in items %}
+        <div class="{{ journal3.classes(item.classes) }}">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a href="#{{ id }}-collapse-{{ loop.index }}" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#{{ id }}-collapse" aria-expanded="false">
+                {{ item.title }}
+                <i class="fa fa-caret-down"></i>
+              </a>
+            </h4>
+          </div>
+          <div class="{{ journal3.classes(item.panel_classes) }}" id="{{ id }}-collapse-{{ loop.index }}">
+            <div class="panel-body">
+              {{ _self.renderTestimonials(_context, item) }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+  </div>
+</div>

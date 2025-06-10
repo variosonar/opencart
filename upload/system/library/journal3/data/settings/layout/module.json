@@ -1,0 +1,134 @@
+{
+  "background": {
+    "type": "Background",
+    "selector": "div.grid-items > .grid-item.grid-module-%s-%s-%s-%s",
+    "important": "true"
+  },
+  "margin": {
+    "type": "Margin",
+    "selector": "div.grid-items > .grid-item.grid-module-%s-%s-%s-%s:not(:empty)",
+    "important": "true"
+  },
+  "padding": {
+    "type": "Padding",
+    "selector": "div.grid-items > .grid-item.grid-module-%s-%s-%s-%s:not(:empty)",
+    "important": "true"
+  },
+  "border": {
+    "type": "Border",
+    "selector": "div.grid-items > .grid-item.grid-module-%s-%s-%s-%s",
+    "important": "true"
+  },
+  "borderRadius": {
+    "type": "BorderRadius",
+    "selector": "div.grid-items > .grid-item.grid-module-%s-%s-%s-%s",
+    "important": "true"
+  },
+  "shadow": {
+    "type": "Shadow",
+    "selector": "div.grid-items > .grid-item.grid-module-%s-%s-%s-%s",
+    "important": "true"
+  },
+  "outline": {
+    "type": "Outline",
+    "selector": "div.grid-items > .grid-item.grid-module-%s-%s-%s-%s",
+    "important": "true"
+  },
+  "containerStyle": {
+    "type": "Variable",
+    "variable": "container",
+    "selector_prefix": ".site-wrapper .grid-rows > .grid-row > .grid-cols-wrapper > .grid-cols > .grid-col > .grid-items > .grid-item.grid-module-%s-%s-%s-%s",
+    "important": "true"
+  },
+  "gridItemMinHeight": {
+    "type": "Input",
+    "value": "",
+    "property": "min-height: %spx",
+    "selector": "div.grid-items > .grid-item.grid-module-%s-%s-%s-%s"
+  },
+  "gridItemContentWidth": {
+    "type": "Radio",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".grid-items > .grid-item.grid-module-%s-%s-%s-%s": "max-width: calc(var(--content-max-width, 100%) - var(--content-gutter, 0px) *2)"
+      }
+    }
+  },
+  "gridItemMaxWidth": {
+    "type": "Input",
+    "value": "",
+    "property": "--max-width: %spx; max-width: var(--max-width)",
+    "selector": ".grid-items > .grid-item.grid-module-%s-%s-%s-%s"
+  },
+  "gridItemOffset": {
+    "type": "Input",
+    "value": "",
+    "rules": {
+      "@": {
+        ".grid-items > .grid-item.grid-module-%s-%s-%s-%s": "transform: translate3d(0,%s%,0);"
+      }
+    }
+  },
+  "gridItemAlignSelf": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "flex-start": {
+        ".grid-items > .grid-item.grid-module-%s-%s-%s-%s": "align-self: %s"
+      },
+      "center": {
+        ".grid-items > .grid-item.grid-module-%s-%s-%s-%s": "align-self: %s"
+      },
+      "flex-end": {
+        ".grid-items > .grid-item.grid-module-%s-%s-%s-%s": "align-self: %s"
+      },
+      "stretch": {
+        ".grid-items > .grid-item.grid-module-%s-%s-%s-%s": "align-self: center;",
+        ".grid-items > .grid-item.grid-module-%s-%s-%s-%s > div": "width: 100%;"
+      }
+    }
+  },
+  "visibility": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "true": {
+        ".grid-items > .grid-item.grid-module-%s-%s-%s-%s": "display: flex"
+      },
+      "false": {
+        ".grid-items > .grid-item.grid-module-%s-%s-%s-%s": "display:none"
+      }
+    }
+  },
+  "moduleTitleVisibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".grid-items > .grid-item.grid-module-%s-%s-%s-%s > .module .module-title": "display: block"
+      },
+      "false": {
+        ".grid-items > .grid-item.grid-module-%s-%s-%s-%s > .module .module-title": "display: none"
+      }
+    }
+  },
+  "order": {
+    "type": "Input",
+    "value": "",
+    "property": "order: %s",
+    "selector": ".grid-items > .grid-item.grid-module-%s-%s-%s-%s"
+  },
+  "gridItemZIndex": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "z-index: %s",
+    "selector": ".grid-items > .grid-item.grid-module-%s-%s-%s-%s"
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

@@ -1,0 +1,321 @@
+{
+  "popupStyle": {
+    "type": "Variable",
+    "variable": "popup",
+    "selector_prefix": ".module-popup-%s"
+  },
+  "popupWidth": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".module-popup-%s .popup-container": "width:%spx"
+      }
+    },
+    "value": "500"
+  },
+  "popupHeightNew": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".module-popup-%s .popup-content": "height:%spx"
+      }
+    }
+  },
+  "popupPadding": {
+    "type": "Padding",
+    "selector": ".module-popup-%s .popup-content, .module-popup-%s .popup-inner-body > .grid-rows, .popup.module-popup-%s .site-wrapper",
+    "important": true
+  },
+  "popupBackground": {
+    "type": "Background",
+    "selector": ".module-popup-%s .popup-inner-body, .module-popup-%s.popup",
+    "important": true
+  },
+  "popupBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-popup-%s .popup-inner-body"
+  },
+  "popupContentBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-popup-%s .popup-inner-body .popup-content, .module-popup-%s .popup-inner-body iframe, .module-popup-%s .popup-inner-body > .grid-rows"
+  },
+  "name": {
+    "type": "Input",
+    "value": "New Popup "
+  },
+  "status": {
+    "type": "Status"
+  },
+  "color_scheme": {
+    "type": "ColorScheme",
+    "php": true
+  },
+  "schedule": {
+    "type": "Range",
+    "php": true
+  },
+  "showAfter": {
+    "type": "Input",
+    "value": "",
+    "php": true,
+    "js": true
+  },
+  "pSpacing": {
+    "type": "Input",
+    "value": "",
+    "property": "margin-top: %spx",
+    "selector": ".popup-content > p + p"
+  },
+  "hideAfter": {
+    "type": "Input",
+    "value": "",
+    "php": true,
+    "js": true
+  },
+  "title": {
+    "type": "InputLang",
+    "php": true
+  },
+  "display": {
+    "type": "Radio",
+    "value": "page"
+  },
+  "cookie": {
+    "type": "Input",
+    "js": true,
+    "php": true
+  },
+  "closeButton": {
+    "type": "Toggle",
+    "php": true
+  },
+  "footer": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "headerText": {
+    "type": "InputLang",
+    "php": true
+  },
+  "headerTitle": {
+    "type": "Variable",
+    "variable": "title",
+    "selector_prefix": ".module-popup-%s .popup-header"
+  },
+  "headerPadding": {
+    "type": "Padding",
+    "selector": ".module-popup-%s .title.popup-header",
+    "important": true
+  },
+  "headerMargin": {
+    "type": "Margin",
+    "selector": ".module-popup-%s .title.popup-header",
+    "important": true
+  },
+  "headerTitleBG": {
+    "type": "Background",
+    "selector": ".module-popup-%s .title.popup-header"
+  },
+  "contentType": {
+    "type": "Radio",
+    "value": "image",
+    "php": true
+  },
+  "image": {
+    "type": "ImageLang"
+  },
+  "typography": {
+    "type": "Variable",
+    "variable": "typography",
+    "selector_prefix": ".module-popup-%s .popup-content"
+  },
+  "imageDimensions": {
+    "type": "ImageDimensions",
+    "php": true
+  },
+  "text": {
+    "type": "InputLang",
+    "php": true
+  },
+  "footerBG": {
+    "type": "Background",
+    "selector": ".module-popup-%s .popup-footer"
+  },
+  "footerShadow": {
+    "type": "Shadow",
+    "selector": ".module-popup-%s .popup-footer"
+  },
+  "footerBorder": {
+    "type": "Border",
+    "selector": ".module-popup-%s .popup-footer"
+  },
+  "footerBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-popup-%s .popup-footer"
+  },
+  "footerPadding": {
+    "type": "Padding",
+    "selector": ".module-popup-%s .popup-footer",
+    "value": {
+      "padding": "13"
+    }
+  },
+  "doNotShowAgain": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true,
+    "js": true
+  },
+  "doNotShowAgainVisibility": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "true": {
+        ".popup-dont-show": "opacity: 1; pointer-events: auto"
+      },
+      "false": {
+        ".popup-dont-show": "opacity: 0; pointer-events: none"
+      }
+    }
+  },
+  "doNotShowAgainChecked": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true,
+    "js": true
+  },
+  "doNotShowSize": {
+    "type": "InputPair",
+    "selector": ".module-popup-%s .popup-dont-show input",
+    "properties": {
+      "first": "width: %spx",
+      "second": "height: %spx;"
+    }
+  },
+  "doNotShowAgainText": {
+    "type": "InputLang",
+    "value": "Don't show again.",
+    "php": true
+  },
+  "doNotShowAgainFont": {
+    "type": "Font",
+    "selector": ".module-popup-%s .popup-dont-show span"
+  },
+  "doNotShowAgainPadding": {
+    "type": "Padding",
+    "selector": ".module-popup-%s .popup-dont-show"
+  },
+  "doNotShowAgainBackground": {
+    "type": "Background",
+    "selector": ".module-popup-%s .popup-dont-show"
+  },
+
+  "doNotShowAgainPosition": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        ".module-popup-%s .popup-dont-show": "justify-content: start; position: absolute; inset-inline-end: auto;",
+        ".module-popup-%s .popup-buttons + .popup-dont-show": "margin-top: 0;"
+      },
+      "center": {
+        ".module-popup-%s .popup-dont-show": "justify-content: center; position: relative; inset-inline-end: auto;",
+        ".module-popup-%s .popup-buttons + .popup-dont-show": "margin-top: 16px;"
+      },
+      "right": {
+        ".module-popup-%s .popup-dont-show": "justify-content: end; position: absolute; inset-inline-end: 0;",
+        ".module-popup-%s .popup-buttons + .popup-dont-show": "margin-top: 0;"
+      }
+    }
+  },
+  "doNotShowAgainMargin": {
+    "type": "Margin",
+    "selector": ".module-popup-%s .popup-dont-show"
+  },
+  "footerButtonsPadding": {
+    "type": "Padding",
+    "selector": ".module-popup-%s .popup-buttons"
+  },
+  "footerButtonsBG": {
+    "type": "Background",
+    "selector": ".module-popup-%s .popup-buttons"
+  },
+  "button1": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "button1Text": {
+    "type": "InputLang",
+    "value": "Button 1",
+    "php": true
+  },
+  "button1Link": {
+    "type": "Link",
+    "php": true
+  },
+  "btn1Style": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": ".module-popup-%s .btn-popup-1&"
+  },
+  "icon1": {
+    "type": "Icon",
+    "selector": ".module-popup-%s .btn-popup-1::before"
+  },
+  "icon1Right": {
+    "type": "Icon",
+    "selector": ".module-popup-%s .btn-popup-1::after"
+  },
+  "button2": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "button2Text": {
+    "type": "InputLang",
+    "value": "Button 2",
+    "php": true
+  },
+  "button2Link": {
+    "type": "Link",
+    "php": true
+  },
+  "btn2Style": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": ".module-popup-%s .btn-popup-2&"
+  },
+  "icon2": {
+    "type": "Icon",
+    "selector": ".module-popup-%s .btn-popup-2::before"
+  },
+  "icon2Right": {
+    "type": "Icon",
+    "selector": ".module-popup-%s .btn-popup-2::after"
+  },
+
+  "overlay": {
+    "type": "Background",
+    "selector": ".module-popup-%s .popup-inner-body::before, .module-popup-%s.popup::before"
+  },
+  "overlayOpacity": {
+    "type": "Input",
+    "property": "opacity",
+    "selector": ".module-popup-%s .popup-inner-body::before, .module-popup-%s.popup::before"
+  },
+  "overlayBlend": {
+    "value": "",
+    "type": "Select",
+    "selector": ".module-popup-%s .popup-inner-body::before, .module-popup-%s.popup::before",
+    "property": "mix-blend-mode"
+  },
+
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

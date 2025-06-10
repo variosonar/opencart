@@ -1,0 +1,109 @@
+{
+  "headerMobileCartIcon": {
+    "type": "Icon",
+    "selector": ".mobile-header-active .mobile-cart-wrapper #cart > a > em::before"
+  },
+  "headerMobileCartIconActive": {
+    "type": "Icon",
+    "selector": ".mobile-header-active .mobile-cart-wrapper #cart > a:active > em::before"
+  },
+  "headerMobileCartIconBG": {
+    "type": "Background",
+    "selector": ".mobile-header-active .mobile-cart-wrapper #cart > a"
+  },
+  "headerMobileCartIconBGActive": {
+    "type": "Background",
+    "selector": ".mobile-header-active .mobile-cart-wrapper #cart > a:active"
+  },
+  "mobileCartContentStyle": {
+    "type": "Variable",
+    "variable": "cart_content",
+    "selector_prefix": ".mobile-header-active"
+  },
+  "headerMobileCartWidth": {
+    "type": "InputNumber",
+    "value": "50",
+    "rules":{
+      "@":{
+        ".mobile-header-active .mobile-cart-wrapper #cart > a": "width:%spx"
+      }
+    }
+  },
+  "headerMobileCartLabel": {
+    "type": "InputLang",
+    "rules": {
+      "@": {
+        ".mobile-header-active .mobile-cart-wrapper #cart > a > em::after": "content:'%s'"
+      }
+    }
+  },
+  "headerMobileCartLabelFont": {
+    "type": "Font",
+    "selector": ".mobile-header-active .mobile-cart-wrapper #cart > a > em::after"
+  },
+  "headerMobileCartLabelOffset": {
+    "type": "InputPair",
+    "selector": ".mobile-header-active .mobile-cart-wrapper #cart > a > em::after",
+    "properties": {
+      "first": "margin-inline-start:%spx",
+      "second": "margin-top:%spx"
+    },
+    "rtlProperties": {
+      "first": "margin-inline-start:calc(0px - (%spx))",
+      "second": "margin-top:%spx"
+    }
+  },
+  "headerMobileCartRadius": {
+    "type": "BorderRadius",
+    "selector": ".mobile-header-active .mobile-cart-wrapper #cart > a"
+  },
+  "headerMobileCartWrapperStyle": {
+    "type": "Variable",
+    "variable": "mobile_wrapper",
+    "selector_prefix": ".mobile-cart-content-container-open"
+  },
+  "headerMobileCartStyle": {
+    "type": "Variable",
+    "variable": "cart",
+    "selector_prefix": ".mobile-header-active"
+  },
+  "headerMobileCartTitle": {
+    "type": "InputLang",
+    "value": "",
+    "rules": {
+      "@": {
+        ".mobile-cart-content-container-open .mobile-cart-content-container .mobile-wrapper-header > span::after": "display: none"
+      }
+    },
+    "php": true
+  },
+
+  "countBadge": {
+    "type": "Variable",
+    "variable": "count_badge",
+    "selector_prefix": ".mobile-header-active .mobile-cart-wrapper #cart-items&"
+  },
+  "countBadgeOffsetNew": {
+    "type": "InputPair",
+    "selector": ".mobile-header-active .mobile-cart-wrapper #cart-items.count-badge",
+    "properties": {
+      "first": "--x: %spx",
+      "second": "--margin-top:%spx"
+    },
+    "rtlProperties":{
+      "first": "--x: calc(0px - %spx)",
+      "second": "--margin-top:%spx"
+    }
+  },
+  "countBadgeVisibility": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".mobile-header-active .mobile-cart-wrapper #cart-items.count-badge": "display: inline-flex"
+      },
+      "false": {
+        ".mobile-header-active .mobile-cart-wrapper #cart-items.count-badge": "display: none"
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+<div class="header header-mega header-lg {{ journal3.classes(journal3.get('headerClasses')) }}">
+  <div class="top-bar navbar-nav {{ journal3.get('header_top_color_scheme') }}">
+    {{ journal3.get('desktop_top_menu') }}
+    {% if journal3.get('langPosition') == 'top' %}
+      <div class="language-currency top-menu">
+        <div class="desktop-language-wrapper">
+          {{ language }}
+        </div>
+        <div class="desktop-currency-wrapper">
+          {{ currency }}
+        </div>
+      </div>
+    {% endif %}
+    <div class="top-menu third-menu">{{ journal3.get('desktop_top_menu_3') }}</div>
+    {% if journal3.get('secondaryMenuPosition') == 'top' %}
+      <div class="top-menu secondary-menu">{{ journal3.get('desktop_top_menu_2') }}</div>
+    {% endif %}
+  </div>
+  <div class="mid-bar navbar-nav">
+    <div class="desktop-logo-wrapper {{ journal3.get('header_logo_color_scheme') }}">
+      <div id="logo">
+        {% if journal3.get('desktop_logo_src') or journal3.get('desktop_logo_alternate_src') %}
+          <a href="{{ home }}">
+            <img class="header-logo" src="{{ journal3.get('desktop_logo_src') }}" {% if journal3.get('desktop_logo_src2x') %}srcset="{{ journal3.get('desktop_logo_src') }} 1x, {{ journal3.get('desktop_logo_src2x') }} 2x"{% endif %} width="{{ journal3.get('desktop_logo_width') }}" height="{{ journal3.get('desktop_logo_height') }}" alt="{{ name }}" title="{{ name }}"/>
+            <img class="header-logo-alternate" src="{{ journal3.get('desktop_logo_alternate_src') }}" {% if journal3.get('desktop_logo_alternate_src2x') %}srcset="{{ journal3.get('desktop_logo_alternate_src') }} 1x, {{ journal3.get('desktop_logo_alternate_src2x') }} 2x"{% endif %} width="{{ journal3.get('desktop_logo_alternate_width') }}" height="{{ journal3.get('desktop_logo_alternate_height') }}" alt="{{ name }}" title="{{ name }}"/>
+          </a>
+        {% else %}
+          <h1><a href="{{ home }}">{{ name }}</a></h1>
+        {% endif %}
+      </div>
+    </div>
+    {% if journal3.get('headerMainMenu2Position') == 'top' %}
+      <div class="desktop-main-menu-wrapper menu-top main-menu-2-top main-menu-2">
+        {% if not journal3.get('mobile_header_active') %}
+          <div class="menu-trigger menu-item main-menu-item menu-trigger-2">
+            <ul class="j-menu">
+              <li class="menu-item"><a href="javascript:;" data-off-canvas="desktop-mobile-main-menu-container"><span class="links-text">{{ journal3.get('menuTriggerText') }}</span></a></li>
+            </ul>
+          </div>
+          {% if not journal3.get('mobileMenu2') %}
+            {{ journal3.get('desktop_main_menu_2') }}
+          {% endif %}
+        {% endif %}
+      </div>
+    {% endif %}
+    {% if journal3.get('secondaryMenuPosition') == 'cart' %}
+      <div class="top-menu secondary-menu {{ journal3.get('secondary_color_scheme') }}">{{ journal3.get('desktop_top_menu_2') }}</div>
+    {% endif %}
+    {% if journal3.get('langPosition') == 'search' %}
+      <div class="language-currency top-menu">
+        <div class="desktop-language-wrapper">
+          {{ language }}
+        </div>
+        <div class="desktop-currency-wrapper">
+          {{ currency }}
+        </div>
+      </div>
+    {% endif %}
+    {% if journal3.get('cartPosition') == 'top' %}
+      <div class="desktop-cart-wrapper default-cart-wrapper">
+        {{ cart }}
+      </div>
+    {% endif %}
+  </div>
+  <div class="desktop-main-menu-wrapper menu-bar has-menu-1 menu-{{ journal3.get('headerMenuLayout') }} {% if journal3.get('desktop_main_menu_2') %}has-menu-2{% endif %} navbar-nav {{ journal3.get('header_menu_color_scheme') }}">
+    {% if not journal3.get('mobile_header_active') %}
+      <div class="main-menu-1">
+        <div class="menu-trigger menu-item main-menu-item menu-trigger-1">
+          <ul class="j-menu">
+            <li class="menu-item"><a href="javascript:;" data-off-canvas="desktop-mobile-main-menu-container"><span class="links-text">{{ journal3.get('menuTriggerText') }}</span></a></li>
+          </ul>
+        </div>
+        {% if not journal3.get('mobileMenu1') %}
+          {{ journal3.get('desktop_main_menu') }}
+        {% endif %}
+      </div>
+      <div class="desktop-search-wrapper full-search default-search-wrapper">
+        {{ search | replace({
+          'color-scheme-__SEARCH_COLOR_SCHEME__': (journal3.get('header_search_color_scheme') ?: 'color-scheme-'),
+          'color-scheme-__SEARCH_CATEGORIES_COLOR_SCHEME__': journal3.get('header_search_categories_color_scheme')
+        }) }}
+      </div>
+      {% if journal3.get('headerMainMenu2Position') == 'menu' %}
+        <div class="main-menu-2">
+          <div class="menu-trigger menu-item main-menu-item menu-trigger-2">
+            <ul class="j-menu">
+              <li class="menu-item"><a href="javascript:;" data-off-canvas="desktop-mobile-main-menu-container"><span class="links-text">{{ journal3.get('menuTriggerText') }}</span></a></li>
+            </ul>
+          </div>
+          {% if not journal3.get('mobileMenu2') %}
+            {{ journal3.get('desktop_main_menu_2') }}
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endif %}
+    {% if journal3.get('cartPosition') == 'menu' %}
+      <div class="desktop-cart-wrapper default-cart-wrapper">
+        {{ cart }}
+      </div>
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,650 @@
+{
+  "headerMainMenu": {
+    "type": "Module",
+    "php": true
+  },
+  "headerMainMenu2": {
+    "type": "Module",
+    "php": true
+  },
+  "headerMainMenuBorder": {
+    "type": "Border",
+    "selector": ".desktop-main-menu-wrapper.menu-top"
+  },
+  "menuLabelStyle": {
+    "type": "Variable",
+    "variable": "menu_label",
+    "selector_prefix": ".main-menu-item"
+  },
+  "mainMenu": {
+    "type": "Variable",
+    "variable": "menu",
+    "selector_prefix": ".menu-trigger-1 + .main-menu > .j-menu >"
+  },
+  "mainMenuItemSpacing": {
+    "type": "Gap",
+    "variableType": "gap",
+    "property": "--menu-item-gap:%s",
+    "selector": "header #main-menu > .j-menu > li"
+  },
+  "mainMenuItemPadding": {
+    "type": "Padding",
+    "selector": "header #main-menu > .j-menu > li > a"
+  },
+  "mainMenuItemSpacing2": {
+    "type": "Gap",
+    "variableType": "gap",
+    "property": "--menu-item-gap:%s",
+    "selector": "header #main-menu-2 > .j-menu > li"
+  },
+  "MenuBarCountBadge": {
+    "type": "Variable",
+    "variable": "count_badge",
+    "selector_prefix": ".desktop-header-active .menu-bar .count-badge&"
+  },
+  "mainMenu2": {
+    "type": "Variable",
+    "variable": "menu",
+    "selector_prefix": ".menu-trigger-2 + .main-menu > .j-menu >"
+  },
+  "mainMenu2Margin": {
+    "type": "Margin",
+    "selector": ".menu-bar .main-menu-2 > .main-menu, #main-menu-2"
+  },
+  "headerMainMenu2Border-hold": {
+    "type": "Border",
+    "selector": ".menu-bar .main-menu-2 > .main-menu"
+  },
+  "headerMainMenu2BorderRadius-hold": {
+    "type": "BorderRadius",
+    "selector": ".menu-bar .main-menu-2 > .main-menu"
+  },
+  "headerMainMenu2Background": {
+    "type": "Background",
+    "selector": ".menu-bar .main-menu-2 > .main-menu"
+  },
+  "headerMainMenu2Padding": {
+    "type": "Padding",
+    "selector": ".menu-bar .main-menu-2 >  .main-menu"
+  },
+  "headerMainMenu1Background": {
+    "type": "Background",
+    "selector": ".menu-bar .main-menu-1 > .main-menu"
+  },
+  "headerMainMenu1Border-hold": {
+    "type": "Border",
+    "selector": ".menu-bar .main-menu-1 > .main-menu"
+  },
+  "headerMainMenu1BorderRadius-hold": {
+    "type": "BorderRadius",
+    "selector": ".menu-bar .main-menu-1 > .main-menu"
+  },
+  "headerMainMenu1Padding": {
+    "type": "Padding",
+    "selector": ".menu-bar .main-menu-1 >  .main-menu"
+  },
+  "menuDropdown": {
+    "type": "Variable",
+    "variable": "dropdown",
+    "selector_prefix": ".desktop-main-menu-wrapper .main-menu .menu-item"
+  },
+  "menuDropdown2": {
+    "type": "Variable",
+    "variable": "dropdown",
+    "selector_prefix": "#main-menu-2 .menu-item"
+  },
+  "megaMenu": {
+    "type": "Variable",
+    "variable": "mega_menu",
+    "selector_prefix": "header .main-menu .mega-menu"
+  },
+  "megaMenu2": {
+    "type": "Variable",
+    "variable": "mega_menu",
+    "selector_prefix": "header #main-menu-2 .mega-menu"
+  },
+  "headerMainMenuDisplay": {
+    "type": "Radio",
+    "php": true,
+    "value": "legacy",
+    "rules": {
+      "scroll": {
+        ".desktop-main-menu-wrapper #main-menu": "overflow-x: auto; overflow-y: hidden;",
+        ".desktop-main-menu-wrapper #main-menu > .j-menu": "flex-wrap: nowrap",
+        ".desktop-main-menu-wrapper > .main-menu > ul > li": "flex-grow: 0",
+        ".desktop-main-menu-wrapper #main-menu > .j-menu > .main-menu-item:not(.mega-fullwidth)": "position: static"
+      },
+      "multi": {
+        ".desktop-main-menu-wrapper.menu-bar .main-menu::before": "display: none",
+        ".desktop-main-menu-wrapper.menu-bar .main-menu::after": "display: none",
+        ".desktop-main-menu-wrapper.menu-bar": "align-items: center; height: auto; min-height: calc(var(--desktop-main-menu, 42px) + var(--bar-padding, 0px) * 2)",
+        ".desktop-main-menu-wrapper #main-menu": "overflow-x: initial; overflow-y: initial; --menu-item-full-height: auto",
+        ".desktop-main-menu-wrapper #main-menu > .j-menu": "flex-wrap: wrap",
+        ".desktop-main-menu-wrapper > .main-menu > ul > li": "flex-grow: 0",
+        ".desktop-main-menu-wrapper #main-menu > .j-menu > .main-menu-item:not(.mega-fullwidth)": "position: relative"
+      }
+    }
+  },
+  "headerMainMenuDisplay2": {
+    "type": "Radio",
+    "php": true,
+    "value": "legacy",
+    "rules": {
+      "scroll": {
+        ".desktop-main-menu-wrapper #main-menu-2": "overflow-x: auto; overflow-y: hidden;",
+        ".desktop-main-menu-wrapper #main-menu-2 > .j-menu": "flex-wrap: nowrap",
+        ".desktop-main-menu-wrapper #main-menu-2 > .j-menu > .main-menu-item:not(.mega-fullwidth)": "position: static"
+      },
+      "multi": {
+        ".menu-bar .main-menu-1 .main-menu::before": "display: none",
+        ".menu-bar .main-menu-1 .main-menu::after": "display: none",
+        ".desktop-main-menu-wrapper.menu-bar.has-menu-2": "align-items: center; height: auto; min-height: calc(var(--desktop-main-menu, 42px) + var(--bar-padding, 0px) * 2)",
+        ".desktop-main-menu-wrapper #main-menu-2": "overflow-x: initial; overflow-y: initial; --menu-item-full-height: auto",
+        ".desktop-main-menu-wrapper #main-menu-2 > .j-menu": "flex-wrap: wrap",
+        ".desktop-main-menu-wrapper #main-menu-2 > .j-menu > .main-menu-item:not(.mega-fullwidth)": "position: relative"
+      }
+    }
+  },
+  "mainMenuMaxWidth": {
+    "type": "InputNumber",
+    "selector": ".menu-1-scroll .desktop-main-menu-wrapper #main-menu",
+    "property": "max-width: %spx",
+    "value": ""
+  },
+  "mainMenuMaxWidth2": {
+    "type": "InputNumber",
+    "selector": ".menu-2-scroll .desktop-main-menu-wrapper #main-menu-2",
+    "property": "max-width: %spx",
+    "value": ""
+  },
+  "headerMainMenuFullHeightTop": {
+    "type": "Toggle",
+    "value": "false",
+    "js": true,
+    "rules": {
+      "true": {
+        ".desktop-header-active .desktop-main-menu-wrapper.menu-top > .menu-trigger": "height: 100%",
+        ".desktop-header-active .desktop-main-menu-wrapper.menu-top > .menu-trigger .j-menu > li > a": "justify-content: center",
+        ".desktop-header-active .mid-bar .desktop-main-menu-wrapper.menu-top": "height: 100%",
+        ".desktop-main-menu-wrapper.menu-top > div:not(.menu-trigger)": "height: 100%",
+        ".desktop-main-menu-wrapper.menu-top .main-menu > .j-menu > li": "height: 100%;",
+        ".desktop-main-menu-wrapper.menu-top .main-menu > .j-menu > li > a": "height: 100%;",
+        ".desktop-main-menu-wrapper.menu-top.menu-multi .main-menu > .j-menu > li": "height: 100%;",
+        ".desktop-main-menu-wrapper.menu-top.menu-multi .main-menu > .j-menu > li > a": "height: 100%;",
+        ".header-sticky.header-desktop-compact": "--element-height-sticky: var(--desktop-sticky, var(--element-height, 0px))"
+      },
+      "false": {
+        ".desktop-header-active .desktop-main-menu-wrapper.menu-top > .menu-trigger": "height: auto",
+        ".desktop-header-active .mid-bar .desktop-main-menu-wrapper.menu-top": "height: auto",
+        ".desktop-main-menu-wrapper.menu-top > div:not(.menu-trigger)": "height: auto",
+        ".desktop-main-menu-wrapper.menu-top .main-menu > .j-menu > li": "height: 100%;",
+        ".desktop-main-menu-wrapper.menu-top .main-menu > .j-menu > li > a": "height: 100%;",
+        ".desktop-main-menu-wrapper.menu-top .menu-trigger li": "height: 100%",
+        ".desktop-main-menu-wrapper.menu-top.menu-multi .main-menu > .j-menu > li": "height: auto;",
+        ".desktop-main-menu-wrapper.menu-top.menu-multi .main-menu > .j-menu > li > a": "height: auto;",
+        ".desktop-main-menu-wrapper.menu-top.menu-multi .menu-trigger li": "height: auto"
+      }
+    }
+  },
+  "headerMainMenuFullHeightNew": {
+    "type": "Toggle",
+    "value": "true",
+    "js": true,
+    "rules": {
+      "true": {
+        ".desktop-main-menu-wrapper": "--menu-item-full-height: 100%",
+        ".desktop-main-menu-wrapper.menu-bar > div": "height: var(--menu-item-full-height, 100%)",
+        ".desktop-main-menu-wrapper .desktop-cart-wrapper #cart": "height: var(--menu-item-full-height, 100%);",
+        ".desktop-main-menu-wrapper .full-search #search": "height: var(--menu-item-full-height, 100%);",
+        ".desktop-main-menu-wrapper.menu-bar > div > div": "height: var(--menu-item-full-height, 100%)",
+        ".desktop-main-menu-wrapper.menu-bar .main-menu > .j-menu > li": "height: var(--menu-item-full-height, 100%);",
+        ".desktop-main-menu-wrapper.menu-bar .main-menu > .j-menu > li > a": "height: var(--menu-item-full-height, 100%)",
+        ".desktop-main-menu-wrapper.menu-bar .menu-trigger li": "min-height: var(--menu-item-full-height, 100%)",
+        ".desktop-main-menu-wrapper.menu-bar.menu-multi .main-menu > .j-menu > li": "height: auto;",
+        ".desktop-main-menu-wrapper.menu-bar.menu-multi .main-menu > .j-menu > li > a": "height: auto",
+        ".desktop-main-menu-wrapper.menu-bar.menu-multi .menu-trigger li": "min-height: auto"
+      },
+      "false": {
+        ".desktop-main-menu-wrapper": "--menu-item-full-height: auto",
+        ".desktop-main-menu-wrapper.menu-bar > div": "height: var(--menu-item-full-height, auto)",
+        ".desktop-main-menu-wrapper .desktop-cart-wrapper #cart": "height: var(--menu-item-full-height, auto)",
+        ".desktop-main-menu-wrapper .full-search #search": "height: var(--search-height, 40px)",
+        ".desktop-main-menu-wrapper.menu-bar > div > div": "height: var(--menu-item-full-height, auto)",
+        ".desktop-main-menu-wrapper.menu-bar .menu-trigger li": "min-height: var(--menu-item-full-height, auto)",
+        ".desktop-main-menu-wrapper.menu-bar .main-menu > .j-menu > li": "height: var(--menu-item-full-height, auto);",
+        ".desktop-main-menu-wrapper.menu-bar .main-menu > .j-menu > li > a": "height: var(--menu-item-full-height, auto)",
+        ".desktop-main-menu-wrapper.menu-bar.menu-multi .menu-trigger li": "min-height: var(--menu-item-full-height, auto)",
+        ".desktop-main-menu-wrapper.menu-bar.menu-multi .main-menu > .j-menu > li": "height: var(--menu-item-full-height, auto);",
+        ".desktop-main-menu-wrapper.menu-bar.menu-multi .main-menu > .j-menu > li > a": "height: var(--menu-item-full-height, auto)"
+      }
+    }
+  },
+  "headerMenuSlimPosition": {
+    "type": "Radio",
+    "value": "before",
+    "rules": {
+      "before": {
+        ".desktop-header-active .header-compact .desktop-logo-wrapper": "order:0"
+      },
+      "after": {
+        ".desktop-header-active .header-compact .desktop-logo-wrapper": "order:-1"
+      }
+    }
+  },
+  "headerMenuLayout": {
+    "type": "Radio",
+    "value": "default",
+    "php": true
+  },
+  "headerMainMenu2Position": {
+    "type": "Radio",
+    "value": "menu",
+    "php": true
+  },
+  "headerMainMenuOrder": {
+    "type": "Radio",
+    "value": "before",
+    "rules": {
+      "before": {
+        ".desktop-header-active .header .mid-bar > .menu-top": "order:initial !important; display: flex"
+      },
+      "after": {
+        ".desktop-header-active .header .mid-bar > .menu-top": "order:5 !important; display: flex"
+      },
+      "none": {
+        ".desktop-header-active .header .mid-bar > .menu-top": "order:5 !important; display: none;"
+      }
+    }
+  },
+  "headerMainMenu2Align-hold": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        ".menu-bar.has-menu-2 .main-menu-2": "margin-inline-start:0; margin-inline-end:auto;",
+        ".menu-top.has-menu-2 .desktop-cart-wrapper": "margin-inline-start:auto;"
+      },
+      "right": {
+        ".menu-bar.has-menu-2 .main-menu-2": "margin-inline-start:auto; margin-inline-end:0;",
+        ".menu-top.has-menu-2 .desktop-cart-wrapper": "margin-inline-start:0"
+      },
+      "center": {
+        ".menu-bar.has-menu-2 .main-menu-2": "margin-inline-start:auto; margin-inline-end:auto;",
+        ".menu-top.has-menu-2 .desktop-cart-wrapper": "margin-inline-start:auto"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        ".menu-bar.has-menu-2 .main-menu-2": "margin-inline-start:auto; margin-inline-end:0;",
+        ".menu-top.has-menu-2 .desktop-cart-wrapper": "margin-inline-end:auto"
+      },
+      "right": {
+        ".menu-bar.has-menu-2 .main-menu-2": "margin-inline-end:auto; margin-inline-start:0;",
+        ".menu-top.has-menu-2 .desktop-cart-wrapper": "margin-inline-end:0"
+      },
+      "center": {
+        ".menu-bar.has-menu-2 .main-menu-2": "margin-inline-start:auto; margin-inline-end:auto;",
+        ".menu-top.has-menu-2 .desktop-cart-wrapper": "margin-inline-start:auto"
+      }
+    }
+  },
+  "headerMenuItemAlign": {
+    "type": "Radio",
+    "value": "center",
+    "rules": {
+      "start": {
+        ".desktop-header-active .header .menu-stretch .main-menu-item > a .links-text": "text-align:left; justify-content: flex-start;"
+      },
+      "center": {
+        ".desktop-header-active .header .menu-stretch .main-menu-item > a .links-text": "text-align:center; justify-content: center;"
+      },
+      "end": {
+        ".desktop-header-active .header .menu-stretch .main-menu-item > a .links-text": "text-align:right; justify-content: flex-end;"
+      }
+    }
+  },
+  "headerClassicMenuLayout": {
+    "type": "Radio",
+    "value": "start",
+    "rules": {
+      "start": {
+        ".menu-bar .main-menu-1": "justify-content: flex-start"
+      },
+      "center": {
+        ".menu-bar .main-menu-1": "justify-content: center"
+      },
+      "end": {
+        ".menu-bar .main-menu-1": "justify-content: flex-end"
+      }
+    }
+  },
+  "headerCompactMenuLayout": {
+    "type": "Radio",
+    "value": "center",
+    "rules": {
+      "start": {
+        ".header-sm .menu-bar .main-menu-1": "justify-content: flex-start"
+      },
+      "center": {
+        ".header-sm .menu-bar .main-menu-1": "justify-content: center"
+      },
+      "end": {
+        ".header-sm .menu-bar .main-menu-1": "justify-content: flex-end"
+      }
+    }
+  },
+  "headerMenuCompactLayout": {
+    "type": "Radio",
+    "value": "default",
+    "rules": {
+      "default": {
+        ".menu-bar .main-menu-1 > .main-menu, .menu-bar .main-menu-1 > .main-menu > .j-menu > li": "flex-grow: 0;"
+      },
+      "stretch": {
+        ".menu-bar .main-menu-1 > .main-menu, .menu-bar .main-menu-1 > .main-menu > .j-menu > li": "flex-grow: 1;"
+      }
+    }
+  },
+  "headerCompactMainMenuAlign": {
+    "type": "Radio",
+    "value": "start",
+    "rules": {
+      "start": {
+        ".menu-bar .main-menu-1 .main-menu > .j-menu > li > a": "justify-content: flex-start;",
+        ".menu-bar .main-menu-1 .main-menu > .j-menu > li > a .links-text": "width: auto"
+      },
+      "center": {
+        ".menu-bar .main-menu-1 .main-menu > .j-menu > li > a": "justify-content: center;",
+        ".menu-bar .main-menu-1 .main-menu > .j-menu > li > a .links-text": "width: auto"
+      },
+      "end": {
+        ".menu-bar .main-menu-1 .main-menu > .j-menu > li > a": "justify-content: flex-end;",
+        ".menu-bar .main-menu-1 .main-menu > .j-menu > li > a .links-text": "width: auto"
+      }
+    }
+  },
+  "headerMainMenuBG": {
+    "type": "Background",
+    "selector": ".desktop-header-active .menu-trigger"
+  },
+  "headerMainMenuBackground": {
+    "type": "Background",
+    "selector": ".desktop-main-menu-wrapper.menu-top"
+  },
+  "headerMainMenuBarBackground": {
+    "type": "Background",
+    "selector": "div.desktop-main-menu-wrapper.menu-bar::before"
+  },
+  "headerMainMenuBGFull": {
+    "type": "Background",
+    "selector": ".desktop-main-menu-wrapper.menu-bar::after, .desktop-main-menu-wrapper.menu-bar::before"
+  },
+  "headerMainMenuBarBorder": {
+    "type": "Border",
+    "selector": ".desktop-main-menu-wrapper.menu-bar::before"
+  },
+  "headerMainMenuHeightNew": {
+    "type": "InputNumber",
+    "value": "42",
+    "rules": {
+      "@": {
+        "html": "--desktop-main-menu: %spx"
+      }
+    },
+    "php": true
+  },
+  "headerMainMenuCountBadgeOffset": {
+    "type": "InputPair",
+    "selector": ".desktop-main-menu-wrapper.menu-bar .j-menu a .count-badge",
+    "properties": {
+      "first": "--x: %spx",
+      "second": "--margin-top:%spx"
+    },
+    "rtlProperties": {
+      "first": "--x: calc(0px - %spx)",
+      "second": "--margin-top:%spx"
+    },
+    "important": true
+  },
+  "headerMainMenuPaddingTop": {
+    "type": "Padding",
+    "selector": ".desktop-main-menu-wrapper.menu-top > div"
+  },
+  "dropdownBarPadding": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".desktop-main-menu-wrapper.menu-bar": "--bar-padding-dropdown: var(--bar-padding, 0px)"
+      },
+      "false": {
+        ".desktop-main-menu-wrapper.menu-bar": "--bar-padding-dropdown: 0px"
+      }
+    }
+  },
+  "headerMainMenuPaddingBar": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".desktop-main-menu-wrapper.menu-bar",
+    "property": "--bar-padding: %spx"
+  },
+  "headerMainMenuPaddingBarInline": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".desktop-main-menu-wrapper.menu-bar",
+    "property": "padding-inline: %spx"
+  },
+  "headerMainMenuMargin": {
+    "type": "Margin",
+    "selector": ".desktop-main-menu-wrapper.menu-bar"
+  },
+  "headerMainMenuFullBorder": {
+    "type": "Border",
+    "selector": ".desktop-main-menu-wrapper::after"
+  },
+  "headerMainMenuSideSpacing": {
+    "type": "Margin",
+    "selector": ".desktop-main-menu-wrapper.menu-top"
+  },
+  "headerMainMenuSideSpacing2": {
+    "type": "Margin",
+    "selector": ".desktop-main-menu-wrapper.menu-top"
+  },
+  "headerMainMenuBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".desktop-main-menu-wrapper.menu-top"
+  },
+  "headerMainMenuBarBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".desktop-main-menu-wrapper.menu-bar"
+  },
+  "menuBarMaxWidth": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".header > .menu-bar": "--max-width: %spx !important"
+      }
+    }
+  },
+  "gutterSubtractMenuBar": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".header > .menu-bar": "max-width: min(calc(100% - var(--content-gutter, 0px) * 2), calc(var(--max-width, var(--content-max-width, 100%)) - var(--content-gutter, 0px) * 2))"
+      },
+      "false": {
+        ".header > .menu-bar": "max-width: calc(var(--max-width, var(--content-max-width, 100%)) - var(--content-gutter, 0px) * 2)"
+      }
+    }
+  },
+  "scaleFullwidthBG": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".menu-bar::after": "--bg-scale-x: 0;"
+      },
+      "false": {
+        ".menu-bar::after": "--bg-scale-x: 1;",
+        ".desktop-main-menu-wrapper.menu-bar::before": "background: none"
+      }
+    }
+  },
+  "scaleFullwidthBGMid": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".header .mid-bar::before": "--bg-scale-x: 0;"
+      },
+      "false": {
+        ".header .mid-bar::before": "--bg-scale-x: 1;"
+      }
+    }
+  },
+  "headerMainMenuDivider": {
+    "type": "Divider",
+    "selector": ".desktop-main-menu-wrapper .main-menu .main-menu-item"
+  },
+  "headerMainMenuDividerHover": {
+    "type": "Color",
+    "selector": ".desktop-main-menu-wrapper .main-menu  .main-menu-item:hover, .desktop-main-menu-wrapper .main-menu  .main-menu-item:hover + div, .desktop-header-active .menu-trigger a:hover",
+    "property": "border-color"
+  },
+  "headerMainMenuFont": {
+    "type": "Font",
+    "selector": ".desktop-main-menu-wrapper .main-menu-item > a"
+  },
+  "headerMainMenuFontHover": {
+    "type": "Font",
+    "selector": ".desktop-main-menu-wrapper .main-menu-item:hover > a, .main-menu-item.open > a"
+  },
+  "headerMainMenuItemBGHover": {
+    "type": "Background",
+    "selector": ".desktop-main-menu-wrapper .main-menu-item:hover"
+  },
+  "headerMainMenuAlign": {
+    "type": "Radio",
+    "value": "start",
+    "rules": {
+      "start": {
+        ".header-compact:not(.header-slim) .mid-bar .desktop-logo-wrapper": "margin-inline-end:0",
+        ".header-compact:not(.header-slim) .mid-bar .header-cart-group": "margin-inline-start:auto"
+      },
+      "center": {
+        ".header-compact:not(.header-slim) .mid-bar .desktop-logo-wrapper": "margin-inline-end:auto",
+        ".header-compact:not(.header-slim) .mid-bar .header-cart-group": "margin-inline-start:auto"
+      },
+      "end": {
+        ".header-compact:not(.header-slim) .mid-bar .desktop-logo-wrapper": "margin-inline-end:auto",
+        ".header-compact:not(.header-slim) .mid-bar .header-cart-group": "margin-inline-start:0"
+      }
+    }
+  },
+  "mainMenuDropdownAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        ".desktop-main-menu-wrapper #main-menu .main-menu-item.dropdown:not(.mega-fullwidth) > .j-dropdown": "left: calc(var(--menu-item-gap, 0px) / 2); right: auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start; --align-scroll: var(--align-scroll-start, 0); --translate-x: 0;",
+        ".desktop-main-menu-wrapper #main-menu .main-menu-item.dropdown:not(.mega-fullwidth):first-child > .j-dropdown": "left: 0px; right: auto;",
+        ".desktop-main-menu-wrapper #main-menu .main-menu-item.dropdown:not(.mega-fullwidth):last-child:not(:only-child) > .j-dropdown": "left: calc(var(--menu-item-gap, 0px) / 2); right: auto;",
+        ".desktop-main-menu-wrapper #main-menu .main-menu-item.dropdown:not(.mega-fullwidth) > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      },
+      "center": {
+        ".desktop-main-menu-wrapper #main-menu .main-menu-item.dropdown:not(.mega-fullwidth) > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center; --align-scroll: var(--align-scroll-center, 0); --translate-x: -50%;",
+        ".desktop-main-menu-wrapper #main-menu .main-menu-item.dropdown:not(.mega-fullwidth):first-child > .j-dropdown": "left: 50%; right: auto;",
+        ".desktop-main-menu-wrapper #main-menu .main-menu-item.dropdown:not(.mega-fullwidth):last-child > .j-dropdown": "left: 50%; right: auto;",
+        ".desktop-main-menu-wrapper #main-menu .main-menu-item.dropdown:not(.mega-fullwidth) > .j-dropdown::before": "--triangle-right: 0px; --triangle-left: 0px"
+      },
+      "right": {
+        ".desktop-main-menu-wrapper #main-menu .main-menu-item.dropdown:not(.mega-fullwidth) > .j-dropdown": "right:calc(var(--menu-item-gap, 0px) / 2); left:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end; --align-scroll: var(--align-scroll-end, 0); --translate-x: -100%;",
+        ".desktop-main-menu-wrapper #main-menu .main-menu-item.dropdown:not(.mega-fullwidth):first-child > .j-dropdown": "right: calc(var(--menu-item-gap, 0px) / 2); left:auto;",
+        ".desktop-main-menu-wrapper #main-menu .main-menu-item.dropdown:not(.mega-fullwidth):last-child > .j-dropdown": "right: 0px; left:auto;",
+        ".desktop-main-menu-wrapper #main-menu .main-menu-item.dropdown:not(.mega-fullwidth) > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        ".desktop-main-menu-wrapper #main-menu .main-menu-item.dropdown:not(.mega-fullwidth) > .j-dropdown": "left: auto; right: calc(var(--menu-item-gap, 0px) / 2); transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start; --align-scroll: var(--align-scroll-start, 0); --translate-x: 0;",
+        ".desktop-main-menu-wrapper #main-menu .main-menu-item.dropdown:not(.mega-fullwidth):first-child > .j-dropdown": "left: auto; right: 0px;",
+        ".desktop-main-menu-wrapper #main-menu .main-menu-item.dropdown:not(.mega-fullwidth):last-child > .j-dropdown": "left: auto; right: calc(var(--menu-item-gap, 0px) / 2);",
+        ".desktop-main-menu-wrapper #main-menu .main-menu-item.dropdown:not(.mega-fullwidth) > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      },
+      "center": {
+        ".desktop-main-menu-wrapper #main-menu .main-menu-item.dropdown:not(.mega-fullwidth) > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center; --align-scroll: var(--align-scroll-center, 0); --translate-x: 50%;",
+        ".desktop-main-menu-wrapper #main-menu .main-menu-item.dropdown:not(.mega-fullwidth):first-child > .j-dropdown": "left:50%; right:auto;",
+        ".desktop-main-menu-wrapper #main-menu .main-menu-item.dropdown:not(.mega-fullwidth):last-child > .j-dropdown": "left:50%; right:auto;",
+        ".desktop-main-menu-wrapper #main-menu .main-menu-item.dropdown:not(.mega-fullwidth) > .j-dropdown::before": "--triangle-right: 0px; --triangle-left: 0px"
+      },
+      "right": {
+        ".desktop-main-menu-wrapper #main-menu .main-menu-item.dropdown:not(.mega-fullwidth) > .j-dropdown": "left:calc(var(--menu-item-gap, 0px) / 2); right:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end; --align-scroll: var(--align-scroll-end, 0); --translate-x: 100%;",
+        ".desktop-main-menu-wrapper #main-menu .main-menu-item.dropdown:not(.mega-fullwidth):first-child > .j-dropdown": "left:calc(var(--menu-item-gap, 0px) / 2); right:auto;",
+        ".desktop-main-menu-wrapper #main-menu .main-menu-item.dropdown:not(.mega-fullwidth):last-child > .j-dropdown": "left:0px; right:auto;",
+        ".desktop-main-menu-wrapper #main-menu .main-menu-item.dropdown:not(.mega-fullwidth) > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      }
+    }
+  },
+  "mainMenu2DropdownAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        ".desktop-main-menu-wrapper #main-menu-2 .main-menu-item.dropdown:not(.mega-fullwidth) > .j-dropdown": "left: calc(var(--menu-item-gap, 0px) / 2); right: auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start; --align-scroll: var(--align-scroll-start, 0); --translate-x: 0;",
+        ".desktop-main-menu-wrapper #main-menu-2 .main-menu-item.dropdown:not(.mega-fullwidth):first-child > .j-dropdown": "left: 0px; right: auto;",
+        ".desktop-main-menu-wrapper #main-menu-2 .main-menu-item.dropdown:not(.mega-fullwidth):last-child:not(:only-child) > .j-dropdown": "left: calc(var(--menu-item-gap, 0px) / 2); right: auto;",
+        ".desktop-main-menu-wrapper #main-menu-2 .main-menu-item.dropdown:not(.mega-fullwidth) > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      },
+      "center": {
+        ".desktop-main-menu-wrapper #main-menu-2 .main-menu-item.dropdown:not(.mega-fullwidth) > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center; --align-scroll: var(--align-scroll-center, 0); --translate-x: -50%;",
+        ".desktop-main-menu-wrapper #main-menu-2 .main-menu-item.dropdown:not(.mega-fullwidth):first-child > .j-dropdown": "left: 50%; right: auto;",
+        ".desktop-main-menu-wrapper #main-menu-2 .main-menu-item.dropdown:not(.mega-fullwidth):last-child > .j-dropdown": "left: 50%; right: auto;",
+        ".desktop-main-menu-wrapper #main-menu-2 .main-menu-item.dropdown:not(.mega-fullwidth) > .j-dropdown::before": "--triangle-right: 0px; --triangle-left: 0px"
+      },
+      "right": {
+        ".desktop-main-menu-wrapper #main-menu-2 .main-menu-item.dropdown:not(.mega-fullwidth) > .j-dropdown": "right:calc(var(--menu-item-gap, 0px) / 2); left:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end; --align-scroll: var(--align-scroll-end, 0); --translate-x: -100%;",
+        ".desktop-main-menu-wrapper #main-menu-2 .main-menu-item.dropdown:not(.mega-fullwidth):first-child > .j-dropdown": "right: calc(var(--menu-item-gap, 0px) / 2); left:auto;",
+        ".desktop-main-menu-wrapper #main-menu-2 .main-menu-item.dropdown:not(.mega-fullwidth):last-child > .j-dropdown": "right: 0px; left:auto;",
+        ".desktop-main-menu-wrapper #main-menu-2 .main-menu-item.dropdown:not(.mega-fullwidth) > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        ".desktop-main-menu-wrapper #main-menu-2 .main-menu-item.dropdown:not(.mega-fullwidth) > .j-dropdown": "left: auto; right: calc(var(--menu-item-gap, 0px) / 2); transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start; --align-scroll: var(--align-scroll-start, 0); --translate-x: 0;",
+        ".desktop-main-menu-wrapper #main-menu-2 .main-menu-item.dropdown:not(.mega-fullwidth):first-child > .j-dropdown": "left: auto; right: 0px;",
+        ".desktop-main-menu-wrapper #main-menu-2 .main-menu-item.dropdown:not(.mega-fullwidth):last-child > .j-dropdown": "left: auto; right: calc(var(--menu-item-gap, 0px) / 2);",
+        ".desktop-main-menu-wrapper #main-menu-2 .main-menu-item.dropdown:not(.mega-fullwidth) > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      },
+      "center": {
+        ".desktop-main-menu-wrapper #main-menu-2 .main-menu-item.dropdown:not(.mega-fullwidth) > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center; --align-scroll: var(--align-scroll-center, 0); --translate-x: 50%;",
+        ".desktop-main-menu-wrapper #main-menu-2 .main-menu-item.dropdown:not(.mega-fullwidth):first-child > .j-dropdown": "left:50%; right:auto;",
+        ".desktop-main-menu-wrapper #main-menu-2 .main-menu-item.dropdown:not(.mega-fullwidth):last-child > .j-dropdown": "left:50%; right:auto;",
+        ".desktop-main-menu-wrapper #main-menu-2 .main-menu-item.dropdown:not(.mega-fullwidth) > .j-dropdown::before": "--triangle-right: 0px; --triangle-left: 0px"
+      },
+      "right": {
+        ".desktop-main-menu-wrapper #main-menu-2 .main-menu-item.dropdown:not(.mega-fullwidth) > .j-dropdown": "left:calc(var(--menu-item-gap, 0px) / 2); right:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end; --align-scroll: var(--align-scroll-end, 0); --translate-x: 100%;",
+        ".desktop-main-menu-wrapper #main-menu-2 .main-menu-item.dropdown:not(.mega-fullwidth):first-child > .j-dropdown": "left:calc(var(--menu-item-gap, 0px) / 2); right:auto;",
+        ".desktop-main-menu-wrapper #main-menu-2 .main-menu-item.dropdown:not(.mega-fullwidth):last-child > .j-dropdown": "left:0px; right:auto;",
+        ".desktop-main-menu-wrapper #main-menu-2 .main-menu-item.dropdown:not(.mega-fullwidth) > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      }
+    }
+  },
+  "menuBarScrollFaderColor": {
+    "type": "Color",
+    "property": "--fader-color: %s",
+    "selector": ".menu-bar .main-menu::before, .menu-bar .main-menu::after"
+  },
+  "menuBarScrollFader": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".menu-bar .main-menu::before, .menu-bar .main-menu::after": "display: block"
+      },
+      "false": {
+        ".menu-bar .main-menu::before, .menu-bar .main-menu::after": "display: none"
+      }
+    }
+  }
+}

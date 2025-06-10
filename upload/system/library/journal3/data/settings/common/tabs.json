@@ -1,0 +1,555 @@
+{
+  "Font": {
+    "type": "Font",
+    "selector": ".nav-tabs > li > a:not(.item-all-link), .nav-tabs > li.active > a:not(.item-all-link), .nav-tabs > li.active > a:not(.item-all-link):hover, .nav-tabs > li.active > a:not(.item-all-link):focus"
+  },
+  "FontHover": {
+    "type": "Font",
+    "selector": ".nav-tabs > li:hover > a:not(.item-all-link), .nav-tabs > li.active > a:not(.item-all-link)"
+  },
+  "FontActive": {
+    "type": "Font",
+    "selector": ".nav-tabs > li.active > a:not(.item-all-link), .nav-tabs > li.active > a:not(.item-all-link):hover, .nav-tabs > li.active > a:not(.item-all-link):focus"
+  },
+  "Background": {
+    "type": "Background",
+    "selector": ".nav-tabs > li",
+    "important": true
+  },
+  "BackgroundHover": {
+    "type": "Background",
+    "selector": ".nav-tabs > li:hover",
+    "important": true
+  },
+  "BackgroundActive": {
+    "type": "Background",
+    "selector": "ul.nav-tabs > li.active, ul.nav-tabs > li.active:hover, ul.nav-tabs > li.active:focus",
+    "important": true
+  },
+  "TabsBorder": {
+    "type": "Border",
+    "selector": ".nav-tabs"
+  },
+  "TabsBackground": {
+    "type": "Background",
+    "selector": ".nav-tabs"
+  },
+  "Border": {
+    "type": "Border",
+    "selector": ".nav-tabs > li"
+  },
+  "BorderHover": {
+    "type": "Color",
+    "selector": ".nav-tabs > li:hover",
+    "property": "border-color"
+  },
+  "BorderActive": {
+    "type": "Color",
+    "selector": ".nav-tabs > li.active, .nav-tabs > li:hover.active",
+    "property": "border-color"
+  },
+  "TabBorderRadius": {
+    "type": "BorderRadius",
+    "selector": "ul.nav-tabs > li"
+  },
+  "FirstTabBorderRadius": {
+    "type": "BorderRadius",
+    "selector": "ul.nav-tabs > li:first-child"
+  },
+  "LastTabBorderRadius": {
+    "type": "BorderRadius",
+    "selector": "ul.nav-tabs > li:last-child"
+  },
+  "FirstBorder": {
+    "type": "Border",
+    "selector": "ul.nav-tabs > li:first-child"
+  },
+  "FirstBorderHover": {
+    "type": "Color",
+    "selector": "ul.nav-tabs > li:first-child:hover",
+    "property": "color"
+  },
+  "FirstBorderActive": {
+    "type": "Color",
+    "selector": "ul.nav-tabs > li.active:first-child",
+    "property": "border-color"
+  },
+  "LastBorder": {
+    "type": "Border",
+    "selector": "ul.nav-tabs > li:last-child"
+  },
+  "LastBorderHover": {
+    "type": "Color",
+    "selector": "ul.nav-tabs > li:last-child:hover",
+    "property": "color"
+  },
+  "LastBorderActive": {
+    "type": "Color",
+    "selector": "ul.nav-tabs > li.active:last-child",
+    "property": "border-color"
+  },
+  "ContentBorder": {
+    "type": "Divider",
+    "selector": ".tab-content"
+  },
+  "ActiveTabBottomColor": {
+    "type": "Color",
+    "selector": ".nav-tabs > li.active",
+    "property": "border-bottom-color"
+  },
+  "ActiveTabIndicator": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".nav-tabs > li.active::after": "content:''; display:block; position: absolute; border: 10px solid transparent; left: 50%; top: 100%; transform: translate(-50%, 0)"
+      },
+      "false": {
+        ".nav-tabs > li.active::after": "display: none"
+      }
+    }
+  },
+  "ActiveTabIndicatorColor": {
+    "type": "Color",
+    "selector": ".nav-tabs > li.active::after",
+    "property": "border-top-color"
+  },
+  "ActiveTabIndicatorSize": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        ".nav-tabs > li.active::after": "border-top-width:%spx"
+      }
+    }
+  },
+  "ActiveTabIndicatorOffset": {
+    "type": "InputPair",
+    "selector": ".nav-tabs > li.active::after",
+    "properties": {
+      "first": "margin-inline-start:%spx",
+      "second": "margin-top:%spx"
+    }
+  },
+  "TabAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        ".nav-tabs > li > a:not(.item-all-link)": "justify-content:flex-start"
+      },
+      "center": {
+        ".nav-tabs > li > a:not(.item-all-link)": "justify-content:center"
+      },
+      "right": {
+        ".nav-tabs > li > a:not(.item-all-link)": "justify-content:flex-end"
+      }
+    }
+  },
+  "TabWhiteSpace": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "normal": {
+        ".nav-tabs > li > a:not(.item-all-link)": "white-space:normal"
+      },
+      "nowrap": {
+        ".nav-tabs > li > a:not(.item-all-link)": "white-space:nowrap"
+      }
+    }
+  },
+
+  "ImageVisibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".nav-tabs > li > a:not(.item-all-link) > .menu-image": "display: inline-flex"
+      },
+      "false": {
+        ".nav-tabs > li > a:not(.item-all-link) > .menu-image": "display: none"
+      }
+    }
+  },
+  "MenuImage": {
+    "type": "Variable",
+    "variable": "menu_image",
+    "selector_prefix": ".nav-tabs li"
+  },
+
+  "IconColor": {
+    "type": "Color",
+    "selector": ".nav-tabs > li > a:not(.item-all-link)::before",
+    "property": "color"
+  },
+  "IconMargin": {
+    "type": "Margin",
+    "selector": ".nav-tabs > li > a:not(.item-all-link)::before"
+  },
+  "IconMarginRight": {
+    "type": "Margin",
+    "selector": ".nav-tabs > li > a:not(.item-all-link)::after"
+  },
+  "IconColorHover": {
+    "type": "Color",
+    "selector": ".nav-tabs > li:hover > a::before, .nav-tabs > li.active > a::before, .nav-tabs > li.active > a:hover::before, .nav-tabs > li.active > a:focus::before",
+    "property": "color"
+  },
+  "IconColorActive": {
+    "type": "Color",
+    "selector": ".nav-tabs > li.active > a::before, .nav-tabs > li.active > a:hover::before, .nav-tabs > li.active > a:focus::before",
+    "property": "color"
+  },
+  "IconSize": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        ".nav-tabs > li > a:not(.item-all-link)::before": "font-size:%spx"
+      }
+    }
+  },
+  "TabsShadow": {
+    "type": "Shadow",
+    "selector": ".nav-tabs"
+  },
+  "Shadow": {
+    "type": "Shadow",
+    "selector": ".nav-tabs > li:not(.active) > a"
+  },
+  "ShadowHover": {
+    "type": "Shadow",
+    "selector": ".nav-tabs > li:not(.active) > a:hover"
+  },
+  "ShadowActive": {
+    "type": "Shadow",
+    "selector": ".nav-tabs > li.active > a"
+  },
+  "BorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".nav-tabs"
+  },
+  "ContentBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".tab-content"
+  },
+  "TabsMargin": {
+    "type": "Margin",
+    "selector": ".nav-tabs"
+  },
+  "BorderBottom-": {
+    "type": "InputNumber",
+    "selector": ".nav-tabs",
+    "property": "margin-top:%spx",
+    "value": ""
+  },
+  "TopSpacing": {
+    "type": "Gap",
+    "variableType": "gap",
+    "selector": ".nav-tabs + .tab-content",
+    "property": "--spacing:%s",
+    "value": ""
+  },
+  "Divider": {
+    "type": "Divider",
+    "selector": ".tab-content, .nav-tabs > li"
+  },
+  "ActiveBorderColor": {
+    "type": "Color",
+    "selector": ".nav-tabs > li.active",
+    "property": "border-bottom-color"
+  },
+  "Padding": {
+    "type": "Padding",
+    "selector": ".nav-tabs > li > a:not(.item-all-link)"
+  },
+  "PaddingImage": {
+    "type": "Padding",
+    "selector": ".nav-tabs > li > a:not(.item-all-link).has-image"
+  },
+  "TabsPadding": {
+    "type": "Padding",
+    "selector": ".nav-tabs",
+    "important": "true"
+  },
+
+  "LastTabFont": {
+    "type": "Font",
+    "selector": ".nav-tabs > li:last-child > a"
+  },
+  "LastTabFontHover": {
+    "type": "Font",
+    "selector": ".nav-tabs > li:last-child:hover > a"
+  },
+  "LastTabBackground": {
+    "type": "Background",
+    "selector": ".nav-tabs > li:last-child > a"
+  },
+  "LastTabBackgroundHover": {
+    "type": "Background",
+    "selector": ".nav-tabs > li:last-child:hover > a"
+  },
+  "TabWidth": {
+    "type": "InputNumber",
+    "property": "--tabs-row:%s",
+    "rules": {
+      "@": {
+        ".nav-tabs > li": "min-width:calc((100% - (%s - 1) * var(--tabs-gap, 0px)) / %s);"
+      }
+    }
+  },
+  "TabHeight": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "--tabs-height:%spx",
+    "selector": ".nav-tabs, .full-tabs-bg"
+  },
+  "FullBGHeight": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "--full-tabs-height:%spx",
+    "selector": ".nav-tabs, .full-tabs-bg"
+  },
+
+  "TabSpace": {
+    "type": "Gap",
+    "variableType": "gap",
+    "property": "--tabs-gap: %s",
+    "selector": "ul.nav-tabs"
+  },
+  "FullBG": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".full-tabs-bg": "display: var(--full-bg-display)"
+      },
+      "false": {
+        ".full-tabs-bg": "display: none"
+      }
+    }
+  },
+  "FullBGBackground": {
+    "type": "Background",
+    "selector": ".full-tabs-bg"
+  },
+
+  "FullBGShadow": {
+    "type": "Shadow",
+    "selector": ".full-tabs-bg"
+  },
+
+  "FullBGBorder": {
+    "type": "Border",
+    "selector": ".full-tabs-bg"
+  },
+
+  "ContentFullBG": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".tab-content::before": "display: var(--full-content-bg-display, block)"
+      },
+      "false": {
+        ".tab-content::before": "display: none"
+      }
+    }
+  },
+  "ContentFullBGBackground": {
+    "type": "Background",
+    "selector": ".tab-content::before"
+  },
+
+  "ContentFullBGShadow": {
+    "type": "Shadow",
+    "selector": ".tab-content::before"
+  },
+
+  "ContentFullBGBorder": {
+    "type": "Border",
+    "selector": ".tab-content::before"
+  },
+  "ContentBackground": {
+    "type": "Background",
+    "selector": ".tab-content"
+  },
+
+  "ContentPadding": {
+    "type": "Padding",
+    "selector": ".tab-content"
+  },
+
+  "ContentTypography": {
+    "type": "Variable",
+    "variable": "typography",
+    "selector_prefix": ".tab-content"
+  },
+
+  "TabsWidthVertical": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "--tabs-v-width: %spx",
+    "selector": ".nav-tabs"
+  },
+  "TabsVerticalHeight": {
+    "type": "InputNumber",
+    "value": "",
+    "rules": {
+      "@": {
+        ".tab-content, .nav-tabs": "--tabs-v-height: %spx"
+      }
+    }
+  },
+
+  "Scroll": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        "ul.nav-tabs": "--page-tabs-scroll: var(--content-gutter, 0px); flex-wrap: nowrap; --pb: 1px; --overflow-x-scroll: auto; --overflow-y-scroll: hidden;"
+      },
+      "false": {
+        "ul.nav-tabs": "--page-tabs-scroll: 0px; flex-wrap: wrap; --pb: 0; --overflow-x-scroll: initial; --overflow-y-scroll: initial;"
+      }
+    }
+  },
+
+  "PageScrollPadding": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".nav-tabs": "--page-tabs-scroll-padding: var(--page-tabs-scroll-direction, 0px);"
+      },
+      "false": {
+        ".nav-tabs": "--page-tabs-scroll-padding: 0px"
+      }
+    }
+  },
+
+  "TabsDirection": {
+    "type": "Radio",
+    "value": "horizontal",
+    "rules": {
+      "horizontal": {
+        "": "--align-tabs: var(--tabs-align, flex-start)",
+        ".full-tabs-bg":"--full-bg-display: block;",
+        ".tab-content::before":"--full-content-bg-display: block;",
+        ".nav-tabs": "min-width: initial; max-width: var(--max-width-display, 100vw); max-height: none; --page-tabs-scroll-direction: var(--page-tabs-scroll, 0px); --tab-align: auto; flex-direction:row; align-items:center; padding-bottom: var(--pb); overflow-x: var(--overflow-x-scroll); overflow-y: var(--overflow-y-scroll);",
+        ".tab-content": "flex-basis: 100%; max-height: none; overflow-y: initial; overflow-x: initial;",
+        ".nav-tabs + .tab-content": "margin-block-start: var(--spacing, 0px); margin-inline-start: 0;"
+      },
+      "vertical": {
+        "": "--align-tabs: flex-start",
+        ".full-tabs-bg":"--full-bg-display: none;",
+        ".tab-content::before":"--full-content-bg-display: none;",
+        ".nav-tabs":"min-width: fit-content; max-width: var(--tabs-v-width, max-content); max-height: var(--tabs-v-height, 100%); --page-tabs-scroll-direction: 0px; --tab-align: 0; align-self: auto; flex-direction:column; align-items:initial; padding-bottom:0; overflow-x: hidden; overflow-y: auto;",
+        ".tab-content":"flex-basis: 0; flex-grow:1; max-height: var(--tabs-v-height, 100%); overflow-y: auto; overflow-x:hidden;",
+        ".nav-tabs + .tab-content": "margin-inline-start: var(--spacing, 0px); margin-block-start: 0;"
+      }
+    }
+  },
+
+  "Display": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "default": {
+        "": "--tabs-align: flex-start",
+        "ul.nav-tabs": "--max-width-display: var(--max-width, 100vw) ",
+        "ul.nav-tabs > li": "flex-grow:0",
+        "ul.nav-tabs > li:first-child": "margin-inline-start: 0",
+        "ul.nav-tabs > li:last-child": "margin-inline-end: 0"
+      },
+      "stretch": {
+        "": "--tabs-align: flex-start",
+        "ul.nav-tabs": "--max-width-display: 100vw",
+        "ul.nav-tabs > li": "flex-grow:1",
+        "ul.nav-tabs > li:first-child": "margin-inline-start:0",
+        "ul.nav-tabs > li:last-child": "margin-inline-end:0"
+      },
+      "center": {
+        "": "--tabs-align: center",
+        "ul.nav-tabs": "--max-width-display: var(--max-width, 100vw) ",
+        "ul.nav-tabs > li": "flex-grow:0",
+        "ul.nav-tabs > li:first-child": "margin-inline-start: var(--tab-align)",
+        "ul.nav-tabs > li:last-child": "margin-inline-end: var(--tab-align)"
+      },
+      "right": {
+        "": "--tabs-align: flex-end",
+        "ul.nav-tabs": "--max-width-display: var(--max-width, 100vw) ",
+        "ul.nav-tabs > li": "flex-grow: 0",
+        "ul.nav-tabs > li:first-child": "margin-inline-start: var(--tab-align)",
+        "ul.nav-tabs > li:last-child": "margin-inline-end: 0"
+      }
+    }
+  },
+
+  "GroupWidthNew": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "tabs": {
+        "ul.nav-tabs": "--max-width: max-content;"
+      },
+      "module": {
+        "ul.nav-tabs": "--max-width: 100vw;"
+      }
+    }
+  },
+
+  "LastTabAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "group": {
+        ".nav-tabs > li:last-child": "margin-inline-start: 0;"
+      },
+      "end": {
+        ".nav-tabs > li:last-child": "margin-inline-start: auto;"
+      }
+    }
+  },
+  "DefaultScrollbarStyle": {
+    "type": "Variable",
+    "variable": "default_scrollbar",
+    "selector_prefix": "ul.nav-tabs"
+  },
+  "TrackHeight": {
+    "type": "InputNumber",
+    "value": "",
+    "rules":{
+      "@":{
+        "ul.nav-tabs::-webkit-scrollbar": "height:%spx; width: %spx",
+        ".tab-content::-webkit-scrollbar": "height:%spx; width: %spx"
+      }
+    }
+  },
+  "TrackColor": {
+    "type": "Color",
+    "selector": "ul.nav-tabs::-webkit-scrollbar, .tab-content::-webkit-scrollbar",
+    "property": "--scrollbar-track-color: %s"
+  },
+  "ScrollColor": {
+    "type": "Color",
+    "selector": "ul.nav-tabs::-webkit-scrollbar-thumb, .tab-content::-webkit-scrollbar-thumb",
+    "property": "--scrollbar-thumb-color: %s"
+  },
+  "ScrollColorHover": {
+    "type": "Color",
+    "selector": "ul.nav-tabs::-webkit-scrollbar-thumb, .tab-content::-webkit-scrollbar-thumb",
+    "property": "--scrollbar-thumb-color-hover: %s"
+  },
+  "ScrollColorActive": {
+    "type": "Color",
+    "selector": "ul.nav-tabs::-webkit-scrollbar-thumb, .tab-content::-webkit-scrollbar-thumb",
+    "property": "--scrollbar-thumb-color-active: %s"
+  },
+  "TrackBorder": {
+    "type": "Border",
+    "selector": "ul.nav-tabs::-webkit-scrollbar-thumb, .tab-content::-webkit-scrollbar-thumb"
+  },
+  "TrackBorderRadius": {
+    "type": "BorderRadius",
+    "selector": "ul.nav-tabs::-webkit-scrollbar-thumb, .tab-content::-webkit-scrollbar-thumb"
+  }
+}

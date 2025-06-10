@@ -1,0 +1,48 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Link"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "title": {
+    "type": "InputLang",
+    "value": "Sub Menu Item",
+    "php": true
+  },
+  "link": {
+    "type": "Link",
+    "php": true
+  },
+  "image": {
+    "type": "Image"
+  },
+  "icon": {
+    "type": "Icon",
+    "selector": ".module-catalog-%s .module-item-%s .subitem.module-subitem-%s::before"
+  },
+  "iconHover": {
+    "type": "Color",
+    "selector": ".module-catalog-%s .module-item-%s .subitem.module-subitem-%s:hover::before",
+    "property": "color"
+  },
+  "font": {
+    "type": "Font",
+    "selector": ".module-catalog-%s .module-item-%s .subitem.module-subitem-%s a"
+  },
+  "fontHover": {
+    "type": "Font",
+    "selector": ".module-catalog-%s .module-item-%s .subitem.module-subitem-%s:hover a"
+  },
+  "LabelBox": {
+    "include": "common_hover",
+    "selector_prefix": ".module-catalog-%s .module-item-%s .subitem.module-subitem-%s > a s"
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

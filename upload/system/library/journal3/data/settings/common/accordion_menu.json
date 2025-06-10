@@ -1,0 +1,440 @@
+{
+  "AccordionMenuStyle": {
+    "type": "Variable",
+    "variable": "menu",
+    "selector_prefix": "&.accordion-menu"
+  },
+  "Background": {
+    "type": "Background",
+    "selector": "&.accordion-menu > .j-menu"
+  },
+  "Padding": {
+    "type": "Padding",
+    "selector": "&.accordion-menu > .j-menu"
+  },
+  "Height": {
+    "type": "InputNumber",
+    "value": "",
+    "rules": {
+      "@": {
+        "&.accordion-menu > .j-menu > li": "min-height:%spx",
+        "&.accordion-menu > .j-menu > li > a": "min-height:%spx"
+      }
+    }
+  },
+  "Height2": {
+    "type": "InputNumber",
+    "value": "",
+    "rules": {
+      "@": {
+        "&.accordion-menu > .j-menu > li .j-menu > li": "min-height:%spx",
+        "&.accordion-menu > .j-menu > li .j-menu > li > a": "min-height:%spx"
+      }
+    }
+  },
+  "ItemSpacingNew1": {
+    "type": "Gap",
+    "variableType": "gap",
+    "property": "--menu-item-gap:%s",
+    "selector": "&.accordion-menu .j-menu > li.menu-item"
+  },
+  "ItemSpacingNew": {
+    "type": "Gap",
+    "variableType": "gap",
+    "property": "--menu-item-gap:%s",
+    "selector": "&.accordion-menu .j-menu .j-menu > li.menu-item"
+  },
+  "ItemPadding1": {
+    "type": "Padding",
+    "selector": "&.accordion-menu .j-menu > li > a"
+  },
+  "ItemPadding": {
+    "type": "Padding",
+    "selector": "&.accordion-menu .j-menu .j-menu > li > a"
+  },
+  "Divider": {
+    "type": "Divider",
+    "selector": "&.accordion-menu .j-menu > li"
+  },
+  "SublevelsBorder": {
+    "type": "Border",
+    "selector": "&.accordion-menu .j-menu .j-menu"
+  },
+  "SublevelsBorderImage": {
+    "type": "Border",
+    "selector": "&.accordion-menu .j-menu .has-image .j-menu"
+  },
+  "SublevelsInset": {
+    "type": "Margin",
+    "selector": "&.accordion-menu .j-menu .j-menu"
+  },
+  "SublevelsInsetImage": {
+    "type": "Margin",
+    "selector": "&.accordion-menu .j-menu .has-image .j-menu"
+  },
+  "SublevelsBorder2": {
+    "type": "Border",
+    "selector": "&.accordion-menu .j-menu .j-menu .j-menu"
+  },
+  "SublevelsBorder2Image": {
+    "type": "Border",
+    "selector": "&.accordion-menu .j-menu .has-image .j-menu .j-menu"
+  },
+  "SublevelsInset2": {
+    "type": "Margin",
+    "selector": "&.accordion-menu .j-menu .j-menu .j-menu"
+  },
+  "SublevelsInset2Image": {
+    "type": "Margin",
+    "selector": "&.accordion-menu .j-menu .has-image .j-menu .j-menu"
+  },
+  "SublevelsBorder3": {
+    "type": "Border",
+    "selector": "&.accordion-menu .j-menu .j-menu .j-menu .j-menu"
+  },
+  "SublevelsBorder3Image": {
+    "type": "Border",
+    "selector": "&.accordion-menu .j-menu .has-image .j-menu .j-menu .j-menu"
+  },
+  "SublevelsInset3": {
+    "type": "Margin",
+    "selector": "&.accordion-menu .j-menu .j-menu .j-menu .j-menu"
+  },
+  "SublevelsInset3Image": {
+    "type": "Margin",
+    "selector": "&.accordion-menu .j-menu .has-image .j-menu .j-menu .j-menu"
+  },
+  "SublevelsBorder4": {
+    "type": "Border",
+    "selector": "&.accordion-menu .j-menu .j-menu .j-menu .j-menu .j-menu"
+  },
+  "SublevelsBorder4Image": {
+    "type": "Border",
+    "selector": "&.accordion-menu .j-menu .has-image .j-menu .j-menu .j-menu .j-menu"
+  },
+  "SublevelsInset4": {
+    "type": "Margin",
+    "selector": "&.accordion-menu .j-menu .j-menu .j-menu .j-menu .j-menu"
+  },
+  "SublevelsInset4Image": {
+    "type": "Margin",
+    "selector": "&.accordion-menu .j-menu .has-image .j-menu .j-menu .j-menu .j-menu"
+  },
+  "SublevelsBorder5": {
+    "type": "Border",
+    "selector": "&.accordion-menu .j-menu .j-menu .j-menu .j-menu .j-menu .j-menu"
+  },
+  "SublevelsBorder5Image": {
+    "type": "Border",
+    "selector": "&.accordion-menu .j-menu .has-image .j-menu .j-menu .j-menu .j-menu .j-menu"
+  },
+  "SublevelsInset5": {
+    "type": "Margin",
+    "selector": "&.accordion-menu .j-menu .j-menu .j-menu .j-menu .j-menu .j-menu"
+  },
+  "SublevelsInset5Image": {
+    "type": "Margin",
+    "selector": "&.accordion-menu .j-menu .has-image .j-menu .j-menu .j-menu .j-menu .j-menu"
+  },
+
+  "AccordionOpenIcon": {
+    "type": "Icon",
+    "selector": ".open-menu em::before",
+    "value": {
+      "icon": {
+        "name": "plus2",
+        "code": "eba0"
+      }
+    }
+  },
+  "AccordionOpenIconHover": {
+    "type": "Color",
+    "selector": ".accordion-menu-item:hover > a > .open-menu em::before",
+    "property": "color",
+    "important": true
+  },
+  "AccordionOpenIconActive": {
+    "type": "Color",
+    "selector": ".accordion-menu-item.open > a > .open-menu em::before",
+    "property": "color"
+  },
+  "AccordionCloseIcon": {
+    "type": "Icon",
+    "selector": ".open-menu[aria-expanded='true'] em::before",
+    "value": {
+      "icon": {
+        "name": "minus2",
+        "code": "eb85"
+      }
+    }
+  },
+  "AccordionCloseIconHover": {
+    "type": "Color",
+    "selector": ".menu-item.open > a:hover > .open-menu[aria-expanded='true'] em::before",
+    "property": "color"
+  },
+  "AccordionCloseIconActive": {
+    "type": "Color",
+    "selector": ".menu-item.open > a > .open-menu[aria-expanded='true'] em::before",
+    "property": "color"
+  },
+  "AccordionOpenPadding": {
+    "type": "Padding",
+    "selector": ".j-menu > .menu-item > a span.open-menu"
+  },
+  "AccordionBackground": {
+    "type": "Background",
+    "selector": ".j-menu > .menu-item > a span.open-menu"
+  },
+  "AccordionBackgroundHover": {
+    "type": "Background",
+    "selector": ".j-menu > .menu-item:hover > a span.open-menu, .j-menu > .menu-item.panel-active > a span.open-menu, .accordion-menu-item.open > a > .open-menu"
+  },
+  "AccordionBorder": {
+    "type": "Border",
+    "selector": ".j-menu > .menu-item > a span.open-menu"
+  },
+  "AccordionBorderHover": {
+    "type": "Color",
+    "selector": ".j-menu > .menu-item:hover > a span.open-menu, .j-menu > .menu-item.panel-active > a span.open-menu, .accordion-menu-item.open > a > .open-menu",
+    "property": "border-color"
+  },
+  "AccordionBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".j-menu > .menu-item > a span.open-menu"
+  },
+  "AccordionOpenSize": {
+    "type": "InputPair",
+    "selector": ".j-menu > .menu-item > a span.open-menu",
+    "properties": {
+      "first": "min-width:%spx",
+      "second": "height:%spx"
+    }
+  },
+  "AccordionSubStyle1": {
+    "type": "Variable",
+    "variable": "menu",
+    "selector_prefix": "&.accordion-menu .j-menu .j-menu"
+  },
+
+  "AccordionSubPadding1": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        ".j-menu > li:not(.mega-menu) > div .j-menu > li > a": "padding-inline-start:%spx !important"
+      }
+    },
+    "rtlRules":{
+      "@":{
+        ".j-menu > li:not(.mega-menu) > div .j-menu > li > a": "padding-inline-end:%spx !important"
+      }
+    }
+  },
+  "AccordionSubPadding1Image": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        ".j-menu > li:not(.mega-menu).has-image > div .j-menu > li > a": "padding-inline-start:%spx !important"
+      }
+    },
+    "rtlRules":{
+      "@":{
+        ".j-menu > li:not(.mega-menu).has-image > div .j-menu > li > a": "padding-inline-end:%spx !important"
+      }
+    }
+  },
+  "AccordionSubStyle2": {
+    "type": "Variable",
+    "variable": "menu",
+    "selector_prefix": "&.accordion-menu .j-menu .j-menu .j-menu"
+  },
+
+
+  "AccordionSubIconMargin": {
+    "type": "Margin",
+    "selector": "&.accordion-menu .j-menu .j-menu > li > a::before"
+  },
+  "AccordionSubIconWidth": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        "&.accordion-menu .j-menu .j-menu > li > a::before": "min-width:%spx"
+      }
+    }
+  },
+  "AccordionSubIconSize": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        "&.accordion-menu .j-menu .j-menu > li > a::before": "font-size:%spx"
+      }
+    }
+  },
+
+  "AccordionSubPadding2": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        ".j-menu > li:not(.mega-menu) > div .j-menu > li > div > .j-menu > li > a": "padding-inline-start:%spx !important"
+      }
+    },
+    "rtlRules":{
+      "@":{
+        ".j-menu > li:not(.mega-menu) > div .j-menu > li > div > .j-menu > li > a": "padding-inline-end:%spx !important"
+      }
+    }
+  },
+  "AccordionSubPadding2Image": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        ".j-menu > li:not(.mega-menu).has-image > div .j-menu > li > div > .j-menu > li > a": "padding-inline-start:%spx !important"
+      }
+    },
+    "rtlRules":{
+      "@":{
+        ".j-menu > li:not(.mega-menu).has-image > div .j-menu > li > div > .j-menu > li > a": "padding-inline-end:%spx !important"
+      }
+    }
+  },
+  "AccordionSubStyle3": {
+    "type": "Variable",
+    "variable": "menu",
+    "selector_prefix": "&.accordion-menu .j-menu .j-menu .j-menu .j-menu"
+  },
+  "AccordionSubPadding3": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        ".j-menu > li:not(.mega-menu) > div .j-menu > li > div > .j-menu > li > div > .j-menu > li > a": "padding-inline-start:%spx !important"
+      }
+    },
+    "rtlRules":{
+      "@":{
+        ".j-menu > li:not(.mega-menu) > div .j-menu > li > div > .j-menu > li > div > .j-menu > li > a": "padding-inline-end:%spx !important"
+      }
+    }
+  },
+  "AccordionSubPadding3Image": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        ".j-menu > li:not(.mega-menu).has-image > div .j-menu > li > div > .j-menu > li > div > .j-menu > li > a": "padding-inline-start:%spx !important"
+      }
+    },
+    "rtlRules":{
+      "@":{
+        ".j-menu > li:not(.mega-menu).has-image > div .j-menu > li > div > .j-menu > li > div > .j-menu > li > a": "padding-inline-end:%spx !important"
+      }
+    }
+  },
+  "AccordionSubStyle4": {
+    "type": "Variable",
+    "variable": "menu",
+    "selector_prefix": "&.accordion-menu .j-menu .j-menu .j-menu .j-menu .j-menu"
+  },
+  "AccordionSubPadding4": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        ".j-menu > li:not(.mega-menu) > div .j-menu > li > div > .j-menu > li > div > .j-menu > li > div > .j-menu > li > a": "padding-inline-start:%spx !important"
+      }
+    },
+    "rtlRules":{
+      "@":{
+        ".j-menu > li:not(.mega-menu) > div .j-menu > li > div > .j-menu > li > div > .j-menu > li > div > .j-menu > li > a": "padding-inline-end:%spx !important"
+      }
+    }
+  },
+  "AccordionSubPadding4Image": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        ".j-menu > li:not(.mega-menu).has-image > div .j-menu > li > div > .j-menu > li > div > .j-menu > li > div > .j-menu > li > a": "padding-inline-start:%spx !important"
+      }
+    },
+    "rtlRules":{
+      "@":{
+        ".j-menu > li:not(.mega-menu).has-image > div .j-menu > li > div > .j-menu > li > div > .j-menu > li > div > .j-menu > li > a": "padding-inline-end:%spx !important"
+      }
+    }
+  },
+
+  "Font1": {
+    "type": "Font",
+    "selector": "&.accordion-menu .j-menu li > a, &.accordion-menu .j-menu li > a > .links-text"
+  },
+  "Font1Hover": {
+    "type": "Font",
+    "selector": "&.accordion-menu .j-menu li:hover > a, &.accordion-menu .j-menu li:hover > a > .links-text, &.accordion-menu .j-menu li.panel-active > a, &.accordion-menu .j-menu li.active > a > .links-text"
+  },
+  "Font1Active": {
+    "type": "Font",
+    "selector": "&.accordion-menu ul.j-menu li.panel-active > a, &.accordion-menu ul.j-menu li.panel-active > a > .links-text, &.accordion-menu ul.j-menu li.active > a, &.accordion-menu ul.j-menu li.active > a > .links-text"
+  },
+  "IconColor": {
+    "type": "Color",
+    "selector": "&.accordion-menu .j-menu li > a::before",
+    "property": "color"
+  },
+  "IconColorHover": {
+    "type": "Color",
+    "selector": "&.accordion-menu .j-menu li:hover > a::before",
+    "property": "color"
+  },
+  "IconColorActive": {
+    "type": "Color",
+    "selector": "&.accordion-menu .j-menu li.panel-active > a::before",
+    "property": "color"
+  },
+  "Font2": {
+    "type": "Font",
+    "selector": "&.accordion-menu .j-menu .j-menu li > a, &.accordion-menu .j-menu .j-menu li > a > .links-text"
+  },
+  "Font2Hover": {
+    "type": "Font",
+    "selector": "&.accordion-menu .j-menu .j-menu li:hover > a, &.accordion-menu .j-menu .j-menu li:hover > a > .links-text, &.accordion-menu .j-menu .j-menu li.panel-active > a, &.accordion-menu .j-menu .j-menu li.panel-active > a > .links-text, &.accordion-menu .j-menu .j-menu li.active > a, &.accordion-menu .j-menu .j-menu li.active > a > .links-text"
+  },
+  "Font2Active": {
+    "type": "Font",
+    "selector": "&.accordion-menu ul.j-menu ul.j-menu li.panel-active > a, &.accordion-menu ul.j-menu ul.j-menu li.panel-active > a > .links-text, &.accordion-menu ul.j-menu ul.j-menu li.active > a, &.accordion-menu ul.j-menu ul.j-menu li.active > a > .links-text"
+  },
+
+  "Font3": {
+    "type": "Font",
+    "selector": "&.accordion-menu .j-menu .j-menu .j-menu li > a, &.accordion-menu .j-menu .j-menu .j-menu li > a > .links-text"
+  },
+  "Font3Hover": {
+    "type": "Font",
+    "selector": "&.accordion-menu .j-menu .j-menu .j-menu li:hover > a, &.accordion-menu .j-menu .j-menu .j-menu li:hover > a > .links-text, &.accordion-menu .j-menu .j-menu .j-menu li.panel-active > a, &.accordion-menu .j-menu .j-menu li.panel-active > a > .links-text, &.accordion-menu .j-menu .j-menu .j-menu li.active > a, &.accordion-menu .j-menu .j-menu li.active > a > .links-text"
+  },
+  "Font3Active": {
+    "type": "Font",
+    "selector": "&.accordion-menu ul.j-menu ul.j-menu ul.j-menu li.panel-active > a, &.accordion-menu ul.j-menu ul.j-menu ul.j-menu li.panel-active > a > .links-text, &.accordion-menu ul.j-menu ul.j-menu ul.j-menu li.active > a, &.accordion-menu ul.j-menu ul.j-menu ul.j-menu li.active > a > .links-text"
+  },
+
+  "Font4": {
+    "type": "Font",
+    "selector": "&.accordion-menu .j-menu .j-menu .j-menu .j-menu li > a, &.accordion-menu .j-menu .j-menu .j-menu .j-menu li > a > .links-text"
+  },
+  "Font4Hover": {
+    "type": "Font",
+    "selector": "&.accordion-menu .j-menu .j-menu .j-menu .j-menu li:hover > a, &.accordion-menu .j-menu .j-menu .j-menu .j-menu li:hover > a > .links-text, &.accordion-menu .j-menu .j-menu .j-menu .j-menu li.panel-active > a, &.accordion-menu .j-menu .j-menu .j-menu li.panel-active > a > .links-text, &.accordion-menu .j-menu .j-menu .j-menu .j-menu li.active > a, &.accordion-menu .j-menu .j-menu .j-menu li.active > a > .links-text"
+  },
+  "Font4Active": {
+    "type": "Font",
+    "selector": "&.accordion-menu ul.j-menu ul.j-menu ul.j-menu ul.j-menu li.panel-active > a, &.accordion-menu ul.j-menu ul.j-menu ul.j-menu ul.j-menu li.panel-active > a > .links-text, &.accordion-menu ul.j-menu ul.j-menu ul.j-menu ul.j-menu li.active > a, &.accordion-menu ul.j-menu ul.j-menu ul.j-menu ul.j-menu li.active > a > .links-text"
+  },
+  "Font5": {
+    "type": "Font",
+    "selector": "&.accordion-menu .j-menu .j-menu .j-menu .j-menu .j-menu li > a, &.accordion-menu .j-menu .j-menu .j-menu .j-menu .j-menu li > a > .links-text"
+  },
+  "Font5Hover": {
+    "type": "Font",
+    "selector": "&.accordion-menu .j-menu .j-menu .j-menu .j-menu .j-menu li:hover > a, &.accordion-menu .j-menu .j-menu .j-menu .j-menu .j-menu li:hover > a > .links-text, &.accordion-menu .j-menu .j-menu .j-menu .j-menu .j-menu li.panel-active > a, &.accordion-menu .j-menu .j-menu .j-menu .j-menu li.panel-active > a > .links-text, &.accordion-menu .j-menu .j-menu .j-menu .j-menu .j-menu li.active > a, &.accordion-menu .j-menu .j-menu .j-menu .j-menu li.active > a > .links-text"
+  },
+  "Font5Active": {
+    "type": "Font",
+    "selector": "&.accordion-menu ul.j-menu ul.j-menu ul.j-menu ul.j-menu ul.j-menu li.panel-active > a, &.accordion-menu ul.j-menu ul.j-menu ul.j-menu ul.j-menu ul.j-menu li.panel-active > a > .links-text, &.accordion-menu ul.j-menu ul.j-menu ul.j-menu ul.j-menu ul.j-menu li.active > a, &.accordion-menu ul.j-menu ul.j-menu ul.j-menu ul.j-menu ul.j-menu li.active > a > .links-text"
+  }
+}

@@ -1,0 +1,305 @@
+{
+  "Font": {
+    "type": "Font",
+    "selector": ".btn, .btn:visited",
+    "important": true
+  },
+  "FontHover": {
+    "type": "Font",
+    "selector": ".btn:hover",
+    "important": true
+  },
+  "FontActiveColor": {
+    "type": "Color",
+    "selector": ".btn:active, .btn:hover:active",
+    "property": "color",
+    "important": true
+  },
+  "FontFocusColor": {
+    "type": "Color",
+    "selector": ".btn",
+    "property": "--focus-color: %s",
+    "important": true
+  },
+  "ContentAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "start": {
+        "&.btn": "justify-content: flex-start"
+      },
+      "center": {
+        "&.btn": "justify-content: center;"
+      },
+      "end": {
+        "&.btn": "justify-content: flex-end;"
+      }
+    }
+  },
+  "BG": {
+    "type": "Background",
+    "selector": ".btn, .tooltip"
+  },
+  "BGHover": {
+    "type": "Background",
+    "selector": ".btn:hover"
+  },
+  "BGActive": {
+    "type": "Background",
+    "selector": ".btn:active, .btn:hover:active, .btn:focus:active, .btn:focus:hover:active"
+  },
+  "BGFocus": {
+    "type": "Background",
+    "selector": ".btn:focus, .btn[disabled]",
+    "important": "true"
+  },
+  "Outline": {
+    "type": "Outline",
+    "selector": ".btn",
+    "important": true
+  },
+  "OutlineHover": {
+    "type": "Outline",
+    "selector": ".btn:hover, .btn:active:hover",
+    "important": true
+  },
+  "OutlineActive": {
+    "type": "Outline",
+    "selector": ".btn:active, .btn:hover:active, .btn:focus:active",
+    "important": true
+  },
+  "OutlineFocus": {
+    "type": "Outline",
+    "selector": ".btn:focus",
+    "important": true
+  },
+  "Border": {
+    "type": "Border",
+    "selector": ".btn"
+  },
+  "BorderHover": {
+    "type": "Color",
+    "selector": ".btn:hover, .btn:active:hover",
+    "property": "border-color"
+  },
+  "BorderActive": {
+    "type": "Color",
+    "selector": ".btn:active, .btn:hover:active, .btn:focus:active",
+    "property": "border-color",
+    "important": true
+  },
+  "BorderFocus": {
+    "type": "Color",
+    "selector": ".btn:focus",
+    "property": "border-color"
+  },
+  "Padding": {
+    "type": "Padding",
+    "selector": ".btn"
+  },
+  "Shadow": {
+    "type": "Shadow",
+    "selector": ".btn"
+  },
+  "ShadowHover": {
+    "type": "Shadow",
+    "selector": ".btn:hover"
+  },
+  "ShadowActive": {
+    "type": "Shadow",
+    "selector": ".btn:active, .btn:hover:active, .btn:focus:active"
+  },
+  "ShadowFocus": {
+    "type": "Shadow",
+    "selector": ".btn:focus"
+  },
+  "BorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".btn",
+    "important": true
+  },
+  "Scale": {
+    "type": "InputPair",
+    "selector": ".btn",
+    "value": {
+      "first": "",
+      "second": ""
+    },
+    "properties": {
+      "first": "--scale-hover: %s;",
+      "second": "--scale-active: %s"
+    }
+  },
+  "Size": {
+    "type": "InputPair",
+    "selector": ".btn",
+    "properties": {
+      "first": "min-width:%spx",
+      "second": "min-height:%spx"
+    }
+  },
+  "MaxSize": {
+    "type": "InputPair",
+    "selector": ".btn",
+    "properties": {
+      "first": "max-width:%spx",
+      "second": "max-height:%spx"
+    }
+  },
+
+  "ButtonLoadingIcon": {
+    "type": "Icon",
+    "selector": ".btn.btn.disabled::after",
+    "value": {
+      "size": "1em"
+    }
+  },
+  "ButtonLoadingType": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "spin": {
+        ".btn.btn.disabled::after": "animation: fa-spin infinite linear;"
+      },
+      "flip": {
+        ".btn.btn.disabled::after": "animation: fa-rotate infinite linear;"
+      }
+    }
+  },
+
+  "ButtonLoadingSpeed": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".btn.btn.disabled::after": "animation-duration: %sms"
+      }
+    }
+  },
+
+  "IconBoxColor": {
+    "type": "Color",
+    "selector": ".btn::before",
+    "property": "color"
+  },
+  "IconBoxColorHover": {
+    "type": "Color",
+    "selector": ".btn:hover::before",
+    "property": "color",
+    "important": true
+  },
+  "IconBoxColorActive": {
+    "type": "Color",
+    "selector": ".btn:active::before, .btn:hover:active::before, .btn:focus:active::before",
+    "property": "color",
+    "important": true
+  },
+  "IconBoxColorFocus": {
+    "type": "Color",
+    "selector": ".btn:focus::before",
+    "property": "color",
+    "important": true
+  },
+
+
+  "IconBoxBackground": {
+    "type": "Background",
+    "selector": ".btn::before"
+  },
+  "IconBoxBackgroundHover": {
+    "type": "Background",
+    "selector": ".btn:hover::before",
+    "important": true
+  },
+  "IconBoxBackgroundActive": {
+    "type": "Background",
+    "selector": ".btn:active::before, .btn:hover:active::before, .btn:focus:active::before",
+    "important": true
+  },
+  "IconBoxBackgroundFocus": {
+    "type": "Background",
+    "selector": ".btn:focus::before",
+    "important": true
+  },
+
+
+  "IconBoxBorder": {
+    "type": "Border",
+    "selector": ".btn::before"
+  },
+  "IconBoxBorderHover": {
+    "type": "Color",
+    "property": "border-color",
+    "selector": ".btn:hover::before",
+    "important": true
+  },
+  "IconBoxBorderActive": {
+    "type": "Color",
+    "property": "border-color",
+    "selector": ".btn:active::before, .btn:hover:active::before, .btn:focus:active::before",
+    "important": true
+  },
+  "IconBoxBorderFocus": {
+    "type": "Color",
+    "property": "border-color",
+    "selector": ".btn:focus::before",
+    "important": true
+  },
+  "IconBoxBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".btn::before"
+  },
+  "IconSize": {
+    "type": "InputValue",
+    "value": "",
+    "property": "font-size: %s",
+    "selector": ".btn::before"
+  },
+  "IconPosition": {
+    "type": "Radio",
+    "value": "",
+    "property": "flex-direction: %s",
+    "selector": ".btn"
+  },
+  "IconBoxMargin": {
+    "type": "Margin",
+    "selector": ".btn::before"
+  },
+  "IconBoxShadow": {
+    "type": "Shadow",
+    "selector": ".btn::before"
+  },
+  "IconBoxSize": {
+    "type": "InputPair",
+    "selector": ".btn::before",
+    "properties": {
+      "first": "width: %spx",
+      "second": "height: %spx"
+    },
+    "value": {
+      "first": "",
+      "second": ""
+    }
+  },
+  "ButtonLoadingTextVisibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "false": {
+        ".btn.disabled": "color: transparent !important",
+        ".btn[disabled]": "color: transparent !important"
+      }
+    }
+  },
+  "ButtonLoadingIconVisibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "false": {
+        ".btn.disabled::after": "display: none",
+        ".btn[disabled]::after": "display: none"
+      }
+    }
+  }
+}
+
+

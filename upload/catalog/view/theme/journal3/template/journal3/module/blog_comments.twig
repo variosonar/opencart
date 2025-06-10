@@ -1,0 +1,23 @@
+{% if items %}
+  <div class="{{ journal3.classes(classes) }}">
+    <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+    {% if title %}
+      <h3 class="title module-title">{{ title }}</h3>
+    {% endif %}
+    <div class="module-body">
+      {% for item in items %}
+        <div class="{{ journal3.classes(item.classes) }}">
+          <a class="side-image" href="{{ item.href }}">
+            <img src="https://s.gravatar.com/avatar/{{ item.avatar }}?s={{ imageSize }}" alt="{{ item.subtitle }}" width="{{ imageSize }}" height="{{ imageSize }}"/>
+          </a>
+          <div class="side-details">
+            <a class="side-title" href="{{ item.href }}">{{ item.title }}</a>
+            <div class="side-subtitle">
+              <span>{{ item.subtitle }}</span>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

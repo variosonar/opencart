@@ -1,0 +1,717 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Block"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "color_scheme": {
+    "type": "ColorScheme",
+    "php": true
+  },
+  "category": {
+    "type": "Catalog"
+  },
+  "type": {
+    "type": "Radio",
+    "value": "custom",
+    "php": true
+  },
+  "title": {
+    "type": "InputLang"
+  },
+  "itemTitle": {
+    "type": "Variable",
+    "variable": "title",
+    "selector_prefix": "div.module-blocks-%s div.module-item-%s div.block-body .title.block-title.module-title"
+  },
+  "titleMargin": {
+    "type": "Margin",
+    "selector": "div.module-blocks-%s div.module-item-%s .title.block-title",
+    "important": true
+  },
+  "titleAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        "div.module-blocks-%s .module-item-%s .title.block-title":"text-align:start",
+        "div.module-blocks-%s .module-item-%s .title.block-title::after": "margin-inline:0 auto;"
+      },
+      "center": {
+        "div.module-blocks-%s .module-item-%s .title.block-title":"text-align:center",
+        "div.module-blocks-%s .module-item-%s .title.block-title::after": "margin-inline: auto;"
+      },
+      "right": {
+        "div.module-blocks-%s .module-item-%s .title.block-title":"text-align:end",
+        "div.module-blocks-%s .module-item-%s .title.block-title::after": "margin-inline:auto 0;"
+      }
+    }
+  },
+
+  "tabType": {
+    "type": "Radio",
+    "value": "content",
+    "php": true
+  },
+  "link": {
+    "type": "Link",
+    "php": true
+  },
+  "blockLink": {
+    "type": "Link",
+    "php": true
+  },
+  "blockHeaderLink": {
+    "type": "Link",
+    "php": true
+  },
+  "tabIcon": {
+    "type": "Icon",
+    "selector": ".module-blocks-%s .tab-%s > a::before"
+  },
+  "tabIconHover2": {
+    "type": "Color",
+    "selector": ".module-blocks-%s .tab-%s:not(.active):hover > a::before",
+    "property": "color"
+  },
+  "blockBoxStyles": {
+    "include": "common_hover",
+    "selector_prefix": ".module-blocks-%s .module-body .block-item.module-item-%s"
+  },
+  "itemBoxStyles": {
+    "include": "common_hover",
+    "selector_prefix": ".module-blocks-%s .module-item-%s .block-body"
+  },
+  "itemFont": {
+    "type": "Font",
+    "selector": ".module-blocks-%s .module-item-%s .block-body .block-content"
+  },
+  "titleFont": {
+    "type": "Font",
+    "selector": "div.module-blocks-%s div.module-item-%s .title.module-title",
+    "important": "true"
+  },
+  "header": {
+    "type": "Radio",
+    "value": "none",
+    "rules": {
+      "none": {
+        ".module-blocks-%s .module-item-%s > .block-body": "height: 100%"
+      }
+    },
+    "php": true
+  },
+  "text": {
+    "type": "InputLang",
+    "value": "",
+    "php": true
+  },
+  "textHeadStyle": {
+    "type": "Variable",
+    "variable": "container",
+    "selector_prefix": ".module-blocks-%s .module-item-%s .block-header-text"
+  },
+  "image": {
+    "type": "Image"
+  },
+  "alt": {
+    "type": "InputLang",
+    "value": "",
+    "php": true
+  },
+  "imagePosition": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "top": {
+        "div.module-blocks-%s > div.module-body div.module-item.block-item > .block-body": "--display: flex; flex-direction: column; flex-wrap: nowrap; --image-split-ratio: 100%;",
+        "div.module-blocks-%s > div.module-body div.module-item.block-item > .block-body > .block-header": "float:none; margin-inline: 0",
+        "div.module-blocks-%s > div.module-body div.module-item.block-item > .block-body > .block-header + .block-wrapper": "min-width: 100%",
+        "div.module-blocks-%s > div.module-body div.module-item.block-item > .block-body::after": "display:none"
+      },
+      "bottom": {
+        "div.module-blocks-%s > div.module-body div.module-item.block-item > .block-body": "--display: flex; flex-direction: column-reverse; flex-wrap: nowrap; --image-split-ratio: 100%;",
+        "div.module-blocks-%s > div.module-body div.module-item.block-item > .block-body > .block-header": "float:none; margin-inline: 0",
+        "div.module-blocks-%s > div.module-body div.module-item.block-item > .block-body > .block-header + .block-wrapper": "min-width: 100%",
+        "div.module-blocks-%s > div.module-body div.module-item.block-item > .block-body::after": "display:none"
+      },
+      "side": {
+        "div.module-blocks-%s > div.module-body div.module-item.block-item > .block-body": "--display: flex; flex-direction: row; flex-wrap: wrap; --image-split-ratio: 50%; gap: var(--block-body-gap, 0px)",
+        "div.module-blocks-%s > div.module-body div.module-item.block-item > .block-body > .block-header": "float:none; margin-inline: 0",
+        "div.module-blocks-%s > div.module-body div.module-item.block-item > .block-body > .block-header + .block-wrapper": " min-width: auto",
+        "div.module-blocks-%s > div.module-body div.module-item.block-item > .block-body::after": "display:none"
+      },
+      "side2": {
+        "div.module-blocks-%s > div.module-body div.module-item.block-item > .block-body": "--display: flex; flex-direction: row-reverse; flex-wrap: wrap; --image-split-ratio: 50%; gap: var(--block-body-gap, 0px)",
+        "div.module-blocks-%s > div.module-body div.module-item.block-item > .block-body > .block-header": "float:none; margin-inline: 0",
+        "div.module-blocks-%s > div.module-body div.module-item.block-item > .block-body > .block-header + .block-wrapper": "min-width: auto",
+        "div.module-blocks-%s > div.module-body div.module-item.block-item > .block-body::after": "display:none"
+      },
+      "left": {
+        "div.module-blocks-%s > div.module-body div.module-item.block-item > .block-body > .block-header": "float:left; min-width: 0 !important; margin-inline-end: var(--block-body-gap, 0px)",
+        "div.module-blocks-%s > div.module-body div.module-item.block-item > .block-body": "--display: block",
+        "div.module-blocks-%s > div.module-body div.module-item.block-item > .block-body > .block-header + .block-wrapper": "min-width: auto",
+        "div.module-blocks-%s > div.module-body div.module-item.block-item > .block-body::after": "display:table"
+      },
+      "right": {
+        "div.module-blocks-%s > div.module-body div.module-item.block-item > .block-body > .block-header": "float:right; min-width: 0 !important; margin-inline-start: var(--block-body-gap, 0px)",
+        "div.module-blocks-%s > div.module-body div.module-item.block-item > .block-body": "--display: block",
+        "div.module-blocks-%s > div.module-body div.module-item.block-item > .block-body > .block-header + .block-wrapper": "min-width: auto",
+        "div.module-blocks-%s > div.module-body div.module-item.block-item > .block-body::after": "display:table"
+      }
+    }
+  },
+  "headerAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        ".module-blocks-%s .module-item-%s .block-header": "align-items:flex-start; text-align: left"
+      },
+      "center": {
+        ".module-blocks-%s .module-item-%s .block-header": "align-items:center; text-align: center"
+      },
+      "right": {
+        ".module-blocks-%s .module-item-%s .block-header": "align-items:flex-end; text-align: right"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        ".module-blocks-%s .module-item-%s .block-header": "align-items:flex-start; text-align: right"
+      },
+      "center": {
+        ".module-blocks-%s .module-item-%s .block-header": "align-items:center; text-align: center"
+      },
+      "right": {
+        ".module-blocks-%s .module-item-%s .block-header": "align-items:flex-end; text-align: left"
+      }
+    }
+  },
+  "headerAlignV": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "top": {
+        ".module-blocks-%s .module-item-%s .block-header": "justify-content:flex-start"
+      },
+      "center": {
+        ".module-blocks-%s .module-item-%s .block-header": "justify-content:center"
+      },
+      "bottom": {
+        ".module-blocks-%s .module-item-%s .block-header": "justify-content:flex-end"
+      }
+    }
+  },
+  "imageMargin": {
+    "type": "Margin",
+    "selector": ".module-blocks-%s .module-item-%s .block-header"
+  },
+  "imageBorder": {
+    "type": "Border",
+    "selector": ".module-blocks-%s .module-item-%s .block-header img"
+  },
+  "imageBorderHover": {
+    "type": "Color",
+    "selector": ".module-blocks-%s .module-item-%s .block-body:hover .block-header img",
+    "property": "border-color"
+  },
+  "imageBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-blocks-%s .module-item-%s .block-header img"
+  },
+  "imageShadow": {
+    "type": "Shadow",
+    "selector": ".module-blocks-%s .module-item-%s .block-header img"
+  },
+  "imageShadowHover": {
+    "type": "Shadow",
+    "selector": ".module-blocks-%s .module-item-%s .block-body .block-header img:hover"
+  },
+  "icon": {
+    "type": "Icon",
+    "selector": ".module-blocks-%s .module-item-%s .block-header em::before"
+  },
+  "iconHover": {
+    "type": "Color",
+    "selector": ".module-blocks-%s .module-item-%s .block-body:hover .block-header em::before",
+    "property": "color"
+  },
+  "iconSize": {
+    "type": "InputPair",
+    "selector": ".module-blocks-%s .module-item-%s .block-header em",
+    "properties": {
+      "first": "min-width: min(%spx, 100%)",
+      "second": "min-height:%spx"
+    }
+  },
+  "iconBG": {
+    "type": "Background",
+    "selector": ".module-blocks-%s .module-item-%s .block-header em"
+  },
+  "iconBGHover": {
+    "type": "Background",
+    "selector": ".module-blocks-%s .module-item-%s .block-body:hover .block-header em"
+  },
+  "iconMargin": {
+    "type": "Margin",
+    "selector": ".module-blocks-%s .module-item-%s .block-header em"
+  },
+  "iconBorder": {
+    "type": "Border",
+    "selector": ".module-blocks-%s .module-item-%s .block-header em"
+  },
+  "iconBorderHover": {
+    "type": "Color",
+    "selector": ".module-blocks-%s .module-item-%s .block-header em",
+    "property": "border-color"
+  },
+  "iconBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-blocks-%s .module-item-%s .block-header em"
+  },
+  "iconShadow": {
+    "type": "Shadow",
+    "selector": ".module-blocks-%s .module-item-%s .block-header em"
+  },
+  "iconShadowHover": {
+    "type": "Shadow",
+    "selector": ".module-blocks-%s .module-item-%s .block-body:hover .block-header em"
+  },
+  "contentType": {
+    "type": "Select",
+    "value": "text",
+    "php": true
+  },
+  "content": {
+    "type": "InputLang"
+  },
+  "shortDescriptionLimit": {
+    "type": "Input",
+    "value": "150",
+    "php": true
+  },
+  "dynamic": {
+    "type": "Input",
+    "value": "journal3/blocks_example",
+    "php": true
+  },
+  "module": {
+    "type": "Module",
+    "value": "",
+    "php": true
+  },
+  "products": {
+    "type": "Module",
+    "value": "",
+    "php": true
+  },
+  "contentWidgetHeight": {
+    "type": "Input",
+    "selector": ".module-blocks-%s .module-item-%s .block-content.block-map",
+    "property": "height: %spx"
+  },
+  "contentWidgetHeightFacebook": {
+    "type": "Input",
+    "selector": ".module-blocks-%s .module-item-%s .block-content.block-Facebook",
+    "property": "height: %spx"
+  },
+  "contentWidgetHeightTwitter": {
+    "type": "Input",
+    "selector": ".module-blocks-%s .module-item-%s .block-content.block-twitter",
+    "property": "height: %spx"
+  },
+  "contentPadding": {
+    "type": "Padding",
+    "selector": ".module-blocks-%s .module-item-%s .block-content"
+  },
+  "contentBG": {
+    "type": "Background",
+    "selector": ".module-blocks-%s .module-item-%s .block-content"
+  },
+  "contentBGHover": {
+    "type": "Background",
+    "selector": ".module-blocks-%s .module-item-%s .block-body:hover .block-content"
+  },
+  "contentBorder": {
+    "type": "Border",
+    "selector": ".module-blocks-%s .module-item-%s .block-content"
+  },
+  "contentBorderHover2": {
+    "type": "Color",
+    "selector": ".module-blocks-%s .module-item-%s .block-body:hover .block-content",
+    "property": "border-color"
+  },
+  "mapLoaderColor": {
+    "type": "Color",
+    "selector": ".module-blocks-%s .module-item-%s .block-map .journal-loading em::before",
+    "property": "color"
+  },
+  "mapOverlay": {
+    "type": "Background",
+    "selector": ".module-blocks-%s .module-item-%s .block-map::before"
+  },
+  "mapOverlayOpacity": {
+    "type": "Input",
+    "property": "opacity:%s",
+    "selector": ".module-blocks-%s .module-item-%s .block-map::before"
+  },
+  "mapOverlayOpacityHover": {
+    "type": "Input",
+    "property": "opacity:%s",
+    "selector": ".module-blocks-%s .module-item-%s .block-map:hover::before"
+  },
+  "mapOverlayOpacityTouch": {
+    "type": "Input",
+    "property": "opacity:%s",
+    "selector": ".module-blocks-%s .module-item-%s .block-map::before",
+    "touchevents": true
+  },
+  "mapOverlayBlend": {
+    "value": "",
+    "type": "Select",
+    "selector": ".module-blocks-%s .module-item-%s .block-map::before",
+    "property": "mix-blend-mode:%s"
+  },
+  "mapGrayscale": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".module-blocks-%s .module-item-%s .block-map > iframe": "filter: grayscale(1);"
+      },
+      "false": {
+        ".module-blocks-%s .module-item-%s .block-map > iframe": "filter: grayscale(0);"
+      }
+    }
+  },
+  "mapGrayscaleTouch": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".touchevents .module-blocks-%s .module-item-%s .block-map > iframe": "filter: grayscale(1);"
+      },
+      "false": {
+        ".touchevents .module-blocks-%s .module-item-%s .block-map > iframe": "filter: grayscale(0);"
+      }
+    }
+  },
+  "mapGrayscaleHover": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-blocks-%s .module-item-%s .block-map:hover > iframe": "filter: grayscale(1);"
+      },
+      "false": {
+        ".module-blocks-%s .module-item-%s .block-map:hover > iframe": "filter: grayscale(0);"
+      }
+    }
+  },
+
+  "contentShadow": {
+    "type": "Shadow",
+    "selector": ".module-blocks-%s .module-item-%s .block-content"
+  },
+  "contentShadowHover": {
+    "type": "Shadow",
+    "selector": ".module-blocks-%s .module-item-%s .block-body:hover .block-content"
+  },
+  "contentBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-blocks-%s .module-item-%s .block-content"
+  },
+  "contentTypography": {
+    "type": "Variable",
+    "variable": "typography",
+    "selector_prefix": ".module-blocks-%s .module-item-%s .block-content"
+  },
+  "itemContentWidth": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".module-blocks-%s .module-item-%s .block-body": "max-width:%spx; margin:0 auto"
+      }
+    }
+  },
+  "gallery": {
+    "type": "Module",
+    "value": "",
+    "php": true
+  },
+  "contentAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        ".module-blocks-%s .module-item-%s .block-content": "text-align:left"
+      },
+      "center": {
+        ".module-blocks-%s .module-item-%s .block-content": "text-align:center"
+      },
+      "right": {
+        ".module-blocks-%s .module-item-%s .block-content": "text-align:right"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        ".module-blocks-%s .module-item-%s .block-content": "text-align:right"
+      },
+      "center": {
+        ".module-blocks-%s .module-item-%s .block-content": "text-align:center"
+      },
+      "right": {
+        ".module-blocks-%s .module-item-%s .block-content": "text-align:left"
+      }
+    }
+  },
+  "contentAlignV": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        ".module-blocks-%s .module-item-%s .block-wrapper": "justify-content:flex-start"
+      },
+      "center": {
+        ".module-blocks-%s .module-item-%s .block-wrapper": "justify-content:center"
+      },
+      "right": {
+        ".module-blocks-%s .module-item-%s .block-wrapper": "justify-content:flex-end"
+      }
+    }
+  },
+  "expandButton": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".module-blocks-%s .module-item-%s .expand-content": "overflow:hidden"
+      },
+      "false": {
+        ".module-blocks-%s .module-item-%s .expand-content": "max-height:100%; overflow:visible"
+      }
+    },
+    "php": true
+  },
+  "expandHeight": {
+    "type": "InputNumber",
+    "value": "70",
+    "rules": {
+      "@": {
+        ".module-blocks-%s .module-item-%s .expand-content": "max-height:%spx"
+      }
+    }
+  },
+  "expandButtonStyle": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": ".module-blocks-%s .module-item-%s .block-expand&"
+  },
+  "expandButtonText": {
+    "type": "InputLang",
+    "selector": ".module-blocks-%s .module-item-%s .block-expand::after",
+    "property": "content:'%s'"
+  },
+  "expandButtonTextLess": {
+    "type": "InputLang",
+    "selector": ".module-blocks-%s .module-item-%s .block-expanded .block-expand::after",
+    "property": "content:'%s'"
+  },
+  "expandIcon": {
+    "type": "Icon",
+    "selector": ".module-blocks-%s .module-item-%s .block-expand::before"
+  },
+  "expandIconHover": {
+    "type": "Color",
+    "selector": ".module-blocks-%s .module-item-%s .block-expand:hover::before",
+    "property": "color"
+  },
+  "expandIconUp": {
+    "type": "Icon",
+    "selector": ".module-blocks-%s .module-item-%s .block-expanded .block-expand::before"
+  },
+  "expandIconHoverUp": {
+    "type": "Color",
+    "selector": ".module-blocks-%s .module-item-%s .block-expanded .block-expand:hover::before",
+    "property": "color"
+  },
+  "expandOverlayColor": {
+    "type": "Color",
+    "rules": {
+      "@": {
+        ".module-blocks-%s .module-item-%s .block-expand-overlay": "--expand-overlay: %s"
+      }
+    }
+  },
+  "blocksColumns": {
+    "type": "Radio",
+    "value": "initial",
+    "selector": ".module-blocks-%s .module-item-%s .block-content",
+    "property": "column-count:%s"
+  },
+  "blocksColumnGap": {
+    "type": "InputNumber",
+    "selector": ".module-blocks-%s .module-item-%s .block-content",
+    "property": "column-gap:%spx",
+    "value": ""
+  },
+  "blocksColumnDividerColor": {
+    "type": "Color",
+    "selector": ".module-blocks-%s .module-item-%s .block-content",
+    "property": "column-rule-color:%s"
+  },
+  "blocksColumnDividerWidth": {
+    "type": "InputNumber",
+    "selector": ".module-blocks-%s .module-item-%s .block-content",
+    "property": "column-rule-width:%spx",
+    "value": ""
+  },
+  "blocksColumnDividerStyle": {
+    "type": "Select",
+    "selector": ".module-blocks-%s .module-item-%s .block-content",
+    "property": "column-rule-style",
+    "value": ""
+  },
+  "footer": {
+    "type": "Radio",
+    "value": "none",
+    "php": true
+  },
+  "footerText": {
+    "type": "InputLang",
+    "php": true
+  },
+  "footerTextFont": {
+    "type": "Font",
+    "selector": ".module-blocks-%s .module-item-%s .block-footer"
+  },
+  "footerTextFontHover": {
+    "type": "Font",
+    "selector": ".module-blocks-%s .module-item-%s .block-body:hover .block-footer"
+  },
+  "footerBoxStyles": {
+    "include": "common",
+    "selector_prefix": ".module-blocks-%s .module-item-%s .block-footer"
+  },
+  "footerButton": {
+    "type": "InputLang",
+    "php": true
+  },
+  "footerButtonLink": {
+    "type": "Link",
+    "php": true
+  },
+  "footerButtonWidth": {
+    "type": "Radio",
+    "value": "",
+    "selector": ".module-blocks-%s .module-item-%s .block-footer .btn",
+    "property": "width:%s"
+  },
+  "footerTextAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        ".module-blocks-%s .module-item-%s .block-footer": "text-align:left"
+      },
+      "center": {
+        ".module-blocks-%s .module-item-%s .block-footer": "text-align:center"
+      },
+      "right": {
+        ".module-blocks-%s .module-item-%s .block-footer": "text-align:right"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        ".module-blocks-%s .module-item-%s .block-footer": "text-align:right"
+      },
+      "center": {
+        ".module-blocks-%s .module-item-%s .block-footer": "text-align:center"
+      },
+      "right": {
+        ".module-blocks-%s .module-item-%s .block-footer": "text-align:left"
+      }
+    }
+  },
+  "footerButtonStyle": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": ".module-blocks-%s .module-item-%s .block-footer"
+  },
+  "buttonIcon": {
+    "type": "Icon",
+    "selector": ".module-blocks-%s .module-item-%s .block-footer .btn::before"
+  },
+  "buttonIconHover": {
+    "type": "Color",
+    "selector": ".module-blocks-%s .module-item-%s .block-footer .btn:hover::before",
+    "property": "color"
+  },
+  "buttonIconRight": {
+    "type": "Icon",
+    "selector": ".module-blocks-%s .module-item-%s .block-footer .btn::after"
+  },
+  "buttonIconHoverRight": {
+    "type": "Color",
+    "selector": ".module-blocks-%s .module-item-%s .block-footer .btn:hover::after",
+    "property": "color"
+  },
+  "itemTypographyStyles": {
+    "type": "Variable",
+    "variable": "typography",
+    "selector_prefix": ".module-blocks-%s .module-item-%s.block-item .block-body"
+  },
+  "itemFormStyles": {
+    "type": "Variable",
+    "variable": "form",
+    "selector_prefix": ".module-blocks-%s .module-item-%s .block-content"
+  },
+  "itemTableStyles": {
+    "type": "Variable",
+    "variable": "table",
+    "selector_prefix": ".module-blocks-%s .module-item-%s .block-content"
+  },
+  "scale": {
+    "type": "InputSlider",
+    "value": "100",
+    "rules": {
+      "@": {
+        ".module-blocks-%s .module-item-%s .block-footer .btn": "transform: scale(calc(%s / 100))"
+      }
+    }
+  },
+  "scaleOrigin": {
+    "type": "Radio",
+    "value": "center",
+    "rules": {
+      "tl": {
+        ".module-blocks-%s .module-item-%s .block-footer .btn": "transform-origin: top left"
+      },
+      "tr": {
+        ".module-blocks-%s .module-item-%s .block-footer .btn": "transform-origin: top right"
+      },
+      "center": {
+        ".module-blocks-%s .module-item-%s .block-footer .btn": "transform-origin: center"
+      },
+      "bl": {
+        ".module-blocks-%s .module-item-%s .block-footer .btn": "transform-origin: bottom left"
+      },
+      "br": {
+        ".module-blocks-%s .module-item-%s .block-footer .btn": "transform-origin: bottom right"
+      }
+    }
+  },
+  "borderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-blocks-%s .module-item-%s .block-footer .btn",
+    "important": true
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

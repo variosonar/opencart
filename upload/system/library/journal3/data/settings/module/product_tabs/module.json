@@ -1,0 +1,106 @@
+{
+  "background": {
+    "type": "Background",
+    "selector": "div.grid-items > .grid-item.grid-module-product_tabs-%s-%s-%s-%s",
+    "important": "true"
+  },
+  "margin": {
+    "type": "Margin",
+    "selector": "div.grid-items > .grid-item.grid-module-product_tabs-%s-%s-%s-%s",
+    "important": "true"
+  },
+  "padding": {
+    "type": "Padding",
+    "selector": "div.grid-items > .grid-item.grid-module-product_tabs-%s-%s-%s-%s",
+    "important": "true"
+  },
+  "border": {
+    "type": "Border",
+    "selector": "div.grid-items > .grid-item.grid-module-product_tabs-%s-%s-%s-%s",
+    "important": "true"
+  },
+  "borderRadius": {
+    "type": "BorderRadius",
+    "selector": "div.grid-items > .grid-item.grid-module-product_tabs-%s-%s-%s-%s",
+    "important": "true"
+  },
+  "shadow": {
+    "type": "Shadow",
+    "selector": "div.grid-items > .grid-item.grid-module-product_tabs-%s-%s-%s-%s",
+    "important": "true"
+  },
+  "outline": {
+    "type": "Outline",
+    "selector": "div.grid-items > .grid-item.grid-module-product_tabs-%s-%s-%s-%s",
+    "important": "true"
+  },
+  "containerStyle": {
+    "type": "Variable",
+    "variable": "container",
+    "selector_prefix": ".grid-items > .grid-item.grid-module-product_tabs-%s-%s-%s-%s",
+    "important": "true"
+  },
+  "gridItemMinHeight": {
+    "type": "Input",
+    "value": "",
+    "property": "min-height: %spx",
+    "selector": ".grid-items > .grid-item.grid-module-product_tabs-%s-%s-%s-%s"
+  },
+  "gridItemMaxWidth": {
+    "type": "Input",
+    "value": "",
+    "property": "max-width: %spx",
+    "selector": ".grid-items > .grid-item.grid-module-product_tabs-%s-%s-%s-%s"
+  },
+  "gridItemAlignSelf": {
+    "type": "Radio",
+    "value": "",
+    "property": "align-self: %s",
+    "selector": ".grid-items > .grid-item.grid-module-product_tabs-%s-%s-%s-%s",
+    "rules": {
+      "flex-start": {
+        ".grid-items > .grid-item.grid-module-product_tabs-%s-%s-%s-%s": "align-self: %s"
+      },
+      "center": {
+        ".grid-items > .grid-item.grid-module-product_tabs-%s-%s-%s-%s": "align-self: %s"
+      },
+      "flex-end": {
+        ".grid-items > .grid-item.grid-module-product_tabs-%s-%s-%s-%s": "align-self: %s"
+      },
+      "stretch": {
+        ".grid-items > .grid-item.grid-module-product_tabs-%s-%s-%s-%s": "align-self: center;",
+        ".grid-items > .grid-item.grid-module-product_tabs-%s-%s-%s-%s > div": "width: 100%;"
+      }
+    }
+  },
+  "visibility": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "true": {
+        ".grid-items > .grid-item.grid-module-product_tabs-%s-%s-%s-%s": "display: flex"
+      },
+      "false": {
+        ".grid-items > .grid-item.grid-module-product_tabs-%s-%s-%s-%s": "display:none"
+      }
+    }
+  },
+  "order": {
+    "type": "Input",
+    "value": "",
+    "property": "order: %s",
+    "selector": ".grid-items > .grid-item.grid-module-product_tabs-%s-%s-%s-%s"
+  },
+  "gridItemZIndex": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "z-index: %s",
+    "selector": ".grid-items > .grid-item.grid-module-product_tabs-%s-%s-%s-%s"
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

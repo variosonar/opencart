@@ -1,0 +1,68 @@
+{% macro renderCatalog(context) %}
+  {% set journal3 = context.journal3 %}
+  {% for item in context.items %}
+    <div class="{{ journal3.classes(item.classes) }}">
+      <div class="item-content">
+        <a href="{{ item.href }}" class="catalog-title" {{ journal3.linkAttrs(item.link) }}>{{ item.name }}</a>
+        <div class="item-assets image-left">
+          <a href="{{ item.href }}" class="catalog-image" {{ journal3.linkAttrs(item.link) }}>
+            {% if item.image %}
+              {% if journal3.get('performanceLazyLoadImagesStatus') %}
+                <img src="{{ context.dummy_image }}" data-src="{{ item.image }}" data-image="{{ item.image }}" {% if item.image2x %}data-srcset="{{ item.image }} 1x, {{ item.image2x }} 2x"{% endif %} alt="{{ item.name }}" width="{{ context.imageDimensions.width }}" height="{{ context.imageDimensions.height }}" class="lazyload">
+              {% else %}
+                <img src="{{ item.image }}" data-image="{{ item.image }}" {% if item.image2x %}srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" data-image2x="{{ item.image2x }}"{% endif %} alt="{{ item.name }}" width="{{ context.imageDimensions.width }}" height="{{ context.imageDimensions.height }}">
+              {% endif %}
+            {% endif %}
+          </a>
+          <div class="subitems">
+            {% for sub_item in item.items %}
+              <div class="{{ journal3.classes(sub_item.classes) }} subitem" {% if sub_item.image %}data-image="{{ sub_item.image }}" data-image2x="{{ sub_item.image }} 1x, {{ sub_item.image2x }} 2x"{% endif %}>
+                <a href="{{ sub_item.href }}" {{ journal3.linkAttrs(sub_item.link) }}><span>{{ sub_item.name }}</span></a>
+              </div>
+            {% endfor %}
+            {% if item.total > item.items|length %}
+              <div class="subitem view-more">
+                <a href="{{ item.href }}"><span>{{ context.viewMoreText }}</span></a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% endmacro %}
+<div class="{{ journal3.classes(classes) }}">
+  <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+  {% if title %}
+    <h3 class="title module-title">{{ title }}</h3>
+  {% endif %}
+  <div class="module-body">
+    {% if gridType == 'ipr' and carousel %}
+      <div class="swiper" data-items-per-row='{{ itemsPerRow|json_encode(constant('JSON_FORCE_OBJECT')) }}' data-options='{{ carouselOptions|json_encode(constant('JSON_FORCE_OBJECT')) }}'>
+        <div class="swiper-container" {% if journal3.is_rtl %}dir="rtl"{% endif %}>
+          <div class="swiper-wrapper ipr-grid">
+            {{ _self.renderCatalog(_context) }}
+          </div>
+        </div>
+        <div class="swiper-buttons">
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    {% else %}
+      <div class="catalog-grid no-scroll {{ gridType }}-grid">
+        {% if gridType == 'auto' %}
+          <div class="auto-grid-items">
+            {{ _self.renderCatalog(_context) }}
+          </div>
+          <div class="auto-carousel-bar auto-carousel-controls"><div class="auto-carousel-thumb"></div><div class="auto-carousel-fill"></div></div>
+          <div class="auto-carousel-buttons auto-carousel-controls"><div class="auto-carousel-prev"><span></span></div><div class="auto-carousel-next"><span></span></div></div>
+        {% else %}
+          {{ _self.renderCatalog(_context) }}
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+

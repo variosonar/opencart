@@ -1,0 +1,105 @@
+{
+  "headerTopMenu": {
+    "type": "Module",
+    "php": true
+  },
+  "menu": {
+    "type": "Variable",
+    "variable": "menu",
+    "selector_prefix": "div.top-bar .top-menu > .j-menu >"
+  },
+  "dropdown": {
+    "type": "Variable",
+    "variable": "dropdown",
+    "selector_prefix": "div.top-bar .top-menu .dropdown"
+  },
+  "last": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".top-bar > div:not(.language-currency):first-child": "width:50%",
+        ".top-bar > div:not(.language-currency):first-child > ul > li:last-child": "position:absolute; right:0; transform: translateX(50%)"
+      },
+      "false": {
+        ".top-bar > div:not(.language-currency):first-child": "width:auto",
+        ".top-bar > div:not(.language-currency):first-child > ul > li:last-child": "position:relative; right:auto; transform: translateX(0)"
+      }
+    },
+    "rtlRules": {
+      "true": {
+        ".top-bar > div:not(.language-currency):first-child": "width:50%",
+        ".top-bar > div:not(.language-currency):first-child > ul > li:last-child": "position:absolute; left:0; transform: translateX(-50%)"
+      },
+      "false": {
+        ".top-bar > div:not(.language-currency):first-child": "width:auto",
+        ".top-bar > div:not(.language-currency):first-child > ul > li:last-child": "position:relative; left:auto; transform: translateX(0)"
+      }
+    }
+  },
+
+  "topMenuFont": {
+    "type": "Font",
+    "selector_prefix": "div.top-menu > .j-menu > li > a > .links-text"
+  },
+  "topMenuFontHover": {
+    "type": "Font",
+    "selector_prefix": "div.top-menu > .j-menu > li:hover > a > .links-text"
+  },
+  "topMenuPadding": {
+    "type": "Padding",
+    "selector_prefix": "div.top-menu > .j-menu > li > a"
+  },
+  "topMenuItemSpacingNew": {
+    "type": "Gap",
+    "variableType": "gap",
+    "property": "--menu-item-gap:%s",
+    "selector": "div.top-menu > .j-menu > li"
+  },
+
+  "topMenuDropdownAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        "div.top-bar > .top-menu:not(.language-currency):not(.third-menu) .dropdown.drop-menu > .j-dropdown": "left: calc(var(--menu-item-gap, 0px) / 2); right: auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "div.top-bar > .top-menu:not(.language-currency):not(.third-menu) .dropdown.drop-menu:first-child > .j-dropdown": "left: 0px; right: auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "div.top-bar > .top-menu:not(.language-currency):not(.third-menu) .dropdown.drop-menu:last-child > .j-dropdown": "left: calc(var(--menu-item-gap, 0px) / 2); right: auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "div.top-bar > .top-menu:not(.language-currency):not(.third-menu) .dropdown.drop-menu > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      },
+      "center": {
+        "div.top-bar > .top-menu:not(.language-currency):not(.third-menu) .dropdown.drop-menu > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "div.top-bar > .top-menu:not(.language-currency):not(.third-menu) .dropdown.drop-menu:first-child > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "div.top-bar > .top-menu:not(.language-currency):not(.third-menu) .dropdown.drop-menu:last-child > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "div.top-bar > .top-menu:not(.language-currency):not(.third-menu) .dropdown.drop-menu > .j-dropdown::before": "--triangle-right: 0px; --triangle-left: 0px"
+      },
+      "right": {
+        "div.top-bar > .top-menu:not(.language-currency):not(.third-menu) .dropdown.drop-menu > .j-dropdown": "right:calc(var(--menu-item-gap, 0px) / 2); left:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "div.top-bar > .top-menu:not(.language-currency):not(.third-menu) .dropdown.drop-menu:first-child > .j-dropdown": "right:calc(var(--menu-item-gap, 0px) / 2); left:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "div.top-bar > .top-menu:not(.language-currency):not(.third-menu) .dropdown.drop-menu:last-child > .j-dropdown": "right:0px; left:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "div.top-bar > .top-menu:not(.language-currency):not(.third-menu) .dropdown.drop-menu > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        "div.top-bar > .top-menu:not(.language-currency):not(.third-menu) .dropdown.drop-menu > .j-dropdown": "left: auto; right: calc(var(--menu-item-gap, 0px) / 2); transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "div.top-bar > .top-menu:not(.language-currency):not(.third-menu) .dropdown.drop-menu:first-child > .j-dropdown": "left: auto; right: 0px; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "div.top-bar > .top-menu:not(.language-currency):not(.third-menu) .dropdown.drop-menu:last-child > .j-dropdown": "left: auto; right: calc(var(--menu-item-gap, 0px) / 2); transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "div.top-bar > .top-menu:not(.language-currency):not(.third-menu) .dropdown.drop-menu > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      },
+      "center": {
+        "div.top-bar > .top-menu:not(.language-currency):not(.third-menu) .dropdown.drop-menu > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "div.top-bar > .top-menu:not(.language-currency):not(.third-menu) .dropdown.drop-menu:first-child > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "div.top-bar > .top-menu:not(.language-currency):not(.third-menu) .dropdown.drop-menu:last-child > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "div.top-bar > .top-menu:not(.language-currency):not(.third-menu) .dropdown.drop-menu > .j-dropdown::before": "--triangle-right: 0px; --triangle-left: 0px"
+      },
+      "right": {
+        "div.top-bar > .top-menu:not(.language-currency):not(.third-menu) .dropdown.drop-menu > .j-dropdown": "left:calc(var(--menu-item-gap, 0px) / 2); right:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "div.top-bar > .top-menu:not(.language-currency):not(.third-menu) .dropdown.drop-menu:first-child > .j-dropdown": "left:calc(var(--menu-item-gap, 0px) / 2); right:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "div.top-bar > .top-menu:not(.language-currency):not(.third-menu) .dropdown.drop-menu:last-child > .j-dropdown": "left:0px; right:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "div.top-bar > .top-menu:not(.language-currency):not(.third-menu) .dropdown.drop-menu > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      }
+    }
+
+  }
+}

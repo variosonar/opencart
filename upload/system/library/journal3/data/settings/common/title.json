@@ -1,0 +1,138 @@
+{
+  "Font": {
+    "type": "Font"
+  },
+
+  "Background": {
+    "type": "Background"
+  },
+
+  "Border": {
+    "type": "Border"
+  },
+
+  "BorderRadius": {
+    "type": "BorderRadius"
+  },
+
+  "Shadow": {
+    "type": "Shadow"
+  },
+
+  "Padding": {
+    "type": "Padding"
+  },
+
+  "Margin": {
+    "type": "Margin"
+  },
+
+  "TopSpacing": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "property": "margin-top:%s !important;"
+  },
+  "BottomSpacing": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "property": "margin-bottom:%s !important;"
+  },
+  "Truncate": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        "": "white-space: nowrap; overflow: hidden; text-overflow: ellipsis"
+      },
+      "false": {
+        "": "white-space: normal; overflow: initial; text-overflow: initial; -webkit-line-clamp: initial;"
+      },
+      "multi": {
+        "": " display: -webkit-box; -webkit-box-orient: vertical;  -webkit-line-clamp: 2; overflow:hidden"
+      }
+    }
+  },
+
+  "TruncateLines": {
+    "type": "Input",
+    "value": "",
+    "rules":{
+      "@":{
+        "": "-webkit-line-clamp: %s"
+      }
+    }
+  },
+
+  "DividerStatus": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        "&::after": "content:''; display:block; position:relative",
+        ".page-title-text::after": "content:''; display:block; position:relative",
+        ".filter-title-text::after": "content:''; display:block; position:relative"
+      },
+      "false": {
+        "&::after": "display:none",
+        ".page-title-text::after": "display:none",
+        ".filter-title-text::after": "display:none"
+      }
+    }
+  },
+  "DividerSize": {
+    "type": "InputPair",
+    "selector": "&::after, .page-title-text::after, .filter-title-text::after",
+    "properties": {
+      "first": "width:%spx",
+      "second": "height:%spx"
+    }
+  },
+  "DividerTopSpacing": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "rules":{
+      "@":{
+        "&::after": "margin-top:%s",
+        ".page-title-text::after": "margin-top:%s",
+        ".filter-title-text::after": "margin-top:%s"
+      }
+    }
+  },
+  "DividerBackground": {
+    "type": "Background",
+    "selector": "&::after, .page-title-text::after, .filter-title-text::after"
+  },
+  "DividerAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        "":"text-align:start",
+        "&::after": "margin-inline-start:0; margin-inline-end:auto;",
+        ".page-title-text":"text-align:start",
+        ".page-title-text::after": "margin-inline-start:0; margin-inline-end:auto;",
+        ".filter-title-text":"text-align:start",
+        ".filter-title-text::after": "margin-inline-start:0; margin-inline-end:auto;"
+      },
+      "center": {
+        "":"text-align:center",
+        "&::after": "margin-inline-start:auto; margin-inline-end:auto;",
+        ".page-title-text":"text-align:center",
+        ".page-title-text::after": "margin-inline-start:auto; margin-inline-end:auto;",
+        ".filter-title-text":"text-align:center",
+        ".filter-title-text::after": "margin-inline-start:auto; margin-inline-end:auto;"
+      },
+      "right": {
+        "":"text-align:end",
+        "&::after": "margin-inline-start:auto; margin-inline-end:0;",
+        ".page-title-text":"text-align:end",
+        ".page-title-text::after": "margin-inline-start:auto; margin-inline-end:0;",
+        ".filter-title-text":"text-align:end",
+        ".filter-title-text::after": "margin-inline-start:auto; margin-inline-end:0;"
+      }
+    }
+  }
+}

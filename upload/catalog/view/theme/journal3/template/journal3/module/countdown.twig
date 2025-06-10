@@ -1,0 +1,24 @@
+<div class="{{ journal3.classes(classes) }}">
+  <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+  <div class="module-body">
+    {% if title or text%}
+   <div class="module-text">
+    <div>
+      {% if title %}
+        <h3 class="title module-title">{{ title }}</h3>
+      {% endif %}
+      {% if text %}
+        <div class="countdown-text">{{ text }}</div>
+      {% endif %}
+    </div>
+   </div>
+    {% endif %}
+    <div class="countdown" data-date="{{ date }}">
+      <div>00 <span>{{ journal3.get('countdownDay') }}</span></div>
+      <div>00 <span>{{ journal3.get('countdownHour') }}</span></div>
+      <div>00 <span>{{ journal3.get('countdownMin') }}</span></div>
+      <div>00 <span>{{ journal3.get('countdownSec') }}</span></div>
+    </div>
+  </div>
+  {{ products }}
+</div>

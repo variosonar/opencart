@@ -1,0 +1,35 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Section"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "title": {
+    "type": "InputLang",
+    "php": true
+  },
+  "tabType": {
+    "type": "Radio",
+    "value": "content",
+    "php": true
+  },
+  "type": {
+    "type": "Radio",
+    "value": "top"
+  },
+  "limit": {
+    "type": "Input",
+    "value": "5"
+  },
+  "manufacturers": {
+    "type": "Input"
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

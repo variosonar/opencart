@@ -1,0 +1,53 @@
+#header {
+    display: none !important;
+}
+
+#column-left {
+    display: none !important;
+}
+
+#content {
+    margin: 0 !important;
+}
+
+
+.page {
+    padding-top: 47px !important;
+}
+
+#footer {
+    display: none !important;
+}
+
+.j-header {
+    top: 0 !important;
+    width: 100% !important;
+    position: fixed;
+    z-index: 22;
+}
+
+#column-left.active + #content .j-header .j-buttons {
+    margin-right: initial;
+}
+
+.j-content .tabs-vertical > ul {
+    height: 100vh !important;
+}
+
+.position-selectors {
+    top: 47px !important;
+    width: 100% !important;
+}
+
+.j-header > .j-button,
+.j-buttons .new-button {
+    display: none !important;
+}
+
+/*.page-skin .j-content > .tabs-vertical > ul {*/
+/*    display: none !important;*/
+/*}*/
+
+/*.page-skin .j-content > .tabs-vertical > .tab-container {*/
+/*    margin-left: 0 !important;*/
+/*}*/

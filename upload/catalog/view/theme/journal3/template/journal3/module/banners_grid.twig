@@ -1,0 +1,185 @@
+<div class="{{ journal3.classes(classes) }}">
+  <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+  {% if title %}
+    <h3 class="title module-title">{{ title }}</h3>
+  {% endif %}
+  <div class="module-body">
+    <div class="banners-grid no-scroll {% if gridType == 'auto' %}auto-grid{% endif %}">
+      {% if gridType == 'auto' %}
+        <div class="banners-wrapper auto-grid-items">
+          {% for item in items %}
+            <div class="{{ journal3.classes(item.classes) }}">
+              <div class="slide-content slide-content-{{ item.type }}">
+                {% if item.type == 'image' or item.type == 'category' or item.type == 'product' %}
+                  {% if lazyLoad or not loop.first %}
+                    <img class="lazyload" src="{{ lazyload_placeholder }}" data-srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" width="{{ item.image_width }}" height="{{ item.image_height }}" alt="{{ item.alt }}" title="{{ item.alt }}"/>
+                  {% else %}
+                    <img src="{{ item.image }}" srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" width="{{ item.image_width }}" height="{{ item.image_height }}" alt="{{ item.alt }}" title="{{ item.alt }}"/>
+                  {% endif %}
+                {% elseif item.type == 'video' %}
+                  <video class="lazyload" autoplay playsinline muted loop data-src="{{ item.videoSrc }}" {% if item.videoPoster %}poster="{{ item.videoPoster }}"{% endif %}></video>
+                {% endif %}
+
+                {% if item.link.href %}
+                  <a class="slide-link" href="{{ item.link.href }}" {{ journal3.linkAttrs(item.link) }} aria-hidden="true" tabindex="-1"></a>
+                {% endif %}
+
+                {% if item.items %}
+                  <div class="slide-cols">
+                    {% for col in ['left', 'right'] %}
+                      {% if item['items_' ~ col] %}
+                        <div class="slide-col slide-col-{{ col }}">
+                          <div class="slide-layers">
+                            {% for subitem in item['items_' ~ col] %}
+                              {% if subitem.type == 'text' %}
+                                <div class="{{ journal3.classes(subitem.classes) }}">
+                                  <div class="slide-text-layer">
+                                    <div class="slide-text-item"><span>{{ subitem.text }}</span></div>
+                                  </div>
+                                </div>
+                              {% elseif subitem.type == 'svg' %}
+                                <div class="{{ journal3.classes(subitem.classes) }}">
+                                  <div class="svg-layer">{{ subitem.svgCode }}</div>
+                                </div>
+                              {% elseif subitem.type == 'button' %}
+                                <div class="{{ journal3.classes(subitem.classes) }}">
+                                  <div class="slide-button-group">
+                                    {% if subitem.button_1_text %}
+                                      <a class="btn slide-button-1" {% if subitem.button_1_link.href %}href="{{ subitem.button_1_link.href }}" {{ journal3.linkAttrs(subitem.button_1_link) }} {% else %}href="javascript:;"{% endif %}><span>{{ subitem.button_1_text }}</span></a>
+                                    {% endif %}
+                                    {% if subitem.button_2_text %}
+                                      <a class="btn slide-button-2" {% if subitem.button_2_link.href %}href="{{ subitem.button_2_link.href }}" {{ journal3.linkAttrs(subitem.button_2_link) }} {% else %}href="javascript:;"{% endif %}><span>{{ subitem.button_2_text }}</span></a>
+                                    {% endif %}
+                                  </div>
+                                </div>
+                              {% elseif subitem.type == 'image' %}
+                                <figure class="{{ journal3.classes(subitem.classes) }}">
+                                  <img class="" src="{{ subitem.image }}" srcset="{{ subitem.image }} 1x, {{ subitem.image2x }} 2x" alt="{{ subitem.alt }}" width="{{ subitem.width }}" height="{{ subitem.height }}"/>
+                                  {% if subitem.caption %}
+                                    <figcaption><span>{{ subitem.caption }}</span></figcaption>
+                                  {% endif %}
+                                  {% if subitem.imageLink.href %}
+                                    <a class="slide-layer-image-link" href="{{ subitem.imageLink.href }}" {{ journal3.linkAttrs(subitem.imageLink) }} aria-hidden="true" tabindex="-1"></a>
+                                  {% endif %}
+                                </figure>
+                              {% elseif subitem.type == 'products' %}
+                                <div class="{{ journal3.classes(subitem.classes) }}">{{ subitem.products }}</div>
+                              {% endif %}
+                            {% endfor %}
+                          </div>
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                  {% for subitem in item['items_absolute'] %}
+                    {% if subitem.type == 'icon' %}
+                      <div class="{{ journal3.classes(subitem.classes) }}">
+                        <div class="can-rotate">
+                          <span class="has-icon"></span>
+                          {% if subitem.iconText %}
+                            <span class="has-text">{{ subitem.iconText }}</span>
+                          {% endif %}
+                        </div>
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="auto-carousel-bar auto-carousel-controls">
+          <div class="auto-carousel-thumb"></div>
+          <div class="auto-carousel-fill"></div>
+        </div>
+        <div class="auto-carousel-buttons auto-carousel-controls">
+          <div class="auto-carousel-prev"><span></span></div>
+          <div class="auto-carousel-next"><span></span></div>
+        </div>
+      {% else %}
+        <div class="banners-wrapper flex-grid">
+          {% for item in items %}
+            <div class="{{ journal3.classes(item.classes) }}">
+              <div class="slide-content slide-content-{{ item.type }}">
+                {% if item.type == 'image' or item.type == 'category' or item.type == 'product' %}
+                  {% if lazyLoad or not loop.first %}
+                    <img class="lazyload" src="{{ lazyload_placeholder }}" data-srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" width="{{ item.image_width }}" height="{{ item.image_height }}" alt="{{ item.alt }}" title="{{ item.alt }}"/>
+                  {% else %}
+                    <img src="{{ item.image }}" srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" width="{{ item.image_width }}" height="{{ item.image_height }}" alt="{{ item.alt }}" title="{{ item.alt }}"/>
+                  {% endif %}
+                {% elseif item.type == 'video' %}
+                  <video autoplay playsinline muted data-src="{{ item.videoSrc }}"></video>
+                {% endif %}
+
+                {% if item.link.href %}
+                  <a class="slide-link" href="{{ item.link.href }}" {{ journal3.linkAttrs(item.link) }} aria-hidden="true" tabindex="-1"></a>
+                {% endif %}
+
+                {% if item.items %}
+                  <div class="slide-cols">
+                    {% for col in ['left', 'right'] %}
+                      {% if item['items_' ~ col] %}
+                        <div class="slide-col slide-col-{{ col }}">
+                          <div class="slide-layers">
+                            {% for subitem in item['items_' ~ col] %}
+                              {% if subitem.type == 'text' %}
+                                <div class="{{ journal3.classes(subitem.classes) }}">
+                                  <div class="slide-text-layer">
+                                    <div class="slide-text-item"><span>{{ subitem.text }}</span></div>
+                                  </div>
+                                </div>
+                              {% elseif subitem.type == 'svg' %}
+                                <div class="{{ journal3.classes(subitem.classes) }}">
+                                  <div class="svg-layer">{{ subitem.svgCode }}</div>
+                                </div>
+                              {% elseif subitem.type == 'button' %}
+                                <div class="{{ journal3.classes(subitem.classes) }}">
+                                  <div class="slide-button-group">
+                                    {% if subitem.button_1_text %}
+                                      <a class="btn slide-button-1" {% if subitem.button_1_link.href %}href="{{ subitem.button_1_link.href }}" {{ journal3.linkAttrs(subitem.button_1_link) }} {% else %}href="javascript:;"{% endif %}><span>{{ subitem.button_1_text }}</span></a>
+                                    {% endif %}
+                                    {% if subitem.button_2_text %}
+                                      <a class="btn slide-button-2" {% if subitem.button_2_link.href %}href="{{ subitem.button_2_link.href }}" {{ journal3.linkAttrs(subitem.button_2_link) }} {% else %}href="javascript:;"{% endif %}><span>{{ subitem.button_2_text }}</span></a>
+                                    {% endif %}
+                                  </div>
+                                </div>
+                              {% elseif subitem.type == 'image' %}
+                                <figure class="{{ journal3.classes(subitem.classes) }}">
+                                  <img class="" src="{{ subitem.image }}" srcset="{{ subitem.image }} 1x, {{ subitem.image2x }} 2x" alt="{{ subitem.alt }}" width="{{ subitem.width }}" height="{{ subitem.height }}"/>
+                                  {% if subitem.caption %}
+                                    <figcaption><span>{{ subitem.caption }}</span></figcaption>
+                                  {% endif %}
+                                  {% if subitem.imageLink.href %}
+                                    <a class="slide-layer-image-link" href="{{ subitem.imageLink.href }}" {{ journal3.linkAttrs(subitem.imageLink) }} aria-hidden="true" tabindex="-1"></a>
+                                  {% endif %}
+                                </figure>
+                              {% elseif subitem.type == 'products' %}
+                                <div class="{{ journal3.classes(subitem.classes) }}">{{ subitem.products }}</div>
+                              {% endif %}
+                            {% endfor %}
+                          </div>
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                  {% for subitem in item['items_absolute'] %}
+                    {% if subitem.type == 'icon' %}
+                      <div class="{{ journal3.classes(subitem.classes) }}">
+                        <div class="can-rotate">
+                          <span class="has-icon"></span>
+                          {% if subitem.iconText %}
+                            <span class="has-text">{{ subitem.iconText }}</span>
+                          {% endif %}
+                        </div>
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

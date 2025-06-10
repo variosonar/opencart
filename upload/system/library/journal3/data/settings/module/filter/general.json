@@ -1,0 +1,594 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Filter "
+  },
+  "status": {
+    "type": "Status"
+  },
+  "schedule": {
+    "type": "Range",
+    "php": true
+  },
+  "title": {
+    "type": "InputLang",
+    "value": "Filter",
+    "php": true
+  },
+  "moduleTitle": {
+    "type": "Variable",
+    "variable": "title",
+    "selector_prefix": ".module-filter-%s .module-title"
+  },
+  "imageDimensions": {
+    "type": "ImageDimensions",
+    "value": {
+      "width": "30",
+      "height": "30"
+    },
+    "php": true
+  },
+  "filterTitleMargin": {
+    "type": "Margin",
+    "selector": "div.module-filter-%s .module-title",
+    "important": true
+  },
+  "input": {
+    "type": "Radio",
+    "value": "checkbox",
+    "php": true
+  },
+  "collapsed": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "options": {
+    "type": "Toggle",
+    "value": "true",
+    "php": true
+  },
+  "attributes": {
+    "type": "Toggle",
+    "value": "true",
+    "php": true
+  },
+  "filters": {
+    "type": "Toggle",
+    "value": "true",
+    "php": true
+  },
+  "filtersCategoryCheck": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "resetButtonVisibility": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "true": {
+        ".module-filter-%s .module-title button": "display: inline-flex"
+      },
+      "false": {
+        ".module-filter-%s .module-title button": "display: none"
+      }
+    }
+  },
+  "resetButtonStyle": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": ".reset-filter&"
+  },
+  "resetText": {
+    "type": "InputLang",
+    "value": "Clear",
+    "php": true
+  },
+  "resetIcon": {
+    "type": "Icon",
+    "selector": ".reset-filter::before",
+    "value": {
+      "icon": {
+        "name": "close2",
+        "code": "e5cd"
+      }
+    }
+  },
+  "resetIconHover": {
+    "type": "Color",
+    "selector": ".reset-filter:hover::before",
+    "property": "color"
+  },
+  "resetButtonOffset": {
+    "type": "InputPair",
+    "selector": "button.reset-filter.btn",
+    "properties": {
+      "first": "left: %spx; right: auto;",
+      "second": "top:%spx"
+    },
+    "rtlProperties": {
+      "first": "right: %spx; left: auto;",
+      "second": "top:%spx"
+    }
+  },
+  "mobileButtonStyle": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": ".mobile-filter-trigger&"
+  },
+  "mobileText": {
+    "type": "InputLang",
+    "value": "Product Filter",
+    "php": true,
+    "js": true
+  },
+  "mobileIcon": {
+    "type": "Icon",
+    "selector": ".mobile-filter-trigger::before",
+    "value": {
+      "icon": {
+        "name": "iconmonstr-control-panel-9",
+        "code": "e908"
+      }
+    }
+  },
+  "mobileIconHover": {
+    "type": "Color",
+    "selector": ".mobile-filter-trigger:hover::before",
+    "property": "color"
+  },
+  "mobileButtonOffset": {
+    "type": "InputPair",
+    "selector": ".mobile-filter-trigger",
+    "properties": {
+      "first": "--mobile-filter-side-offset:%spx",
+      "second": "--mobile-filter-bottom-offset:%spx"
+    },
+    "value": {
+      "first": "",
+      "second": ""
+    }
+  },
+  "mobileButtonBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".mobile-filter-trigger.btn",
+    "important": true
+  },
+  "mobileButtonBorder": {
+    "type": "Border",
+    "selector": ".mobile-filter-trigger.btn",
+    "important": true
+  },
+  "mobileButtonPadding": {
+    "type": "Padding",
+    "selector": ".mobile-filter-trigger.btn",
+    "important": true
+  },
+  "filterMobileWrapperStyle": {
+    "type": "Variable",
+    "variable": "mobile_wrapper",
+    "selector_prefix": ".mobile-filter-container-open"
+  },
+  "mobileButtonWidth": {
+    "type": "Radio",
+    "value": "auto",
+    "rules": {
+      "auto": {
+        ".btn.mobile-filter-trigger": "width: auto"
+      },
+      "full": {
+        ".btn.mobile-filter-trigger": "width: calc(100% - var(--content-gutter, 0px))"
+      }
+    }
+  },
+  "mobileButtonAlign": {
+    "type": "Radio",
+    "value": "center",
+    "rules": {
+      "left": {
+        ".btn.mobile-filter-trigger": "left:0; right:auto; transform: translate3d(0,0,0) scale(var(--scale-hover, 1));"
+      },
+      "center": {
+        ".btn.mobile-filter-trigger": "left:50%; right:auto; transform: translate3d(-50%,0,0) scale(var(--scale-hover, 1))"
+      },
+      "right": {
+        ".btn.mobile-filter-trigger": "right:0; left:auto; transform: translate3d(0,0,0) scale(var(--scale-hover, 1))"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        ".btn.mobile-filter-trigger": "right:20px; left:auto; transform: translate3d(0,0,0) scale(var(--scale-hover, 1))"
+      },
+      "center": {
+        ".btn.mobile-filter-trigger": "left:50%; right:auto; transform: translate3d(-50%,0,0) scale(var(--scale-hover, 1))"
+      },
+      "right": {
+        ".btn.mobile-filter-trigger": "left:20px; right:auto; transform: translate3d(0,0,0) scale(var(--scale-hover, 1))"
+      }
+    }
+  },
+  "filterAccordion": {
+    "type": "Variable",
+    "variable": "accordion",
+    "selector_prefix": ".module-filter-%s"
+  },
+  "filterCountBadge": {
+    "type": "Variable",
+    "variable": "count_badge",
+    "selector_prefix": ".module-filter-%s"
+  },
+  "filterCountBadgeOffset": {
+    "type": "InputPair",
+    "selector": ".module-filter-%s .panel-body > div > label .count-badge",
+    "properties": {
+      "first": "--x: %spx",
+      "second": "margin-top:%spx"
+    },
+    "rtlProperties": {
+      "first": "--x: calc(0px - %spx)",
+      "second": "margin-top:%spx"
+    }
+  },
+  "filterCountBadgeVisibility": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".module-filter-%s .count-badge": "display: inline-flex"
+      },
+      "false": {
+        ".module-filter-%s .count-badge": "display: none"
+      }
+    }
+  },
+  "currencyFont": {
+    "type": "Font",
+    "selector": ".module-filter-%s .currency-symbol"
+  },
+  "priceInput": {
+    "type": "Variable",
+    "variable": "form_input",
+    "selector_prefix": ".module-filter-%s .extra-controls input"
+  },
+  "pricePadding": {
+    "type": "Padding",
+    "selector": ".module-filter-%s .filter-price"
+  },
+  "sectionHeight": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".module-filter-%s .panel-body": "max-height:%spx; overflow-y:auto"
+      }
+    }
+  },
+  "sectionHeightMobile": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".mobile-filter-container .module-filter-%s .panel-body": "max-height:%spx; overflow-y:auto"
+      }
+    }
+  },
+  "itemFont": {
+    "type": "Font",
+    "selector": ".module-filter-%s label .links-text"
+  },
+  "itemFontHover": {
+    "type": "Font",
+    "selector": ".module-filter-%s label:hover .links-text"
+  },
+  "itemFontActive": {
+    "type": "Font",
+    "selector": ".module-filter-%s label input:checked + .links-text, .module-filter-%s label input:checked + img + .links-text"
+  },
+  "imageBorder": {
+    "type": "Border",
+    "selector": ".module-filter-%s label img"
+  },
+  "imageBorderHover": {
+    "type": "Color",
+    "selector": ".module-filter-%s label:hover img",
+    "property": "border-color"
+  },
+  "imageBorderActive": {
+    "type": "Color",
+    "selector": ".module-filter-%s label input:checked + img",
+    "property": "border-color"
+  },
+  "imageShadow": {
+    "type": "Shadow",
+    "selector": ".module-filter-%s label img"
+  },
+  "imageShadowHover": {
+    "type": "Shadow",
+    "selector": ".module-filter-%s label:hover img",
+    "property": "border-color"
+  },
+  "imageShadowActive": {
+    "type": "Shadow",
+    "selector": ".module-filter-%s label input:checked + img",
+    "property": "border-color"
+  },
+  "imageBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-filter-%s label img"
+  },
+  "itemPadding": {
+    "type": "Padding",
+    "selector": ".module-filter-%s .panel-body > div > label"
+  },
+  "imageBackground": {
+    "type": "Background",
+    "selector": ".module-filter-%s .panel-body > div > label img"
+  },
+  "imagePadding": {
+    "type": "Padding",
+    "selector": ".module-filter-%s .panel-body > div > label img"
+  },
+  "imagePaddingOnly": {
+    "type": "Padding",
+    "selector": ".module-filter-%s .image-only .panel-body > div > label img"
+  },
+  "itemDivider": {
+    "type": "Divider",
+    "selector": ".module-filter-%s .panel-body > div > label + label::before"
+  },
+  "itemBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-filter-%s label .filter-item-bg"
+  },
+  "itemBackground": {
+    "type": "Background",
+    "selector": ".module-filter-%s label .filter-item-bg"
+  },
+  "itemBackgroundHover": {
+    "type": "Background",
+    "selector": ".module-filter-%s label:hover .filter-item-bg"
+  },
+  "itemBackgroundActive": {
+    "type": "Background",
+    "selector": ".module-filter-%s label input:checked ~ .filter-item-bg"
+  },
+  "itemBorder": {
+    "type": "Border",
+    "selector": ".module-filter-%s label .filter-item-bg"
+  },
+  "itemBorderHover": {
+    "type": "Color",
+    "property": "border-color",
+    "selector": ".module-filter-%s label:hover .filter-item-bg"
+  },
+  "itemBorderActive": {
+    "type": "Color",
+    "property": "border-color",
+    "selector": ".module-filter-%s label input:checked ~ .filter-item-bg"
+  },
+  "itemShadow": {
+    "type": "Shadow",
+    "selector": ".module-filter-%s label .filter-item-bg"
+  },
+  "itemShadowHover": {
+    "type": "Shadow",
+    "selector": ".module-filter-%s label:hover .filter-item-bg"
+  },
+  "itemShadowActive": {
+    "type": "Shadow",
+    "selector": ".module-filter-%s label input:checked ~ .filter-item-bg"
+  },
+  "itemSpacing": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "10",
+    "selector": ".module-filter-%s .panel-body > div > label + label",
+    "property": "--item-spacing: %s"
+  },
+  "textSpacing": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "selector": ".module-filter-%s .panel-body > div",
+    "property": "--text-margin: %s"
+  },
+  "imageOnlyBorder": {
+    "type": "Border",
+    "selector": ".module-filter-%s .image-only label img"
+  },
+  "imageOnlyBorderHover": {
+    "type": "Color",
+    "selector": ".module-filter-%s .image-only label:hover img",
+    "property": "border-color"
+  },
+  "imageOnlyBorderActive": {
+    "type": "Color",
+    "selector": ".module-filter-%s .image-only label input:checked + img",
+    "property": "border-color"
+  },
+  "imageOnlyShadow": {
+    "type": "Shadow",
+    "selector": ".module-filter-%s .image-only label img"
+  },
+  "imageOnlyShadowHover": {
+    "type": "Shadow",
+    "selector": ".module-filter-%s .image-only label:hover img",
+    "property": "border-color"
+  },
+  "imageOnlyShadowActive": {
+    "type": "Shadow",
+    "selector": ".module-filter-%s .image-only label input:checked + img",
+    "property": "border-color"
+  },
+  "imageOnlyBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-filter-%s .image-only label img"
+  },
+  "imageOnlySpacing": {
+    "type": "InputNumber",
+    "value": "10",
+    "rules": {
+      "@": {
+        ".module-filter-%s .image-only .panel-body > div > label": "--item-gap: %spx; margin:calc(%spx / 2)"
+      }
+    }
+  },
+  "imageOnlyWidth": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".module-filter-%s .image-only .panel-body > div > label": "--ipr: %s; width:calc((100% - (var(--ipr, -1)) * var(--item-gap, 0px)) / var(--ipr, -1));"
+      }
+    }
+  },
+  "imageOnlySectionPadding": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".module-filter-%s .image-only .panel-body > div": "padding:%spx"
+      }
+    }
+  },
+  "imageOnlyTooltip": {
+    "type": "Variable",
+    "variable": "tooltip",
+    "selector_prefix": ".filter-tooltip-%s"
+  },
+  "priceLineHeight": {
+    "type": "InputSlider",
+    "value": "5",
+    "rules": {
+      "@": {
+        ".module-filter-%s .irs-line": "transform: scaleY(.%s);",
+        ".module-filter-%s .irs-bar": "transform: scaleY(.%s);"
+      }
+    }
+  },
+  "priceLineSpacing": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".module-filter-%s .extra-controls",
+    "property": "margin-top: %spx"
+  },
+  "priceLineBackground": {
+    "type": "Background",
+    "selector": ".module-filter-%s .irs-line"
+  },
+  "priceLineForeground": {
+    "type": "Background",
+    "selector": ".module-filter-%s .irs-bar"
+  },
+  "priceLineBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-filter-%s .irs-line, .module-filter-%s .irs-bar"
+  },
+  "priceThumbBackground": {
+    "type": "Background",
+    "selector": ".module-filter-%s .irs-slider"
+  },
+  "priceThumbBackgroundHover": {
+    "type": "Background",
+    "selector": ".module-filter-%s .irs-slider:hover"
+  },
+  "priceThumbBorder": {
+    "type": "Border",
+    "selector": ".module-filter-%s .irs-slider"
+  },
+  "priceThumbBorderHover": {
+    "type": "Color",
+    "selector": ".module-filter-%s .irs-slider:hover",
+    "property": "border-color"
+  },
+  "priceThumbBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-filter-%s .irs-slider"
+  },
+  "priceThumbShadow": {
+    "type": "Shadow",
+    "selector": ".module-filter-%s .irs-slider"
+  },
+  "priceThumbShadowHover": {
+    "type": "Shadow",
+    "selector": ".module-filter-%s .irs-slider:hover"
+  },
+  "priceSize": {
+    "type": "InputNumber",
+    "value": "15",
+    "rules": {
+      "@": {
+        ".module-filter-%s .irs-slider": "width:%spx; height:%spx"
+      }
+    }
+  },
+  "priceOffset": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".module-filter-%s .irs-slider": "transform: translateY(%spx)"
+      }
+    }
+  },
+  "filterBackgroundMobile": {
+    "type": "Background",
+    "selector": ".mobile-filter-container .module-filter-%s"
+  },
+  "filterBackground": {
+    "type": "Background",
+    "selector": ".module-filter-%s"
+  },
+  "filterAccordionPadding": {
+    "type": "Padding",
+    "selector": "div.module-filter-%s .panel-group .panel-heading a"
+  },
+  "filterAccordionPanelPadding": {
+    "type": "Padding",
+    "selector": "div.module-filter-%s .panel-group .panel-body"
+  },
+  "DefaultScrollbarStyle": {
+    "type": "Variable",
+    "variable": "default_scrollbar",
+    "selector_prefix": ".module-filter-%s .panel-body"
+  },
+  "ScrollColor": {
+    "type": "Color",
+    "selector": ".module-filter-%s .panel-body::-webkit-scrollbar-thumb, .desktop-filter-wrapper::-webkit-scrollbar-thumb",
+    "property": "--scrollbar-thumb-color: %s"
+  },
+  "ScrollColorHover": {
+    "type": "Color",
+    "selector": ".module-filter-%s .panel-body::-webkit-scrollbar-thumb, .desktop-filter-wrapper::-webkit-scrollbar-thumb",
+    "property": "--scrollbar-thumb-color: %s"
+  },
+  "ScrollColorActive": {
+    "type": "Color",
+    "selector": ".module-filter-%s .panel-body::-webkit-scrollbar-thumb, .desktop-filter-wrapper::-webkit-scrollbar-thumb",
+    "property": "--scrollbar-thumb-color: %s"
+  },
+  "ThumbBorder": {
+    "type": "Border",
+    "selector": ".module-filter-%s .panel-body::-webkit-scrollbar-thumb, .desktop-filter-wrapper::-webkit-scrollbar-thumb"
+  },
+  "ThumbBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-filter-%s .panel-body::-webkit-scrollbar-thumb, .desktop-filter-wrapper::-webkit-scrollbar-thumb"
+  },
+  "TrackColor": {
+    "type": "Color",
+    "selector": ".module-filter-%s .panel-body::-webkit-scrollbar, .desktop-filter-wrapper::-webkit-scrollbar",
+    "property": "--scrollbar-track-color: %s"
+  },
+  "TrackHeight": {
+    "type": "InputNumber",
+    "value": "",
+    "rules": {
+      "@": {
+        ".module-filter-%s .panel-body::-webkit-scrollbar": "height:%spx; width: %spx",
+        ".desktop-filter-wrapper::-webkit-scrollbar": "height:%spx; width: %spx"
+      }
+    }
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

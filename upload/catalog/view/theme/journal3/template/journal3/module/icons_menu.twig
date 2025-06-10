@@ -1,0 +1,29 @@
+{% if items %}
+  <div class="{{ journal3.classes(classes) }}">
+    <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+    {% if title %}
+      <h3 class="title module-title">{{ title }}</h3>
+    {% endif %}
+    <ul>
+      {% for item in items %}
+        <li class="{{ journal3.classes(item.classes) }}">
+          {% if item.link.href %}
+            <a {% if journal3.is_desktop and tooltipStatus %}data-toggle="tooltip-hover" data-tooltip-class="icons-menu-tooltip-{{ module_id }}" data-placement="{{ tooltipPosition }}" data-selector="true" data-title="{{ item.title }}"{% endif %} title="{{ item.title }}" href="{{ item.link.href }}" {{ journal3.linkAttrs(item.link) }}>
+              {% if item.type == 'image' %}
+                <img src="{{ item.image }}" {% if item.image2x %} srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" {% endif %} width="{{ imageDimensions.width }}" height="{{ imageDimensions.height }}" alt="{{ item.title }}" class="info-block-img"/>
+              {% endif %}
+              {{ journal3.countBadge(item.title, item.link.total, item.link.classes) }}
+            </a>
+          {% else %}
+            <a href="javascript:;">
+              {% if item.type == 'image' %}
+                <img src="{{ item.image }}" {% if item.image2x %} srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" {% endif %} width="{{ imageDimensions.width }}" height="{{ imageDimensions.height }}" alt="{{ item.title }}" class="info-block-img"/>
+              {% endif %}
+              {{ journal3.countBadge(item.title, item.link.total, item.link.classes) }}
+            </a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}

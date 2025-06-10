@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Builder"
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

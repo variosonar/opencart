@@ -1,0 +1,749 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Products"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "color_scheme_content": {
+    "type": "ColorScheme",
+    "php": true
+  },
+  "title": {
+    "type": "InputLang",
+    "php": true
+  },
+  "titleStyle": {
+    "type": "Variable",
+    "variable": "title",
+    "selector_prefix": ".module-products-%s .module-title"
+  },
+  "moduleTitle": {
+    "type": "Variable",
+    "variable": "title",
+    "selector_prefix": ".module-products-%s .module-body .module-title"
+  },
+  "titleAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        "div.module-products-%s .module-title":"text-align:start",
+        "div.module-products-%s .module-title::after": "margin-inline:0 auto;"
+      },
+      "center": {
+        "div.module-products-%s .module-title":"text-align:center",
+        "div.module-products-%s .module-title::after": "margin-inline:auto;"
+      },
+      "right": {
+        "div.module-products-%s .module-title":"text-align:end",
+        "div.module-products-%s .module-title::after": "margin-inline: auto 0;"
+      }
+    }
+  },
+  "titleMargin": {
+    "type": "Margin",
+    "selector": "module.module-products-%s .title.module-title",
+    "important": true
+  },
+  "inline_button_text": {
+    "type": "InputLang",
+    "value": "",
+    "php": true
+  },
+  "inline_button_link": {
+    "type": "Link",
+    "php": true
+  },
+  "inlineButtonStyle": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": ".module-products-%s .title-main .title-inline-btn&"
+  },
+  "inlineButtonIconLeft": {
+    "type": "Icon",
+    "selector": ".module-products-%s .title-main .title-inline-btn::before"
+  },
+  "inlineButtonIconLeftHover": {
+    "type": "Color",
+    "property": "color",
+    "selector": ".module-products-%s .title-main .title-inline-btn:hover::before"
+  },
+  "inlineButtonIconRight": {
+    "type": "Icon",
+    "selector": ".module-products-%s .title-main .title-inline-btn::after"
+  },
+  "inlineButtonIconRightHover": {
+    "type": "Color",
+    "property": "color",
+    "selector": ".module-products-%s .title-main .title-inline-btn:hover::after"
+  },
+  "inlineButtonFont": {
+    "type": "Font",
+    "selector": ".module-products-%s .title-main .title-inline-btn",
+    "important": true
+  },
+  "inlineButtonMargin": {
+    "type": "Margin",
+    "selector": ".module-products-%s .title-main .title-inline-btn"
+  },
+  "inlineButtonFontHover": {
+    "type": "Font",
+    "selector": ".module-products-%s .title-main .title-inline-btn",
+    "important": true
+  },
+  "inlineButtonPadding": {
+    "type": "Padding",
+    "selector": ".module-products-%s .title-main .title-inline-btn",
+    "important": true
+  },
+  "inlineButtonRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-products-%s .title-main .title-inline-btn",
+    "important": true
+  },
+  "inline_button_visibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-products-%s .title-main .title-inline-btn": "display: inline-flex"
+      },
+      "false": {
+        ".module-products-%s .title-main .title-inline-btn": "display: none"
+      }
+    }
+  },
+  "schedule": {
+    "type": "Range",
+    "php": true
+  },
+  "display": {
+    "type": "Radio",
+    "value": "grid",
+    "php": true
+  },
+  "sectionsDisplay": {
+    "type": "Radio",
+    "value": "blocks",
+    "php": true,
+    "device": true
+  },
+  "sectionsDisplayTablet": {
+    "type": "Radio",
+    "value": "",
+    "php": true
+  },
+  "sectionsDisplayPhone": {
+    "type": "Radio",
+    "value": "",
+    "php": true
+  },
+  "carousel": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true,
+    "device": true
+  },
+  "carouselTablet": {
+    "type": "Toggle",
+    "value": "",
+    "php": true
+  },
+  "carouselPhone": {
+    "type": "Toggle",
+    "value": "",
+    "php": true
+  },
+  "carouselStyle": {
+    "type": "Variable",
+    "variable": "carousel",
+    "selector_prefix": ".module-products-%s "
+  },
+  "accordionStyle": {
+    "type": "Variable",
+    "variable": "accordion",
+    "selector_prefix": "div.module-products-%s .module-body"
+  },
+  "tabsStyle": {
+    "type": "Variable",
+    "variable": "tabs",
+    "selector_prefix": "div.module-products-%s .module-body"
+  },
+  "TopSpacing": {
+    "type": "Gap",
+    "variableType": "gap",
+    "selector": "div.module-products-%s .module-body .nav-tabs + .tab-content",
+    "property": "--spacing:%s",
+    "value": ""
+  },
+  "LastTabAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "group": {
+        ".module-products-%s > .module-body > .tab-container > .nav-tabs > li:last-child": "margin-inline-start: 0;"
+      },
+      "end": {
+        ".module-products-%s > .module-body > .tab-container > .nav-tabs > li:last-child": "margin-inline-start: auto;"
+      }
+    }
+  },
+  "TabsAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "default": {
+        ".module-products-%s > .module-body > .tab-container": "--align-tabs: flex-start",
+        ".module-products-%s > .module-body > .tab-container > .nav-tabs": "--align-self: start; --max-width: 100vw",
+        ".module-products-%s > .module-body > .tab-container > .nav-tabs > li": "flex-grow:0",
+        ".module-products-%s > .module-body > .tab-container > .nav-tabs > li:first-child": "margin-inline-start: 0",
+        ".module-products-%s > .module-body > .tab-container > .nav-tabs > li:last-child": "margin-inline-end: 0"
+      },
+      "stretch": {
+        ".module-products-%s > .module-body > .tab-container": "--align-tabs: flex-start",
+        ".module-products-%s > .module-body > .tab-container > .nav-tabs": "--align-self: initial; --max-width: 100vw",
+        ".module-products-%s > .module-body > .tab-container > .nav-tabs > li": "flex-grow:1",
+        ".module-products-%s > .module-body > .tab-container > .nav-tabs > li:first-child": "margin-inline-start:0",
+        ".module-products-%s > .module-body > .tab-container > .nav-tabs > li:last-child": "margin-inline-end:0"
+      },
+      "center": {
+        ".module-products-%s > .module-body > .tab-container": "--align-tabs: center",
+        ".module-products-%s > .module-body > .tab-container > .nav-tabs": "--align-self: center; --max-width: fit-content",
+        ".module-products-%s > .module-body > .tab-container > .nav-tabs > li": "flex-grow:0",
+        ".module-products-%s > .module-body > .tab-container > .nav-tabs > li:first-child": "margin-inline-start: var(--tab-align)",
+        ".module-products-%s > .module-body > .tab-container > .nav-tabs > li:last-child": "margin-inline-end: var(--tab-align)"
+      },
+      "right": {
+        ".module-products-%s > .module-body > .tab-container": "--align-tabs: flex-end",
+        ".module-products-%s > .module-body > .tab-container > .nav-tabs": "--align-self: end; --max-width: 100vw",
+        ".module-products-%s > .module-body > .tab-container > .nav-tabs > li": "flex-grow:0",
+        ".module-products-%s > .module-body > .tab-container > .nav-tabs > li:first-child": "margin-inline-start: var(--tab-align)",
+        ".module-products-%s > .module-body > .tab-container > .nav-tabs > li:last-child": "margin-inline-end: 0"
+      }
+    }
+  },
+  "itemsPerRow": {
+    "type": "ItemsPerRow",
+    "selector": ".module-products-%s .ipr-grid .product-layout",
+    "php": true
+  },
+  "default": {
+    "type": "Select",
+    "value": "",
+    "php": true
+  },
+  "sectionMargin": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".module-products-%s .module-body > .module-item + .module-item": "margin-top:%spx"
+      }
+    }
+  },
+  "carouselGutter": {
+    "type": "Padding",
+    "selector": ".module-products-%s.carousel-mode .swiper-container"
+  },
+  "containerMargin": {
+    "type": "Margin",
+    "selector": ".module-products-%s:not(.carousel-mode) .module-body .ipr-grid"
+  },
+  "imageDimensions": {
+    "type": "ImageDimensions",
+    "value": {
+      "resize": "fit"
+    },
+    "php": true
+  },
+  "limit": {
+    "type": "Input",
+    "value": "5",
+    "php": true
+  },
+  "moduleProductGrid": {
+    "type": "Variable",
+    "variable": "product_grid",
+    "selector_prefix": ".module-products-%s .product-grid"
+  },
+  "moduleProductList": {
+    "type": "Variable",
+    "variable": "product_list",
+    "selector_prefix": ".module-products-%s .product-list"
+  },
+  "CountdownVisibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        "div.module-products-%s .product-grid.product-grid .has-countdown .wish-group": "--countdown-offset-buttons: var(--buttons-countdown-offset, 40px) !important",
+        "div.module-products-%s :not(.product-list) .has-countdown .product-thumb .rating": "--countdown-offset: var(--countdown-margin, 0) !important",
+        "div.module-products-%s .product-grid .has-countdown .product-thumb .btn-quickview": "--countdown-offset: var(--countdown-margin, 0) !important",
+        "div.module-products-%s .product-layout.has-countdown .product-thumb .countdown": "display:flex;"
+      },
+      "false": {
+        "div.module-products-%s .product-grid.product-grid .has-countdown .wish-group": "--countdown-offset-buttons: 0px !important",
+        "div.module-products-%s .product-grid:not(.product-list) .product-thumb .rating": "--countdown-offset: 0 !important",
+        "div.module-products-%s .product-grid .has-countdown .product-thumb .btn-quickview": "--countdown-offset: 0 !important",
+        "div.module-products-%s .product-layout.has-countdown .product-thumb .countdown": "display:none"
+      }
+    }
+  },
+  "moduleProductDescriptionLimit": {
+    "type": "Input",
+    "value": "150",
+    "php": true
+  },
+  "moduleProductStat1": {
+    "type": "Select",
+    "value": "none",
+    "php": true
+  },
+  "moduleProductStat2": {
+    "type": "Select",
+    "value": "none",
+    "php": true
+  },
+  "moduleBackground": {
+    "type": "Background",
+    "selector": ".module-products-%s .module-body"
+  },
+  "modulePadding": {
+    "type": "Padding",
+    "selector": ".module-products-%s .module-body"
+  },
+  "moduleMargin": {
+    "type": "Margin",
+    "selector": ".module-products-%s .module-body"
+  },
+  "moduleBorder": {
+    "type": "Border",
+    "selector": ".module-products-%s .module-body"
+  },
+  "moduleBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-products-%s .module-body"
+  },
+  "moduleShadow": {
+    "type": "Shadow",
+    "selector": ".module-products-%s .module-body"
+  },
+  "moduleProductQuickviewTooltip": {
+    "type": "Variable",
+    "variable": "tooltip",
+    "selector_prefix": ".module-products-%s.quickview-tooltip"
+  },
+  "moduleProductCartTooltip": {
+    "type": "Variable",
+    "variable": "tooltip",
+    "selector_prefix": ".module-products-%s.cart-tooltip"
+  },
+  "moduleProductWishlistTooltip": {
+    "type": "Variable",
+    "variable": "tooltip",
+    "selector_prefix": ".module-products-%s.wishlist-tooltip"
+  },
+  "moduleProductCompareTooltip": {
+    "type": "Variable",
+    "variable": "tooltip",
+    "selector_prefix": ".module-products-%s.compare-tooltip"
+  },
+  "moduleProductExtraTooltip": {
+    "type": "Variable",
+    "variable": "tooltip",
+    "selector_prefix": ".module-products-%s.extra-tooltip"
+  },
+  "gridType": {
+    "type": "Radio",
+    "value": "ipr",
+    "php": true
+  },
+  "flexItems": {
+    "type": "InputPair",
+    "selector": ".module-products-%s .flex-grid",
+    "properties": {
+      "first": "--flex-grid-width: %spx",
+      "second": "--flex-grid-max-col: calc((100% - (%s - 1) * var(--flex-grid-gap, 0px)) / %s)"
+    },
+    "value": {
+      "first": "",
+      "second": ""
+    }
+  },
+  "flexItemGap": {
+    "type": "Gap",
+    "variableType": "gap",
+    "selector": ".module-products-%s .flex-grid",
+    "property": "--flex-grid-gap:%s"
+  },
+  "flexGrow": {
+    "type": "Radio",
+    "value": "1",
+    "selector": ".module-products-%s .flex-grid > *",
+    "property": "flex-grow: %s"
+  },
+  "flexAlign": {
+    "type": "Radio",
+    "value": "",
+    "selector": ".module-products-%s .flex-grid",
+    "property": "justify-content: %s"
+  },
+  "autoGridStyle": {
+    "type": "Variable",
+    "variable": "auto_grid",
+    "selector_prefix": ".module-products-%s .auto-grid "
+  },
+  "autoGrid": {
+    "type": "InputTriple",
+    "selector": "div.module-products-%s .auto-grid",
+    "properties": {
+      "first": "--grid-min-width: %spx",
+      "minCol": "--grid-min-col: %s",
+      "second": "--grid-max-col: %s",
+      "third": "--grid-gap: %s",
+      "fourth": "--auto-grow-type: auto-%s; --item-width: var(--item-%s)"
+    },
+    "value": {
+      "first": "",
+      "minCol": "",
+      "second": "",
+      "third": "",
+      "fourth": ""
+    }
+  },
+  "centerInsufficient": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".module-products-%s": "--center-insufficient: var(--center-insufficient-carousel, initial); --inline-margin: auto"
+      },
+      "false": {
+        ".module-products-%s": "--center-insufficient: initial; --inline-margin: initial"
+      }
+    }
+  },
+  "autoCarousel": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".module-products-%s": "--center-insufficient-carousel: max-content; --align-to-content-title: max(0px, calc(50% - var(--content-max-width) / 2 + var(--content-gutter))); --align-to-content: max(var(--content-gutter), calc((100vw - var(--scrollW, 0px) - var(--content-max-width)) / 2) + var(--content-gutter, 0px)); --align-to-content-cancel: calc(var(--align-to-content) * -1 + var(--content-gutter, 0px));",
+        ".module-products-%s .auto-grid": "margin-inline-start: calc(0px - var(--scroll-padding, 0px)); margin-inline-end: calc(0px - var(--scroll-padding, 0px)); --fr: var(--item-width, var(--grid-min-width))",
+        ".module-products-%s .auto-grid .auto-grid-items": "cursor: var(--cursor); grid-auto-flow: column; overflow-x:auto; overflow-y:hidden; padding-inline-start:var(--scroll-padding, 0px); padding-inline-end: var(--scroll-padding, 0px); padding-top:var(--top-padding, 0px); padding-bottom: var(--bottom-padding, 0px)",
+        ".module-products-%s .auto-grid .auto-carousel-controls": "display:flex;",
+        ".module-products-%s .auto-grid .auto-carousel-items::after": "display:block;",
+        ".module-products-%s .auto-grid .auto-grid-items.is-gliding a": "pointer-events: none"
+      },
+      "false": {
+        ".module-products-%s": "--center-insufficient-carousel: initial;",
+        ".module-products-%s .auto-grid": "margin-inline-start: unset; margin-inline-end: unset; --fr: 1fr;",
+        ".module-products-%s .auto-grid .auto-grid-items": "cursor: auto; grid-auto-flow: row dense; overflow-x:initial; padding-inline-start:unset; padding-inline-end: unset",
+        ".module-products-%s .auto-grid .auto-carousel-controls": "display:none;",
+        ".module-products-%s .auto-grid .auto-carousel-items::after": "display:none;",
+        ".module-products-%s .auto-grid .auto-grid-items.is-gliding a": "pointer-events: auto"
+      }
+    }
+  },
+  "autoCarouselRows": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".module-products-%s .auto-grid .auto-grid-items": " --grid-rows: %s"
+      }
+    }
+  },
+  "AutoCarouselButtonsVisibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-products-%s .auto-grid > .auto-carousel-buttons": "visibility: visible;"
+      },
+      "false": {
+        ".module-products-%s .auto-grid > .auto-carousel-buttons": "visibility: hidden;"
+      }
+    }
+  },
+  "FaderStatus": {
+    "type": "Radio",
+    "value": "off",
+    "rules": {
+      "off": {
+        ".module-products-%s .auto-grid > .auto-grid-items::before": "--fader-status: 0; display: none",
+        ".module-products-%s .auto-grid > .auto-grid-items::after": "--fader-status: 0; display: none"
+      },
+      "both": {
+        ".module-products-%s .auto-grid > .auto-grid-items::before": "--fader-status: 1; display: block",
+        ".module-products-%s .auto-grid > .auto-grid-items::after": "--fader-status: 1; display: block"
+      },
+      "start": {
+        ".module-products-%s .auto-grid > .auto-grid-items::before": "--fader-status: 1; display: block",
+        ".module-products-%s .auto-grid > .auto-grid-items::after": "--fader-status: 0; display: none"
+      },
+      "end": {
+        ".module-products-%s .auto-grid > .auto-grid-items::before": "--fader-status: 0; display: none",
+        ".module-products-%s .auto-grid > .auto-grid-items::after": "--fader-status: 1; display: block"
+      }
+    }
+  },
+  "FaderColor": {
+    "type": "Color",
+    "selector": ".module-products-%s .auto-grid .auto-grid-items::before, .module-products-%s .auto-grid .auto-grid-items::after",
+    "property": "--fader-color: %s"
+  },
+  "FaderWidth": {
+    "type": "InputPair",
+    "selector": ".module-products-%s .auto-grid .auto-grid-items::before, .module-products-%s .auto-grid .auto-grid-items::after",
+    "properties": {
+      "first": "--fader-width-left:%spx",
+      "second": "--fader-width-right:%spx",
+      "value": {
+        "first": "",
+        "second": ""
+      }
+    }
+  },
+  "autoCarouselStyle": {
+    "type": "Variable",
+    "variable": "auto_carousel",
+    "selector_prefix": ".module-products-%s "
+  },
+  "AutoCarouselScrollerType": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "custom": {
+        "div.module-products-%s .auto-grid": "--scrollbar-top-space: var(--scrollbar-top-spacing, 0px); --scrollbar-bottom-space: var(--scrollbar-bottom-spacing, 0px)",
+        "div.module-products-%s .auto-carousel-bar": "display:flex; margin: var(--scrollbar-top-spacing, 0) max(0px, var(--scroll-padding, 0px)) var(--scrollbar-bottom-spacing, 0) max(0px, var(--scroll-padding, 0px))",
+        "div.module-products-%s .auto-carousel-controls.auto-carousel-bar": "max-height: none"
+      },
+      "none": {
+        "div.module-products-%s .auto-grid": "--scrollbar-top-space: 0px; --scrollbar-bottom-space: 0px",
+        "div.module-products-%s .auto-carousel-bar": "display:none; margin: 0;",
+        "div.module-products-%s .auto-carousel-controls.auto-carousel-bar": "max-height: 0"
+      }
+    }
+  },
+  "AutoCarouselButtonPosition": {
+    "type": "Select",
+    "value": "",
+    "rules": {
+      "tl": {
+        "div.module-products-%s .auto-grid > .auto-carousel-buttons": "align-items:center; justify-content:flex-start; flex-direction:row; position:relative; height:0; transform: translate3d(0,calc(var(--auto-carousel-button-height,40px) / 2 * -1), 0); top:0; margin-top: 0px;",
+        "div.module-products-%s .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        "div.module-products-%s .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "tc": {
+        "div.module-products-%s .auto-grid > .auto-carousel-buttons": "align-items:center; justify-content:center; flex-direction:row; position:relative; height:0; transform: translate3d(0,calc(var(--auto-carousel-button-height,40px) / 2 * -1), 0); top:0; margin-top: 0px;",
+        "div.module-products-%s .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        "div.module-products-%s .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "tr": {
+        "div.module-products-%s .auto-grid > .auto-carousel-buttons": "align-items:center; justify-content:flex-end; flex-direction:row; position:relative; height:0; transform: translate3d(0,calc(var(--auto-carousel-button-height,40px) / 2 * -1), 0); top:0; margin-top: 0px;",
+        "div.module-products-%s .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        "div.module-products-%s .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "ta": {
+        "div.module-products-%s .auto-grid > .auto-carousel-buttons": "align-items:center; justify-content:space-between; flex-direction:row; position:relative; height:0; transform: translate3d(0,calc(var(--auto-carousel-button-height,40px) / 2 * -1), 0); top:0; margin-top: 0px;",
+        "div.module-products-%s .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        "div.module-products-%s .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(calc(var(--auto-carousel-button-x, 0px) * -1), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "cl": {
+        "div.module-products-%s .auto-grid > .auto-carousel-buttons": "align-items:flex-start; justify-content:flex-start; flex-direction:column; position:absolute; top:50%; height:auto; transform: translate3d(0,-50%,0); margin-top: var(--buttons-offset, 0px)",
+        "div.module-products-%s .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        "div.module-products-%s .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "cr": {
+        "div.module-products-%s .auto-grid > .auto-carousel-buttons": "align-items:flex-end; justify-content:flex-start; flex-direction:column; position:absolute; top:50%; height:auto; transform: translate3d(0,-50%,0); margin-top: var(--buttons-offset, 0px)",
+        "div.module-products-%s .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        "div.module-products-%s .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "ca": {
+        "div.module-products-%s .auto-grid > .auto-carousel-buttons": "align-items:center; justify-content:space-between; flex-direction:row; position:absolute; top:50%; height:auto; transform: translate3d(0,-50%,0); margin-top: var(--buttons-offset, 0px)",
+        "div.module-products-%s .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        "div.module-products-%s .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(calc(var(--auto-carousel-button-x, 0px) * -1), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      }
+    }
+  },
+  "AutoCarouselButtonOffset": {
+    "type": "InputPair",
+    "selector": "div.module-products-%s .auto-grid",
+    "properties": {
+      "first": "--auto-carousel-button-x: %spx",
+      "second": "--auto-carousel-button-y: %spx"
+    },
+    "rtlProperties": {
+      "first": "--auto-carousel-button-x: calc(%spx * -1)",
+      "second": "--auto-carousel-button-y: %spx"
+    }
+  },
+  "AutoCarouselPadding": {
+    "type": "InputPair",
+    "selector": "div.module-products-%s .auto-grid",
+    "properties": {
+      "first": "--top-padding:%spx",
+      "second": "--bottom-padding:%spx",
+      "value": {
+        "first": "",
+        "second": ""
+      }
+    }
+  },
+  "AutoCarouselSnapAlign": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "start": {
+        "div.module-products-%s .auto-grid-items > *": "scroll-snap-align:start"
+      },
+      "center": {
+        "div.module-products-%s .auto-grid-items > *": "scroll-snap-align:center"
+      },
+      "end": {
+        "div.module-products-%s .auto-grid-items > *": "scroll-snap-align:end"
+      },
+      "none": {
+        "div.module-products-%s .auto-grid-items > *": "scroll-snap-align:none"
+      }
+    },
+    "touchevents": true
+  },
+  "AutoCarouselSnapPaddingCustom": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "selector": "div.module-products-%s .auto-grid",
+    "property": "--scroll-padding-custom: %s !important"
+  },
+  "AutoCarouselSnapPadding": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "auto": {
+        "div.module-products-%s .auto-grid": "--scroll-padding: var(--scroll-padding-custom, var(--element-padding, 0px));"
+      },
+      "gap": {
+        "div.module-products-%s .auto-grid": "--scroll-padding: var(--scroll-padding-custom, var(--grid-gap, 0px));"
+      },
+      "true": {
+        "div.module-products-%s .auto-grid": "--scroll-padding: var(--scroll-padding-custom, var(--content-gutter, 0px));"
+      },
+      "false": {
+        "div.module-products-%s .auto-grid": "--scroll-padding: var(--scroll-padding-custom, 0px);"
+      }
+    }
+  },
+  "AutoCarouselScrollBy": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": "div.module-products-%s .auto-grid .auto-grid-items",
+    "property": "--scroll-by:%s"
+  },
+  "AutoScrollbarStyle": {
+    "type": "Variable",
+    "variable": "auto_scrollbar",
+    "selector_prefix": ".module-products-%s "
+  },
+  "AutoScrollbarTrackSpacing": {
+    "type": "InputPair",
+    "selector": "div.module-products-%s .auto-grid",
+    "properties": {
+      "first": "--scrollbar-top-spacing: %spx",
+      "second": "--scrollbar-bottom-spacing: %spx"
+    },
+    "value": {
+      "first": "",
+      "second": ""
+    }
+  },
+  "AutoCarouselButtonsWidth-hold": {
+    "type": "Toggle",
+    "value": "content",
+    "rules": {
+      "full": {
+        "div.module-products-%s": "--auto-carousel-controls-max-width: calc(100% - var(--scroll-padding, 0px) * 2)"
+      },
+      "content": {
+        "div.module-products-%s": "--auto-carousel-controls-max-width: min(min(var(--content-max-width, 100%) - var(--scroll-padding, 0px) * 2, var(--content-max-width, 100%) - var(--content-gutter, 0) * 2), 100% - var(--scroll-padding, 0px) * 2)"
+      }
+    }
+  },
+  "AutoScrollbarAlign": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "start": {
+        "div.module-products-%s .auto-carousel-bar": "margin-inline-start:max(0px, var(--scroll-padding,0px)); margin-inline-end: auto;"
+      },
+      "center": {
+        "div.module-products-%s .auto-carousel-bar": "margin-inline-start:auto; margin-inline-end: auto;"
+      },
+      "end": {
+        "div.module-products-%s .auto-carousel-bar": "margin-inline-start:auto; margin-inline-end: max(0px, var(--scroll-padding,0px));"
+      }
+    }
+  },
+  "AutoScrollbarTrackMaxWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": "div.module-products-%s .auto-carousel-bar",
+    "property": "--auto-scroll-max-width:%spx"
+  },
+  "AutoScrollbarTrackWidth": {
+    "type": "InputNumber",
+    "selector": "div.module-products-%s .auto-carousel-bar",
+    "value": "",
+    "property": "--width-reduction:%spx"
+  },
+  "autoGridContainerAlignToContentTitle-hold": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        "div.module-products-%s.align-to-content": "--align-to-content-title: 0px !important"
+      }
+    }
+  },
+  "autoGridContainerAlignToContent": {
+    "type": "Toggle",
+    "value": "false"
+  },
+  "autoGridContainerPadding-hold": {
+    "type": "Padding",
+    "selector": "div.module-products-%s .auto-grid .auto-grid-items"
+  },
+  "autoGridContainerMargin": {
+    "type": "Margin",
+    "selector": "div.module-products-%s .auto-grid"
+  },
+  "autoGridContainerBackground": {
+    "type": "Background",
+    "selector": "div.module-products-%s .auto-grid .auto-grid-items"
+  },
+  "autoGridContainerShadow": {
+    "type": "Shadow",
+    "selector_prefix": "div.module-products-%s .auto-grid .auto-grid-items"
+  },
+  "autoGridContainerWidthOuter": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "max-width: %spx",
+    "selector_prefix": "div.module-products-%s .auto-grid"
+  },
+  "autoGridContainerMarginOuter": {
+    "type": "Margin",
+    "selector_prefix": "div.module-products-%s .auto-grid"
+  },
+  "autoGridContainerPaddingOuter": {
+    "type": "Padding",
+    "selector_prefix": "div.module-products-%s .auto-grid"
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Section"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "title": {
+    "type": "InputLang",
+    "php": true
+  },
+  "tabType": {
+    "type": "Radio",
+    "value": "content",
+    "php": true
+  },
+  "filter": {
+    "type": "ProductFilter",
+    "php": true
+  },
+  "CounterVisibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-side_products-%s .module-item-%s .side-products .side-product::before": "display: flex"
+      },
+      "false": {
+        ".module-side_products-%s .module-item-%s .side-products .side-product::before": "display: none"
+      }
+    }
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

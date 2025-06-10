@@ -1,0 +1,462 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Slide"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "color_scheme": {
+    "type": "ColorScheme",
+    "php": true
+  },
+  "type": {
+    "type": "Radio",
+    "value": "image",
+    "php": true
+  },
+  "image": {
+    "type": "ImageLang"
+  },
+  "videoHtml5Url": {
+    "type": "InputLang",
+    "device": true
+  },
+  "videoHtml5Poster": {
+    "type": "ImageLang"
+  },
+  "customAlign": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".module-slider-%s .module-item-%s .slide-content",
+    "property": "--custom-align-h:%s%"
+  },
+  "customAlignV": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".module-slider-%s .module-item-%s .slide-content",
+    "property": "--custom-align-v:%s%"
+  },
+  "align": {
+    "type": "Input",
+    "value": "",
+    "rules": {
+      "top": {
+        ".module-slider-%s .module-item-%s .slide-content": "--object-position-h: left; justify-content: flex-start"
+      },
+      "center": {
+        ".module-slider-%s .module-item-%s .slide-content": "--object-position-h: center; justify-content: center"
+      },
+      "bottom": {
+        ".module-slider-%s .module-item-%s .slide-content": "--object-position-h: right; justify-content: flex-end"
+      },
+      "custom": {
+        ".module-slider-%s .module-item-%s .slide-content": "--object-position-h: var(--custom-align-h); justify-content: flex-end"
+      }
+    },
+    "rtlRules": {
+      "top": {
+        ".module-slider-%s .module-item-%s .slide-content": "--object-position-h: right; justify-content: flex-start"
+      },
+      "center": {
+        ".module-slider-%s .module-item-%s .slide-content": "--object-position-h: center; justify-content: center"
+      },
+      "bottom": {
+        ".module-slider-%s .module-item-%s .slide-content": "--object-position-h: left; justify-content: flex-end"
+      },
+      "custom": {
+        ".module-slider-%s .module-item-%s .slide-content": "--object-position-h: var(--custom-align-h); justify-content: flex-end"
+      }
+    }
+  },
+  "alignV": {
+    "type": "Input",
+    "value": "",
+    "rules": {
+      "top": {
+        ".module-slider-%s .module-item-%s .slide-content": "--object-position-v: top; align-self: flex-start",
+        ".module-slider-%s .module-item-%s .slide-content > img": "align-self: flex-start",
+        ".module-slider-%s .module-item-%s .slide-content > video": "align-self: flex-start"
+      },
+      "center": {
+        ".module-slider-%s .module-item-%s .slide-content": "--object-position-v: center",
+        ".module-slider-%s .module-item-%s .slide-content > img": "align-self: center",
+        ".module-slider-%s .module-item-%s .slide-content > video": "align-self: center"
+      },
+      "bottom": {
+        ".module-slider-%s .module-item-%s .slide-content": "--object-position-v: bottom",
+        ".module-slider-%s .module-item-%s .slide-content > img": "align-self: flex-end",
+        ".module-slider-%s .module-item-%s .slide-content > video": "align-self: flex-end"
+      },
+      "custom": {
+        ".module-slider-%s .module-item-%s .slide-content": "--object-position-v: var(--custom-align-v)",
+        ".module-slider-%s .module-item-%s .slide-content > img": "align-self: center",
+        ".module-slider-%s .module-item-%s .slide-content > video": "align-self: center"
+      }
+    }
+  },
+  "slideFillType": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "auto": {
+        ".module-slider-%s .module-item-%s .slide-content > img": "width: min(calc(var(--image-width) * 1px), 100%); height: auto",
+        ".module-slider-%s .module-item-%s .slide-content > video": "width: min(calc(var(--image-width) * 1px), 100%); height: auto; aspect-ratio: var(--image-width) / var(--image-height)"
+      },
+      "fill": {
+        ".module-slider-%s .module-item-%s .slide-content > img": "width: 100%; height: 100%",
+        ".module-slider-%s .module-item-%s .slide-content > video": "width: 100%; height: 100%"
+      }
+    }
+  },
+  "slideMediaMaxWidth": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "selector": ".module-slider-%s .module-item-%s .slide-content > img, .module-slider-%s .module-item-%s .slide-content > video",
+    "property": "max-width: %s"
+  },
+  "slideBackground": {
+    "type": "Background",
+    "selector": ".module-slider-%s .module-item.module-item-%s .slide-content-image"
+  },
+  "custom": {
+    "type": "Background",
+    "selector": ".module-slider-%s .module-item.module-item-%s .slide-content-image"
+  },
+  "customHover": {
+    "type": "Background",
+    "selector": ".module-slider-%s .module-item.module-item-%s:hover .slide-content-image"
+  },
+  "slidesBorder": {
+    "type": "Border",
+    "selector": ".module-slider-%s .module-item-%s .slide-content"
+  },
+  "slidesBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-slider-%s .module-item-%s .slide-content"
+  },
+  "slidesOutline": {
+    "type": "Outline",
+    "selector": ".module-slider-%s .module-item-%s .slide-cols"
+  },
+  "slidesOutlineHover": {
+    "type": "Outline",
+    "selector": ".module-slider-%s:hover .module-item-%s .slide-cols"
+  },
+  "thumbImage": {
+    "type": "ImageLang"
+  },
+  "thumbText": {
+    "type": "InputLang",
+    "php": true
+  },
+  "thumbTextIcon": {
+    "type": "Icon",
+    "selector": ".module-slider-%s .swiper-slide.thumb-item-%s .thumb-text::before"
+  },
+  "thumbTextIconHover": {
+    "type": "Color",
+    "property": "color",
+    "selector": ".module-slider-%s .swiper-slide.thumb-item-%s:hover .thumb-text::before"
+  },
+  "thumbTextIconActive": {
+    "type": "Color",
+    "property": "color",
+    "selector": ".module-slider-%s .swiper-slide.thumb-item-%s.swiper-slide-active .thumb-text::before",
+    "important": true
+  },
+  "thumbTextFont": {
+    "type": "Font",
+    "selector": ".module-slider-%s .swiper-slide.thumb-item-%s .thumb-text"
+  },
+  "thumbTextFontHover": {
+    "type": "Font",
+    "selector": ".module-slider-%s .swiper-slide.thumb-item-%s:hover .thumb-text"
+  },
+  "thumbTextFontActive": {
+    "type": "Font",
+    "selector": ".module-slider-%s .swiper-slide.thumb-item-%s.swiper-slide-active .thumb-text",
+    "important": true
+  },
+  "thumbnailBackground": {
+    "type": "Background",
+    "selector": ".module-slider-%s .slider-thumbs .swiper-slide.thumb-item-%s"
+  },
+  "thumbnailBackgroundHover": {
+    "type": "Background",
+    "selector": ".module-slider-%s .slider-thumbs .swiper-slide.thumb-item-%s:hover"
+  },
+  "thumbnailBackgroundActive": {
+    "type": "Background",
+    "selector": ".module-slider-%s .slider-thumbs .swiper-slide.thumb-item-%s.swiper-slide-active",
+    "important": true
+  },
+  "overlayStatus2": {
+    "value": "",
+    "type": "Radio",
+    "selector": ".module-slider-%s .module-item-%s .slide-content::before",
+    "property": "display: %s"
+  },
+  "overlay": {
+    "type": "Background",
+    "selector": ".module-slider-%s .module-item-%s .slide-content::before"
+  },
+  "overlayOpacity": {
+    "type": "Input",
+    "property": "opacity",
+    "selector": ".module-slider-%s .module-item-%s .slide-content::before"
+  },
+  "overlayBlend": {
+    "value": "",
+    "type": "Select",
+    "selector": ".module-slider-%s .module-item-%s .slide-content::before",
+    "property": "mix-blend-mode"
+  },
+  "alt": {
+    "type": "InputLang",
+    "php": true
+  },
+  "link": {
+    "type": "Link",
+    "php": true
+  },
+  "linkZIndex": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-slider-%s .module-item-%s.swiper-slide .slide-link": "z-index:3"
+      },
+      "false": {
+        ".module-slider-%s .module-item-%s.swiper-slide .slide-link": "z-index:2"
+      }
+    }
+  },
+  "slidesColLeftAlignH": {
+    "value": "",
+    "type": "Radio",
+    "rules": {
+      "flex-start": {
+        ".module-slider-%s .module-item-%s .slide-col-left .slide-layers": "align-items: %s",
+        ".module-slider-%s .module-item-%s .slide-col-left .slide-text": "text-align: start"
+      },
+      "center": {
+        ".module-slider-%s .module-item-%s .slide-col-left .slide-layers": "align-items: %s",
+        ".module-slider-%s .module-item-%s .slide-col-left .slide-text": "text-align: center"
+      },
+      "flex-end": {
+        ".module-slider-%s .module-item-%s .slide-col-left .slide-layers": "align-items: %s",
+        ".module-slider-%s .module-item-%s .slide-col-left .slide-text": "text-align: end"
+      }
+    }
+  },
+  "slidesColLeftAlignV": {
+    "value": "",
+    "type": "Radio",
+    "selector": ".module-slider-%s .module-item-%s .slide-col-left .slide-layers",
+    "property": "justify-content: %s"
+  },
+  "slidesColRightAlignH": {
+    "value": "",
+    "type": "Radio",
+    "rules": {
+      "flex-start": {
+        ".module-slider-%s .module-item-%s .slide-col-right .slide-layers": "align-items: %s",
+        ".module-slider-%s .module-item-%s .slide-col-right .slide-text": "text-align: start"
+      },
+      "center": {
+        ".module-slider-%s .module-item-%s .slide-col-right .slide-layers": "align-items: %s",
+        ".module-slider-%s .module-item-%s .slide-col-right .slide-text": "text-align: center"
+      },
+      "flex-end": {
+        ".module-slider-%s .module-item-%s .slide-col-right .slide-layers": "align-items: %s",
+        ".module-slider-%s .module-item-%s .slide-col-right .slide-text": "text-align: end"
+      }
+    }
+  },
+  "slidesColRightAlignV": {
+    "value": "",
+    "type": "Radio",
+    "selector": ".module-slider-%s .module-item-%s .slide-col-right .slide-layers",
+    "property": "justify-content: %s"
+  },
+  "slideColRightWidth": {
+    "type": "InputValue",
+    "value": "",
+    "property": "--slides-cols-width:%s%",
+    "selector": ".module-slider-%s .module-item-%s .slide-col"
+  },
+  "slideColsStack": {
+    "type": "InputValue",
+    "value": "",
+    "property": "--slides-cols-auto-stack:%spx",
+    "selector": ".module-slider-%s .module-item-%s .slide-col"
+  },
+  "slidesColsStackBase": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "%": {
+        ".module-slider-%s .module-item-%s .slide-col": "--stack-unit: 1%s"
+      },
+      "vw": {
+        ".module-slider-%s .module-item-%s .slide-col": "--stack-unit: 1%s"
+      }
+    }
+  },
+  "colsOrder": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-slider-%s .module-item-%s.swiper-slide .slide-col-right": "order: 1",
+        ".module-slider-%s .module-item-%s.swiper-slide .slide-col-left": "order: 2"
+      },
+      "false": {
+        ".module-slider-%s .module-item-%s.swiper-slide .slide-col-right": "order: 2",
+        ".module-slider-%s .module-item-%s.swiper-slide .slide-col-left": "order: 1"
+      }
+    }
+  },
+  "slideColumnLeftPadding": {
+    "type": "Padding",
+    "selector": ".module-slider-%s .module-item-%s .slide-col-left .slide-layers"
+  },
+  "slideColumnLeftBackground": {
+    "type": "Background",
+    "selector": ".module-slider-%s .module-item-%s .slide-col-left .slide-layers"
+  },
+  "slideColumnRightPadding": {
+    "type": "Padding",
+    "selector": ".module-slider-%s .module-item-%s .slide-col-right .slide-layers"
+  },
+  "slideColumnRightBackground": {
+    "type": "Background",
+    "selector": ".module-slider-%s .module-item-%s .slide-col-right .slide-layers"
+  },
+  "slidesColumnLeftMargin": {
+    "type": "Margin",
+    "selector": ".module-slider-%s .module-item-%s .slide-col-left .slide-layers"
+  },
+  "slidesColumnRightMargin": {
+    "type": "Margin",
+    "selector": ".module-slider-%s .module-item-%s .slide-col-right .slide-layers"
+  },
+  "slidesColsLeftZ": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".module-slider-%s .module-item-%s .slide-col-left",
+    "property": "z-index: %s"
+  },
+  "slidesColsRightZ": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".module-slider-%s .module-item-%s .slide-col-right",
+    "property": "z-index: %s"
+  },
+  "colElementLeftStatus": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-slider-%s .module-item-%s .slide-col-left .slide-layers::after": "display: block"
+      },
+      "false": {
+        ".module-slider-%s .module-item-%s .slide-col-left .slide-layers::after": "display: none"
+      }
+    }
+  },
+  "colElementLeftBackground": {
+    "type": "Background",
+    "selector": ".module-slider-%s .module-item-%s .slide-col-left .slide-layers::after"
+  },
+  "colElementLeftBorder": {
+    "type": "Border",
+    "selector": ".module-slider-%s .module-item-%s .slide-col-left .slide-layers::after"
+  },
+  "colElementLeftBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-slider-%s .module-item-%s .slide-col-left .slide-layers::after"
+  },
+  "colElementLeftShadow": {
+    "type": "Shadow",
+    "selector": ".module-slider-%s .module-item-%s .slide-col-left .slide-layers::after"
+  },
+  "colElementLeftOpacity": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "opacity",
+    "selector": ".module-slider-%s .module-item-%s .slide-col-left .slide-layers::after"
+  },
+  "colElementLeftSize": {
+    "value": "",
+    "type": "InputNumber",
+    "selector": ".module-slider-%s .module-item-%s .slide-col-left .slide-layers::after",
+    "property": "width: %s%"
+  },
+  "colElementLeftClipPath": {
+    "type": "Text",
+    "value": "",
+    "rules": {
+      "@": {
+        ".module-slider-%s .module-item-%s .slide-col-left .slide-layers::after": "%s"
+      }
+    }
+  },
+  "colElementRightStatus": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-slider-%s .module-item-%s .slide-col-right .slide-layers::after": "display: block"
+      },
+      "false": {
+        ".module-slider-%s .module-item-%s .slide-col-right .slide-layers::after": "display: none"
+      }
+    }
+  },
+  "colElementRightBackground": {
+    "type": "Background",
+    "selector": ".module-slider-%s .module-item-%s .slide-col-right .slide-layers::after"
+  },
+  "colElementRightBorder": {
+    "type": "Border",
+    "selector": ".module-slider-%s .module-item-%s .slide-col-right .slide-layers::after"
+  },
+  "colElementRightBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-slider-%s .module-item-%s .slide-col-right .slide-layers::after"
+  },
+  "colElementRightShadow": {
+    "type": "Shadow",
+    "selector": ".module-slider-%s .module-item-%s .slide-col-right .slide-layers::after"
+  },
+  "colElementRightOpacity": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "opacity",
+    "selector": ".module-slider-%s .module-item-%s .slide-col-right .slide-layers::after"
+  },
+  "colElementRightSize": {
+    "value": "",
+    "type": "InputNumber",
+    "selector": ".module-slider-%s .module-item-%s .slide-col-right .slide-layers::after",
+    "property": "width: %s%"
+  },
+  "colElementRightClipPath": {
+    "type": "Text",
+    "value": "",
+    "rules": {
+      "@": {
+        ".module-slider-%s .module-item-%s .slide-col-right .slide-layers::after": "%s"
+      }
+    }
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

@@ -1,0 +1,336 @@
+{
+  "PushOptionsSectionBackground": {
+    "type": "Background",
+    "selector": ".push-option"
+  },
+  "PushOptionsSectionPadding": {
+    "type": "Padding",
+    "selector": ".push-option"
+  },
+  "PushOptionsSectionBorder": {
+    "type": "Border",
+    "selector": ".push-option"
+  },
+  "PushOptionsSpacing": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "rules": {
+      "@": {
+        "": "--push-option-spacing:%s"
+      }
+    }
+  },
+  "PushOptionsSize": {
+    "type": "InputPair",
+    "selector": ".push-option .option-value",
+    "properties": {
+      "first": "min-width:%spx",
+      "second": "min-height:%spx"
+    }
+  },
+
+  "PushOptionsFont": {
+    "type": "Font",
+    "selector": ".push-option .option-value"
+  },
+  "PushOptionsFontHover": {
+    "type": "Font",
+    "selector": ".push-option .option-wrapper:hover .option-value, .push-option input:checked + .option-wrapper .option-value"
+  },
+  "PushOptionsFontActive": {
+    "type": "Font",
+    "selector": ".push-option input:checked + .option-wrapper .option-value"
+  },
+  "PushOptionsFontPrice": {
+    "type": "Font",
+    "selector": ".push-option .option-wrapper .option-price"
+  },
+  "PushOptionsFontPriceHover": {
+    "type": "Font",
+    "selector": ".push-option .option-wrapper .option-price:hover, .push-option input:checked + .option-wrapper .option-price"
+  },
+  "PushOptionsFontPriceActive": {
+    "type": "Font",
+    "selector": ".push-option input:checked + .option-wrapper .option-price"
+  },
+  "PushOptionsBackground": {
+    "type": "Background",
+    "selector": ".push-option .option-wrapper:not(.push-option-image)"
+  },
+  "PushOptionsBackgroundHover": {
+    "type": "Background",
+    "selector": ".push-option .option-wrapper:not(.push-option-image):hover, .push-option input:checked + .option-wrapper:not(.push-option-image)"
+  },
+  "PushOptionsBackgroundActive": {
+    "type": "Background",
+    "selector": ".push-option input:checked + .option-wrapper:not(.push-option-image)"
+  },
+  "PushOptionsPadding": {
+    "type": "Padding",
+    "selector": ".push-option .option-value"
+  },
+  "PushOptionsBorder": {
+    "type": "Border",
+    "selector": ".push-option .option-wrapper"
+  },
+  "PushOptionsBorderHover": {
+    "type": "Color",
+    "selector": ".push-option .option-wrapper:hover, .push-option input:checked + .option-wrapper",
+    "property": "border-color"
+  },
+  "PushOptionsBorderActive": {
+    "type": "Color",
+    "selector": ".push-option input:checked + .option-wrapper",
+    "property": "border-color"
+  },
+  "PushOptionsBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".push-option .option-wrapper"
+  },
+  "PushOptionsShadow": {
+    "type": "Shadow",
+    "selector": ".push-option .option-wrapper:not(.push-option-image)"
+  },
+  "PushOptionsShadowHover": {
+    "type": "Shadow",
+    "selector": ".push-option .option-wrapper:not(.push-option-image):hover, .push-option input:checked + .option-wrapper:not(.push-option-image)"
+  },
+  "PushOptionsShadowActive": {
+    "type": "Shadow",
+    "selector": ".push-option input:checked + .option-wrapper:not(.push-option-image)"
+  },
+
+  "PushOptionsImageBackground": {
+    "type": "Background",
+    "selector": ".push-option .push-option-image.option-wrapper"
+  },
+  "PushOptionsImageBackgroundHover": {
+    "type": "Background",
+    "selector": ".push-option label:hover .push-option-image.option-wrapper"
+  },
+  "PushOptionsImageBackgroundActive": {
+    "type": "Background",
+    "selector": ".push-option label input:checked + .push-option-image.option-wrapper",
+    "important": true
+  },
+  "PushOptionsImagePadding": {
+    "type": "Padding",
+    "selector": ".push-option .push-option-image.option-wrapper"
+  },
+  "PushOptionsImageBorder": {
+    "type": "Border",
+    "selector": ".push-option .push-option-image.option-wrapper"
+  },
+  "PushOptionsImageBorderHover": {
+    "type": "Color",
+    "selector": ".push-option label:hover .push-option-image.option-wrapper",
+    "property": "border-color"
+  },
+  "PushOptionsImageBorderActive": {
+    "type": "Color",
+    "selector": ".push-option label input:checked + .push-option-image.option-wrapper",
+    "property": "border-color",
+    "important": true
+  },
+  "PushOptionsImageBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".push-option .push-option-image.option-wrapper"
+  },
+  "PushOptionsImageShadow": {
+    "type": "Shadow",
+    "selector": ".push-option .push-option-image.option-wrapper"
+  },
+  "PushOptionsImageShadowHover": {
+    "type": "Shadow",
+    "selector": ".push-option label:hover .push-option-image.option-wrapper"
+  },
+  "PushOptionsImageShadowActive": {
+    "type": "Shadow",
+    "selector": ".push-option label input:checked + .push-option-image.option-wrapper",
+    "important": true
+  },
+
+  "PushImageWidth": {
+    "type": "Input",
+    "rules": {
+      "@": {
+        ".push-option-image img": "max-width:%spx"
+      }
+    }
+  },
+  "PushImageBorder": {
+    "type": "Border",
+    "selector": ".push-option .push-option-image img"
+  },
+  "PushImageBorderHover": {
+    "type": "Color",
+    "selector": ".push-option label:hover .push-option-image img",
+    "property": "border-color"
+  },
+  "PushImageBorderActive": {
+    "type": "Color",
+    "selector": ".push-option label input:checked + .push-option-image img",
+    "property": "border-color",
+    "important": true
+  },
+  "PushImageBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".push-option .push-option-image img"
+  },
+  "PushImagePadding": {
+    "type": "Padding",
+    "selector": ".push-option .push-option-image img"
+  },
+  "PushImageShadow": {
+    "type": "Shadow",
+    "selector": ".push-option .push-option-image img"
+  },
+  "PushImageShadowHover": {
+    "type": "Shadow",
+    "selector": ".push-option label:hover .push-option-image img"
+  },
+  "PushImageShadowActive": {
+    "type": "Shadow",
+    "selector": ".push-option label input:checked + .push-option-image img"
+  },
+
+  "NameVisibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".push-option-image .option-value": "display: flex"
+      },
+      "false": {
+        ".push-option-image .option-value": "display: none"
+      }
+    }
+  },
+  "NameVisibilityTouch": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".push-option-image .option-value": "display: flex"
+      },
+      "false": {
+        ".push-option-image .option-value": "display: none"
+      }
+    },
+    "touchevents": true
+  },
+  "NameMaxWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".push-option-image .option-value",
+    "property": "max-width: %spx"
+  },
+  "NamePosition": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "below": {
+        ".push-option-image": "flex-direction: column; justify-content: flex-start",
+        ".push-option-image img": "position: relative; width: auto; height: auto;",
+        ".push-option-image .option-value": "margin: 1px 5px; pointer-events: auto;"
+      },
+      "side": {
+        ".push-option-image": "flex-direction: row;  justify-content: flex-start",
+        ".push-option-image img": "position: relative; width: auto; height: auto;",
+        ".push-option-image .option-value": "margin: 1px 5px;  pointer-events: auto;"
+      },
+      "over": {
+        ".push-option-image": "flex-direction: column; justify-content: flex-end",
+        ".push-option-image img": "position: absolute; width: 100%; height: 100%;",
+        ".push-option-image .option-value": "margin: 0; pointer-events: none;"
+      }
+    }
+  },
+  "NameAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "start": {
+        ".push-option-image .option-value": "text-align: start; --align-items: flex-start;"
+      },
+      "center": {
+        ".push-option-image .option-value": "text-align: center; --align-items: center;"
+      },
+      "end": {
+        ".push-option-image .option-value": "text-align: end; --align-items: flex-end;"
+      }
+    }
+  },
+  "NameFont": {
+    "type": "Font",
+    "selector": ".push-option .push-option-image .option-value"
+  },
+  "NameFontHoverNew": {
+    "type": "Color",
+    "property": "color",
+    "selector": ".push-option label:hover .option-wrapper .option-value"
+  },
+  "NameFontActiveNew": {
+    "type": "Color",
+    "property": "color",
+    "selector": ".push-option label input:checked + .option-wrapper .option-value"
+  },
+  "PushImageValueBackground": {
+    "type": "Background",
+    "selector": ".push-option .push-option-image .option-value"
+  },
+  "PushImageValueBackgroundHover": {
+    "type": "Background",
+    "selector": ".push-option label:hover .push-option-image .option-value"
+  },
+  "PushImageValueBackgroundActive": {
+    "type": "Background",
+    "selector": ".push-option label input:checked + .push-option-image .option-value",
+    "important": true
+  },
+  "NamePadding": {
+    "type": "Padding",
+    "selector": ".push-option .push-option-image .option-value",
+    "important": true
+  },
+  "NameMargin": {
+    "type": "Margin",
+    "selector": ".push-option .push-option-image .option-value"
+  },
+  "NameBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".push-option .push-option-image .option-value"
+  },
+  "PushOptionPricePosition": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "below": {
+        ".push-option-image .option-value": "flex-direction: column; align-items: var(--align-items, flex-start)"
+      },
+      "inline": {
+        ".push-option-image .option-value": "flex-direction: row; align-items: center"
+      }
+    }
+  },
+  "PushImagePriceFont": {
+    "type": "Font",
+    "selector": ".push-option .push-option-image .option-price"
+  },
+  "PushImagePriceFontHoverNew": {
+    "type": "Color",
+    "property": "color",
+    "selector": ".push-option label:hover .option-wrapper .option-price"
+  },
+  "PushImagePriceFontActiveNew": {
+    "type": "Color",
+    "property": "color",
+    "selector": ".push-option label input:checked + .option-wrapper .option-price"
+  },
+  "PushPriceMargin": {
+    "type": "Margin",
+    "selector": ".push-option .push-option-image .option-price",
+    "important": true
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "MegaMenuBackground": {
+    "type": "Background",
+    "selector": ".mega-menu-content"
+  },
+  "MegaMenuBorder": {
+    "type": "Border",
+    "selector": ".mega-menu-content",
+    "desktop":true
+  },
+  "MegaMenuBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".mega-menu-content",
+    "desktop":true
+  },
+  "MegaMenuShadow": {
+    "type": "Shadow",
+    "selector": ".j-dropdown > .mega-menu-content"
+  },
+  "MegaMenuPadding": {
+    "type": "Padding",
+    "selector": ".mega-menu-content"
+  },
+  "MegaMenuTabPadding": {
+    "type": "Padding",
+    "selector": ".mega-menu-content .module-catalog_blocks .nav-tabs > li > a:not(.item-all-link)"
+  },
+  "MegaMenuTabPaddingImage": {
+    "type": "Padding",
+    "selector": ".mega-menu-content .module-catalog_blocks .nav-tabs > li > a:not(.item-all-link).has-image"
+  },
+  "MegaMenuPaddingTabContent": {
+    "type": "Padding",
+    "selector": ".mega-menu-content .module-catalog_blocks .tab-content"
+  },
+  "MegaMenuTabHeight": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "--tabs-height:%spx",
+    "selector": ".mega-menu-content .module-catalog_blocks .nav-tabs"
+  },
+  "MegaMenuHeight": {
+    "type": "InputNumber",
+    "value": "",
+    "rules": {
+      "@": {
+        ".j-dropdown > .mega-menu-content": "max-height:%spx !important"
+      }
+    }
+  },
+  "MenuTriangle": {
+    "include": "triangle",
+    "selector_prefix": "&.menu-item.dropdown.mega-menu"
+  },
+  "MegaMenuBackgroundOverlay": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".mega-menu-content::before": "display:block"
+      },
+      "false": {
+        ".mega-menu-content::before": "display:none"
+      }
+    }
+  },
+  "MegaMenuBackgroundOverlayBackground": {
+    "type": "Background",
+    "selector": ".mega-menu-content::before"
+  },
+  "MegaMenuBackgroundOverlayOpacity": {
+    "type": "Input",
+    "value": "",
+    "property": "opacity: %s",
+    "selector": ".mega-menu-content::before"
+  },
+  "MegaMenuBackgroundOverlayBlend": {
+    "type": "Select",
+    "value": "",
+    "property": "mix-blend-mode: %s",
+    "selector": ".mega-menu-content::before"
+  }
+}

@@ -1,0 +1,411 @@
+{
+  "status": {
+    "type": "Status"
+  },
+  "color_scheme": {
+    "type": "ColorScheme",
+    "php": true
+  },
+  "columnsGap": {
+    "type": "Gap",
+    "variableType": "gap",
+    "rules": {
+      "@": {
+        ".grid-row-%s-%s": "--col-gap:%s"
+      }
+    }
+  },
+  "minHeight": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".grid-row-%s-%s > .grid-cols-wrapper > .grid-cols": "min-height:%spx"
+      }
+    }
+  },
+  "colsTopMargin": {
+    "property": "margin-top: calc(0px - %spx)",
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "selector": ".grid-row-%s-%s > .grid-cols-wrapper > .grid-cols"
+  },
+  "colsBackground": {
+    "type": "Background",
+    "selector": ".grid-row-%s-%s > .grid-cols-wrapper > div.grid-cols"
+  },
+  "colsPadding": {
+    "type": "Padding",
+    "selector": ".grid-row-%s-%s > .grid-cols-wrapper > .grid-cols"
+  },
+  "colsBorder": {
+    "type": "Border",
+    "selector": ".grid-row-%s-%s > .grid-cols-wrapper > .grid-cols"
+  },
+  "colsBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".grid-row-%s-%s > .grid-cols-wrapper > .grid-cols"
+  },
+  "colsShadow": {
+    "type": "Shadow",
+    "selector": ".grid-row-%s-%s > .grid-cols-wrapper > .grid-cols"
+  },
+  "colBackground": {
+    "type": "Background",
+    "selector": ".grid-row-%s-%s > .grid-cols-wrapper > .grid-cols > .grid-col > .grid-items"
+  },
+  "colPadding": {
+    "type": "Padding",
+    "selector": ".grid-row-%s-%s > .grid-cols-wrapper > .grid-cols > .grid-col > .grid-items"
+  },
+  "colBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".grid-row-%s-%s > .grid-cols-wrapper > .grid-cols > .grid-col > .grid-items"
+  },
+  "colShadow": {
+    "type": "Shadow",
+    "selector": ".grid-row-%s-%s > .grid-cols-wrapper > .grid-cols > .grid-col > .grid-items"
+  },
+  "fullwidth": {
+    "type": "Toggle",
+    "value": "false"
+  },
+  "rowOverflow": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".grid-row-%s-%s": "overflow:hidden;"
+      },
+      "false": {
+        ".grid-row-%s-%s": "overflow:initial;"
+      }
+    }
+  },
+  "colsOverflow": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".grid-row-%s-%s > .grid-cols-wrapper": "overflow:hidden;"
+      },
+      "false": {
+        ".grid-row-%s-%s > .grid-cols-wrapper": "overflow:visible;"
+      }
+    }
+  },
+  "zIndex": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".grid-row-%s-%s": "z-index: %s;"
+      }
+    }
+  },
+  "stackColumns": {
+    "type": "InputValue",
+    "variableType": "breakpoint",
+    "rules": {
+      "@": {
+        ".grid-row-%s-%s > .grid-cols-wrapper > .grid-cols > .grid-col": "flex-basis: calc((%spx + 1px - (100 * var(--unit, 1%)))*9999);"
+      }
+    }
+  },
+  "stackBase": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "%": {
+        ".grid-row-%s-%s > .grid-cols-wrapper > .grid-cols > .grid-col": "--unit: 1%s"
+      },
+      "vw": {
+        ".grid-row-%s-%s > .grid-cols-wrapper > .grid-cols > .grid-col": "--unit: 1%s"
+      }
+    }
+  },
+  "rowColsAlignV": {
+    "type": "Radio",
+    "value": "",
+    "property": "justify-content: %s",
+    "selector": ".grid-row-%s-%s > .grid-cols-wrapper > .grid-cols > .grid-col > .grid-items"
+  },
+  "rowColsAlign": {
+    "type": "Radio",
+    "value": "",
+    "property": "justify-content: %s",
+    "selector": ".grid-row-%s-%s > .grid-cols-wrapper > .grid-cols"
+  },
+  "autoGrowColumns": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".grid-row-%s-%s > .grid-cols-wrapper > .grid-cols > .grid-col": "flex-grow: 1"
+      },
+      "false": {
+        ".grid-row-%s-%s > .grid-cols-wrapper > .grid-cols > .grid-col": "flex-grow: 0"
+      }
+    }
+  },
+  "background": {
+    "type": "Background",
+    "selector": ".grid-row-%s-%s > .row-bg"
+  },
+  "backgroundBorder": {
+    "type": "Border",
+    "selector": ".grid-row-%s-%s > .row-bg"
+  },
+  "backgroundBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".grid-row-%s-%s > .row-bg"
+  },
+  "backgroundOpacity": {
+    "type": "Input",
+    "property": "opacity:%s",
+    "selector": ".grid-row-%s-%s > .row-bg"
+  },
+  "backgroundAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "top": {
+        ".grid-row-%s-%s > .row-bg": "top: 0; transform: none;"
+      },
+      "center": {
+        ".grid-row-%s-%s > .row-bg": "top: 50%; transform: translate3d(0,-50%,0);"
+      },
+      "bottom": {
+        ".grid-row-%s-%s > .row-bg": "top: 100%; transform: translate3d(0,-100%,0);"
+      }
+    }
+  },
+  "backgroundHeight": {
+    "type": "Input",
+    "value": "",
+    "property": "--row-bg-height:%s%",
+    "selector": ".grid-row-%s-%s > .row-bg"
+  },
+  "backgroundOffset": {
+    "type": "Input",
+    "value": "",
+    "property": "--row-bg-offset:%spx",
+    "selector": ".grid-row-%s-%s > .row-bg"
+  },
+  "paddingBoth": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "rules": {
+      "@": {
+        ".grid-row-%s-%s": "padding-top:%s; padding-bottom: %s"
+      }
+    }
+  },
+  "paddingBottom": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "rules": {
+      "@": {
+        ".grid-row-%s-%s": "padding-bottom: %s"
+      }
+    }
+  },
+  "padding": {
+    "type": "Padding",
+    "selector": ".grid-row-%s-%s"
+  },
+  "border": {
+    "type": "Border",
+    "selector": ".grid-row-%s-%s"
+  },
+  "shadow": {
+    "type": "Shadow",
+    "selector": ".grid-row-%s-%s"
+  },
+  "marginTop": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "rules": {
+      "@": {
+        ".grid-rows div.grid-row-%s-%s": "margin-top:%s"
+      }
+    }
+  },
+  "margin": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "rules": {
+      "@": {
+        ".grid-rows div.grid-row-%s-%s": "margin-bottom:%s"
+      }
+    }
+  },
+  "overlayStatus": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".grid-row-%s-%s::before": "content:''"
+      }
+    }
+  },
+  "overlayVisibility": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".grid-row-%s-%s::before": "display: block"
+      },
+      "false": {
+        ".grid-row-%s-%s::before": "display: none"
+      }
+    }
+  },
+  "overlayOpacity": {
+    "type": "Input",
+    "property": "opacity:%s",
+    "selector": ".grid-row-%s-%s::before"
+  },
+  "overlayBackground": {
+    "type": "Background",
+    "selector": ".grid-row-%s-%s::before"
+  },
+  "backgroundWidthType": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "row": {
+        ".grid-row-%s-%s > .row-bg": "max-width: 100%;  margin:0;"
+      },
+      "content": {
+        ".grid-row-%s-%s > .row-bg": "max-width: calc(var(--content-max-width, 100%) - var(--content-gutter, 0px) * 2);  margin:0 auto;"
+      }
+    }
+  },
+  "overlayWidthType": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "row": {
+        ".grid-row-%s-%s::before": "max-width: 100%;  margin:0;"
+      },
+      "content": {
+        ".grid-row-%s-%s::before": "max-width: calc(var(--content-max-width, 100%) - var(--content-gutter, 0px) * 2);  margin:0 auto;"
+      }
+    }
+  },
+  "overlayMaxWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "max-width: %s%",
+    "selector": "div.grid-row-%s-%s::before"
+  },
+  "overlayAlignNew": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        "div.grid-row-%s-%s::before": "left:0; right:auto; margin:0;"
+      },
+      "center": {
+        "div.grid-row-%s-%s::before": "left: 0; right:0; margin:0 auto;"
+      },
+      "right": {
+        "div.grid-row-%s-%s::before": "left: auto; right:0; margin:0;"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        "div.grid-row-%s-%s::before": "left:auto; right:0;  margin:0;"
+      },
+      "center": {
+        "div.grid-row-%s-%s::before": "left: 0; right:0;  margin:0 auto;"
+      },
+      "right": {
+        "div.grid-row-%s-%s::before": "left: 0; right:auto; margin:0;"
+      }
+    }
+  },
+  "overlayAlignV": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "top": {
+        ".grid-row-%s-%s::before": "top: calc(0px + var(--overlay-top, 0px)); transform: translate3d(0,0,0) rotate(var(--overlay-rotate, 0deg)) skew(var(--overlay-rotate, 0deg));"
+      },
+      "center": {
+        ".grid-row-%s-%s::before": "top: calc(50% + var(--overlay-top, 0px)); transform: translate3d(0,-50%,0) rotate(var(--overlay-rotate, 0deg)) skew(var(--overlay-rotate, 0deg));"
+      },
+      "bottom": {
+        ".grid-row-%s-%s::before": "top: calc(100% + var(--overlay-top, 0px)); transform: translate3d(0,-100%,0) rotate(var(--overlay-rotate, 0deg)) skew(var(--overlay-rotate, 0deg));"
+      }
+    }
+  },
+  "overlayClipPath": {
+    "type": "Text",
+    "value": "",
+    "property": "%s",
+    "selector": ".grid-row-%s-%s::before"
+  },
+  "rowOverlayBlend": {
+    "type": "Select",
+    "selector": ".grid-row-%s-%s::before",
+    "property": "mix-blend-mode"
+  },
+  "overlayBorder": {
+    "type": "Border",
+    "selector": ".grid-row-%s-%s::before"
+  },
+  "overlayHeight": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".grid-row-%s-%s::before": "height:%s%"
+      }
+    }
+  },
+  "overlayAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        ".grid-row-%s-%s::before": "left:0; right:auto; width:50%"
+      },
+      "center": {
+        ".grid-row-%s-%s::before": "left: 0; right:0; width:100%"
+      },
+      "right": {
+        ".grid-row-%s-%s::before": "left: 50%; right:auto; width:50%"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        ".grid-row-%s-%s::before": "left:auto; right:0; width:50%"
+      },
+      "center": {
+        ".grid-row-%s-%s::before": "left: 0; right:0; width:100%"
+      },
+      "right": {
+        ".grid-row-%s-%s::before": "left: auto; right:50%; width:50%"
+      }
+    }
+  },
+  "overlayRotate": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".grid-row-%s-%s::before": "--overlay-rotate: %sdeg"
+      }
+    }
+  },
+  "overlayTop": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".grid-row-%s-%s::before": "--overlay-top: %svw"
+      }
+    }
+  }
+}

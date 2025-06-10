@@ -1,0 +1,33 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Top Menu"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "dropdown_color_scheme": {
+    "type": "ColorScheme",
+    "php": true
+  },
+  "imageDimensions": {
+    "type": "ImageDimensions",
+    "value": {
+      "width": "40",
+      "height": "40",
+      "resize": "fill",
+      "tablet_resize": "fill",
+      "phone_resize": "fill"
+    }
+  },
+  "scheduledStatus": {
+    "type": "Range",
+    "php": true
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

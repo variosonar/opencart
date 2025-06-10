@@ -1,0 +1,45 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Spacer Module"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "schedule": {
+    "type": "Range",
+    "php": true
+  },
+  "height": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "rules": {
+      "@": {
+        ".module-spacer-%s": "height:%s;"
+      }
+    }
+  },
+  "icon": {
+    "type": "Icon",
+    "selector": ".module-spacer-%s .spacer-icon::before"
+  },
+  "divider": {
+    "type": "Divider",
+    "selector": ".module-spacer-%s .spacer-divider"
+  },
+  "maxWidth": {
+    "type": "InputValue",
+    "variableType": "breakpoint",
+    "value": "",
+    "selector": "div.module-spacer-%s .spacer-divider",
+    "property": "max-width: calc(%spx / 2 - var(--content-gutter, 0px) * 2)"
+  },
+
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

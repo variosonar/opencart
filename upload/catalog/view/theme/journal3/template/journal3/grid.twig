@@ -1,0 +1,43 @@
+{% if rows %}
+  <div class="{{ journal3.classes(grid_classes) }} {% if rows | length == 1 %}single-item{% endif %}">
+    {% if edit %}
+      <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+    {% endif %}
+    {% for grid_row in rows %}
+      <div class="{{ journal3.classes(grid_row.classes) }}">
+        {% if grid_row.waveStatus %}
+          <svg viewBox="0 0 100 20" class="wave wave-top" preserveAspectRatio="none">
+            <path fill="white" d="M 0 30 V 10 Q 25 {{ grid_row.waveDirection }} 55 10 T 100 10 V 30 Z"></path>
+          </svg>
+        {% endif %}
+        <div class="row-bg"></div>
+        {% if grid_row.videoBgStatus and grid_row.videoBg %}
+          <div class="video-row">
+            <video preload="none" data-autoplay autoplay loop muted playsinline class="video-bg lazyload" data-src="{{ grid_row.videoBg }}"></video>
+          </div>
+        {% endif %}
+        <div class="grid-cols-wrapper">
+          <div class="grid-cols {% if grid_row.columns | length == 1 %}single-item{% endif %}">
+            {% for grid_column in grid_row.columns %}
+              <div class="{{ journal3.classes(grid_column.classes) }}">
+                {% if grid_column.videoColStatus and grid_column.videoCol %}
+                  <video preload="none" data-autoplay autoplay loop muted playsinline class="video-col-bg lazyload" data-src="{{ grid_column.videoCol }}"></video>
+                {% endif %}
+                <div class="grid-items {% if grid_column.items | length == 1 %}single-item{% endif %}">
+                  {% for grid_item in grid_column.items %}
+                    <div class="{{ journal3.classes(grid_item.classes) }}">{{ grid_item.item }}</div>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% if grid_row.wave2Status %}
+          <svg viewBox="0 0 100 20" class="wave wave-bottom" preserveAspectRatio="none">
+            <path fill="white" d="M 0 30 V 10 Q 25 {{ grid_row.wave2Direction }} 55 10 T 100 10 V 30 Z"></path>
+          </svg>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}

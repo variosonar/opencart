@@ -1,0 +1,111 @@
+{
+  "header_mobile_secondary_menu_color_scheme": {
+    "type": "ColorScheme",
+    "php": true,
+    "js": true
+  },
+  "mobileSecondaryMenuItem": {
+    "type": "Variable",
+    "variable": "menu",
+    "selector_prefix": ".mobile-header-active .mobile-secondary-menu .top-menu > .j-menu >"
+  },
+  "mobileSecondaryMenuDropdownItem": {
+    "type": "Variable",
+    "variable": "dropdown",
+    "selector_prefix": ".mobile-header-active"
+  },
+  "mobileSecondaryMenuPadding": {
+    "type": "Padding",
+    "selector": ".mobile-header-active .mobile-header .mobile-secondary-menu .top-menu > .j-menu"
+  },
+  "mobileSecondaryMenuBackground": {
+    "type": "Background",
+    "selector": ".mobile-header-active .mobile-secondary-menu"
+  },
+  "mobileSecondaryMenuMinHeight": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".mobile-header-active .mobile-secondary-menu .top-menu > .j-menu > li.menu-item > a",
+    "property": "min-height: %spx"
+  },
+  "gutterSubtract": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "true": {
+        ".mobile-header .mobile-secondary-menu .top-menu > .j-menu": "padding: 0 var(--content-gutter, 0px) 0 calc(var(--content-gutter, 0px) - 5px);",
+        ".mobile-header .mobile-secondary-menu .top-menu > .j-menu > li.menu-item:last-child": "padding-inline-end: var(--content-gutter, 0px)"
+      },
+      "false": {
+        ".mobile-header .mobile-secondary-menu .top-menu > .j-menu": "padding: 0;",
+        ".mobile-header .mobile-secondary-menu .top-menu > .j-menu > li.menu-item:last-child": "padding-inline-end: 0"
+      }
+    },
+    "rtlRules": {
+      "true": {
+        ".mobile-header .mobile-secondary-menu .top-menu > .j-menu": "padding: 0 var(--content-gutter, 0px) 0 calc(var(--content-gutter, 0px) - 5px);",
+        ".mobile-header .mobile-secondary-menu .top-menu > .j-menu > li.menu-item:last-child": "padding-inline-start: var(--content-gutter, 0px)"
+      },
+      "false": {
+        ".mobile-header .mobile-secondary-menu .top-menu > .j-menu": "padding: 0;",
+        ".mobile-header .mobile-secondary-menu .top-menu > .j-menu > li.menu-item:last-child": "padding-inline-start: 0"
+      }
+    }
+  },
+  "mobileSecondaryMenuFont": {
+    "type": "Font",
+    "selector": "div.mobile-header .mobile-secondary-menu .top-menu > .j-menu > li.menu-item > a, div.mobile-header .mobile-secondary-menu .top-menu > .j-menu > li.menu-item > a .links-text"
+  },
+  "ItemSpacingNew": {
+    "type": "Gap",
+    "variableType": "gap",
+    "property": "--menu-item-gap:%s",
+    "selector": "div.mobile-header .mobile-secondary-menu .top-menu > .j-menu > li.menu-item"
+  },
+  "centerItems": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".mobile-header .mobile-secondary-menu .top-menu > .j-menu > li.menu-item:first-child": "margin-inline-start: auto",
+        ".mobile-header .mobile-secondary-menu .top-menu > .j-menu > li.menu-item:last-child": "margin-inline-end: auto"
+      },
+      "false": {
+        ".mobile-header .mobile-secondary-menu .top-menu > .j-menu > li.menu-item:first-child": "margin-inline-start: 0",
+        ".mobile-header .mobile-secondary-menu .top-menu > .j-menu > li.menu-item:last-child": "margin-inline-end: 0"
+      }
+    }
+  },
+  "mobileSecondaryMenuDropdownAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        ".mobile-header-active .mobile-secondary-menu .top-menu > .j-menu > .drop-menu > .j-dropdown": "align-items: flex-start; --align-scroll: var(--align-scroll-start, 0); --translate-x: 0;",
+        ".mobile-header-active .mobile-secondary-menu .top-menu > .j-menu > .drop-menu > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      },
+      "center": {
+        ".mobile-header-active .mobile-secondary-menu .top-menu > .j-menu > .drop-menu > .j-dropdown": "align-items: center; --align-scroll: var(--align-scroll-center, 0); --translate-x: -50%;",
+        ".mobile-header-active .mobile-secondary-menu .top-menu > .j-menu > .drop-menu > .j-dropdown::before": "--triangle-right: 0px; --triangle-left: 0px"
+      },
+      "right": {
+        ".mobile-header-active .mobile-secondary-menu .top-menu > .j-menu > .drop-menu > .j-dropdown": "align-items: flex-end; --align-scroll: var(--align-scroll-end, 0); --translate-x: -100%;",
+        ".mobile-header-active .mobile-secondary-menu .top-menu > .j-menu > .drop-menu > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        ".mobile-header-active .mobile-secondary-menu .top-menu > .j-menu > .drop-menu > .j-dropdown": "align-items: flex-start; --align-scroll: var(--align-scroll-start, 0); --translate-x: 0;",
+        ".mobile-header-active .mobile-secondary-menu .top-menu > .j-menu > .drop-menu > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      },
+      "center": {
+        ".mobile-header-active .mobile-secondary-menu .top-menu > .j-menu > .drop-menu > .j-dropdown": "align-items: center; --align-scroll: var(--align-scroll-center, 0); --translate-x: 50%;",
+        ".mobile-header-active .mobile-secondary-menu .top-menu > .j-menu > .drop-menu > .j-dropdown::before": "--triangle-right: 0px; --triangle-left: 0px"
+      },
+      "right": {
+        ".mobile-header-active .mobile-secondary-menu .top-menu > .j-menu > .drop-menu > .j-dropdown": "align-items: flex-end; --align-scroll: var(--align-scroll-end, 0); --translate-x: 100%;",
+        ".mobile-header-active .mobile-secondary-menu .top-menu > .j-menu > .drop-menu > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      }
+    }
+  }
+}

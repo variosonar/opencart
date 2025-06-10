@@ -1,0 +1,612 @@
+{
+  "SearchBorder": {
+    "type": "Border",
+    "selector": ".header-search"
+  },
+  "SearchBackground": {
+    "type": "Background",
+    "selector": ".header-search"
+  },
+  "SearchPadding": {
+    "type": "Padding",
+    "selector": ".header-search"
+  },
+  "SearchBorderHover": {
+    "type": "Color",
+    "selector": ".header-search:hover",
+    "property": "border-color"
+  },
+  "SearchBorderActive": {
+    "type": "Color",
+    "selector": ".header-search.focused, .header-search.focused:hover",
+    "property": "border-color"
+  },
+  "SearchFullBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".header-search"
+  },
+  "SearchShadow": {
+    "type": "Shadow",
+    "selector": ".header-search"
+  },
+  "SearchShadowHover": {
+    "type": "Shadow",
+    "selector": ".header-search:hover"
+  },
+  "SearchShadowActive": {
+    "type": "Shadow",
+    "selector": ".header-search.focused, .header-search.focused:hover"
+  },
+  "InputSearchMargin": {
+    "type": "Margin",
+    "selector": ".header-search input"
+  },
+  "InputSearchBorder": {
+    "type": "Border",
+    "selector": ".header-search input"
+  },
+  "InputSearchBorderHover": {
+    "type": "Color",
+    "selector": ".header-search:hover input",
+    "property": "border-color"
+  },
+  "InputSearchBorderActive": {
+    "type": "Color",
+    "selector": ".header-search.focused input, .header-search.focused:hover input",
+    "property": "border-color"
+  },
+  "InputSearchFullBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".header-search input",
+    "important": "true"
+  },
+  "InputSearchShadow": {
+    "type": "Shadow",
+    "selector": ".header-search input"
+  },
+
+  "SearchInputFont": {
+    "type": "Font",
+    "selector": ".header-search input"
+  },
+  "SearchInputBG": {
+    "type": "Background",
+    "selector": ".header-search input",
+    "important": true
+  },
+  "SearchInputBGHover": {
+    "type": "Background",
+    "selector": ".header-search:hover input",
+    "important": true
+  },
+  "SearchIconBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".search-button",
+    "important": "true"
+  },
+  "SearchIcon": {
+    "type": "Icon",
+    "selector": "div.header-search > .search-button::before"
+  },
+  "SearchIconHover": {
+    "type": "Color",
+    "selector": ".header-search:hover > .search-button::before",
+    "property": "color",
+    "important": true
+  },
+  "SearchIconBorder": {
+    "type": "Border",
+    "selector": ".header-search > .search-button"
+  },
+  "SearchIconBorderHover": {
+    "type": "Color",
+    "selector": ".header-search:hover > .search-button",
+    "property": "border-color"
+  },
+  "SearchIconBorderActive": {
+    "type": "Color",
+    "selector": ".header-search.focused > .search-button",
+    "property": "border-color"
+  },
+  "SearchIconActive": {
+    "type": "Color",
+    "selector": ".header-search > .search-button:active::before",
+    "property": "color",
+    "important": true
+  },
+  "SearchIconBG": {
+    "type": "Background",
+    "selector": ".header-search .search-button"
+  },
+  "SearchIconBGActive": {
+    "type": "Background",
+    "selector": ".header-search .search-button:active"
+  },
+  "SearchIconBGHover": {
+    "type": "Background",
+    "selector": ".header-search:hover .search-button"
+  },
+  "SearchIconWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "rules":{
+      "@":{
+        ".header-search .search-button": "min-width:min(%spx, 100%)"
+      }
+    }
+  },
+  "SearchPlaceholder": {
+    "type": "InputLang",
+    "value": "Search...",
+    "php": true
+  },
+  "SearchCategories": {
+    "type": "InputLang",
+    "value": "All",
+    "php": true
+  },
+  "SearchCategoriesMinWidth": {
+    "type": "InputNumber",
+    "value":"",
+    "rules":{
+      "@":{
+        ".header-search .search-categories-button": "min-width:%spx"
+      }
+    }
+  },
+  "SearchPlaceholderColor": {
+    "type": "Color",
+    "rules": {
+      "@": {
+        "#search input::-webkit-input-placeholder": "color: %s",
+        "#search input::-moz-input-placeholder": "color: %s",
+        "#search input:-ms-input-placeholder": "color: %s"
+      }
+    }
+  },
+
+  "SearchCategoriesSelectorStatus": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "false": {
+        ".header-search > input":"border-top-left-radius: inherit; border-bottom-left-radius: inherit;"
+      }
+    },
+    "rtlRules": {
+      "false": {
+        ".header-search > input":"border-top-right-radius: inherit; border-bottom-right-radius: inherit;"
+      }
+    },
+    "php": true
+  },
+
+  "SearchCategoriesWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".search-categories-button",
+    "property": "--max-width: %spx"
+  },
+
+  "SearchCategoriesBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".search-categories",
+    "important": "true"
+  },
+
+  "SearchCategoriesSelectorVisibility": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "true": {
+        ".search-categories": "display: flex",
+        ".header-search > span": "border-radius: 0"
+      },
+      "false": {
+        ".search-categories": "display: none",
+        ".search-categories + span": "border-top-left-radius: inherit; border-bottom-left-radius: inherit;",
+        ".search-categories + label + span": "border-top-left-radius: inherit; border-bottom-left-radius: inherit;",
+        ".search-categories + label + input": "border-top-left-radius: inherit; border-bottom-left-radius: inherit;"
+      }
+    }
+  },
+
+  "SearchCategoriesType": {
+    "type": "Radio",
+    "value": "all",
+    "php": true
+  },
+  "SearchCategoriesSelectorBG": {
+    "type": "Background",
+    "selector": ".search-categories"
+  },
+  "SearchCategoriesSelectorBGHover": {
+    "type": "Background",
+    "selector": ".header-search:hover .search-categories"
+  },
+  "SearchCategoriesSelectorFont": {
+    "type": "Font",
+    "selector": ".search-categories-button.dropdown-toggle, .search-categories-button, .search-categories-button > a"
+  },
+  "SearchCategoriesSelectorFontHover": {
+    "type": "Font",
+    "selector": ".header-search:hover .search-categories-button"
+  },
+  "SearchCategoriesBorder": {
+    "type": "Border",
+    "selector": ".search-categories"
+  },
+  "SearchCategoriesBorderHover": {
+    "type": "Color",
+    "selector": ".header-search:hover .search-categories",
+    "property": "border-color"
+  },
+  "SearchCategoriesBorderActive": {
+    "type": "Color",
+    "selector": ".header-search.focused .search-categories",
+    "property": "border-color"
+  },
+  "SearchCategoriesSelectorIcon": {
+    "type": "Icon",
+    "selector": ".search-categories-button::after",
+    "value": {
+      "icon": {
+        "name": "sort",
+        "code": "f0dc"
+      }
+    }
+  },
+  "SearchCategoriesSelectorIconHover": {
+    "type": "Color",
+    "selector": ".header-search:hover .search-categories-button::after",
+    "property": "color"
+  },
+
+  "SearchCategoriesSelectorDropdownWidth": {
+    "type": "InputNumber",
+    "selector": ".search-categories .dropdown-menu ul",
+    "property": "width:%spx"
+  },
+  "SearchCategoriesSelectorDropdownHeight": {
+    "type": "InputNumber",
+    "selector": ".search-categories .dropdown-menu ul",
+    "property": "max-height:%spx"
+  },
+
+  "SearchCategoriesSelectorDropdown": {
+    "type": "Variable",
+    "variable": "dropdown",
+    "selector_prefix": "#search .search-categories"
+  },
+
+  "SearchCategoriesSelectorDropdownAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        "#search .header-search .search-categories.dropdown > .j-dropdown": "left: 0; right: auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "#search .header-search .search-categories.dropdown > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      },
+      "center": {
+        "#search .header-search .search-categories.dropdown > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "#search .header-search .search-categories.dropdown > .j-dropdown::before": "--triangle-right: 0px; --triangle-left: 0px"
+      },
+      "right": {
+        "#search .header-search .search-categories.dropdown > .j-dropdown": "right:0; left:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "#search .header-search .search-categories.dropdown > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        "#search .header-search .search-categories.dropdown > .j-dropdown": "left: auto; right: 0; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "#search .header-search .search-categories.dropdown > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      },
+      "center": {
+        "#search .header-search .search-categories.dropdown > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "#search .header-search .search-categories.dropdown > .j-dropdown::before": "--triangle-right: 0px; --triangle-left: 0px"
+      },
+      "right": {
+        "#search .header-search .search-categories.dropdown > .j-dropdown": "left:0; right:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "#search .header-search .search-categories.dropdown > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      }
+    }
+  },
+  "DropdownTopSpacing": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": "#search .search-categories.drop-menu > .j-dropdown::before",
+    "property": "margin-top: %spx"
+  },
+  "SearchAutoSuggestItemWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".tt-menu",
+    "property": "--item-width: %spx"
+  },
+  "SearchAutoSuggestItemGap": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".tt-menu",
+    "property": "--item-gap: %spx"
+  },
+  "SearchCategoriesTriangle": {
+    "include": "triangle",
+    "selector_prefix": ".search-categories .j-menu"
+  },
+  "SearchAutoSuggestStatus": {
+    "type": "Status",
+    "php": true,
+    "js": true
+  },
+  "SearchAutoSuggestLimit": {
+    "type": "Input",
+    "value": "10",
+    "php": true
+  },
+  "SearchAutoSuggestDescription": {
+    "type": "Toggle",
+    "value": "true",
+    "php": true,
+    "js": true
+  },
+  "SearchAutoSuggestSubCategories": {
+    "type": "Toggle",
+    "js": true,
+    "php": true
+  },
+  "SearchAutoSuggestWidth": {
+    "type": "InputNumber",
+    "selector": ".tt-menu > div",
+    "property": "width:%spx"
+  },
+  "SearchAutoSuggestHeight": {
+    "type": "InputNumber",
+    "selector": ".tt-menu > div",
+    "property": "max-height:%spx"
+  },
+  "SearchAutoSuggestShadow-hold": {
+    "type": "Shadow",
+    "selector": ".search-result"
+  },
+  "SearchAutoSuggestShadowHover-hold": {
+    "type": "Shadow",
+    "selector": ".search-result:hover"
+  },
+  "SearchAutoSuggestBG": {
+    "type": "Background",
+    "selector": ".tt-menu > div",
+    "important": true
+  },
+  "SearchAutoSuggestItemBG": {
+    "type": "Background",
+    "selector": ".tt-menu .search-result:not(.view-more) a"
+  },
+  "SearchAutoSuggestBGHover": {
+    "type": "Background",
+    "selector": ".tt-menu .search-result:not(.view-more):hover a, .tt-cursor"
+  },
+  "SearchAutoSuggestDivider": {
+    "type": "Divider",
+    "selector": ".tt-menu > div > div > a"
+  },
+  "SearchAutoSuggestDividerHover": {
+    "type": "Color",
+    "selector": ".tt-menu > div > div > a:hover, .tt-menu > div > div:hover + div > a",
+    "property": "border-color"
+  },
+  "SearchAutoSuggestViewMoreDivider": {
+    "type": "Divider",
+    "selector": ".tt-menu > div > div.view-more > a"
+  },
+  "SearchAutoSuggestViewMoreDividerHover": {
+    "type": "Color",
+    "selector": ".tt-menu > div > div.view-more > a:hover",
+    "property": "border-color"
+  },
+  "SearchAutoSuggestShadowWrapper": {
+    "type": "Shadow",
+    "selector": ".tt-dataset"
+  },
+  "SearchAutoSuggestBorder": {
+    "type": "Border",
+    "selector": ".tt-menu > div"
+  },
+  "SearchAutoSuggestBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".tt-menu > div"
+  },
+  "SearchAutoSuggestTriangle": {
+    "include": "triangle",
+    "selector_prefix": "#search .twitter-typeahead"
+  },
+  "SearchAutoSuggestImageStatus": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "false": {
+        ".search-result > a > img":"display:none",
+        ".search-result > a > span":"padding-inline-start:5px;"
+      }
+    }
+  },
+  "SearchAutoSuggestProductImageBorder": {
+    "type": "Border",
+    "selector": ".search-result > a > img"
+  },
+  "SearchAutoSuggestProductImageBorderHover": {
+    "type": "Color",
+    "selector": ".tt-menu > div > div > a:hover img",
+    "property": "border-color"
+  },
+  "SearchAutoSuggestProductImageBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".search-result > a > img"
+  },
+  "SearchAutoSuggestProductImageBackground": {
+    "type": "Background",
+    "selector": ".search-result > a > img"
+  },
+  "SearchAutoSuggestProductImageShadow": {
+    "type": "Shadow",
+    "selector": ".search-result > a > img"
+  },
+  "SearchAutoSuggestProductImageShadowHover": {
+    "type": "Shadow",
+    "selector": ".tt-menu > div > div > a:hover img"
+  },
+  "SearchAutoSuggestPadding": {
+    "type": "Padding",
+    "selector": ".search-result > a"
+  },
+  "SearchAutoSuggestProductPadding": {
+    "type": "Padding",
+    "selector": ".search-result > a > span"
+  },
+
+  "SearchAutoSuggestNameStatus": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "false": {
+        ".search-result .product-name":"display:none"
+      }
+    }
+  },
+  "SearchAutoSuggestPriceStatus": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "false": {
+        ".search-result .product-name + span":"display:none"
+      }
+    }
+  },
+
+  "SearchViewMoreAlign": {
+    "type": "Radio",
+    "value": "flex-start",
+    "property": "justify-content",
+    "selector": ".search-result.view-more a"
+  },
+
+  "SearchAutoSuggestFont": {
+    "type": "Font",
+    "selector": ".search-result .product-name"
+  },
+  "SearchAutoSuggestFontHover": {
+    "type": "Font",
+    "selector": ".tt-menu > div > div > a:hover .product-name"
+  },
+  "SearchAutoSuggestPriceFont": {
+    "type": "Font",
+    "selector": ".search-result .product-name + span"
+  },
+  "SearchAutoSuggestPriceFontHover": {
+    "type": "Font",
+    "selector": ".tt-menu > div > div > a:hover .product-name + span"
+  },
+  "SearchAutoSuggestPriceOldFont": {
+    "type": "Font",
+    "selector": ".search-result .price-old"
+  },
+  "SearchAutoSuggestPriceOldFontHover": {
+    "type": "Font",
+    "selector": ".tt-menu > div > div > a:hover .price-old"
+  },
+  "SearchAutoSuggestPriceOldBG": {
+    "type": "Background",
+    "selector": ".search-result .price-old"
+  },
+  "SearchAutoSuggestPriceOldBGHover": {
+    "type": "Background",
+    "selector": ".tt-menu > div > div > a:hover .price-old"
+  },
+  "SearchAutoSuggestProductOldPadding": {
+    "type": "Padding",
+    "selector": ".search-result .price-old"
+  },
+  "SearchAutoSuggestProductNameMargin": {
+    "type": "Margin",
+    "selector": ".search-result .product-name"
+  },
+  "SearchAutoSuggestViewMoreStatus": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "false": {
+        ".search-result.view-more":"display:none"
+      }
+    }
+  },
+  "SearchViewMoreText": {
+    "type": "InputLang",
+    "value": "View More",
+    "php": true
+  },
+  "SearchAutoSuggestViewMoreFont": {
+    "type": "Font",
+    "selector": ".search-result.view-more a"
+  },
+  "SearchAutoSuggestViewMoreFontHover": {
+    "type": "Font",
+    "selector": ".search-result.view-more a:hover"
+  },
+  "SearchAutoSuggestProductsAlign": {
+    "type": "Radio",
+    "value": "top",
+    "rules": {
+      "top": {
+        ".search-result > a > span": "justify-content:flex-start"
+      },
+      "center": {
+        ".search-result > a > span": "justify-content:center"
+      }
+    }
+  },
+  "SearchAutoSuggestViewMoreBG": {
+    "type": "Background",
+    "selector": ".search-result.view-more a"
+  },
+  "SearchAutoSuggestViewMoreBGHover": {
+    "type": "Background",
+    "selector": ".search-result.view-more a:hover"
+  },
+  "SearchAutoSuggestViewMorePadding": {
+    "type": "Padding",
+    "selector": ".search-result.view-more a"
+  },
+  "SearchAutoSuggestViewMoreIcon": {
+    "type": "Icon",
+    "selector": ".search-result.view-more a::after"
+  },
+  "SearchAutoSuggestViewMoreIconHover": {
+    "type": "Color",
+    "selector": ".search-result.view-more a:hover::after",
+    "property": "color"
+  },
+
+  "SearchAutoSuggestItemIcon": {
+    "type": "Icon",
+    "selector": ".search-result:not(.view-more) > a::after"
+  },
+  "SearchAutoSuggestItemIconHover": {
+    "type": "Color",
+    "selector": ".search-result:not(.view-more) > a:hover::after",
+    "property": "color"
+  },
+
+  "SearchNoResultsText": {
+    "type": "InputLang",
+    "value": "No results found.",
+    "php": true
+  },
+  "AutoSuggestPadding": {
+    "type": "Padding",
+    "selector": ".search-result > a"
+  },
+  "SearchNoResultsFont": {
+    "type": "Font",
+    "selector": ".search-result.no-results > a",
+    "important": true
+  }
+}

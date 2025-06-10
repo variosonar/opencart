@@ -1,0 +1,39 @@
+{% for category in categories %}
+  <div class="category-layout {{ journal3.classes(category.classes) }} {{ color_scheme_content }}">
+    <div class="category-thumb">
+      {% if images %}
+      <div class="image">
+        {% if category.total_text and productsCountTextPosition == 'image' %}
+          <div class="product-count product-count-image {% if category.total <= 0 %}product-count-zero{% endif %}">{{ category.total_text }}</div>
+        {% endif %}
+
+        <a href="{{ category.href }}">
+          {% if journal3.get('performanceLazyLoadImagesStatus') %}
+            <img src="{{ dummy_image }}" data-src="{{ category.thumb }}" {% if category.thumb2x %}data-srcset="{{ category.thumb }} 1x, {{ category.thumb2x }} 2x" {% endif %} width="{{ image_width }}" height="{{ image_height }}" alt="{{ category.name }}" title="{{ category.name }}" class="img-responsive lazyload"/>
+          {% else %}
+            <img src="{{ category.thumb }}" {% if category.thumb2x %}srcset="{{ category.thumb }} 1x, {{ category.thumb2x }} 2x" {% endif %} width="{{ image_width }}" height="{{ image_height }}" alt="{{ category.name }}" title="{{ category.name }}" class="img-responsive"/>
+          {% endif %}
+        </a>
+      </div>
+      {% endif %}
+
+      <div class="caption">
+        <div class="name"><a href="{{ category.href }}">{{ category.name }}</a> {% if category.total_text and productsCountTextPosition == 'name' %}<div class="product-count product-count-name {% if category.total <= 0 %}product-count-zero{% endif %}">{{ category.total_text }}</div>{% endif %}</div>
+
+        {% if category.total_text and productsCountTextPosition == 'below' %}
+          <div class="product-count product-count-below {% if category.total <= 0 %}product-count-zero{% endif %}">{{ category.total_text }}</div>
+        {% endif %}
+
+        <div class="description">{{ category.description }}</div>
+
+        {% if viewMoreText %}
+        <div class="button-group">
+          <a class="btn btn-view-more" href="{{ category.href }}" {% if journal3.is_desktop and (journal3.getIn('CategoryButtonDisplay', _context) == "icon") and (journal3.getIn('CategoryButtonTooltipStatus', _context)) %} data-toggle="tooltip-hover" data-tooltip-class="{{ module_id ? 'module-categories-' ~ module_id ~ ' module-categories-grid' : 'category-grid' }} view-more-tooltip" data-placement="{{ journal3.getIn('CategoryButtonTooltipPosition', _context) }}"{% endif %} title="{{ viewMoreText }}">
+            <span class="btn-text">{{ viewMoreText }}</span>
+          </a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endfor %}

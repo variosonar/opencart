@@ -1,0 +1,69 @@
+{% macro renderInfoBlocks(context, item) %}
+  {% set journal3 = context.journal3 %}
+  {% if item.link.href %}
+    <a href="{{ item.link.href }}" class="info-block" {{ journal3.linkAttrs(item.link) }} title="{{ item.title }}">
+      {% if item.type == 'image' %}
+        <img src="{{ item.image }}" {% if item.image2x %} srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" {% endif %} width="{{ context.imageDimensions.width }}" height="{{ context.imageDimensions.height }}" alt="{{ item.title }}" class="info-block-img"/>
+      {% endif %}
+      {% if item.type == 'counter' %}
+        <div class="info-block-counter">
+          {{ item.counter }}
+        </div>
+      {% endif %}
+      <div class="info-block-content">
+        <div class="info-block-title">{{ item.title }}</div>
+        <div class="info-block-text">{{ item.content }}</div>
+        <div class="btn info-block-button">{{ item.buttonTextNew }}</div>
+      </div>
+      {% if item.link.total is not null %}
+        <span class="count-badge">{{ item.link.total }}</span>
+      {% endif %}
+    </a>
+  {% else %}
+    <div class="info-block">
+      {% if item.type == 'image' %}
+        <img src="{{ item.image }}" {% if item.image2x %} srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" {% endif %} width="{{ context.imageDimensions.width }}" height="{{ context.imageDimensions.height }}" alt="{{ item.title }}" class="info-block-img"/>
+      {% endif %}
+      {% if item.type == 'counter' %}
+        <div class="info-block-counter">
+          {{ item.counter }}
+        </div>
+      {% endif %}
+      <div class="info-block-content">
+        <div class="info-block-title">{{ item.title }}</div>
+        <div class="info-block-text">{{ item.content }}</div>
+        <a class="btn info-block-button" href="{{ item.buttonLink.href | default('javascript:;') }}" {{ journal3.linkAttrs(item.buttonLink) }}>{{ item.buttonTextNew }}</a>
+      </div>
+    </div>
+  {% endif %}
+{% endmacro %}
+<div class="{{ journal3.classes(classes) }}">
+  <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+  {% if title %}
+    <h3 class="title module-title">{{ title }}</h3>
+  {% endif %}
+  {% if description %}
+    <p class="module-description">{{ description }}</p>
+  {% endif %}
+  <div class="module-body">
+    <div class="info_blocks-grid no-scroll {{ gridType }}-grid">
+      {% if gridType == 'auto' %}
+        <div class="auto-grid-items">
+          {% for item in items %}
+            <div class="{{ journal3.classes(item.classes) }}">
+              {{ _self.renderInfoBlocks(_context, item) }}
+            </div>
+          {% endfor %}
+        </div>
+        <div class="auto-carousel-bar auto-carousel-controls"><div class="auto-carousel-thumb"></div><div class="auto-carousel-fill"></div></div>
+        <div class="auto-carousel-buttons auto-carousel-controls"><div class="auto-carousel-prev"><span></span></div><div class="auto-carousel-next"><span></span></div></div>
+      {% else %}
+        {% for item in items %}
+          <div class="{{ journal3.classes(item.classes) }}">
+            {{ _self.renderInfoBlocks(_context, item) }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</div>

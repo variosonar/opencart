@@ -1,0 +1,591 @@
+{
+  "Text1Font": {
+    "type": "Font",
+    "selector": ".info-block .info-block-title"
+  },
+  "Text1FontHover": {
+    "type": "Font",
+    "selector": "a.info-block:hover .info-block-title, a.info-block:active .info-block-title"
+  },
+  "Text2Order": {
+    "type": "Radio",
+    "value": "initial",
+    "selector": ".info-block-text",
+    "property": "order: %s"
+  },
+  "Text2Font": {
+    "type": "Font",
+    "selector": ".info-block .info-block-text"
+  },
+  "Text2FontHover": {
+    "type": "Font",
+    "selector": "a.info-block:hover .info-block-text, a.info-block:active .info-block-text"
+  },
+  "TitleIconRight": {
+    "type": "Icon",
+    "selector": ".info-block-title::after"
+  },
+  "TitleIconRightHover": {
+    "type": "Color",
+    "selector": "a.info-block:hover .info-block-title::after",
+    "property": "color"
+  },
+  "Text1Spacing": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        ".info-block-title:not(:empty) + .info-block-text:not(:empty)": "margin-top:%spx"
+      }
+    }
+  },
+  "Text1Height": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        ".info-block .info-block-title": "min-height:%spx"
+      }
+    }
+  },
+  "Text1Visibility": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".info-block .info-block-title": "display: flex"
+      },
+      "false": {
+        ".info-block .info-block-title": "display: none"
+      }
+    }
+  },
+  "Text2Visibility": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".info-block .info-block-text": "display: block"
+      },
+      "false": {
+        ".info-block .info-block-text": "display: none"
+      }
+    }
+  },
+  "TextAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        ".info-block .info-block-content": "text-align: start; align-items: flex-start"
+      },
+      "center": {
+        ".info-block .info-block-content": "text-align: center; align-items: center"
+      },
+      "right": {
+        ".info-block .info-block-content": "text-align: end; align-items: flex-end"
+      }
+    }
+  },
+  "ContentWidth": {
+    "type": "Radio",
+    "value": "",
+    "property": "flex-grow: %s",
+    "selector": ".info-block .info-block-content"
+  },
+  "Background": {
+    "type": "Background",
+    "selector": ".info-block"
+  },
+  "BackgroundHover": {
+    "type": "Background",
+    "selector": ".info-block:hover"
+  },
+  "Scale": {
+    "type": "InputPair",
+    "selector": "a.info-block",
+    "properties": {
+      "first": "--scale-hover: %s;",
+      "second": "--scale-active: %s"
+    }
+  },
+  "InnerBackground": {
+    "type": "Background",
+    "selector": ".info-block-content"
+  },
+  "InnerBackgroundHover": {
+    "type": "Background",
+    "selector": "a.info-block:hover .info-block-content"
+  },
+  "BorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".info-block"
+  },
+  "Border": {
+    "type": "Border",
+    "selector": ".info-block"
+  },
+  "BorderHover": {
+    "type": "Color",
+    "selector": ".info-block:hover",
+    "property": "border-color"
+  },
+  "FirstBorder": {
+    "type": "Border",
+    "selector": ".info-blocks:first-child .info-block"
+  },
+  "FirstBorderHover": {
+    "type": "Color",
+    "selector": ".info-blocks:first-child .info-block:hover",
+    "property": "border-color"
+  },
+  "LastBorder": {
+    "type": "Border",
+    "selector": ".info-blocks:last-child .info-block"
+  },
+  "LastBorderHover": {
+    "type": "Color",
+    "selector": ".info-blocks:last-child .info-block:hover",
+    "property": "border-color"
+  },
+  "FirstBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".info-blocks:first-child .info-block"
+  },
+  "LastBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".info-blocks:last-child .info-block"
+  },
+  "OddBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".info-blocks:nth-child(odd) .info-block"
+  },
+  "EvenBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".info-blocks:nth-child(even) .info-block"
+  },
+  "Shadow": {
+    "type": "Shadow",
+    "selector": ".info-block"
+  },
+  "ShadowHover": {
+    "type": "Shadow",
+    "selector": ".info-block:hover"
+  },
+  "Padding": {
+    "type": "Padding",
+    "selector": ".info-block"
+  },
+  "ContentPadding": {
+    "type": "Padding",
+    "selector": ".info-block-content"
+  },
+  "HoverBackgroundStatus": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".info-block-content::before": "display: block",
+        "a.info-block": "overflow: hidden"
+      },
+      "false": {
+        ".info-block-content::before": "display: none",
+        "a.info-block": "overflow: visible"
+      }
+    }
+  },
+
+  "HoverBackground": {
+    "type": "Background",
+    "selector": ".info-block-content::before"
+  },
+
+  "HoverDirection": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "opacity": {
+        "a.info-block .info-block-content::before": "opacity: 0; transform: scaleX(1) scaleY(1)",
+        "a.info-block:hover .info-block-content::before": "opacity: 1; transform: scaleX(1) scaleY(1)"
+      },
+      "top": {
+        "a.info-block .info-block-content::before": "transform: scaleX(1) scaleY(0); transform-origin: bottom",
+        "a.info-block:hover .info-block-content::before": "transform: scaleX(1) scaleY(1); transform-origin: top"
+      },
+      "right": {
+        "a.info-block .info-block-content::before": "transform: scaleX(0) scaleY(1); transform-origin: left",
+        "a.info-block:hover .info-block-content::before": "transform: scaleX(1) scaleY(1); transform-origin:right"
+      },
+      "bottom": {
+        "a.info-block .info-block-content::before": "transform: scaleX(1) scaleY(0); transform-origin: top",
+        "a.info-block:hover .info-block-content::before": "transform: scaleX(1) scaleY(1); transform-origin:bottom"
+      },
+      "left": {
+        "a.info-block .info-block-content::before": "transform: scaleX(0) scaleY(1); transform-origin: right",
+        "a.info-block:hover .info-block-content::before": "transform: scaleX(1) scaleY(1); transform-origin:left"
+      }
+    }
+  },
+
+  "IconAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "start": {
+        ".info-block": "align-items: flex-start; --align-v: flex-start; --align-h: flex-start; --align-text-v: start; --align-text-h: start",
+        ".info-block::before": "align-self:flex-start;",
+        ".info-block-img": "align-self:flex-start;",
+        ".info-block-counter": "align-self:flex-start;"
+      },
+      "center": {
+        ".info-block": "--align-v: center; --align-h: center; --align-text-v: start; --align-text-h: center",
+        ".info-block::before": "align-self:center;",
+        ".info-block-img": "align-self:center;",
+        ".info-block-counter": "align-self:center;"
+      },
+      "end": {
+        ".info-block": "--align-v: flex-end; --align-h: flex-end; --align-text-v: start; --align-text-h: end",
+        ".info-block::before": "align-self:flex-end;",
+        ".info-block-img": "align-self:flex-end;",
+        ".info-block-counter": "align-self:flex-end;"
+      }
+    }
+  },
+
+  "ItemsDirection": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "h": {
+        ".info-block": "display: flex; flex-direction: row; --align-h: flex-start",
+        ".info-block-content": "justify-content: var(--align-v); align-items: flex-start; text-align: start"
+      },
+      "v": {
+        ".info-block": "display: flex; flex-direction: column;",
+        ".info-block-content": "justify-content: flex-start;  align-items: var(--align-h); text-align: var(--align-text-h)"
+      }
+    }
+  },
+
+  "IconPosition": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "side": {
+        ".info-block": "display: flex; flex-direction: row; justify-content: flex-start; text-align: start",
+        ".info-block-content":"display:flex",
+        ".info-block::before": "position: relative; transform: none; top: initial;"
+      },
+      "top": {
+        ".info-block": "display:flex; flex-direction: column; justify-content: flex-start;",
+        ".info-block-content":"display:flex; justify-content: flex-start;  align-items: var(--align-h); text-align: var(--align-text-h)",
+        ".info-block::before": "position: relative; transform: none; top: initial;"
+      },
+      "float": {
+        ".info-block": "display:block; text-align:start",
+        ".info-block::before": "float: inline-start; margin-inline-end: var(--gap, 8px); position: relative; transform: none; top: initial;",
+        ".info-block-img": "float: inline-start;",
+        ".info-block-counter": "float: inline-start;",
+        ".info-block-content":"display: block"
+      },
+      "absolute": {
+        ".info-block::before": "position: absolute; transform: translate3d(0,-50%,0); top: 0;"
+      }
+    }
+  },
+
+  "ItemsGap": {
+    "type": "Gap",
+    "variableType": "gap",
+    "property": "--gap:%s",
+    "selector": ".info-block"
+  },
+
+  "IconHeight": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".info-block::before": "height: 100%"
+      },
+      "false": {
+        ".info-block::before": "height: var(--height)"
+      }
+    }
+  },
+
+  "IconShadow": {
+    "type": "Shadow",
+    "selector": ".info-block::before"
+  },
+  "IconShadowHover": {
+    "type": "Shadow",
+    "selector": "a.info-block:hover::before"
+  },
+
+  "IconSize": {
+    "type": "InputPair",
+    "selector": ".info-block, .info-block::before",
+    "properties": {
+      "first": "--width:%spx",
+      "second": "--height:%spx"
+    }
+  },
+
+  "IconDimensions": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        ".info-block::before": "font-size:%spx"
+      }
+    }
+  },
+
+  "IconBackground": {
+    "type": "Background",
+    "selector": ".info-block::before, .info-block-counter, .info-block-img"
+  },
+
+  "IconBackgroundHover": {
+    "type": "Background",
+    "selector": "a.info-block:hover::before, a.info-block:hover .info-block-counter, a.info-block:hover .info-block-img"
+  },
+  "GlobalIcon": {
+    "type": "Icon",
+    "selector": ".info-block::before"
+  },
+  "GlobalIconRight": {
+    "type": "Icon",
+    "selector": ".info-block::after"
+  },
+  "IconRightDisplay": {
+    "type": "Radio",
+    "value": "always",
+    "rules": {
+      "always": {
+        ".info-block::after": "opacity: 1; transform: translate3d(0,0,0) scale(1);"
+      },
+      "hover": {
+        ".info-block::after": "opacity: 0; transform: translate3d(-5px,0,0) scale(.9);",
+        ".info-block:hover::after": "opacity: 1; transform: translate3d(0,0,0) scale(1);"
+      }
+    }
+  },
+  "IncrementalNumberFont": {
+    "type": "Font",
+    "selector": ".info-blocks-incremental .info-block::before",
+    "important": "true"
+  },
+  "IncrementalNumberFontHover": {
+    "type": "Font",
+    "selector": ".info-blocks-incremental a.info-block:hover::before",
+    "important": "true"
+  },
+  "IncrementalTitleFont": {
+    "type": "Font",
+    "selector": ".info-blocks .info-block-title::before"
+  },
+  "IncrementalTitleFontHover": {
+    "type": "Font",
+    "selector": ".info-blocks a.info-block-title:hover::before"
+  },
+  "IncrementalTitle": {
+    "type": "Toggle",
+    "value": "none",
+    "rules": {
+      "none": {
+        ".info-blocks .info-block-title::before": "display:none"
+      },
+      "normal": {
+        ".info-blocks .info-block-title::before": "display:inline-flex; content: counter(top-counters) '.'"
+      },
+      "leading": {
+        ".info-blocks .info-block-title::before": "display:inline-flex; content: counter(top-counters, decimal-leading-zero) '.'"
+      }
+    }
+  },
+  "IncrementalIcon": {
+    "type": "Toggle",
+    "value": "normal",
+    "rules": {
+      "normal": {
+        ".info-blocks-incremental .info-block::before": "content: counter(top-counters) !important"
+      },
+      "leading": {
+        ".info-blocks-incremental .info-block::before": "content: counter(top-counters, decimal-leading-zero) !important"
+      }
+    }
+  },
+  "CounterFont": {
+    "type": "Font",
+    "selector": ".info-block-counter"
+  },
+  "CounterFontHover": {
+    "type": "Font",
+    "selector": "a.info-block:hover .info-block-counter"
+  },
+  "CounterSymbolFont": {
+    "type": "Font",
+    "selector": ".info-block-counter::after"
+  },
+  "CounterSymbolFontHover": {
+    "type": "Font",
+    "selector": "a.info-block:hover .info-block-counter::after"
+  },
+  "CounterSymbolMargin": {
+    "type": "Margin",
+    "selector": ".info-block-counter::after"
+  },
+  "IconColor": {
+    "type": "Color",
+    "selector": ".info-block::before",
+    "property": "color"
+  },
+  "IconColorHover": {
+    "type": "Color",
+    "selector": "a.info-block:hover::before",
+    "property": "color"
+  },
+  "IconMargin": {
+    "type": "Margin",
+    "selector": ".info-block::before, .info-block-img, .info-block-counter"
+  },
+  "IconBorder": {
+    "type": "Border",
+    "selector": ".info-block::before, .info-block-img, .info-block-counter"
+  },
+  "IconBorderHover": {
+    "type": "Color",
+    "property": "border-color",
+    "selector": ".info-block:hover::before, .info-block-img:hover, .info-block-counter:hover"
+  },
+  "IconBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".info-block::before, .info-block-img, .info-block-counter"
+  },
+
+
+  "IconRightSize": {
+    "type": "InputPair",
+    "selector": ".info-block::after",
+    "properties": {
+      "first": "width:%spx",
+      "second": "height:%spx"
+    }
+  },
+
+  "IconRightDimensions": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        ".info-block::after": "font-size:%spx"
+      }
+    }
+  },
+
+  "IconRightBackground": {
+    "type": "Background",
+    "selector": ".info-block::after"
+  },
+  "IconRightBackgroundHover": {
+    "type": "Background",
+    "selector": "a.info-block:hover::after"
+  },
+  "IconRightColor": {
+    "type": "Color",
+    "selector": ".info-block::after",
+    "property": "color"
+  },
+  "IconRightColorHover": {
+    "type": "Color",
+    "selector": "a.info-block:hover::after",
+    "property": "color"
+  },
+  "IconRightMargin": {
+    "type": "Margin",
+    "selector": ".info-block::after"
+  },
+  "IconRightBorder": {
+    "type": "Border",
+    "selector": ".info-block::after"
+  },
+  "IconRightBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".info-block::after"
+  },
+  "IconRightShadow": {
+    "type": "Shadow",
+    "selector": ".info-block::before"
+  },
+  "IconRightShadowHover": {
+    "type": "Shadow",
+    "selector": ".info-block:hover::before"
+  },
+
+
+  "CountBadge": {
+    "type": "Variable",
+    "variable": "count_badge",
+    "selector_prefix": ".info-block"
+  },
+
+  "CountBadgeOffset": {
+    "type": "InputPair",
+    "selector": ".info-block .count-badge",
+    "properties": {
+      "first": "--x: %spx",
+      "second": "margin-top:%spx"
+    },
+    "rtlProperties":{
+      "first": "--x: calc(0px - %spx)",
+      "second": "margin-top:%spx"
+    }
+  },
+
+  "ButtonStyle": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": ".info-block-button&"
+  },
+  "ButtonVisibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".info-block-button": "display: flex"
+      },
+      "false": {
+        ".info-block-button": "display: none"
+      }
+    }
+  },
+  "ButtonWidth": {
+    "type": "Radio",
+    "value": "",
+    "selector": ".info-block-button",
+    "property": "max-width:%s"
+  },
+
+  "ButtonMargin": {
+    "type": "Margin",
+    "selector": ".info-block-button"
+  },
+  "ButtonFont": {
+    "type": "Font",
+    "selector": ".info-block-button",
+    "important": true
+  },
+  "ButtonFontHover": {
+    "type": "Font",
+    "selector": "a.info-block:hover .info-block-button",
+    "important": true
+  },
+  "CountBadgeVisibility": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".info-block .count-badge": "display: inline-flex"
+      },
+      "false": {
+        ".info-block .count-badge": "display: none"
+      }
+    }
+  }
+}

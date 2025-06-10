@@ -1,0 +1,17 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "Field Value",
+    "php": true
+  },
+  "label": {
+    "type": "InputLang",
+    "php": true
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

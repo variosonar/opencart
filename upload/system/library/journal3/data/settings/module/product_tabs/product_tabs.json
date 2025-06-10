@@ -1,0 +1,43 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Product TAB"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "type": {
+    "type": "Radio",
+    "value": "custom",
+    "php": true
+  },
+  "filter": {
+    "type": "ProductFilter"
+  },
+  "schedule": {
+    "type": "Range",
+    "php": true
+  },
+  "position": {
+    "type": "Radio",
+    "value": "default",
+    "php": true,
+    "device": true
+  },
+  "positionTablet": {
+    "type": "Radio",
+    "value": "",
+    "php": true
+  },
+  "positionPhone": {
+    "type": "Radio",
+    "value": "",
+    "php": true
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "informationTypography": {
+    "type": "Variable",
+    "variable": "typography",
+    "selector_prefix": ".route-information-information .content"
+  },
+  "informationColumns": {
+    "type": "Radio",
+    "value": "initial",
+    "selector": ".route-information-information .content",
+    "property": "column-count:%s"
+  },
+  "informationColumnGap": {
+    "type": "InputNumber",
+    "selector": ".route-information-information .content",
+    "property": "column-gap:%spx"
+  },
+  "informationColumnDividerColor": {
+    "type": "Color",
+    "selector": ".route-information-information .content",
+    "property": "column-rule-color"
+  },
+  "informationColumnDividerWidth": {
+    "type": "InputNumber",
+    "selector": ".route-information-information .content",
+    "property": "column-rule-width:%spx",
+    "value": ""
+  },
+  "informationColumnDividerStyle": {
+    "type": "Select",
+    "selector": ".route-information-information .content",
+    "property": "column-rule-style"
+  },
+  "informationHideLoneP": {
+    "type": "Toggle",
+    "selector": ".route-information-information .content > p:only-child",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".route-information-information .content > p:only-child": "display:none"
+      }
+    }
+  }
+}

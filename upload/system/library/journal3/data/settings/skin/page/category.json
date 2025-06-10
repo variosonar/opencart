@@ -1,0 +1,704 @@
+{
+  "categoryPageDescStatus": {
+    "type": "Toggle",
+    "php": true
+  },
+  "categoryPageTitle": {
+    "type": "Variable",
+    "variable": "title",
+    "selector_prefix": ".route-product-category .page-title"
+  },
+  "categoryPageTitleVisibility": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".route-product-category .page-title": "display: block"
+      },
+      "false": {
+        ".route-product-category .page-title": "display: none"
+      }
+    }
+  },
+  "refineTitle": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "refineTitleText": {
+    "type": "InputLang",
+    "php": true
+  },
+  "refineTitleStyle": {
+    "type": "Variable",
+    "variable": "title",
+    "selector_prefix": ".refine-title"
+  },
+  "categoryPageCategoryDescriptionStatus": {
+    "type": "Status",
+    "php": true
+  },
+  "categoryPageCategoryDescriptionPosition": {
+    "type": "Radio",
+    "value": "top",
+    "rules": {
+      "topmost": {
+        ".route-product-category .category-description": "order:-1"
+      },
+      "top": {
+        ".route-product-category .category-description": "order:0"
+      },
+      "bottom": {
+        ".route-product-category .category-description": "order:10"
+      }
+    }
+  },
+  "categoryPageTypography": {
+    "type": "Variable",
+    "variable": "typography",
+    "selector_prefix": ".category-description"
+  },
+  "categoryImageFloat": {
+    "type": "Radio",
+    "value": "left",
+    "rules": {
+      "left": {
+        ".category-image": "float:left"
+      },
+      "center": {
+        ".category-image": "float:none"
+      },
+      "right": {
+        ".category-image": "float:right"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        ".category-image": "float:right"
+      },
+      "center": {
+        ".category-image": "float:none"
+      },
+      "right": {
+        ".category-image": "float:left"
+      }
+    }
+  },
+  "categoryDescriptionDisplay": {
+    "type": "Radio",
+    "value": "default",
+    "rules": {
+      "default": {
+        ".category-text": "position:static; bottom:auto"
+      },
+      "over": {
+        ".category-text": "position:absolute; bottom:0;"
+      }
+    }
+  },
+  "categoryDescriptionText": {
+    "include": "common",
+    "selector_prefix": ".category-text"
+  },
+  "categoryPageDescription": {
+    "include": "common",
+    "selector_prefix": ".category-description"
+  },
+  "categoryPageCategoryImageStatus": {
+    "type": "Status",
+    "php": true
+  },
+  "categoryPageCategoryImage": {
+    "include": "common",
+    "selector_prefix": ".category-description > img"
+  },
+  "subcategoriesStatus": {
+    "type": "Status",
+    "php": true
+  },
+  "subcategoriesDisplay": {
+    "type": "Radio",
+    "value": "carousel",
+    "php": true
+  },
+  "subcategoriesItemsPerRow": {
+    "type": "ItemsPerRow",
+    "selector": ".refine-categories .ipr-grid .refine-item",
+    "php": true
+  },
+  "subcategoriesContainerGutter": {
+    "type": "Margin",
+    "selector": ".refine-items.ipr-grid"
+  },
+  "subcategoriesCarouselPadding": {
+    "type": "Padding",
+    "selector": ".refine-categories .swiper-container"
+  },
+  "subcategoriesPadding": {
+    "type": "Padding",
+    "selector": ".refine-categories:not(.refine-carousel)"
+  },
+  "subcategoriesLinksSpacing": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".refine-links": "--refine-spacing:%spx"
+      }
+    }
+  },
+  "subcategoriesBackground": {
+    "type": "Background",
+    "selector": ".refine-categories"
+  },
+  "subcategoriesCarousel": {
+    "type": "Toggle",
+    "php": true
+  },
+  "subcategoriesCarouselStyle": {
+    "type": "Variable",
+    "variable": "carousel",
+    "selector_prefix": ".refine-categories"
+  },
+  "subcategoriesItemBoxStyles": {
+    "include": "common_hover",
+    "selector_prefix": ".refine-item a"
+  },
+  "subcategoriesNameContainer": {
+    "include": "common_hover",
+    "selector_prefix": ".refine-item a .refine-name"
+  },
+  "subcategoriesImageStatus": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".refine-item a img": "display:block;"
+      },
+      "false": {
+        ".refine-item a img": "display:none;"
+      }
+    }
+  },
+  "subcategoriesImageScale": {
+    "type": "InputPair",
+    "selector": ".refine-item a",
+    "properties": {
+      "first": "--scale-hover: %s",
+      "second": "--scale-active: %s"
+    },
+    "rules": {
+      "@": {
+        ".catalog-image:hover": "transform: scale(var(--scale-hover, 1));",
+        ".catalog-image:active": "transform: scale(var(--scale-active, 1));"
+      }
+    }
+  },
+  "subcategoriesImagePosition": {
+    "type": "Radio",
+    "value": "top",
+    "rules": {
+      "top": {
+        ".refine-item a": "flex-direction: column;",
+        ".refine-item a img": "width: 100%;"
+      },
+      "side": {
+        ".refine-item a": "flex-direction: row;",
+        ".refine-item a img": "width: auto;"
+      }
+    }
+  },
+  "subcategoriesImage": {
+    "include": "common_hover",
+    "selector_prefix": ".refine-item a img"
+  },
+  "subcategoriesNameFont": {
+    "type": "Font",
+    "selector": ".refine-item .refine-name",
+    "value": {
+      "text-align": "center"
+    }
+  },
+  "subcategoriesNameFontHover": {
+    "type": "Font",
+    "selector": ".refine-item a:hover .refine-name .links-text"
+  },
+  "subcategoriesNamePadding": {
+    "type": "Padding",
+    "selector": ".refine-name .links-text"
+  },
+  "subcategoriesGridType": {
+    "type": "Radio",
+    "value": "auto",
+    "php": true
+  },
+  "subcategoriesFlexItems": {
+    "type": "InputPair",
+    "selector": ".refine-items.flex-grid",
+    "properties": {
+      "first": "--flex-grid-width: %spx",
+      "second": "--flex-grid-max-col: calc((100% - (%s - 1) * var(--flex-grid-gap, 0px)) / %s)"
+    },
+    "value": {
+      "first": "",
+      "second": ""
+    }
+  },
+  "subcategoriesFlexItemGap": {
+    "type": "Gap",
+    "variableType": "gap",
+    "selector": ".refine-items.flex-grid",
+    "property": "--flex-grid-gap:%s"
+  },
+  "subcategoriesFlexGrow": {
+    "type": "Radio",
+    "value": "0",
+    "selector": ".refine-items.flex-grid > .refine-item",
+    "property": "flex-grow: %s"
+  },
+  "subcategoriesFlexAlign": {
+    "type": "Radio",
+    "value": "",
+    "selector": ".refine-items.flex-grid",
+    "property": "justify-content: %s"
+  },
+  "autoGrid": {
+    "type": "InputTriple",
+    "selector": ".refine-categories .auto-grid",
+    "properties": {
+      "first": "--grid-min-width: %spx",
+      "minCol": "--grid-min-col: %s",
+      "second": "--grid-max-col: %s",
+      "third": "--grid-gap: %s",
+      "fourth": "--auto-grow-type: auto-%s; --item-width: var(--item-%s)"
+    },
+    "value": {
+      "first": "",
+      "minCol": "",
+      "second": "",
+      "third": "",
+      "fourth": ""
+    }
+  },
+  "autoGridStyle": {
+    "type": "Variable",
+    "variable": "auto_grid",
+    "selector_prefix": ".refine-items"
+  },
+  "autoCarousel": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".refine-categories .auto-grid": "margin-inline-start: calc(0px - var(--scroll-padding, 0px)); margin-inline-end: calc(0px - var(--scroll-padding, 0px)); --fr: var(--item-width)",
+        ".refine-categories .auto-grid .auto-grid-items": "cursor: var(--cursor); grid-auto-flow: column; overflow-x:auto; overflow-y:hidden; padding-inline-start:var(--scroll-padding, 0px); padding-inline-end: var(--scroll-padding, 0px); padding-top:var(--top-padding, 0px); padding-bottom: var(--bottom-padding, 0px)",
+        ".refine-categories .auto-grid .auto-carousel-controls": "display:flex;",
+        ".refine-categories .auto-grid .auto-carousel-items::after": "display:block;",
+        ".refine-categories .auto-grid .auto-grid-items.is-gliding a": "pointer-events: none"
+      },
+      "false": {
+        ".refine-categories .auto-grid": "margin-inline-start: unset; margin-inline-end: unset; --fr: 1fr",
+        ".refine-categories .auto-grid .auto-grid-items": "grid-auto-flow: row dense; overflow-x:initial; padding-inline-start:unset; padding-inline-end: unset",
+        ".refine-categories .auto-grid .auto-carousel-controls": "display:none;",
+        ".refine-categories .auto-grid .auto-carousel-items::after": "display:none;",
+        ".refine-categories .auto-grid .auto-grid-items.is-gliding a": "pointer-events: auto"
+      }
+    }
+  },
+  "autoCarouselRows": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".refine-categories .auto-grid .auto-grid-items": " --grid-rows: %s"
+      }
+    }
+  },
+  "AutoCarouselScrollerType": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "custom": {
+        ".refine-categories .auto-grid": "--scrollbar-top-space: var(--scrollbar-top-spacing, 0px); --scrollbar-bottom-space: var(--scrollbar-bottom-spacing, 0px)",
+        ".refine-categories .auto-carousel-bar": "display:flex; margin: var(--scrollbar-top-spacing, 0) max(0px, var(--scroll-padding, 0px)) var(--scrollbar-bottom-spacing, 0) max(0px, var(--scroll-padding, 0px))",
+        ".refine-categories .auto-carousel-controls.auto-carousel-bar": "max-height: none"
+      },
+      "none": {
+        ".refine-categories .auto-grid": "--scrollbar-top-space: 0px; --scrollbar-bottom-space: 0px",
+        ".refine-categories .auto-carousel-bar": "display:none; margin: 0;",
+        ".refine-categories .auto-carousel-controls.auto-carousel-bar": "max-height: 0"
+      }
+    }
+  },
+  "AutoCarouselButtonPosition": {
+    "type": "Select",
+    "value": "",
+    "rules": {
+      "tl": {
+        ".refine-categories .auto-grid > .auto-carousel-buttons": "align-items:center; justify-content:flex-start; flex-direction:row; position:relative; height:0; transform: translate3d(0,calc(var(--auto-carousel-button-height,40px) / 2 * -1), 0); top:0; margin-top: 0px;",
+        ".refine-categories .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        ".refine-categories .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "tc": {
+        ".refine-categories .auto-grid > .auto-carousel-buttons": "align-items:center; justify-content:center; flex-direction:row; position:relative; height:0; transform: translate3d(0,calc(var(--auto-carousel-button-height,40px) / 2 * -1), 0); top:0; margin-top: 0px;",
+        ".refine-categories .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        ".refine-categories .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "tr": {
+        ".refine-categories .auto-grid > .auto-carousel-buttons": "align-items:center; justify-content:flex-end; flex-direction:row; position:relative; height:0; transform: translate3d(0,calc(var(--auto-carousel-button-height,40px) / 2 * -1), 0); top:0; margin-top: 0px;",
+        ".refine-categories .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        ".refine-categories .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "ta": {
+        ".refine-categories .auto-grid > .auto-carousel-buttons": "align-items:center; justify-content:space-between; flex-direction:row; position:relative; height:0; transform: translate3d(0,calc(var(--auto-carousel-button-height,40px) / 2 * -1), 0); top:0; margin-top: 0px;",
+        ".refine-categories .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        ".refine-categories .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(calc(var(--auto-carousel-button-x, 0px) * -1), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "cl": {
+        ".refine-categories .auto-grid > .auto-carousel-buttons": "align-items:flex-start; justify-content:flex-start; flex-direction:column; position:absolute; top:50%; height:auto; transform: translate3d(0,-50%,0); margin-top: var(--buttons-offset, 0px)",
+        ".refine-categories .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        ".refine-categories .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "cr": {
+        ".refine-categories .auto-grid > .auto-carousel-buttons": "align-items:flex-end; justify-content:flex-start; flex-direction:column; position:absolute; top:50%; height:auto; transform: translate3d(0,-50%,0); margin-top: var(--buttons-offset, 0px)",
+        ".refine-categories .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        ".refine-categories .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "ca": {
+        ".refine-categories .auto-grid > .auto-carousel-buttons": "align-items:center; justify-content:space-between; flex-direction:row; position:absolute; top:50%; height:auto; transform: translate3d(0,-50%,0); margin-top: var(--buttons-offset, 0px)",
+        ".refine-categories .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        ".refine-categories .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(calc(var(--auto-carousel-button-x, 0px) * -1), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      }
+    }
+  },
+  "AutoCarouselButtonOffset": {
+    "type": "InputPair",
+    "selector": ".refine-categories .auto-grid",
+    "properties": {
+      "first": "--auto-carousel-button-x: %spx",
+      "second": "--auto-carousel-button-y: %spx"
+    },
+    "rtlProperties": {
+      "first": "--auto-carousel-button-x: calc(%spx * -1)",
+      "second": "--auto-carousel-button-y: %spx"
+    }
+  },
+  "AutoCarouselPadding": {
+    "type": "InputPair",
+    "selector": ".refine-categories .auto-grid",
+    "properties": {
+      "first": "--top-padding:%spx",
+      "second": "--bottom-padding:%spx",
+      "value": {
+        "first": "",
+        "second": ""
+      }
+    }
+  },
+  "AutoCarouselSnapAlign": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "start": {
+        ".refine-categories .auto-grid-items:not(.is-dragging) > *": "scroll-snap-align:start"
+      },
+      "center": {
+        ".refine-categories .auto-grid-items:not(.is-dragging) > *": "scroll-snap-align:center"
+      },
+      "end": {
+        ".refine-categories .auto-grid-items:not(.is-dragging) > *": "scroll-snap-align:end"
+      },
+      "none": {
+        ".refine-categories .auto-grid-items:not(.is-dragging) > *": "scroll-snap-align:none"
+      }
+    },
+    "touchevents": true
+  },
+  "AutoCarouselSnapPaddingCustom": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "selector": ".refine-categories .auto-grid",
+    "property": "--scroll-padding-custom: %s"
+  },
+  "AutoCarouselSnapPadding": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "auto": {
+        ".refine-categories .auto-grid": "--scroll-padding: var(--scroll-padding-custom, var(--element-padding, 0px));"
+      },
+      "gap": {
+        ".refine-categories .auto-grid": "--scroll-padding: var(--scroll-padding-custom, var(--grid-gap, 0px));"
+      },
+      "true": {
+        ".refine-categories .auto-grid": "--scroll-padding: var(--scroll-padding-custom, var(--content-gutter, 0px));"
+      },
+      "false": {
+        ".refine-categories .auto-grid": "--scroll-padding: var(--scroll-padding-custom, 0px);"
+      }
+    }
+  },
+  "AutoCarouselScrollBy": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".refine-categories .auto-grid .auto-grid-items",
+    "property": "--scroll-by:%s"
+  },
+  "AutoScrollbarStyle": {
+    "type": "Variable",
+    "variable": "auto_scrollbar",
+    "selector_prefix": ".refine-categories"
+  },
+  "AutoScrollbarTrackSpacing": {
+    "type": "InputPair",
+    "selector": ".refine-categories .auto-grid",
+    "properties": {
+      "first": "--scrollbar-top-spacing: %spx",
+      "second": "--scrollbar-bottom-spacing: %spx"
+    },
+    "value": {
+      "first": "",
+      "second": ""
+    }
+  },
+  "AutoCarouselButtonsWidth-hold": {
+    "type": "Toggle",
+    "value": "content",
+    "rules": {
+      "full": {
+        ".refine-categories .auto-carousel-controls": "--auto-carousel-controls-max-width: calc(100% - var(--scroll-padding, 0px) * 2)"
+      },
+      "content": {
+        ".refine-categories .auto-carousel-controls": "--auto-carousel-controls-max-width: min(min(var(--content-max-width, 100%) - var(--scroll-padding, 0px) * 2, var(--content-max-width, 100%) - var(--content-gutter, 0) * 2), 100% - var(--scroll-padding, 0px) * 2)"
+      }
+    }
+  },
+  "AutoScrollbarAlign": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "start": {
+        ".refine-categories .auto-carousel-bar": "margin-inline-start:max(0px, var(--scroll-padding,0px)); margin-inline-end: auto;"
+      },
+      "center": {
+        ".refine-categories .auto-carousel-bar": "margin-inline-start:auto; margin-inline-end: auto;"
+      },
+      "end": {
+        ".refine-categories .auto-carousel-bar": "margin-inline-start:auto; margin-inline-end: max(0px, var(--scroll-padding,0px));"
+      }
+    }
+  },
+  "AutoCarouselButtonsVisibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".refine-categories .auto-carousel-buttons": "visibility: visible;"
+      },
+      "false": {
+        ".refine-categories .auto-carousel-buttons": "visibility: hidden;"
+      }
+    }
+  },
+  "FaderStatus": {
+    "type": "Radio",
+    "value": "off",
+    "rules": {
+      "off": {
+        ".refine-categories .auto-grid-items::before": "--fader-status: 0; display: none",
+        ".refine-categories .auto-grid-items::after": "--fader-status: 0; display: none"
+      },
+      "both": {
+        ".refine-categories .auto-grid-items::before": "--fader-status: 1; display: block",
+        ".refine-categories .auto-grid-items::after": "--fader-status: 1; display: block"
+      },
+      "start": {
+        ".refine-categories .auto-grid-items::before": "--fader-status: 1; display: block",
+        ".refine-categories .auto-grid-items::after": "--fader-status: 0; display: none"
+      },
+      "end": {
+        ".refine-categories .auto-grid-items::before": "--fader-status: 0; display: none",
+        ".refine-categories .auto-grid-items::after": "--fader-status: 1; display: block"
+      }
+    }
+  },
+  "FaderColor": {
+    "type": "Color",
+    "selector": ".refine-categories .auto-grid-items::before, .refine-categories .auto-grid-items::after",
+    "property": "--fader-color: %s"
+  },
+  "FaderWidth": {
+    "type": "InputPair",
+    "selector": ".refine-categories .auto-grid-items::before, .refine-categories .auto-grid-items::after",
+    "properties": {
+      "first": "--fader-width-left:%spx",
+      "second": "--fader-width-right:%spx",
+      "value": {
+        "first": "",
+        "second": ""
+      }
+    }
+  },
+  "AutoScrollbarTrackMaxWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".refine-categories .auto-carousel-bar",
+    "property": "--auto-scroll-max-width:%spx"
+  },
+  "AutoScrollbarTrackWidth": {
+    "type": "InputNumber",
+    "selector": ".refine-categories .auto-carousel-bar",
+    "value": "",
+    "property": "--width-reduction:%spx"
+  },
+  "subcategoriesMarginTop": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "rules": {
+      "@": {
+        ".refine-categories": "margin-top:%s"
+      }
+    }
+  },
+  "subcategoriesMargin": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "rules": {
+      "@": {
+        ".refine-categories": "margin-bottom:%s"
+      }
+    }
+  },
+  "subcategoriesOrder": {
+    "type": "Radio",
+    "selector": ".refine-categories",
+    "value": "initial",
+    "property": "order: %s"
+  },
+  "subcategoriesMaxWidth": {
+    "type": "InputNumber",
+    "selector": ".refine-categories",
+    "value": "",
+    "property": "max-width: %spx"
+  },
+  "descriptionMaxWidth": {
+    "type": "InputNumber",
+    "selector": ".category-text",
+    "value": "",
+    "property": "max-width: %spx"
+  },
+  "subcategoriesAutoCarouselStyle": {
+    "type": "Variable",
+    "variable": "auto_carousel",
+    "selector_prefix": ".refine-categories"
+  },
+  "subcategoriesAutoGridContainerPadding": {
+    "type": "Padding",
+    "selector": ".refine-categories"
+  },
+  "subcategoriesAutoGridContainerMargin-hold": {
+    "type": "Margin",
+    "selector": ".refine-categories"
+  },
+  "subcategoriesAutoGridContainerBackground-hold": {
+    "type": "Background",
+    "selector": ".refine-categories"
+  },
+  "subcategoriesAutoGridContainerShadow": {
+    "type": "Shadow",
+    "selector_prefix": ".refine-categories"
+  },
+  "categoryCountBadgeVisibility": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".refine-name .count-badge": "display: inline-flex"
+      },
+      "false": {
+        ".refine-name .count-badge": "display: none"
+      }
+    }
+  },
+  "categoryCountBadgePosition": {
+    "type": "Radio",
+    "value": "side",
+    "rules": {
+      "side": {
+        ".refine-name": "flex-wrap: nowrap"
+      },
+      "inline": {
+        ".refine-name": "flex-wrap: wrap"
+      }
+    }
+  },
+  "categoryCountBadgeOffset": {
+    "type": "InputPair",
+    "selector": ".refine-name .count-badge",
+    "properties": {
+      "first": "--x: %spx",
+      "second": "margin-top:%spx"
+    },
+    "rtlProperties": {
+      "first": "--x: calc(0px - %spx)",
+      "second": "margin-top:%spx"
+    }
+  },
+  "categoryCountBadge": {
+    "type": "Variable",
+    "variable": "count_badge",
+    "selector_prefix": ".refine-name"
+  },
+  "subcategoriesNameAlignH": {
+    "type": "Toggle",
+    "value": "center",
+    "rules": {
+      "start": {
+        ".refine-name": "justify-content: flex-start"
+      },
+      "center": {
+        ".refine-name": "justify-content: center"
+      },
+      "end": {
+        ".refine-name": "justify-content: flex-end"
+      }
+    }
+  },
+  "subcategoriesNameAlignV": {
+    "type": "Toggle",
+    "value": "center",
+    "rules": {
+      "start": {
+        ".refine-name": "align-items: flex-start"
+      },
+      "center": {
+        ".refine-name": "align-items: center"
+      },
+      "end": {
+        ".refine-name": "align-items: flex-end"
+      }
+    }
+  },
+  "subcategoriesNameTruncate": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".refine-name .links-text": "white-space: nowrap; overflow: hidden; text-overflow: ellipsis"
+      },
+      "false": {
+        ".refine-name .links-text": "white-space: normal; overflow: initial; text-overflow: initial"
+      },
+      "multi": {
+        ".refine-name .links-text": " display: -webkit-box; -webkit-box-orient: vertical;  -webkit-line-clamp: 2; overflow:hidden"
+      }
+    }
+  },
+  "subcategoriesNameTruncateLines": {
+    "type": "Input",
+    "value": "2",
+    "rules": {
+      "@": {
+        ".refine-name .links-text": "-webkit-line-clamp: %s"
+      }
+    }
+  }
+}

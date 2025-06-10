@@ -1,0 +1,242 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Notification"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "color_scheme": {
+    "type": "ColorScheme",
+    "php": true
+  },
+  "schedule": {
+    "type": "Range",
+    "php": true
+  },
+  "cookie": {
+    "type": "Input",
+    "js": true,
+    "php": true
+  },
+  "closeButton": {
+    "type": "Toggle",
+    "php": true
+  },
+  "title": {
+    "type": "InputLang",
+    "php": true
+  },
+  "text": {
+    "type": "InputLang",
+    "value": "Notification...",
+    "php": true
+  },
+  "notificationFont": {
+    "type": "Font",
+    "selector": ".module-notification-%s"
+  },
+  "notificationTitleFont": {
+    "type": "Font",
+    "selector": ".module-notification-%s .notification-title"
+  },
+  "linkFont": {
+    "type": "Font",
+    "selector": ".module-notification-%s a"
+  },
+  "linkFontHover": {
+    "type": "Font",
+    "selector": ".module-notification-%s a:hover"
+  },
+
+  "notificationWidth": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "rules": {
+      "@": {
+        ".module-notification-%s.notification": "--notification-max-width: %s"
+      }
+    }
+  },
+  "notificationContentWidth": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".module-notification-%s.notification": "max-width: calc(var(--content-max-width, 100%) - var(--content-gutter, 0px) * 2)"
+      },
+      "false": {
+        ".module-notification-%s.notification": "max-width: var(--notification-max-width, 100%)"
+      }
+    }
+  },
+  "notificationTextPadding": {
+    "type": "Padding",
+    "selector": ".module-notification-%s .notification-text"
+  },
+  "notificationPadding": {
+    "type": "Padding",
+    "selector": ".module-notification-%s"
+  },
+  "bottomSpacing": {
+    "type": "Gap",
+    "variableType": "gap",
+    "rules":{
+      "@":{
+        ".module-notification-%s": "bottom:%s"
+      }
+    }
+  },
+  "sideSpacing": {
+    "type": "Gap",
+    "variableType": "gap",
+    "rules":{
+      "@":{
+        ".notification-wrapper-bottom": "padding-inline-start: %s; padding-inline-end: %s"
+      }
+    }
+  },
+  "notificationPosition": {
+    "type": "Radio",
+    "value": "center",
+    "rules": {
+      "start": {
+        ".module-notification-%s": "align-self: flex-start"
+      },
+      "end": {
+        ".module-notification-%s": "align-self: flex-end"
+      }
+    }
+  },
+  "notificationBG": {
+    "type": "Background",
+    "selector": ".module-notification-%s"
+  },
+  "notificationBorder": {
+    "type": "Border",
+    "selector": ".module-notification-%s"
+  },
+  "notificationBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-notification-%s"
+  },
+  "notificationShadow": {
+    "type": "Shadow",
+    "selector": ".module-notification-%s"
+  },
+  "notificationClosePadding": {
+    "type": "Padding",
+    "selector": ".module-notification-%s .notification-close",
+    "important": true
+  },
+  "notificationCloseStatus": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "true": {
+        ".module-notification-%s .notification-close": "display: flex"
+      },
+      "false": {
+        ".module-notification-%s .notification-close": "display: none"
+      }
+    }
+  },
+  "notificationCloseText": {
+    "type": "InputLang",
+    "value":  "",
+    "php": true
+  },
+  "notificationCloseIcon": {
+    "type": "Icon",
+    "selector": ".module-notification-%s .notification-close::before"
+  },
+  "notificationCloseIconHover": {
+    "type": "Color",
+    "selector": ".module-notification-%s .notification-close:hover::before",
+    "property": "color"
+  },
+  "notificationCloseSize": {
+    "type": "InputPair",
+    "selector": ".module-notification-%s .notification-close",
+    "properties": {
+      "first": "width:%spx",
+      "second": "height:%spx",
+      "value": {
+        "first": "25",
+        "second": "25"
+      }
+    }
+  },
+  "notificationCloseFont": {
+    "type": "Font",
+    "selector": ".module-notification-%s .notification-close",
+    "important": true
+  },
+  "notificationCloseRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-notification-%s .notification-close",
+    "important": true
+  },
+  "notificationClosePosition": {
+    "type": "Radio",
+    "value": "right",
+    "rules": {
+      "bottom": {
+        ".module-notification-%s .notification-close": "top:initial; bottom:0; left:50%; right:initial; transform: translateX(-50%)"
+      },
+      "right": {
+        ".module-notification-%s .notification-close": "top:0; bottom:initial; left:initial; right:0; transform:none"
+      },
+      "content": {
+        ".module-notification-%s": "flex-direction: row; align-items: center; justify-content: space-between;",
+        ".module-notification-%s .notification-close": "margin:0 !important; position:relative; bottom:initial; left:initial; right:initial; transform:none; align-self:center; flex-shrink:0"
+      }
+    },
+    "rtlRules": {
+      "bottom": {
+        ".module-notification-%s .notification-close": "top:initial; bottom:0; left:initial; right:50%; transform: translateX(50%)"
+      },
+      "right": {
+        ".module-notification-%s .notification-close": "top:0; bottom:initial; left:0; right:initial; transform:none"
+      },
+      "content": {
+        ".module-notification-%s": "flex-direction: row; align-items: center; justify-content: space-between;",
+        ".module-notification-%s .notification-close": "margin:0 !important; position:relative; bottom:initial; left:initial; right:0; transform:none; align-self:center; flex-shrink:0"
+      }
+    }
+  },
+  "notificationCloseOffset": {
+    "type": "InputPair",
+    "selector": ".module-notification-%s .notification-close",
+    "properties": {
+      "first": "margin-inline-start:%spx; margin-inline-end:%spx",
+      "second": "margin-top:%spx; margin-bottom:%spx"
+    },
+    "rtlProperties": {
+      "first": "margin-inline-start:%spx; margin-inline-end:%spx",
+      "second": "margin-top:%spx; margin-bottom:%spx"
+    }
+  },
+  "notificationCloseStyle": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": ".module-notification-%s .notification-close&"
+  },
+  "buttonBottomSpacing": {
+    "value": "",
+    "type": "Gap",
+    "variableType": "gap",
+    "rules":{
+      "@":{
+        ".module-notification-%s .notification-close.btn": "margin-top:%s !important"
+      }
+    }
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

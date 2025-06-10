@@ -1,0 +1,40 @@
+{% for post in posts %}
+  <div class="post-layout {{ journal3.classes(post.classes) }}">
+    <div class="post-thumb">
+      <div class="image">
+        <a href="{{ post.href }}">
+          {% if journal3.get('datePosition') == 'image' %}
+            <span class="p-date p-date-image">{{ post.date }}</span>
+          {% endif %}
+          {% if journal3.get('performanceLazyLoadImagesStatus') %}
+            <img src="{{ dummy_image }}" data-src="{{ post.thumb }}" {% if post.thumb2x %}data-srcset="{{ post.thumb }} 1x, {{ post.thumb2x }} 2x" {% endif %} width="{{ image_width }}" height="{{ image_height }}" alt="{{ post.name | escape }}" title="{{ post.name | escape }}" class="img-responsive lazyload"/>
+          {% else %}
+            <img src="{{ post.thumb }}" {% if post.thumb2x %}srcset="{{ post.thumb }} 1x, {{ post.thumb2x }} 2x" {% endif %} width="{{ image_width }}" height="{{ image_height }}" alt="{{ post.name | escape }}" title="{{ post.name | escape }}" class="img-responsive"/>
+          {% endif %}
+        </a>
+      </div>
+
+      <div class="caption">
+
+        <div class="post-stats">
+          <span class="p-author">{{ post.author }}</span>
+          {% if journal3.get('datePosition') == 'default' %}
+          <span class="p-date p-date-default">{{ post.date }}</span>
+          {% endif %}
+          <span class="p-comment">{{ post.comments }}</span>
+          <span class="p-view">{{ post.views }}</span>
+        </div>
+
+        <div class="name"><a href="{{ post.href }}">{{ post.name }}</a></div>
+
+        <div class="description">{{ post.description }}</div>
+
+        <div class="button-group">
+          <a class="btn btn-read-more" href="{{ post.href }}" {% if journal3.is_desktop and (journal3.getIn('PostGridButtonDisplay', _context) == "icon") and (journal3.getIn('PostGridButtonTooltipStatus', _context)) %}  data-toggle="tooltip-hover" data-tooltip-class="{{ module_id ? 'module-blog_posts-' ~ module_id ~ ' module-blog_posts-grid' : 'post-grid' }} read-more-tooltip" data-placement="{{ journal3.getIn('PostGridButtonTooltipPosition', _context) }}" title="{{ journal3.get('blogReadMoreButtonText') }}" {% endif %}>
+            <span class="btn-text">{{ journal3.get('blogReadMoreButtonText') }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}

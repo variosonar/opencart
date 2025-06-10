@@ -1,0 +1,53 @@
+{% macro renderMarquee(context, item) %}
+  {% set journal3 = context.journal3 %}
+  {% if item.link.href %}
+    <a href="{{ item.link.href }}" class="{{ journal3.classes(item.classes) }}" {{ journal3.linkAttrs(item.link) }}>
+      {% if item.type == "title" %}
+        <span>{{ item.title }}</span>
+      {% else %}
+        {% if journal3.get('performanceLazyLoadImagesStatus') %}
+          <img src="{{ dummy_image }}" data-src="{{ item.image }}" {% if image2x %}data-srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" {% endif %} alt="{{ item.alt }}" width="{{ context.image_width }}" height="{{ context.image_height }}" class="lazyload"/>
+        {% else %}
+          <img src="{{ item.image }}" {% if image2x %}srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" {% endif %} alt="{{ item.alt }}" width="{{ context.image_width }}" height="{{ context.image_height }}"/>
+        {% endif %}
+      {% endif %}
+    </a>
+  {% else %}
+    <div class="{{ journal3.classes(item.classes) }}">
+      {% if item.type == "title" %}
+        <span>{{ item.title }}</span>
+      {% else %}
+        {% if journal3.get('performanceLazyLoadImagesStatus') %}
+          <img src="{{ dummy_image }}" data-src="{{ item.image }}" {% if image2x %}data-srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" {% endif %} alt="{{ item.alt }}" width="{{ context.image_width }}" height="{{ context.image_height }}" class="lazyload"/>
+        {% else %}
+          <img src="{{ item.image }}" {% if image2x %}srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" {% endif %} alt="{{ item.alt }}" width="{{ context.image_width }}" height="{{ context.image_height }}"/>
+        {% endif %}
+      {% endif %}
+    </div>
+  {% endif %}
+{% endmacro %}
+{% if items %}
+  <div class="{{ journal3.classes(classes) }} {{ color_scheme_module }}">
+    <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+    <div class="module-body">
+      <div class="marquee-slider">
+        <div class="marquee-items marquee-items-1">
+          {% for i in 1..max(1, repeat) %}
+            {% for item in items %}
+              {{ _self.renderMarquee(_context, item) }}
+            {% endfor %}
+          {% endfor %}
+        </div>
+        <div class="marquee-items marquee-items-2" aria-hidden="true">
+          {% for i in 1..max(1, repeat) %}
+            {% for item in items %}
+              {{ _self.renderMarquee(_context, item) }}
+            {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+

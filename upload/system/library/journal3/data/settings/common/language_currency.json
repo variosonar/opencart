@@ -1,0 +1,244 @@
+{
+  "Display": {
+    "type": "Radio",
+    "value": "full",
+    "rules": {
+      "symbol": {
+        ".dropdown-toggle": "text-decoration:none;",
+        ".dropdown-toggle .symbol": "display:flex;",
+        ".dropdown-toggle .symbol ~ span": "display:none",
+        ".dropdown-toggle .currency-code ": "display:none"
+      },
+      "text": {
+        ".dropdown-toggle .symbol": "display:none",
+        ".dropdown-toggle .symbol + span": "display:block;",
+        ".dropdown-toggle .currency-code ": "display:none"
+      },
+      "code": {
+        ".dropdown-toggle .symbol": "display:none",
+        ".dropdown-toggle .language-title": "display:block;",
+        ".dropdown-toggle .currency-title ": "display:none",
+        ".dropdown-toggle .currency-code ": "display:block"
+      },
+      "full": {
+        ".dropdown-toggle .symbol": "display:flex",
+        ".dropdown-toggle .symbol + span": "display:block;",
+        ".dropdown-toggle .currency-code ": "display:none"
+      }
+    }
+  },
+  "DropdownDisplay": {
+    "type": "Radio",
+    "value": "full",
+    "rules": {
+      "symbol": {
+        ".dropdown-menu .language-flag": "display:inline-flex",
+        ".dropdown-menu .currency-symbol": "display:inline-flex",
+        ".dropdown-menu .language-flag ~ span": "display:none",
+        ".dropdown-menu .currency-symbol ~ span": "display:none"
+      },
+      "text": {
+        ".dropdown-menu .language-flag": "display:none",
+        ".dropdown-menu .currency-symbol": "display:none",
+        ".dropdown-menu .language-title-dropdown": "display:inline-flex",
+        ".dropdown-menu .currency-title-dropdown": "display:inline-flex",
+        ".dropdown-menu .currency-code-dropdown": "display:none"
+      },
+      "code": {
+        ".dropdown-menu .language-flag": "display:none",
+        ".dropdown-menu .currency-symbol": "display:none",
+        ".dropdown-menu .language-title-dropdown": "display:inline-flex",
+        ".dropdown-menu .currency-code-dropdown": "display:inline-flex",
+        ".dropdown-menu .currency-title-dropdown": "display:none"
+      },
+      "full": {
+        ".dropdown-menu .language-flag": "display:inline-flex",
+        ".dropdown-menu .currency-symbol": "display:inline-flex",
+        ".dropdown-menu .language-title-dropdown": "display:inline-flex",
+        ".dropdown-menu .currency-title-dropdown": "display:inline-flex",
+        ".dropdown-menu .currency-code-dropdown": "display:none"
+      }
+    }
+  },
+  "CurrencySymbolVisibility": {
+    "type": "Radio",
+    "value": "code",
+    "rules": {
+      "code": {
+        ".currency-symbol-title .symbol, .currency-symbol": "display: flex !important; margin-inline-end: 4px"
+      }
+    }
+  },
+  "DropdownIndicator": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".dropdown-toggle::after": "display: block"
+      },
+      "false": {
+        ".dropdown-toggle::after": "display: none"
+      }
+    }
+  },
+  "DIColor": {
+    "type": "Color",
+    "selector": ".dropdown-toggle::after",
+    "property": "border-left-color"
+  },
+  "DIColorHover": {
+    "type": "Color",
+    "selector": ".dropdown.open .dropdown-toggle::after",
+    "property": "border-left-color"
+  },
+  "DISize": {
+    "type": "InputNumber",
+    "value": "4",
+    "rules":{
+      "@":{
+        ".dropdown-toggle::after": "border-width:%spx"
+      }
+    }
+  },
+  "DIWidth": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        ".dropdown-toggle::after": "border-top-width:%spx; border-bottom-width:%spx"
+      }
+    }
+  },
+  "DIOffset": {
+    "type": "InputPair",
+    "selector": ".dropdown-toggle::after",
+    "properties": {
+      "first": "left: %spx",
+      "second": "top:%spx"
+    },
+    "rtlProperties": {
+      "first": "right: %spx",
+      "second": "top:%spx"
+    }
+  },
+  "TextFont": {
+    "type": "Font",
+    "selector": "button.dropdown-toggle"
+  },
+  "TextFontHover": {
+    "type": "Font",
+    "selector": ".dropdown:hover button.dropdown-toggle"
+  },
+  "LangMaxWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "--menu-max-width: %spx",
+    "selector": "span.currency-title, span.language-title"
+  },
+  "LangTextTruncate": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        "span.currency-title": "max-width:var(--menu-max-width, none); white-space: nowrap; overflow: hidden; text-overflow: ellipsis",
+        "span.language-title": "max-width:var(--menu-max-width, none); white-space: nowrap; overflow: hidden; text-overflow: ellipsis"
+      },
+      "false": {
+        "span.currency-title": "max-width:none; white-space: normal; overflow: visible; text-overflow: initial",
+        "span.language-title": "max-width:none; white-space: normal; overflow: visible; text-overflow: initial"
+      }
+    }
+  },
+  "ButtonBackground": {
+    "type": "Background",
+    "selector": ".dropdown-toggle"
+  },
+  "ButtonBackgroundHover": {
+    "type": "Background",
+    "selector": ".dropdown:hover .dropdown-toggle"
+  },
+  "TextPadding": {
+    "type": "Padding",
+    "selector": ".dropdown-toggle"
+  },
+  "TextBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".dropdown-toggle"
+  },
+  "SymbolFontSize": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        ".dropdown-toggle .symbol": "font-size:%spx"
+      }
+    }
+  },
+  "SymbolSize": {
+    "type": "InputPair",
+    "selector": ".dropdown-toggle .symbol",
+    "properties": {
+      "first": "width:%spx",
+      "second": "height:%spx"
+    }
+  },
+  "SymbolColor": {
+    "type": "Color",
+    "selector": ".dropdown-toggle .symbol",
+    "property": "color"
+  },
+  "SymbolColorHover": {
+    "type": "Color",
+    "selector": ".dropdown.open .dropdown-toggle .symbol",
+    "property": "color",
+    "important": true
+  },
+  "SymbolBackground": {
+    "type": "Background",
+    "selector": ".dropdown-toggle .symbol"
+  },
+  "SymbolBackgroundHover": {
+    "type": "Background",
+    "selector": ".dropdown.open .dropdown-toggle .symbol"
+  },
+  "SymbolRadius": {
+    "type": "BorderRadius",
+    "selector": ".dropdown-toggle .symbol"
+  },
+  "SymbolBorder": {
+    "type": "Border",
+    "selector": ".dropdown-toggle .symbol"
+  },
+  "SymbolShadow": {
+    "type": "Shadow",
+    "selector": ".dropdown-toggle .symbol"
+  },
+  "SymbolShadowHover": {
+    "type": "Shadow",
+    "selector": ".dropdown:hover .dropdown-toggle .symbol"
+  },
+  "DropdownAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        ".j-dropdown": "left: 0; right: auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start"
+      },
+      "center": {
+        ".j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center"
+      },
+      "right": {
+        ".j-dropdown": "right:0; left:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        ".j-dropdown": "left: auto; right: 0; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start"
+      },
+      "center": {
+        ".j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center"
+      },
+      "right": {
+        ".j-dropdown": "left:0; right:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end"
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "sitemapBox": {
+    "include": "box",
+    "selector_prefix": ".route-information-sitemap #content > .row > div > ul"
+  },
+  "sitemapBox2": {
+    "include": "box",
+    "selector_prefix": ".route-information-sitemap #content > .row > div + div > ul"
+  },
+  "sitemapFont": {
+    "type": "Font",
+    "selector": ".route-information-sitemap #content .row ul li, .route-information-sitemap #content .row ul li a"
+  },
+  "sitemapFontHover": {
+    "type": "Font",
+    "selector": ".route-information-sitemap #content .row ul li a:hover"
+  },
+  "sitemapTopFont": {
+    "type": "Font",
+    "selector": ".route-information-sitemap #content .row > div > ul > li, .route-information-sitemap #content .row > div > ul > li > a"
+  },
+  "sitemapTopFontHover": {
+    "type": "Font",
+    "selector": ".route-information-sitemap #content .row > div > ul > li > a:hover"
+  },
+  "sitemapCategoryIcon": {
+    "type": "Icon",
+    "selector": ".route-information-sitemap #content > .row > div > ul > li > a::before",
+    "value": {
+      "icon": {
+        "name": "file-text",
+        "code": "f15c"
+      }
+    }
+  },
+  "sitemapCategoryIconHover": {
+    "type": "Color",
+    "selector": ".route-information-sitemap #content > .row > div > ul > li > a:hover::before",
+    "property": "color"
+  },
+  "sitemapSubCategoryIcon": {
+    "type": "Icon",
+    "selector": ".route-information-sitemap #content > .row > div > ul li ul li a::before",
+    "value": {
+      "icon": {
+        "name": "file-text-o",
+        "code": "f0f6"
+      }
+    }
+  },
+  "sitemapSubCategoryIconHover": {
+    "type": "Color",
+    "selector": ".route-information-sitemap #content > .row > div > ul li ul li a:hover::before",
+    "property": "color"
+  },
+  "sitemapGap": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "property": "--sitemap-gap: %s",
+    "selector": ".route-information-sitemap #content"
+  },
+  "sitemapColumns": {
+    "type": "Radio",
+    "value": "2",
+    "rules": {
+      "1": {
+        ".route-information-sitemap #content > .row": "flex-direction:column"
+      },
+      "2": {
+        ".route-information-sitemap #content > .row": "flex-direction:row"
+      }
+    }
+  }
+}

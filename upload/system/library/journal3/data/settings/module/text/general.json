@@ -1,0 +1,152 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Text"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "schedule": {
+    "type": "Range",
+    "php": true
+  },
+  "title": {
+    "type": "InputLang",
+    "php": true
+  },
+  "titleMargin": {
+    "type": "Margin",
+    "selector": "div.module-text-%s .module-title",
+    "important": true
+  },
+  "titleAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        "div.module-text-%s .module-title":"text-align:start",
+        "div.module-text-%s .module-title::after": "margin-inline-start:0; margin-inline-end:auto;"
+      },
+      "center": {
+        "div.module-text-%s .module-title":"text-align:center",
+        "div.module-text-%s .module-title::after": "margin-inline-start:auto; margin-inline-end:auto;"
+      },
+      "right": {
+        "div.module-text-%s .module-title":"text-align:end",
+        "div.module-text-%s .module-title::after": "margin-inline-start:auto; margin-inline-end:0;"
+      }
+    }
+  },
+  "titleStyle": {
+    "type": "Variable",
+    "variable": "title",
+    "selector_prefix": ".module-text-%s .module-title"
+  },
+  "tableStyle": {
+    "type": "Variable",
+    "variable": "table",
+    "selector_prefix": ".module-text-%s"
+  },
+  "contentAlignV": {
+    "type": "Radio",
+    "value": "flex-start",
+    "property": "--text-module-align-v: %s",
+    "selector": ".module-text-%s .module-body"
+  },
+  "contentAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        ".module-text-%s": "text-align: left",
+        ".module-text-%s > .module-body": "margin-inline-start: 0; margin-inline-end: auto;",
+        ".module-text-%s .module-title:after": "margin-inline-start: 0; margin-inline-end: right;"
+      },
+      "center": {
+        ".module-text-%s": "text-align: center",
+        ".module-text-%s > .module-body": "margin-inline-start: auto; margin-inline-end: auto;",
+        ".module-text-%s .module-title:after": "margin-inline-start: auto; margin-inline-end: auto;"
+      },
+      "right": {
+        ".module-text-%s": "text-align: right",
+        ".module-text-%s > .module-body": "margin-inline-start: auto; margin-inline-end: 0;",
+        ".module-text-%s .module-title:after": "margin-inline-start: auto; margin-inline-end: 0;"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        ".module-text-%s": "text-align: right",
+        ".module-text-%s > .module-body": "margin-inline-start: auto; margin-inline-end: 0;",
+        ".module-text-%s .module-title:after": "margin-inline-start: 0; margin-inline-end: auto;"
+      },
+      "center": {
+        ".module-text-%s": "text-align: center",
+        ".module-text-%s > .module-body": "margin-inline-start: auto; margin-inline-end: auto;",
+        ".module-text-%s .module-title:after": "margin-inline-start: auto; margin-inline-end: auto;"
+      },
+      "right": {
+        ".module-text-%s": "text-align: left",
+        ".module-text-%s > .module-body": "margin-inline-start: 0; margin-inline-end: auto;",
+        ".module-text-%s .module-title:after": "margin-inline-start: 0; margin-inline-end: auto;"
+      }
+    }
+  },
+  "contentType": {
+    "type": "Select",
+    "value": "text",
+    "php": true
+  },
+  "content": {
+    "type": "InputLang",
+    "value": "",
+    "php": true
+  },
+  "dynamic": {
+    "type": "Input",
+    "value": "journal3/blocks_example",
+    "php": true
+  },
+  "containerStyle": {
+    "type": "Variable",
+    "variable": "container",
+    "selector_prefix": ".module-text-%s .module-body"
+  },
+  "typographyStyle": {
+    "type": "Variable",
+    "variable": "typography",
+    "selector_prefix": ".module-text-%s .module-body"
+  },
+  "maxWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "max-width:%spx",
+    "selector": ".module-text-%s .module-body"
+  },
+  "maxHeight": {
+    "type": "InputNumber",
+    "value": "",
+    "rules": {
+      "@": {
+        ".module-text-%s .module-body": "max-height: %spx; overflow-y:auto"
+      }
+    }
+  },
+  "Font": {
+    "type": "Font",
+    "selector": ".module-text-%s .module-body"
+  },
+  "FontHover": {
+    "type": "Font",
+    "selector": ".module-text-%s .module-body:hover"
+  },
+  "styleOverride": {
+    "include": "common_hover",
+    "selector_prefix": ".module-text-%s .module-body"
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

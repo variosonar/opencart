@@ -1,0 +1,600 @@
+{
+  "LabelVisibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".form-label": "display: flex",
+        ".form-group .control-label": "display: flex",
+        ".required .control-label + div::before": "display:none",
+        ".required .control-label::after": "display:inline",
+        ".required .form-label + div::before": "display:none",
+        ".required .form-label::after": "display:inline"
+      },
+      "false": {
+        ".form-label": "display: none",
+        ".form-group .control-label": "display: none",
+        ".required .form-label + div::before": "display:inline",
+        ".required .form-label::after": "display:none",
+        ".required .control-label + div::before": "display:inline",
+        ".required .control-label::after": "display:none"
+      }
+    }
+  },
+  "LabelFont": {
+    "type": "Font",
+    "selector": "label, .form-group .control-label, .form-label"
+  },
+  "LabelError": {
+    "type": "Color",
+    "selector": ".has-error",
+    "property": "color",
+    "important": true
+  },
+  "LabelErrorFont": {
+    "type": "Font",
+    "selector": ".has-error + .text-danger, .text-danger, .invalid-feedback",
+    "important": true
+  },
+  "LabelErrorMargin": {
+    "type": "Margin",
+    "selector": ".has-error + .text-danger, .invalid-feedback",
+    "important": true
+  },
+  "ControlLabelMaxWidthNew": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".form-group, .form-label": "--form-label-width:%s%"
+      }
+    }
+  },
+  "LabelWidth-hold": {
+    "type": "InputPair",
+    "selector": ".form-group",
+    "properties": {
+      "first": "--form-label-width: %s%",
+      "second": "--form-label-min-width: %spx"
+    }
+  },
+  "FormLabelStack": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".form-group, .form-label": "--form-label-stack:%spx"
+      }
+    }
+  },
+  "ButtonGroupStack": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".form-group .control-label + .input-group .input-group-btn": "--button-group-stack:%spx"
+      }
+    }
+  },
+  "LabelPaddingNew": {
+    "type": "Padding",
+    "selector": ".form-group .control-label, .form-label"
+  },
+  "LabelBottomMargin": {
+    "type": "InputNumber",
+    "value": "",
+    "rules": {
+      "@": {
+        ".form-group, .control-label, .form-label": "--label-gap:%spx"
+      }
+    }
+  },
+  "LabelBorder": {
+    "type": "Border",
+    "selector": ".form-group .control-label, .form-label"
+  },
+  "LabelShadow": {
+    "type": "Shadow",
+    "selector": ".form-group .control-label, .form-label"
+  },
+  "LabelAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        ".form-group .control-label, .form-label": "justify-content:flex-start"
+      },
+      "center": {
+        ".form-group .control-label, .form-label": "justify-content:center"
+      },
+      "right": {
+        ".form-group .control-label, .form-label": "justify-content:flex-end"
+      }
+    }
+  },
+  "LegendTitle": {
+    "type": "Variable",
+    "variable": "title",
+    "selector_prefix": "legend"
+  },
+  "LabelVerticalAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "start": {
+        ".form-group .control-label, .form-label": "align-items:flex-start"
+      },
+      "center": {
+        ".form-group .control-label, .form-label": "align-items:center"
+      },
+      "end": {
+        ".form-group .control-label, .form-label": "align-items:flex-end"
+      }
+    }
+  },
+  "RequiredSymbolPosition": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "before": {
+        ".required .control-label::after": "display: none",
+        ".required .control-label::before": "display: block;",
+        ".required .form-label::after": "display: none",
+        ".required .form-label::before": "display: block;"
+      },
+      "after": {
+        ".required .control-label::after": "display: block",
+        ".required .control-label::before": "display: none",
+        ".required .form-label::after": "display: block",
+        ".required .form-label::before": "display: none"
+      }
+    }
+  },
+  "LabelBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".form-group .control-label, .form-label"
+  },
+  "ErrorBorder": {
+    "type": "Divider",
+    "selector": ".has-error .form-control, .has-error .g-recaptcha iframe, .is-invalid",
+    "important": true
+  },
+  "RequiredSymbol": {
+    "type": "Font",
+    "selector": ".required .control-label::after, .required .control-label::before, .required .control-label + div::before"
+  },
+  "FormBox": {
+    "include": "common",
+    "selector_prefix": ".form-horizontal"
+  },
+  "LabelBackground": {
+    "type": "Background",
+    "selector": ".control-label, .form-label"
+  },
+  "InputSpacing": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "rules": {
+      "@": {
+        ".form-group": "--input-group-spacing: %s",
+        "form > fieldset > .row": "--input-group-spacing: %s",
+        "form > fieldset > .row + .row": "margin-top: var(--input-group-spacing, 0px);",
+        ".form-group:not(:first-child)": "margin-top: var(--input-group-spacing, 0px) !important;",
+        ".form-group + .checkbox": "margin-top:%s",
+        ".form-group ~ .payment": "margin-top:%s",
+        "form > #account": "margin-bottom:%s;",
+        "form > div:not(.buttons):not(.checkout-section):not(.dropdown):not(#review):not(.input-group)": "margin-bottom:%s !important;",
+        ".panel .radio + p": "margin-bottom:%s !important;",
+        ".panel p + .radio": "margin-top:%s !important;",
+        "fieldset:not(:last-of-type)": "margin-bottom:%s;",
+        "fieldset > legend": "margin-top:%s;",
+        "#collapse-shipping .btn": "margin-top:%s;",
+        ".payment-address .section-body > div": "margin-bottom:%s",
+        ".shipping-address .section-body > div": "margin-bottom:%s"
+      }
+    }
+  },
+  "FieldsetSpacing": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "rules": {
+      "@": {
+        "fieldset": "--fieldset-spacing: %s"
+      }
+    }
+  },
+  "FormGroupBackgroundHover": {
+    "type": "Background",
+    "selector": ".form-group:hover"
+  },
+  "FormGroupBackground": {
+    "type": "Background",
+    "selector": ".form-group, .form-horizontal .form-group"
+  },
+  "FormGroupMargin": {
+    "type": "Margin",
+    "selector": ".form-group, .form-horizontal .form-group"
+  },
+  "FormGroupPadding": {
+    "type": "Padding",
+    "selector": ".form-group, .form-horizontal .form-group"
+  },
+  "FormGroupBorder": {
+    "type": "Border",
+    "selector": ".form-group, .form-horizontal .form-group"
+  },
+  "FormGroupBorderHover": {
+    "type": "Color",
+    "selector": ".form-group:hover",
+    "property": "border-color"
+  },
+  "FormGroupBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".form-group, .form-horizontal .form-group"
+  },
+  "FormGroupShadow": {
+    "type": "Shadow",
+    "selector": ".form-group, .form-horizontal .form-group"
+  },
+  "FormGroupShadowHover": {
+    "type": "Shadow",
+    "selector": ".form-group:hover"
+  },
+  "RequiredError": {
+    "type": "Color",
+    "selector": ".required.has-error .control-label::after, .required.has-error .control-label + div::before",
+    "property": "color",
+    "important": true
+  },
+  "RequiredOffsetNew": {
+    "type": "InputPair",
+    "selector": ".required .control-label::after, .required .control-label::before, .required .control-label + div::before",
+    "properties": {
+      "first": "margin-inline-start: %spx; margin-inline-end: %spx",
+      "second": "margin-top: %spx"
+    },
+    "rtlProperties": {
+      "first": "margin-inline-start: calc(0px + (-%spx))",
+      "second": "margin-top:%spx;"
+    }
+  },
+  "InputStyle": {
+    "type": "Variable",
+    "variable": "form_input",
+    "selector_prefix": "input.form-control"
+  },
+  "FormWidth": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        "form": "max-width:%spx"
+      }
+    }
+  },
+  "InputWidth": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        "input.form-control": "max-width:%spx"
+      }
+    }
+  },
+  "LabelHeight": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".control-label": "max-height:%spx"
+      }
+    }
+  },
+  "InputHeight": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        "input.form-control": "min-height:%spx"
+      }
+    }
+  },
+  "TextStyle": {
+    "type": "Variable",
+    "variable": "form_input",
+    "selector_prefix": "textarea.form-control"
+  },
+  "TextareaWidth": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        "textarea.form-control": "max-width:%spx"
+      }
+    }
+  },
+  "TextareaHeight": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        "textarea.form-control": "min-height:%spx"
+      }
+    }
+  },
+  "SelectStyle": {
+    "type": "Variable",
+    "variable": "form_input",
+    "selector_prefix": "select"
+  },
+  "SelectStyleOc4": {
+    "type": "Variable",
+    "variable": "form_input",
+    "selector_prefix": "select"
+  },
+  "SelectWidth": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        "select, select.form-control, select.form-select": "max-width:%spx"
+      }
+    }
+  },
+  "SelectHeight": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        "select, select.form-control, select.form-select": "height:%spx"
+      }
+    }
+  },
+  "RadioFont": {
+    "type": "Font",
+    "selector": ".radio label",
+    "important": true
+  },
+  "RadioLabelShadow": {
+    "type": "Shadow",
+    "selector": ".radio label"
+  },
+  "RadioBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".radio label"
+  },
+  "CheckboxBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".checkbox label"
+  },
+  "CheckboxLabelShadow": {
+    "type": "Shadow",
+    "selector": ".checkbox label"
+  },
+  "RadioBG": {
+    "type": "Background",
+    "selector": ".radio label"
+  },
+  "RadioFontHover": {
+    "type": "Font",
+    "selector": ".radio label:hover",
+    "important": true
+  },
+  "RadioBGHover": {
+    "type": "Background",
+    "selector": ".radio label:hover"
+  },
+  "RadioInline": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".radio": "width: auto"
+      },
+      "false": {
+        ".radio": "width: 100%"
+      }
+    }
+  },
+  "RadioInputSpacing": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        "input[type='radio']": "margin-inline-end:%spx !important"
+      }
+    }
+  },
+  "RadioSpacing": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".form-group .radio > label, .form-group .radio-inline, .form-check-label": "margin: calc(%spx / 2)",
+        ".form-radio": "--radio-gap: %spx"
+      }
+    }
+  },
+  "RadioPadding": {
+    "type": "Padding",
+    "selector": ".radio label",
+    "important": true
+  },
+  "AccentColor": {
+    "type": "Color",
+    "property": "accent-color",
+    "selector": "input"
+  },
+  "RadioCheckboxMargin": {
+    "type": "Margin",
+    "value": "10",
+    "selector": ".radio, .checkbox"
+  },
+  "RadioCheckboxSize": {
+    "type": "InputPair",
+    "selector": "input[type='radio'], input[type='checkbox']",
+    "properties": {
+      "first": "min-width:%spx",
+      "second": "min-height:%spx"
+    }
+  },
+  "RadioSize": {
+    "type": "InputPair",
+    "selector": "input[type='radio']",
+    "properties": {
+      "first": "min-width:%spx",
+      "second": "min-height:%spx"
+    }
+  },
+  "CheckboxFont": {
+    "type": "Font",
+    "selector": ".checkbox label",
+    "important": true
+  },
+  "CheckboxFontHover": {
+    "type": "Font",
+    "selector": ".checkbox label:hover",
+    "important": true
+  },
+  "CheckboxLinkFont": {
+    "type": "Font",
+    "selector": ".checkbox label a",
+    "important": true
+  },
+  "CheckboxLinkFontHover": {
+    "type": "Font",
+    "selector": ".checkbox label:hover a",
+    "important": true
+  },
+  "CheckboxBG": {
+    "type": "Background",
+    "selector": ".checkbox label"
+  },
+  "CheckboxBGHover": {
+    "type": "Background",
+    "selector": ".checkbox label:hover"
+  },
+  "CheckboxSize": {
+    "type": "InputPair",
+    "selector": "input[type='checkbox']",
+    "properties": {
+      "first": "min-width:%spx",
+      "second": "min-height:%spx"
+    }
+  },
+  "CheckboxInline": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".checkbox, .checkbox-inline": "width: auto"
+      },
+      "false": {
+        ".checkbox, .checkbox-inline": "width: 100%"
+      }
+    }
+  },
+  "CheckboxSpacing": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".form-group .checkbox > label, .form-group .checkbox-inline": "margin: calc(%spx / 2)",
+        ".form-checkbox": "--checkbox-gap: %spx"
+      }
+    }
+  },
+  "CheckboxInputSpacing": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        "input[type='checkbox']": "margin-inline-end:%spx !important"
+      }
+    }
+  },
+  "CheckboxPadding": {
+    "type": "Padding",
+    "selector": ".checkbox label",
+    "important": true
+  },
+  "InputGroupStyle": {
+    "type": "Variable",
+    "variable": "form_input",
+    "selector_prefix": ".input-group .form-control"
+  },
+  "InputGroupButton": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": ".input-group-btn"
+  },
+  "InputGroupButtonWidth": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".input-group .btn, .input-group-btn .btn": "min-width:%spx"
+      }
+    }
+  },
+  "InputGroupButtonPadding": {
+    "type": "Padding",
+    "selector": ".input-group .btn, .input-group-btn .btn",
+    "important": "true"
+  },
+  "InputGroupButtonBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".input-group .btn, .input-group-btn .btn",
+    "important": "true"
+  },
+  "InputGroupButtonHeight": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".input-group .btn, .input-group-btn .btn": "min-height:%spx"
+      }
+    }
+  },
+  "InputGroupButtonMaxHeight": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".input-group .btn, .input-group-btn .btn": "max-height:%spx"
+      }
+    }
+  },
+  "InputGroupButtonSpacing": {
+    "type": "InputNumber",
+    "value": "",
+    "rules": {
+      "@": {
+        ".input-group, .input-group-btn": "--input-group-gap:%spx"
+      }
+    }
+  },
+  "DateTimeStyle": {
+    "type": "Variable",
+    "variable": "date_time",
+    "selector_prefix": ""
+  },
+  "UploadButtonStyle": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": ".upload-btn&"
+  },
+  "UploadIcon": {
+    "type": "Icon",
+    "selector": ".product-option-file .btn i::before, .btn.upload-btn i::before",
+    "value": {
+      "icon": {
+        "name": "upload2",
+        "code": "ebd8"
+      }
+    }
+  },
+  "UploadIconHover": {
+    "type": "Color",
+    "selector": ".product-option-file .btn:hover i::before, .btn.upload-btn:hover i::before",
+    "property": "color"
+  },
+  "UploadWidth": {
+    "type": "Radio",
+    "value": "auto",
+    "rules": {
+      "auto": {
+        ".product-option-file .control-label + button": "max-width:max-content",
+        ".btn.upload-btn": "width: auto"
+      },
+      "full": {
+        ".product-option-file .control-label + button": "max-width:100%",
+        ".btn.upload-btn": "width: 100%"
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Subitem"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "title": {
+    "type": "InputLang",
+    "php": true
+  },
+  "link": {
+    "type": "Link",
+    "php": true
+  },
+  "icon": {
+    "type": "Icon",
+    "selector": ".top-menu-%s .j-menu .j-menu li.top-menu-item-%s > a::before"
+  },
+  "iconHover": {
+    "type": "Color",
+    "selector": ".top-menu-%s li.top-menu-item-%s:hover > a::before",
+    "property": "color"
+  },
+  "font": {
+    "type": "Font",
+    "selector": ".top-menu-%s li.top-menu-item-%s > a .links-text"
+  },
+  "fontHover": {
+    "type": "Font",
+    "selector": ".top-menu-%s li.top-menu-item-%s:hover > a .links-text",
+    "important": true
+  },
+  "visibility": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "true": {
+        ".top-menu-%s .top-menu-item-%s": "display: block"
+      },
+      "false": {
+        ".top-menu-%s .top-menu-item-%s": "display:none"
+      }
+    }
+  },
+  "order": {
+    "type": "Input",
+    "value": "",
+    "property": "order: %s",
+    "selector": ".top-menu-%s .top-menu-item-%s"
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

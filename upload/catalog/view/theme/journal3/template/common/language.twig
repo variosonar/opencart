@@ -1,0 +1,34 @@
+{% if journal3.get('catalogLanguageStatus') %}
+{% if languages|length > 1 %}
+<div id="language" class="language">
+  <form id="form-language" action="{{ action }}" method="post" {% if language.href %}enctype="multipart/form-data"{% else %}data-oc-toggle="ajax"{% endif %}>
+    <div class="dropdown drop-menu">
+      <button type="button" class="dropdown-toggle" data-toggle="dropdown">
+        <span class="language-flag-title">
+          {% for language in languages %}
+          {% if language.code == code %}
+          <span class="symbol" style="background-image: url('{{ language.journal3_language_image }}')"><img src="{{ journal3_language_image_placeholder }}" width="{{ journal3_language_image_width }}" height="{{ journal3_language_image_height }}" alt="{{ language.name }}" title="{{ language.name }}"/></span>
+          <span class="language-title">{{ language.name }}</span>
+          {% endif %}
+          {% endfor %}
+        </span>
+      </button>
+      <div class="dropdown-menu j-dropdown">
+      <ul class="j-menu">
+        {% for language in languages %}
+        <li class="menu-item">
+          <a class="language-select dropdown-item" {% if journal3_is_oc4 %}href="{{ language.href ?: language.code }}" {% else %}role="button"{% endif %} data-name="{{ language.code }}">
+            <span class="language-flag" style="background-image: url('{{ language.journal3_language_image }}')"><img src="{{ journal3_language_image_placeholder }}" width="{{ journal3_language_image_width }}" height="{{ journal3_language_image_height }}" alt="{{ language.name }}" title="{{ language.name }}"/></span>
+            <span class="language-title-dropdown">{{ language.name }}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      </div>
+    </div>
+    <input type="hidden" name="code" value="" />
+    <input type="hidden" name="redirect" value="{{ redirect }}" />
+  </form>
+</div>
+{% endif %}
+{% endif %}

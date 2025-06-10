@@ -1,0 +1,734 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Testimonials"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "color_scheme_module": {
+    "type": "ColorScheme",
+    "php": true
+  },
+  "schedule": {
+    "type": "Range",
+    "php": true
+  },
+  "display": {
+    "type": "Radio",
+    "value": "grid",
+    "php": true,
+    "device": true
+  },
+  "displayTablet": {
+    "type": "Radio",
+    "value": "",
+    "php": true
+  },
+  "displayPhone": {
+    "type": "Radio",
+    "value": "",
+    "php": true
+  },
+  "carousel": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true,
+    "device": true
+  },
+  "carouselTablet": {
+    "type": "Toggle",
+    "value": "",
+    "php": true
+  },
+  "carouselPhone": {
+    "type": "Toggle",
+    "value": "",
+    "php": true
+  },
+  "carouselStyle": {
+    "type": "Variable",
+    "variable": "carousel",
+    "selector_prefix": ".module-testimonials-%s"
+  },
+  "itemsPerRow": {
+    "type": "ItemsPerRow",
+    "selector": ".module-testimonials-%s.blocks-grid .ipr-grid .module-item",
+    "php": true,
+    "value": {
+      "c0": {
+        "items": "1"
+      },
+      "c1": {
+        "items": "1"
+      },
+      "c2": {
+        "items": "1"
+      }
+    }
+  },
+  "default": {
+    "type": "Select",
+    "value": "",
+    "php": true
+  },
+  "title": {
+    "type": "InputLang",
+    "php": true
+  },
+  "moduleTitle": {
+    "type": "Variable",
+    "variable": "title",
+    "selector_prefix": ".module-testimonials-%s .module-title"
+  },
+  "titleAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        "div.module-testimonials-%s .module-title":"text-align:start",
+        "div.module-testimonials-%s .module-title::after": "margin-inline-start:0; margin-inline-end:auto;"
+      },
+      "center": {
+        "div.module-testimonials-%s .module-title":"text-align:center",
+        "div.module-testimonials-%s .module-title::after": "margin-inline-start:auto; margin-inline-end:auto;"
+      },
+      "right": {
+        "div.module-testimonials-%s .module-title":"text-align:end",
+        "div.module-testimonials-%s .module-title::after": "margin-inline-start:auto; margin-inline-end:0;"
+      }
+    }
+  },
+  "containerGutter": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".module-testimonials-%s.testimonials-grid:not(.carousel-mode) .module-body": "margin:%spx"
+      }
+    }
+  },
+  "contentHeight": {
+    "type": "Radio",
+    "value": "auto",
+    "property": "height:%s",
+    "selector": ".module-testimonials-%s .block-body, .module-testimonials-%s .block-content"
+  },
+  "itemsBoxStyles": {
+    "include": "common_hover",
+    "selector_prefix": ".module-testimonials-%s .module-item"
+  },
+  "headerBoxStyles": {
+    "include": "common",
+    "selector_prefix": ".module-testimonials-%s .block-header"
+  },
+  "imageBoxStyles": {
+    "include": "common",
+    "selector_prefix": ".module-testimonials-%s .block-header img"
+  },
+  "contentBoxStyles": {
+    "include": "common_hover",
+    "selector_prefix": ".module-testimonials-%s .block-content"
+  },
+  "footerBoxStyles": {
+    "include": "common_hover",
+    "selector_prefix": ".module-testimonials-%s .block-footer"
+  },
+  "containerMargin": {
+    "type": "Margin",
+    "selector": ".module-testimonials-%s.testimonials-grid .ipr-grid"
+  },
+  "carouselGutter": {
+    "type": "Padding",
+    "selector": ".module-testimonials-%s.carousel-mode .swiper-container"
+  },
+  "moduleBackground": {
+    "type": "Background",
+    "selector": ".module-testimonials-%s"
+  },
+  "imageDimensions": {
+    "type": "ImageDimensions",
+    "php": true
+  },
+  "accordionStyle": {
+    "type": "Variable",
+    "variable": "accordion",
+    "selector_prefix": ".module-testimonials-%s"
+  },
+  "tabsStyle": {
+    "type": "Variable",
+    "variable": "tabs",
+    "selector_prefix": ".module-testimonials-%s"
+  },
+  "typographyStyle": {
+    "type": "Variable",
+    "variable": "typography",
+    "selector_prefix": ".module-testimonials-%s .block-content"
+  },
+  "imagePosition": {
+    "type": "Radio",
+    "value": "top",
+    "rules": {
+      "top": {
+        ".module-testimonials-%s .block-header": "float:none",
+        ".module-testimonials-%s .block-body": "--display:flex; flex-direction: column;"
+      },
+      "left": {
+        ".module-testimonials-%s .block-header": "float:left",
+        ".module-testimonials-%s .block-body": "--display:block"
+      },
+      "right": {
+        ".module-testimonials-%s .block-header": "float:right",
+        ".module-testimonials-%s .block-body": "--display:block"
+      }
+    },
+    "rtlRules": {
+      "top": {
+        ".module-testimonials-%s .block-header": "float:none",
+        ".module-testimonials-%s .block-body": "--display:flex; flex-direction: column;"
+      },
+      "left": {
+        ".module-testimonials-%s .block-header": "float:right",
+        ".module-testimonials-%s .block-body": "--display:block"
+      },
+      "right": {
+        ".module-testimonials-%s .block-header": "float:left",
+        ".module-testimonials-%s .block-body": "--display:block"
+      }
+    }
+  },
+  "imageAlign": {
+    "type": "Radio",
+    "value": "left",
+    "rules": {
+      "left": {
+        ".module-testimonials-%s div.block-header": "text-align:left",
+        ".module-testimonials-%s div.block-body": "align-items:flex-start"
+      },
+      "center": {
+        ".module-testimonials-%s div.block-header": "text-align:center",
+        ".module-testimonials-%s div.block-body": "align-items:center"
+      },
+      "right": {
+        ".module-testimonials-%s div.block-header": "text-align:right",
+        ".module-testimonials-%s div.block-body": "align-items:flex-end"
+      }
+    }
+  },
+  "moduleAlign": {
+    "type": "Radio",
+    "value": "left",
+    "rules": {
+      "left": {
+        ".module-testimonials-%s .block-header": "text-align:start",
+        ".module-testimonials-%s .block-body": "align-items:flex-start; text-align:start",
+        ".module-testimonials-%s .block-footer": "text-align:start"
+      },
+      "center": {
+        ".module-testimonials-%s .block-header": "text-align:center",
+        ".module-testimonials-%s .block-body": "align-items:center; text-align:center",
+        ".module-testimonials-%s .block-footer": "text-align:center"
+      },
+      "right": {
+        ".module-testimonials-%s .block-header": "text-align:end",
+        ".module-testimonials-%s .block-body": "align-items:flex-end; text-align:end",
+        ".module-testimonials-%s .block-footer": "text-align:end"
+      }
+    }
+  },
+  "icon": {
+    "type": "Icon",
+    "selector": ".module-testimonials-%s .block-header em::before"
+  },
+  "iconHover": {
+    "type": "Color",
+    "selector": ".module-testimonials-%s .block-body:hover .block-header em::before",
+    "property": "color"
+  },
+  "iconSize": {
+    "type": "InputPair",
+    "selector": ".module-testimonials-%s .block-header em",
+    "properties": {
+      "first": "width:%spx",
+      "second": "height:%spx"
+    }
+  },
+  "iconBG": {
+    "type": "Background",
+    "selector": ".module-testimonials-%s .block-header em"
+  },
+  "iconBGHover": {
+    "type": "Background",
+    "selector": ".module-testimonials-%s .block-body:hover .block-header em"
+  },
+  "iconMargin": {
+    "type": "Margin",
+    "selector": ".module-testimonials-%s .block-header em"
+  },
+  "itemMinHeight": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".module-testimonials-%s .module-item",
+    "property": "min-height: %spx"
+  },
+  "firstBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-testimonials-%s .module-item:first-child"
+  },
+  "lastBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-testimonials-%s .module-item:last-child"
+  },
+  "iconBorder": {
+    "type": "Border",
+    "selector": ".module-testimonials-%s .block-header em"
+  },
+  "iconBorderHover": {
+    "type": "Color",
+    "selector": ".module-testimonials-%s .block-header em",
+    "property": "border-color"
+  },
+  "iconBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-testimonials-%s .block-header em"
+  },
+  "iconShadow": {
+    "type": "Shadow",
+    "selector": ".module-testimonials-%s .block-header em"
+  },
+  "iconShadowHover": {
+    "type": "Shadow",
+    "selector": ".module-testimonials-%s .block-body:hover .block-header em"
+  },
+  "footerTextAlign": {
+    "type": "Radio",
+    "value": "center",
+    "rules": {
+      "left": {
+        ".module-testimonials-%s div.block-footer": "text-align:start"
+      },
+      "center": {
+        ".module-testimonials-%s div.block-footer": "text-align:center"
+      },
+      "right": {
+        ".module-testimonials-%s div.block-footer": "text-align:end"
+      }
+    }
+  },
+  "font": {
+    "type": "Font",
+    "selector": ".module-testimonials-%s .block-body"
+  },
+  "footerTextFont": {
+    "type": "Font",
+    "selector": ".module-testimonials-%s .block-footer"
+  },
+  "footerTextFontHover": {
+    "type": "Font",
+    "selector": ".module-testimonials-%s .block-body:hover .block-footer"
+  },
+  "authorMargin": {
+    "type": "Margin",
+    "selector": ".module-testimonials-%s .block-footer"
+  },
+  "moduleWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "rules": {
+      "@": {
+        ".module.module-testimonials-%s": "max-width: %spx !important; margin: 0 auto"
+      }
+    }
+  },
+  "gridType": {
+    "type": "Radio",
+    "value": "ipr",
+    "php": true
+  },
+  "flexItems": {
+    "type": "InputPair",
+    "selector": ".module-testimonials-%s .flex-grid",
+    "properties": {
+      "first": "--flex-grid-width: %spx",
+      "second": "--flex-grid-max-col: calc((100% - (%s - 1) * var(--flex-grid-gap, 0px)) / %s)"
+    },
+    "value": {
+      "first": "",
+      "second": ""
+    }
+  },
+  "flexItemGap": {
+    "type": "Gap",
+    "variableType": "gap",
+    "selector": ".module-testimonials-%s .flex-grid",
+    "property": "--flex-grid-gap:%s"
+  },
+  "flexGrow": {
+    "type": "Radio",
+    "value": "1",
+    "selector": ".module-testimonials-%s .flex-grid > *",
+    "property": "flex-grow: %s"
+  },
+  "flexAlign": {
+    "type": "Radio",
+    "value": "",
+    "selector": ".module-testimonials-%s .flex-grid",
+    "property": "justify-content: %s"
+  },
+  "autoGridStyle": {
+    "type": "Variable",
+    "variable": "auto_grid",
+    "selector_prefix": ".module-testimonials-%s .auto-grid "
+  },
+  "autoGrid": {
+    "type": "InputTriple",
+    "selector": "div.module-testimonials-%s .auto-grid",
+    "properties": {
+      "first": "--grid-min-width: %spx",
+      "minCol": "--grid-min-col: %s",
+      "second": "--grid-max-col: %s",
+      "third": "--grid-gap: %s",
+      "fourth": "--auto-grow-type: auto-%s; --item-width: var(--item-%s)"
+    },
+    "value": {
+      "first": "",
+      "minCol": "",
+      "second": "",
+      "third": "",
+      "fourth": ""
+    }
+  },
+  "centerInsufficient": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".module-testimonials-%s": "--center-insufficient: var(--center-insufficient-carousel, initial); --inline-margin: auto"
+      },
+      "false": {
+        ".module-testimonials-%s": "--center-insufficient: initial; --inline-margin: initial"
+      }
+    }
+  },
+  "autoCarousel": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".module-testimonials-%s": "--center-insufficient-carousel: max-content; --align-to-content-title: max(0px, calc(50% - var(--content-max-width) / 2 + var(--content-gutter))); --align-to-content: max(var(--content-gutter), calc((100vw - var(--scrollW, 0px) - var(--content-max-width)) / 2) + var(--content-gutter, 0px)); --align-to-content-cancel: calc(var(--align-to-content) * -1 + var(--content-gutter, 0px));",
+        ".module-testimonials-%s .auto-grid": "margin-inline-start: calc(0px - var(--scroll-padding, 0px)); margin-inline-end: calc(0px - var(--scroll-padding, 0px)); --fr: var(--item-width)",
+        ".module-testimonials-%s .auto-grid .auto-grid-items": "cursor: var(--cursor); grid-auto-flow: column; overflow-x:auto; overflow-y:hidden; padding-inline-start:var(--scroll-padding, 0px); padding-inline-end: var(--scroll-padding, 0px); padding-top:var(--top-padding, 0px); padding-bottom: var(--bottom-padding, 0px)",
+        ".module-testimonials-%s .auto-grid .auto-carousel-controls": "display:flex;",
+        ".module-testimonials-%s .auto-grid .auto-carousel-items::after": "display:block;",
+        ".module-testimonials-%s .auto-grid .auto-grid-items.is-gliding a": "pointer-events: none"
+      },
+      "false": {
+        ".module-testimonials-%s": "--center-insufficient-carousel: initial;",
+        ".module-testimonials-%s .auto-grid": "margin-inline-start: unset; margin-inline-end: unset; --fr: 1fr",
+        ".module-testimonials-%s .auto-grid .auto-grid-items": "grid-auto-flow: row dense; overflow-x:initial; padding-inline-start:unset; padding-inline-end: unset",
+        ".module-testimonials-%s .auto-grid .auto-carousel-controls": "display:none;",
+        ".module-testimonials-%s .auto-grid .auto-carousel-items::after": "display:none;",
+        ".module-testimonials-%s .auto-grid .auto-grid-items.is-gliding a": "pointer-events: auto"
+      }
+    }
+  },
+  "autoCarouselRows": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".module-testimonials-%s .auto-grid .auto-grid-items": " --grid-rows: %s"
+      }
+    }
+  },
+    "AutoCarouselButtonsVisibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-testimonials-%s .auto-grid > .auto-carousel-buttons": "visibility: visible;"
+      },
+      "false": {
+        ".module-testimonials-%s .auto-grid > .auto-carousel-buttons": "visibility: hidden;"
+      }
+    }
+  },
+  "FaderStatus": {
+    "type": "Radio",
+    "value": "off",
+    "rules": {
+      "off": {
+        ".module-testimonials-%s .auto-grid > .auto-grid-items::before": "--fader-status: 0; display: none",
+        ".module-testimonials-%s .auto-grid > .auto-grid-items::after": "--fader-status: 0; display: none"
+      },
+      "both": {
+        ".module-testimonials-%s .auto-grid > .auto-grid-items::before": "--fader-status: 1; display: block",
+        ".module-testimonials-%s .auto-grid > .auto-grid-items::after": "--fader-status: 1; display: block"
+      },
+      "start": {
+        ".module-testimonials-%s .auto-grid > .auto-grid-items::before": "--fader-status: 1; display: block",
+        ".module-testimonials-%s .auto-grid > .auto-grid-items::after": "--fader-status: 0; display: none"
+      },
+      "end": {
+        ".module-testimonials-%s .auto-grid > .auto-grid-items::before": "--fader-status: 0; display: none",
+        ".module-testimonials-%s .auto-grid > .auto-grid-items::after": "--fader-status: 1; display: block"
+      }
+    }
+  },
+  "FaderColor": {
+    "type": "Color",
+    "selector": ".module-testimonials-%s .auto-grid .auto-grid-items::before, .module-testimonials-%s .auto-grid .auto-grid-items::after",
+    "property": "--fader-color: %s"
+  },
+  "FaderWidth": {
+    "type": "InputPair",
+    "selector": ".module-testimonials-%s .auto-grid .auto-grid-items::before, .module-testimonials-%s .auto-grid .auto-grid-items::after",
+    "properties": {
+      "first": "--fader-width-left:%spx",
+      "second": "--fader-width-right:%spx",
+      "value": {
+        "first": "",
+        "second": ""
+      }
+    }
+  },
+  "autoCarouselStyle": {
+    "type": "Variable",
+    "variable": "auto_carousel",
+    "selector_prefix": ".module-testimonials-%s "
+  },
+"AutoCarouselScrollerType": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "custom": {
+        "div.module-testimonials-%s .auto-grid": "--scrollbar-top-space: var(--scrollbar-top-spacing, 0px); --scrollbar-bottom-space: var(--scrollbar-bottom-spacing, 0px)",
+        "div.module-testimonials-%s .auto-carousel-bar": "display:flex; margin: var(--scrollbar-top-spacing, 0) max(0px, var(--scroll-padding, 0px)) var(--scrollbar-bottom-spacing, 0) max(0px, var(--scroll-padding, 0px))",
+        "div.module-testimonials-%s .auto-carousel-controls.auto-carousel-bar": "max-height: none"
+      },
+      "none": {
+        "div.module-testimonials-%s .auto-grid": "--scrollbar-top-space: 0px; --scrollbar-bottom-space: 0px",
+        "div.module-testimonials-%s .auto-carousel-bar": "display:none; margin: 0;",
+        "div.module-testimonials-%s .auto-carousel-controls.auto-carousel-bar": "max-height: 0"
+      }
+    }
+  },
+  "AutoCarouselButtonPosition": {
+    "type": "Select",
+    "value": "",
+    "rules": {
+      "tl": {
+        "div.module-testimonials-%s .auto-grid > .auto-carousel-buttons": "align-items:center; justify-content:flex-start; flex-direction:row; position:relative; height:0; transform: translate3d(0,calc(var(--auto-carousel-button-height,40px) / 2 * -1), 0); top:0; margin-top: 0px;",
+        "div.module-testimonials-%s .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        "div.module-testimonials-%s .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "tc": {
+        "div.module-testimonials-%s .auto-grid > .auto-carousel-buttons": "align-items:center; justify-content:center; flex-direction:row; position:relative; height:0; transform: translate3d(0,calc(var(--auto-carousel-button-height,40px) / 2 * -1), 0); top:0; margin-top: 0px;",
+        "div.module-testimonials-%s .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        "div.module-testimonials-%s .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "tr": {
+        "div.module-testimonials-%s .auto-grid > .auto-carousel-buttons": "align-items:center; justify-content:flex-end; flex-direction:row; position:relative; height:0; transform: translate3d(0,calc(var(--auto-carousel-button-height,40px) / 2 * -1), 0); top:0; margin-top: 0px;",
+        "div.module-testimonials-%s .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        "div.module-testimonials-%s .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "ta": {
+        "div.module-testimonials-%s .auto-grid > .auto-carousel-buttons": "align-items:center; justify-content:space-between; flex-direction:row; position:relative; height:0; transform: translate3d(0,calc(var(--auto-carousel-button-height,40px) / 2 * -1), 0); top:0; margin-top: 0px;",
+        "div.module-testimonials-%s .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        "div.module-testimonials-%s .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(calc(var(--auto-carousel-button-x, 0px) * -1), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "cl": {
+        "div.module-testimonials-%s .auto-grid > .auto-carousel-buttons": "align-items:flex-start; justify-content:flex-start; flex-direction:column; position:absolute; top:50%; height:auto; transform: translate3d(0,-50%,0); margin-top: var(--buttons-offset, 0px)",
+        "div.module-testimonials-%s .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        "div.module-testimonials-%s .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "cr": {
+        "div.module-testimonials-%s .auto-grid > .auto-carousel-buttons": "align-items:flex-end; justify-content:flex-start; flex-direction:column; position:absolute; top:50%; height:auto; transform: translate3d(0,-50%,0); margin-top: var(--buttons-offset, 0px)",
+        "div.module-testimonials-%s .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        "div.module-testimonials-%s .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "ca": {
+        "div.module-testimonials-%s .auto-grid > .auto-carousel-buttons": "align-items:center; justify-content:space-between; flex-direction:row; position:absolute; top:50%; height:auto; transform: translate3d(0,-50%,0); margin-top: var(--buttons-offset, 0px)",
+        "div.module-testimonials-%s .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        "div.module-testimonials-%s .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(calc(var(--auto-carousel-button-x, 0px) * -1), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      }
+    }
+  },
+  "AutoCarouselButtonOffset": {
+    "type": "InputPair",
+    "selector": "div.module-testimonials-%s .auto-grid",
+    "properties": {
+      "first": "--auto-carousel-button-x: %spx",
+      "second": "--auto-carousel-button-y: %spx"
+    },
+    "rtlProperties": {
+      "first": "--auto-carousel-button-x: calc(%spx * -1)",
+      "second": "--auto-carousel-button-y: %spx"
+    }
+  },
+  "AutoCarouselPadding": {
+    "type": "InputPair",
+    "selector": "div.module-testimonials-%s .auto-grid",
+    "properties": {
+      "first": "--top-padding:%spx",
+      "second": "--bottom-padding:%spx",
+      "value": {
+        "first": "",
+        "second": ""
+      }
+    }
+  },
+  "AutoCarouselSnapAlign": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "start": {
+        "div.module-testimonials-%s .auto-grid-items:not(.is-dragging) > *": "scroll-snap-align:start"
+      },
+      "center": {
+        "div.module-testimonials-%s .auto-grid-items:not(.is-dragging) > *": "scroll-snap-align:center"
+      },
+      "end": {
+        "div.module-testimonials-%s .auto-grid-items:not(.is-dragging) > *": "scroll-snap-align:end"
+      },
+      "none": {
+        "div.module-testimonials-%s .auto-grid-items:not(.is-dragging) > *": "scroll-snap-align:none"
+      }
+    },
+    "touchevents": true
+  },
+  "AutoCarouselSnapPaddingCustom": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "selector": "div.module-testimonials-%s .auto-grid",
+    "property": "--scroll-padding-custom: %s"
+  },
+  "AutoCarouselSnapPadding": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "auto": {
+        "div.module-testimonials-%s .auto-grid": "--scroll-padding: var(--scroll-padding-custom, var(--element-padding, 0px));"
+      },
+      "gap": {
+        "div.module-testimonials-%s .auto-grid": "--scroll-padding: var(--scroll-padding-custom, var(--grid-gap, 0px));"
+      },
+      "true": {
+        "div.module-testimonials-%s .auto-grid": "--scroll-padding: var(--scroll-padding-custom, var(--content-gutter, 0px));"
+      },
+      "false": {
+        "div.module-testimonials-%s .auto-grid": "--scroll-padding: var(--scroll-padding-custom, 0px);"
+      }
+    }
+  },
+  "AutoCarouselScrollBy": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": "div.module-testimonials-%s .auto-grid .auto-grid-items",
+    "property": "--scroll-by:%s"
+  },
+  "AutoScrollbarStyle": {
+    "type": "Variable",
+    "variable": "auto_scrollbar",
+    "selector_prefix": ".module-testimonials-%s "
+  },
+  "AutoScrollbarTrackSpacing": {
+    "type": "InputPair",
+    "selector": "div.module-testimonials-%s .auto-grid",
+    "properties": {
+      "first": "--scrollbar-top-spacing: %spx",
+      "second": "--scrollbar-bottom-spacing: %spx"
+    },
+    "value": {
+      "first": "",
+      "second": ""
+    }
+  },
+  "AutoCarouselButtonsWidth-hold": {
+    "type": "Toggle",
+    "value": "content",
+    "rules": {
+      "full": {
+        "div.module-testimonials-%s": "--auto-carousel-controls-max-width: calc(100% - var(--scroll-padding, 0px) * 2)"
+      },
+      "content": {
+        "div.module-testimonials-%s": "--auto-carousel-controls-max-width: min(min(var(--content-max-width, 100%) - var(--scroll-padding, 0px) * 2, var(--content-max-width, 100%) - var(--content-gutter, 0) * 2), 100% - var(--scroll-padding, 0px) * 2)"
+      }
+    }
+  },
+  "AutoScrollbarAlign": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "start": {
+        "div.module-testimonials-%s .auto-carousel-bar": "margin-inline-start:max(0px, var(--scroll-padding,0px)); margin-inline-end: auto;"
+      },
+      "center": {
+        "div.module-testimonials-%s .auto-carousel-bar": "margin-inline-start:auto; margin-inline-end: auto;"
+      },
+      "end": {
+        "div.module-testimonials-%s .auto-carousel-bar": "margin-inline-start:auto; margin-inline-end: max(0px, var(--scroll-padding,0px));"
+      }
+    }
+  },
+  "AutoScrollbarTrackMaxWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": "div.module-testimonials-%s .auto-carousel-bar",
+    "property": "--auto-scroll-max-width:%spx"
+  },
+  "AutoScrollbarTrackWidth": {
+    "type": "InputNumber",
+    "selector": "div.module-testimonials-%s .auto-carousel-bar",
+    "value": "",
+    "property": "--width-reduction:%spx"
+  },
+  "autoGridContainerAlignToContentTitle-hold": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".module-testimonials-%s.align-to-content": "--align-to-content-title: 0px !important"
+      }
+    }
+  },
+  "autoGridContainerAlignToContent": {
+    "type": "Toggle",
+    "value": "false"
+  },
+  "autoGridContainerPadding-hold": {
+    "type": "Padding",
+    "selector": ".module-testimonials-%s .auto-grid .auto-grid-items"
+  },
+  "autoGridContainerMargin": {
+    "type": "Margin",
+    "selector": ".module-testimonials-%s .auto-grid"
+  },
+  "autoGridContainerBackground": {
+    "type": "Background",
+    "selector": ".module-testimonials-%s .auto-grid .auto-grid-items"
+  },
+  "autoGridContainerShadow": {
+    "type": "Shadow",
+    "selector_prefix": ".module-testimonials-%s .auto-grid .auto-grid-items"
+  },
+  "autoGridContainerWidthOuter": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "max-width: %spx",
+    "selector_prefix": ".module-testimonials-%s .auto-grid"
+  },
+  "autoGridContainerMarginOuter": {
+    "type": "Margin",
+    "selector_prefix": ".module-testimonials-%s .auto-grid"
+  },
+  "autoGridContainerPaddingOuter": {
+    "type": "Padding",
+    "selector_prefix": ".module-testimonials-%s .auto-grid"
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

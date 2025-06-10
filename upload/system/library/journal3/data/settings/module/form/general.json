@@ -1,0 +1,172 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Form "
+  },
+  "status": {
+    "type": "Status"
+  },
+  "schedule": {
+    "type": "Range",
+    "php": true
+  },
+  "title": {
+    "type": "InputLang",
+    "value": "Contact Us",
+    "php": true
+  },
+  "formStyle": {
+    "type": "Variable",
+    "variable": "form",
+    "selector_prefix": ".module-form-%s"
+  },
+  "legendTitle": {
+    "type": "Variable",
+    "variable": "title",
+    "selector_prefix": ".module-form-%s form legend"
+  },
+  "moduleTitle": {
+    "type": "Variable",
+    "variable": "title",
+    "selector_prefix": ".module-form-%s .module-title"
+  },
+  "titleAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        "div.module-form-%s .module-title":"text-align:start",
+        "div.module-form-%s .module-title::after": "margin-inline-start:0; margin-inline-end:auto;"
+      },
+      "center": {
+        "div.module-form-%s .module-title":"text-align:center",
+        "div.module-form-%s .module-title::after": "margin-inline-start:auto; margin-inline-end:auto;"
+      },
+      "right": {
+        "div.module-form-%s .module-title":"text-align:end",
+        "div.module-form-%s .module-title::after": "margin-inline-start:auto; margin-inline-end:0;"
+      }
+    }
+  },
+  "pageButtons": {
+    "type": "Variable",
+    "variable": "page_buttons",
+    "selector_prefix": ".module-form-%s"
+  },
+  "background": {
+    "type": "Background",
+    "selector": ".module-form-%s"
+  },
+  "padding": {
+    "type": "Padding",
+    "selector": ".module-form-%s"
+  },
+  "titleMargin": {
+    "type": "Margin",
+    "selector": ".module-form-%s .module-title"
+  },
+  "titleFont": {
+    "type": "Font",
+    "selector": ".module-form-%s .module-title"
+  },
+  "legendFont": {
+    "type": "Font",
+    "selector": "div.module-form-%s legend"
+  },
+  "legendMargin": {
+    "type": "Margin",
+    "selector": "div.module-form-%s legend"
+  },
+  "buttonStyle": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": "div.module-form-%s .buttons .pull-right"
+  },
+  "buttonMargin": {
+    "type": "Margin",
+    "selector": "div.module-form-%s .buttons"
+  },
+  "buttonWidth": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "auto": {
+        "div.module-form-%s .buttons .pull-right:only-child": "max-width: max-content",
+        "div.module-form-%s .buttons .pull-right:only-child .btn": "width: auto"
+      },
+      "full": {
+        "div.module-form-%s .buttons .pull-right:only-child": "max-width: 100%",
+        "div.module-form-%s .buttons .pull-right:only-child .btn": "width: 100%"
+      }
+    }
+  },
+  "agree": {
+    "type": "Catalog",
+    "php": true
+  },
+  "sendButtonText": {
+    "type": "InputLang",
+    "value": "",
+    "php": true
+  },
+  "sentText": {
+    "type": "InputLang",
+    "value": "Your message has been successfully sent.",
+    "php": true
+  },
+  "sentEmailTo": {
+    "type": "Input",
+    "value": "",
+    "php": true
+  },
+  "sentEmailSubject": {
+    "type": "InputLang",
+    "value": "{{ $store }} - Enquiry from {{ $email }}",
+    "php": true
+  },
+  "sentEmailLogo": {
+    "type": "Toggle",
+    "php": true,
+    "value": "false"
+  },
+  "sentEmailTitle": {
+    "type": "InputLang",
+    "value": "A new message has been received!",
+    "php": true
+  },
+  "sentEmailField": {
+    "type": "InputLang",
+    "value": "Field",
+    "php": true
+  },
+  "sentEmailValue": {
+    "type": "InputLang",
+    "value": "Value",
+    "php": true
+  },
+  "sentEmailUsingModule": {
+    "type": "InputLang",
+    "value": "Sent using module",
+    "php": true
+  },
+  "sentEmailFrom": {
+    "type": "InputLang",
+    "value": "Sent from",
+    "php": true
+  },
+  "sentEmailIPAddress": {
+    "type": "InputLang",
+    "value": "IP Address",
+    "php": true
+  },
+  "redirect": {
+    "type": "Link",
+    "php": true
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

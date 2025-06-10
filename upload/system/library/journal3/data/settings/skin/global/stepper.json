@@ -1,0 +1,22 @@
+{
+  "stepperStatus": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "false": {
+        ".stepper button": "display: none !important"
+      }
+    },
+    "php": true,
+    "js": true
+  },
+  "stepperDecimals": {
+    "type": "InputNumber",
+    "value": "0",
+    "js": true
+  },
+  "globalStepper": {
+    "type": "Variable",
+    "variable": "stepper"
+  }
+}

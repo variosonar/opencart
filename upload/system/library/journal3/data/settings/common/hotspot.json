@@ -1,0 +1,107 @@
+{
+  "hotspotSize": {
+    "type": "InputSlider",
+    "selector": ".hotspot",
+    "property": "--hotspot-size:%spx",
+    "value": "16"
+  },
+  "hotspotScaleHover": {
+    "type": "InputPair",
+    "selector": ".hotspot",
+    "properties": {
+      "first": "--scale-hover: %s",
+      "second": "--scale-active: %s"
+    },
+    "rules": {
+      "@": {
+        ".hotspot:hover span": "transform: scale(var(--scale-hover, 1));",
+        ".hotspot:active span": "transform: scale(var(--scale-active, 1));"
+      }
+    }
+  },
+  "hotspotIcon": {
+    "type": "Icon",
+    "selector": ".hotspot > span::before"
+  },
+  "hotspotIconHover": {
+    "type": "Color",
+    "property": "color",
+    "selector": ".hotspot:hover > span::before"
+  },
+  "hotspotBackground": {
+    "type": "Background",
+    "selector": ".hotspot > span"
+  },
+  "hotspotBackgroundHover": {
+    "type": "Background",
+    "selector": ".hotspot:hover > span"
+  },
+  "hotspotBorder": {
+    "type": "Border",
+    "selector": ".hotspot > span"
+  },
+  "hotspotBorderHover": {
+    "type": "Color",
+    "property": "border-color",
+    "selector": ".hotspot:hover > span"
+  },
+  "hotspotBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".hotspot > span"
+  },
+  "hotspotShadow": {
+    "type": "Shadow",
+    "selector": ".hotspot > span"
+  },
+  "hotspotShadowHover": {
+    "type": "Shadow",
+    "selector": ".hotspot:hover > span"
+  },
+  "hotspotRotate": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "true": {
+        ".hotspot-active": "--hotspot-rotate: 45deg;"
+      },
+      "false": {
+        ".hotspot-active": "--hotspot-rotate: 0deg;"
+      }
+    }
+  },
+  "hotspotPulsate": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".hotspot": "--pulse-dot: var(--pulse-size, .8);"
+      },
+      "false": {
+        ".hotspot": "--pulse-dot: 1;"
+      }
+    }
+  },
+  "hotspotPulseSize": {
+    "type": "InputNumber",
+    "selector": ".hotspot",
+    "property": "--pulse-size:%s",
+    "value": ""
+  },
+  "hotspotPulsateRing": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".hotspot::after": "display: block;"
+      },
+      "false": {
+        ".hotspot::after": "display: none;"
+      }
+    }
+  },
+  "hotspotPulsateRingColor": {
+    "type": "Color",
+    "property": "background-color",
+    "selector": ".hotspot::after"
+  }
+}

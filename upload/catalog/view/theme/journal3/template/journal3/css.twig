@@ -1,0 +1,18 @@
+<style>
+  {% if journal3.get('headerMiniSearchDisplay') == 'page' %}
+  .search-page .mini-search {
+    --search-container-padding: {{journal3.get('headerMiniSearchDropdownPadding')}}px;
+    --search-container-padding-outer: {{journal3.get('headerMiniSearchDropdownPaddingOuter')}}px;
+  }
+  {% endif %}
+
+
+  {# Shipping payment visibility #}
+  {% if journal3.get('sectionShippingVisibility') != 'true' and journal3.get('sectionPaymentVisibility') != 'true' %}
+  .quick-checkout-wrapper .shipping-payment {
+    display: none;
+  }
+  {% endif %}
+
+</style>
+

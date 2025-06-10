@@ -1,0 +1,689 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "Menu Item"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "color_scheme": {
+    "type": "ColorScheme",
+    "php": true
+  },
+  "menuStyle": {
+    "type": "Variable",
+    "variable": "menu",
+    "selector_prefix": ".main-menu.main-menu-%s > .j-menu > .main-menu-item-%s&"
+  },
+  "dropdown_color_scheme": {
+    "type": "ColorScheme",
+    "php": true
+  },
+  "visibility": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "true": {
+        "div.main-menu.main-menu-%s > .j-menu .menu-item.main-menu-item-%s": "display: flex"
+      },
+      "false": {
+        "div.main-menu.main-menu-%s > .j-menu .menu-item.main-menu-item-%s": "display:none"
+      }
+    }
+  },
+  "order": {
+    "type": "Input",
+    "value": "",
+    "property": "order: %s",
+    "selector": "div.main-menu.main-menu-%s > .j-menu .menu-item.main-menu-item-%s"
+  },
+  "title": {
+    "type": "InputLang",
+    "value": "Menu Item",
+    "php": true
+  },
+  "icon": {
+    "type": "Icon",
+    "selector": "div.main-menu.main-menu-%s > .j-menu .menu-item.main-menu-item-%s > a::before",
+    "important": true
+  },
+  "iconHover": {
+    "type": "Color",
+    "selector": "div.main-menu.main-menu-%s > .j-menu .menu-item.main-menu-item-%s:hover > a::before",
+    "property": "color",
+    "important": true
+  },
+  "iconDesktop": {
+    "type": "Icon",
+    "selector": "desktop-main-menu-wrapper .main-menu.main-menu-%s > .j-menu .menu-item.main-menu-item-%s > a::before",
+    "important": true
+  },
+  "iconDesktopHover": {
+    "type": "Color",
+    "selector": "desktop-main-menu-wrapper .main-menu.main-menu-%s > .j-menu .menu-item.main-menu-item-%s:hover > a::before",
+    "property": "color",
+    "important": true
+  },
+  "image": {
+    "type": "ImageLang"
+  },
+  "font": {
+    "type": "Font",
+    "selector": "div#main-menu.main-menu-%s > .j-menu li.main-menu-item-%s > a > .links-text, div#main-menu-2.main-menu-%s > .j-menu li.main-menu-item-%s > a > .links-text, #main-menu-mobile.main-menu-%s > .j-menu li.main-menu-item-%s > a > .links-text, div#main-menu.main-menu-%s > .j-menu li.main-menu-item-%s > a, div#main-menu-2.main-menu-%s > .j-menu li.main-menu-item-%s > a, #main-menu-mobile.main-menu-%s > .j-menu li.main-menu-item-%s > a",
+    "important": true
+  },
+  "fontHover": {
+    "type": "Font",
+    "selector": "div#main-menu.main-menu-%s > .j-menu li.main-menu-item-%s:hover > a, div#main-menu-2.main-menu-%s > .j-menu li.main-menu-item-%s:hover > a, div#main-menu.main-menu-%s > .j-menu li.main-menu-item-%s:hover > a.open, div#main-menu-2.main-menu-%s > .j-menu li.main-menu-item-%s.open > a, #main-menu-mobile.main-menu-%s > .j-menu li.main-menu-item-%s > a, div#main-menu.main-menu-%s > .j-menu li.main-menu-item-%s:hover > a > .links-text, div#main-menu-2.main-menu-%s > .j-menu li.main-menu-item-%s:hover > a > .links-text, div#main-menu.main-menu-%s > .j-menu li.main-menu-item-%s:hover > a.open > .links-text, div#main-menu-2.main-menu-%s > .j-menu li.main-menu-item-%s.open > a > .links-text, #main-menu-mobile.main-menu-%s > .j-menu li.main-menu-item-%s > a > .links-text",
+    "important": true
+  },
+  "border": {
+    "type": "Border",
+    "selector": "div.main-menu.main-menu-%s > .j-menu > .main-menu-item-%s > a > .links-text",
+    "important": true
+  },
+  "borderHover": {
+    "type": "Color",
+    "selector": "div.main-menu.main-menu-%s > .j-menu > .main-menu-item-%s:hover > a > .links-text",
+    "property": "border-color",
+    "important": true
+  },
+  "borderRadius": {
+    "type": "BorderRadius",
+    "selector": ".desktop-main-menu-wrapper div.main-menu.main-menu-%s > .j-menu > .main-menu-item-%s > a",
+    "important": true
+  },
+  "dropdownBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".desktop-main-menu-wrapper div.main-menu.main-menu-%s > .j-menu > .main-menu-item-%s.drop-menu > .j-dropdown > .j-menu, .desktop-main-menu-wrapper div.main-menu.main-menu-%s > .j-menu > .main-menu-item-%s.drop-menu > .j-dropdown > .flyout-menu > .j-menu",
+    "important": true
+  },
+  "textPadding": {
+    "type": "Padding",
+    "selector": "div.main-menu.main-menu-%s > .j-menu li.main-menu-item-%s > a > .links-text",
+    "important": true
+  },
+  "background": {
+    "type": "Background",
+    "selector": ".desktop-main-menu-wrapper div.main-menu.main-menu-%s > .j-menu li.main-menu-item-%s > a, .mobile-main-menu-wrapper div.main-menu.main-menu-%s > .j-menu li.main-menu-item-%s > a",
+    "important": true
+  },
+  "backgroundHover": {
+    "type": "Background",
+    "selector": ".desktop-main-menu-wrapper div.main-menu.main-menu-%s > .j-menu li.main-menu-item-%s:hover > a, .mobile-main-menu-wrapper div.main-menu.main-menu-%s > .j-menu li.main-menu-item-%s.panel-active > a",
+    "important": true
+  },
+  "padding": {
+    "type": "Padding",
+    "selector": ".desktop-main-menu-wrapper div.main-menu.main-menu-%s > .j-menu > .main-menu-item-%s > a",
+    "important": true
+  },
+  "itemMinWidth": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".desktop-main-menu-wrapper div.main-menu.main-menu-%s > .j-menu > .main-menu-item-%s > a": "min-width:%spx"
+      }
+    }
+  },
+  "link": {
+    "type": "Link",
+    "php": true
+  },
+  "categoryImage": {
+    "type": "Toggle",
+    "value": "false"
+  },
+  "subcategories": {
+    "type": "Toggle"
+  },
+  "subcategoriesImages": {
+    "type": "Toggle",
+    "value": "false"
+  },
+  "subcategoriesMaxLevels": {
+    "type": "Input"
+  },
+  "type": {
+    "type": "Radio",
+    "value": "multilevel",
+    "php": true
+  },
+  "flyout": {
+    "type": "Module"
+  },
+  "mobileOpen": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "homeOpen": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".route-common-home .desktop-main-menu-wrapper .main-menu-%s .main-menu-item-%s.flyout > .j-dropdown": "display:block !important; --dropdown-from: 0; opacity: 1; top: 100%;"
+      }
+    }
+  },
+  "pagesOpen": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        "html:not(.route-common-home) .desktop-main-menu-wrapper .main-menu-%s .main-menu-item-%s.flyout > .j-dropdown": "display:block !important; --dropdown-from: 0; opacity: 1; top: 100%"
+      }
+    }
+  },
+  "stickyOpen": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "false": {
+        ".header-sticky[data-sticky='is-sticky'] .desktop-main-menu-wrapper .main-menu-%s .main-menu-item-%s.flyout:not(.open) > .j-dropdown": "visibility:hidden;"
+      }
+    }
+  },
+  "disableHome": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".route-common-home .desktop-main-menu-wrapper .main-menu-%s .main-menu-item-%s.flyout": "pointer-events: none"
+      }
+    }
+  },
+  "megaMenuLayout": {
+    "type": "Radio",
+    "value": "full"
+  },
+  "megaMenuBGFull": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".desktop-main-menu-wrapper .menu-fullwidth > .j-dropdown": "width: 100%"
+      }
+    }
+  },
+  "megaMenuContentFull": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".desktop-main-menu-wrapper .main-menu-%s .main-menu-item-%s.menu-fullwidth > .j-dropdown > .mega-menu-content > .grid-rows > .grid-row > .grid-cols-wrapper": "max-width: calc(100% - var(--gutter, 0px) * 2)"
+      }
+    }
+  },
+  "megaMenuContentFullGutter": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "true": {
+        ".desktop-main-menu-wrapper .main-menu-%s .main-menu-item-%s.menu-fullwidth > .j-dropdown > .mega-menu-content": "padding-inline-start:0; padding-inline-end:0;",
+        ".desktop-main-menu-wrapper .main-menu-%s .main-menu-item-%s.menu-fullwidth > .j-dropdown > .mega-menu-content > .grid-rows > .grid-row > .grid-cols-wrapper": "--gutter: var(--content-gutter, 0px)"
+      },
+      "false": {
+        ".desktop-main-menu-wrapper .main-menu-%s .main-menu-item-%s.menu-fullwidth > .j-dropdown > .mega-menu-content > .grid-rows > .grid-row > .grid-cols-wrapper": "--gutter: 0px"
+      }
+    }
+  },
+  "megaMenuWidth": {
+    "type": "InputNumber",
+    "selector": ".desktop-main-menu-wrapper .main-menu-%s .main-menu-item-%s.dropdown.mega-custom > .j-dropdown",
+    "property": "--width:%spx",
+    "value": ""
+  },
+  "iconOnly": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".main-menu-%s > .j-menu li.main-menu-item-%s > a .links-text": "display: none"
+      },
+      "false": {
+        ".main-menu-%s > .j-menu li.main-menu-item-%s > a .links-text": "display:var(--display); --display: block;"
+      }
+    }
+  },
+  "dropdownIndicator": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".main-menu-%s > .j-menu > .main-menu-item-%s.dropdown > a::after": "display: block",
+        ".main-menu-%s > .j-menu > .main-menu-item-%s.dropdown > a": "--dropdown-indicator: -8px"
+      },
+      "false": {
+        ".main-menu-%s > .j-menu > .main-menu-item-%s.dropdown > a::after": "display: none",
+        ".main-menu-%s > .j-menu > .main-menu-item-%s.dropdown > a": "--dropdown-indicator: 0px"
+      }
+    }
+  },
+  "dropdownIndicatorColor": {
+    "type": "Color",
+    "selector": ".main-menu-%s > .j-menu > .main-menu-item-%s.dropdown > a::after",
+    "property": "border-left-color"
+  },
+  "dropdownIndicatorColorHover": {
+    "type": "Color",
+    "selector": ".main-menu-%s > .j-menu > .main-menu-item-%s.dropdown.open > a::after",
+    "property": "border-left-color"
+  },
+  "megaMenuCustomTriangle": {
+    "include": "triangle",
+    "selector_prefix": "div.desktop-main-menu-wrapper [id*='main-menu'].main-menu-%s > .j-menu li.main-menu-item-%s.dropdown:not(#search).main-menu-item"
+  },
+  "mainMenuItemSpacing": {
+    "type": "Gap",
+    "variableType": "gap",
+    "property": "--menu-item-gap:%s",
+    "selector": ".main-menu-%s > .j-menu li.main-menu-item-%s",
+    "important": true
+  },
+  "mainMenuSubItemSpacing": {
+    "type": "Gap",
+    "variableType": "gap",
+    "property": "--menu-item-gap:%s",
+    "selector": ".main-menu-%s > .j-menu > li.main-menu-item-%s.multi-level .j-menu > li",
+    "important": true
+  },
+  "mainMenuSubItemIcon": {
+    "type": "Icon",
+    "selector": ".main-menu-%s > .j-menu > li.main-menu-item-%s.multi-level .j-menu > li > a::before",
+    "important": "true"
+  },
+  "mainMenuSubItemIconHover": {
+    "type": "Color",
+    "selector": ".main-menu-%s > .j-menu > li.main-menu-item-%s.multi-level:hover .j-menu > li > a::before",
+    "property": "color",
+    "important": "true"
+  },
+  "mainMenuSubItemFont": {
+    "type": "Font",
+    "selector": ".main-menu-%s > .j-menu > li.main-menu-item-%s.multi-level .j-menu > li > a, .main-menu-%s > .j-menu > li.main-menu-item-%s.multi-level .j-menu > li > a > .links-text",
+    "important": "true"
+  },
+  "mainMenuSubItemFontHover": {
+    "type": "Font",
+    "selector": ".main-menu-%s > .j-menu > li.main-menu-item-%s.multi-level:hover .j-menu > li > a, .main-menu-%s > .j-menu > li.main-menu-item-%s.multi-level:hover .j-menu > li > a > .links-text",
+    "important": "true"
+  },
+  "mainMenuItemDivider": {
+    "type": "Divider",
+    "selector": ".main-menu-%s > .j-menu li.main-menu-item-%s, .main-menu-%s.accordion-menu .menu-item > a + div",
+    "important": true
+  },
+  "mainMenuItemFont": {
+    "type": "Font",
+    "selector": ".main-menu-%s > .j-menu li.main-menu-item-%s > a, .main-menu-%s > .j-menu li.main-menu-item-%s > a > .links-text",
+    "important": true
+  },
+  "mainMenuItemFontHover": {
+    "type": "Font",
+    "selector": "div.main-menu.main-menu-%s > .j-menu li.main-menu-item-%s:hover > a, div.main-menu.main-menu-%s > .j-menu li.main-menu-item-%s:hover > a > .links-text"
+  },
+  "mainMenuItemBG": {
+    "type": "Background",
+    "selector": ".main-menu-%s > .j-menu li.main-menu-item-%s",
+    "important": true
+  },
+  "mainMenuItemBGHover": {
+    "type": "Background",
+    "selector": "div.main-menu.main-menu-%s > .j-menu li.main-menu-item-%s:hover"
+  },
+  "multiLevelPosition": {
+    "type": "Radio",
+    "value": "right",
+    "rules": {
+      "left": {
+        ".desktop-main-menu-wrapper .main-menu-%s > .j-menu li.main-menu-item-%s.multi-level .dropdown-menu ul li .dropdown-menu": "left:0%; transform: translateX(-100%);"
+      },
+      "right": {
+        ".desktop-main-menu-wrapper .main-menu-%s > .j-menu li.main-menu-item-%s.multi-level .dropdown-menu ul li .dropdown-menu": "left:100%"
+      }
+    },
+    "rtlRules": {
+      "right": {
+        ".desktop-main-menu-wrapper .main-menu-%s > .j-menu li.main-menu-item-%s.multi-level .dropdown-menu ul li .dropdown-menu": "right:100%"
+      },
+      "left": {
+        ".desktop-main-menu-wrapper .main-menu-%s > .j-menu li.main-menu-item-%s.multi-level .dropdown-menu ul li .dropdown-menu": "right:0; transform: translateX(100%);"
+      }
+    }
+  },
+  "multiLevelOffset": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".desktop-main-menu-wrapper .main-menu-%s > .j-menu li.main-menu-item-%s.multi-level .dropdown-menu ul li .dropdown-menu": "margin-inline-start:%spx"
+      }
+    },
+    "rtlRules": {
+      "@": {
+        ".desktop-main-menu-wrapper .main-menu-%s > .j-menu li.main-menu-item-%s.multi-level .dropdown-menu ul li .dropdown-menu": "margin-inline-end:%spx"
+      }
+    }
+  },
+  "multiLevelDropdownWidth": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".desktop-main-menu-wrapper .main-menu-%s > .j-menu li.main-menu-item-%s.multi-level .dropdown-menu": "width:%spx"
+      }
+    }
+  },
+  "megaStyle": {
+    "type": "Variable",
+    "variable": "mega_menu",
+    "selector_prefix": ".main-menu-%s > .j-menu li.main-menu-item-%s"
+  },
+  "dropdownWidth": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".desktop-main-menu-wrapper .main-menu-%s > .j-menu li.main-menu-item-%s.dropdown > .dropdown-menu": "min-width:%spx"
+      }
+    }
+  },
+  "megaMenuBorder": {
+    "type": "Border",
+    "selector": ".main-menu-%s > .j-menu li.main-menu-item-%s .mega-menu-content"
+  },
+  "megaMenuBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".main-menu-%s > .j-menu li.main-menu-item-%s .mega-menu-content",
+    "important": true
+  },
+  "megaMenuBackground": {
+    "type": "Background",
+    "selector": ".main-menu-%s > .j-menu li.main-menu-item-%s .mega-menu-content"
+  },
+  "MegaMenuBackgroundOverlay": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".main-menu-%s > .j-menu li.main-menu-item-%s .mega-menu-content::before": "display:block"
+      },
+      "false": {
+        ".main-menu-%s > .j-menu li.main-menu-item-%s .mega-menu-content::before": "display:none"
+      }
+    }
+  },
+  "MegaMenuBackgroundOverlayBackground": {
+    "type": "Background",
+    "selector": ".main-menu-%s > .j-menu li.main-menu-item-%s .mega-menu-content::before"
+  },
+  "MegaMenuBackgroundOverlayOpacity": {
+    "type": "Input",
+    "value": "",
+    "property": "opacity: %s",
+    "selector": ".main-menu-%s > .j-menu li.main-menu-item-%s .mega-menu-content::before"
+  },
+  "MegaMenuBackgroundOverlayBlend": {
+    "type": "Select",
+    "value": "",
+    "property": "mix-blend-mode: %s",
+    "selector": ".main-menu-%s > .j-menu li.main-menu-item-%s .mega-menu-content::before"
+  },
+  "megaMenuPadding": {
+    "type": "Padding",
+    "selector": ".main-menu-%s > .j-menu li.main-menu-item-%s .mega-menu-content",
+    "important": true
+  },
+  "dropdownAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth) > .j-dropdown": "left: calc(var(--menu-item-gap, 0px) / 2); right: auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start; --align-scroll: var(--align-scroll-start, 0); --translate-x: 0;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth):first-child > .j-dropdown": "left: initial; right: auto;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth):last-child:not(:only-child) > .j-dropdown": "left: calc(var(--menu-item-gap, 0px) / 2); right: auto;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth) > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth) > .j-dropdown": "left: calc(var(--menu-item-gap, 0px) / 2); right: auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start; --align-scroll: var(--align-scroll-start, 0); --translate-x: 0;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth):first-child > .j-dropdown": "left: initial; right: auto;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth):last-child:not(:only-child) > .j-dropdown": "left: calc(var(--menu-item-gap, 0px) / 2); right: auto;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth) > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      },
+      "center": {
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth) > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center; --align-scroll: var(--align-scroll-center, 0); --translate-x: -50%;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth):first-child > .j-dropdown": "left: 50%; right: auto;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth):last-child > .j-dropdown": "left: 50%; right: auto;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth) > .j-dropdown::before": "--triangle-right: 0px; --triangle-left: 0px",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth) > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center; --align-scroll: var(--align-scroll-center, 0); --translate-x: -50%;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth):first-child > .j-dropdown": "left: 50%; right: auto;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth):last-child > .j-dropdown": "left: 50%; right: auto;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth) > .j-dropdown::before": "--triangle-right: 0px; --triangle-left: 0px"
+      },
+      "right": {
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth) > .j-dropdown": "right:calc(var(--menu-item-gap, 0px) / 2); left:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end; --align-scroll: var(--align-scroll-end, 0); --translate-x: -100%;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth):first-child > .j-dropdown": "right: calc(var(--menu-item-gap, 0px) / 2); left:auto;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth):last-child > .j-dropdown": "right: 0px; left:auto;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth) > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth) > .j-dropdown": "right:calc(var(--menu-item-gap, 0px) / 2); left:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end; --align-scroll: var(--align-scroll-end, 0); --translate-x: -100%;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth):first-child > .j-dropdown": "right: calc(var(--menu-item-gap, 0px) / 2); left:auto;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth):last-child > .j-dropdown": "right: 0px; left:auto;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth) > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth) > .j-dropdown": "left: auto; right: calc(var(--menu-item-gap, 0px) / 2); transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start; --align-scroll: var(--align-scroll-start, 0); --translate-x: 0;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth):first-child > .j-dropdown": "left: auto; right: 0px;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth):last-child > .j-dropdown": "left: auto; right: calc(var(--menu-item-gap, 0px) / 2);",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth) > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth) > .j-dropdown": "left: auto; right: calc(var(--menu-item-gap, 0px) / 2); transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start; --align-scroll: var(--align-scroll-start, 0); --translate-x: 0;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth):first-child > .j-dropdown": "left: auto; right: 0px;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth):last-child > .j-dropdown": "left: auto; right: calc(var(--menu-item-gap, 0px) / 2);",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth) > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      },
+      "center": {
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth) > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center; --align-scroll: var(--align-scroll-center, 0); --translate-x: 50%;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth):first-child > .j-dropdown": "left:50%; right:auto;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth):last-child > .j-dropdown": "left:50%; right:auto;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth) > .j-dropdown::before": "--triangle-right: 0px; --triangle-left: 0px",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth) > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center; --align-scroll: var(--align-scroll-center, 0); --translate-x: 50%;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth):first-child > .j-dropdown": "left:50%; right:auto;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth):last-child > .j-dropdown": "left:50%; right:auto;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth) > .j-dropdown::before": "--triangle-right: 0px; --triangle-left: 0px"
+      },
+      "right": {
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth) > .j-dropdown": "left:calc(var(--menu-item-gap, 0px) / 2); right:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end; --align-scroll: var(--align-scroll-end, 0); --translate-x: 100%;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth):first-child > .j-dropdown": "left:calc(var(--menu-item-gap, 0px) / 2); right:auto;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth):last-child > .j-dropdown": "left:0px; right:auto;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth) > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth) > .j-dropdown": "left:calc(var(--menu-item-gap, 0px) / 2); right:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end; --align-scroll: var(--align-scroll-end, 0); --translate-x: 100%;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth):first-child > .j-dropdown": "left:calc(var(--menu-item-gap, 0px) / 2); right:auto;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth):last-child > .j-dropdown": "left:0px; right:auto;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth) > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      }
+    }
+  },
+  "customWidthAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "default": {
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom > .j-dropdown": "left: calc(var(--menu-item-gap, 0px) / 2); right: auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start; --align-scroll: var(--align-scroll-start, 0); --translate-x: 0;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom:first-child > .j-dropdown": "left: initial; right: auto;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom:last-child > .j-dropdown": "left: calc(var(--menu-item-gap, 0px) / 2); right: auto;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px); transform: none;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom > .j-dropdown": "left: calc(var(--menu-item-gap, 0px) / 2); right: auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start; --align-scroll: var(--align-scroll-start, 0); --translate-x: 0;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom:first-child > .j-dropdown": "left: initial; right: auto;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom:last-child > .j-dropdown": "left: calc(var(--menu-item-gap, 0px) / 2); right: auto;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px); transform: none;"
+      },
+      "center": {
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center; --align-scroll: var(--align-scroll-center, 0); --translate-x: -50%;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom:first-child > .j-dropdown": "left: 50%; right: auto;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom:last-child > .j-dropdown": "left: 50%; right: auto;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom > .j-dropdown::before": "--triangle-right: 0px; --triangle-left: 0px; transform: translate3d(-100%, 0, 0); transform: translate3d(-50%, 0, 0);",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center; --align-scroll: var(--align-scroll-center, 0); --translate-x: -50%;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom:first-child > .j-dropdown": "left: 50%; right: auto;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom:last-child > .j-dropdown": "left: 50%; right: auto;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom > .j-dropdown::before": "--triangle-right: 0px; --triangle-left: 0px; transform: translate3d(-100%, 0, 0); transform: translate3d(-50%, 0, 0);"
+      },
+      "end": {
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom > .j-dropdown": "right:calc(var(--menu-item-gap, 0px) / 2); left:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end; --align-scroll: var(--align-scroll-end, 0); --translate-x: -100%;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom:first-child > .j-dropdown": "right: calc(var(--menu-item-gap, 0px) / 2); left:auto;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom:last-child > .j-dropdown": "right: 0px; left:auto;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px); transform: translate3d(-50%, 0, 0);",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom > .j-dropdown": "right:calc(var(--menu-item-gap, 0px) / 2); left:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end; --align-scroll: var(--align-scroll-end, 0); --translate-x: -100%;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom:first-child > .j-dropdown": "right: calc(var(--menu-item-gap, 0px) / 2); left:auto;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom:last-child > .j-dropdown": "right: 0px; left:auto;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px); transform: translate3d(-50%, 0, 0);"
+      }
+    },
+    "rtlRules": {
+      "default": {
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom > .j-dropdown": "left: auto; right: calc(var(--menu-item-gap, 0px) / 2); transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start; --align-scroll: var(--align-scroll-start, 0); --translate-x: 0;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom:first-child > .j-dropdown": "left: auto; right: 0px;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom:last-child > .j-dropdown": "left: auto; right: calc(var(--menu-item-gap, 0px) / 2);",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom > .j-dropdown": "left: auto; right: calc(var(--menu-item-gap, 0px) / 2); transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start; --align-scroll: var(--align-scroll-start, 0); --translate-x: 0;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom:first-child > .j-dropdown": "left: auto; right: 0px;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom:last-child > .j-dropdown": "left: auto; right: calc(var(--menu-item-gap, 0px) / 2);",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      },
+      "center": {
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center; --align-scroll: var(--align-scroll-center, 0); --translate-x: 50%;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom:first-child > .j-dropdown": "left:50%; right:auto;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom:last-child > .j-dropdown": "left:50%; right:auto;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom > .j-dropdown::before": "--triangle-right: 0px; --triangle-left: 0px",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center; --align-scroll: var(--align-scroll-center, 0); --translate-x: 50%;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom:first-child > .j-dropdown": "left:50%; right:auto;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom:last-child > .j-dropdown": "left:50%; right:auto;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom > .j-dropdown::before": "--triangle-right: 0px; --triangle-left: 0px"
+      },
+      "end": {
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom > .j-dropdown": "left:calc(var(--menu-item-gap, 0px) / 2); right:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end; --align-scroll: var(--align-scroll-end, 0); --translate-x: 100%;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom:first-child > .j-dropdown": "left:calc(var(--menu-item-gap, 0px) / 2); right:auto;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom:last-child > .j-dropdown": "left:0px; right:auto;",
+        ".desktop-main-menu-wrapper #main-menu.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom > .j-dropdown": "left:calc(var(--menu-item-gap, 0px) / 2); right:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end; --align-scroll: var(--align-scroll-end, 0); --translate-x: 100%;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom:first-child > .j-dropdown": "left:calc(var(--menu-item-gap, 0px) / 2); right:auto;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom:last-child > .j-dropdown": "left:0px; right:auto;",
+        ".desktop-main-menu-wrapper #main-menu-2.main-menu-%s .main-menu-item-%s.dropdown:not(.mega-fullwidth).mega-custom > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      }
+    }
+  },
+  "label": {
+    "type": "InputLang",
+    "php": true
+  },
+  "labelStyle": {
+    "type": "Variable",
+    "variable": "menu_label",
+    "selector_prefix": ".main-menu-%s > .j-menu li.main-menu-item-%s"
+  },
+  "labelMargin": {
+    "type": "Margin",
+    "selector": ".main-menu-%s > .j-menu > .menu-item > a > .menu-label",
+    "important": true
+  },
+  "LabelType": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "floating": {
+        ".main-menu-%s > .j-menu li.main-menu-item-%s > a .menu-label": "position:absolute; translate3d(calc(-100% + var(--offset-x, 0px)), calc(-150% + var(--sticky-offset-y, var(--offset-y, 0px))), 0) scale(var(--label-scale, 1)); opacity: var(--label-opacity, 1); margin:0;",
+        ".main-menu-%s > .j-menu li.main-menu-item-%s > a .menu-label::before": "border-right-color: transparent;",
+        ".main-menu-%s > .j-menu li.main-menu-item-%s > a .menu-label::after": "border-top-color: currentColor;"
+      },
+      "inline": {
+        ".main-menu-%s > .j-menu li.main-menu-item-%s > a .menu-label": "position:static; --offset-y:-1px; transform: translate3d(var(--offset-x, 0), var(--offset-y, 0), 0); opacity: 1; margin: 0 0 0 calc(var(--label-margin, 0px) + var(--label-triangle-size, 0px))",
+        ".main-menu-%s > .j-menu li.main-menu-item-%s > a .menu-label::before": "border-right-color: currentColor;",
+        ".main-menu-%s > .j-menu li.main-menu-item-%s > a .menu-label::after": "border-top-color: transparent;"
+      }
+    },
+    "rtlRules": {
+      "floating": {
+        ".main-menu-%s > .j-menu li.main-menu-item-%s > a .menu-label": "position:absolute; translate3d(calc(-100% + var(--offset-x, 0px)), calc(-150% + var(--sticky-offset-y, var(--offset-y, 0px))), 0) scale(var(--label-scale, 1)); opacity: var(--label-opacity, 1); margin:0;",
+        ".main-menu-%s > .j-menu li.main-menu-item-%s > a .menu-label::before": "border-right-color: transparent;",
+        ".main-menu-%s > .j-menu li.main-menu-item-%s > a .menu-label::after": "border-top-color: currentColor;"
+      },
+      "inline": {
+        ".main-menu-%s > .j-menu li.main-menu-item-%s > a .menu-label": "position:static; --offset-y:-1px; transform: translate3d(var(--offset-x, 0), var(--offset-y, 0), 0); opacity: 1; margin: 0 calc(var(--label-margin, 0px) + var(--label-triangle-size, 0px)) 0 0",
+        ".main-menu-%s > .j-menu li.main-menu-item-%s > a .menu-label::before": "border-left-color: currentColor;",
+        ".main-menu-%s > .j-menu li.main-menu-item-%s > a .menu-label::after": "border-top-color: transparent;"
+      }
+    }
+  },
+  "LabelTriangleVisibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".main-menu-%s > .j-menu li.main-menu-item-%s > a .menu-label::before": "--display: block",
+        ".main-menu-%s > .j-menu li.main-menu-item-%s > a .menu-label::after": "--display: block"
+      },
+      "false": {
+        ".main-menu-%s > .j-menu li.main-menu-item-%s > a .menu-label::before": "--display: none",
+        ".main-menu-%s > .j-menu li.main-menu-item-%s > a .menu-label::after": "--display: none"
+      }
+    }
+  },
+  "labelOffset": {
+    "type": "InputPair",
+    "selector": "div.main-menu-%s > .j-menu li.main-menu-item-%s > a .menu-label",
+    "properties": {
+      "first": "--offset-x: %spx",
+      "second": "--offset-y: %spx"
+    }
+  },
+  "labelOffsetSticky": {
+    "type": "Input",
+    "value": "",
+    "property": "--sticky-offset-y:%spx",
+    "selector": ".header-sticky .main-menu-%s > .j-menu li.main-menu-item-%s > a .menu-label"
+  },
+  "labelFont": {
+    "type": "Font",
+    "selector": "div#main-menu.main-menu-%s > .j-menu li.main-menu-item-%s > a > .menu-label",
+    "important": true
+  },
+  "labelFontHover": {
+    "type": "Font",
+    "selector": "div#main-menu.main-menu-%s > .j-menu li.main-menu-item-%s:hover > a > .menu-label",
+    "important": true
+  },
+  "DropdownColumns": {
+    "type": "InputNumber",
+    "value": "",
+    "rules": {
+      "@": {
+        ".main-menu-%s .main-menu-item-%s.multi-level > .j-dropdown > .j-menu": "--dropdown-cols: %s !important"
+      }
+    }
+  },
+  "DropdownColumns2": {
+    "type": "InputNumber",
+    "value": "",
+    "rules": {
+      "@": {
+        ".main-menu-%s .main-menu-item-%s.multi-level > .j-dropdown > .j-menu > .dropdown > .j-dropdown > .j-menu": "--dropdown-cols: %s !important"
+      }
+    }
+  },
+  "DropdownColumns3": {
+    "type": "InputNumber",
+    "value": "",
+    "rules": {
+      "@": {
+        ".main-menu-%s .main-menu-item-%s.multi-level > .j-dropdown > .j-menu > .dropdown > .j-dropdown > .j-menu > .dropdown > .j-dropdown > .j-menu": "--dropdown-cols: %s !important"
+      }
+    }
+  },
+  "customClass": {
+    "type": "Input",
+    "rules": {
+      "@": {
+        ".main-menu-%s > ul > .main-menu-item-%s": "--custom-class: %s"
+      }
+    }
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

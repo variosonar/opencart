@@ -1,0 +1,16 @@
+{% if items %}
+  <div class="{{ journal3.classes(classes) }}">
+    <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+    <ul>
+      {% for item in items %}
+        <li class="{{ journal3.classes(item.classes) }}">
+          {% if item.link.href %}
+            <a href="{{ item.link.href }}" {{ journal3.linkAttrs(item.link) }}>{{ journal3.countBadge(item.title, item.link.total, item.link.classes) }}</a>
+          {% else %}
+            <a>{{ journal3.countBadge(item.title, item.link.total, item.link.classes) }}</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}

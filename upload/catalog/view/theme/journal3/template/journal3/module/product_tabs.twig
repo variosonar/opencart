@@ -1,0 +1,103 @@
+{% if display == 'tabs' %}
+  <div class="tab-container {{ journal3.classes(classes) }}">
+    <div class="full-tabs-bg"></div>
+    <ul class="nav nav-tabs">
+      {% for item in items %}
+        <li class="{{ journal3.classes(item.tab_classes) }}">
+          {% if item.tabType == 'link' %}
+            <a href="{{ item.link.href }}" {{ journal3.linkAttrs(item.link) }}>{{ item.title }}</a>
+          {% else %}
+            <a href="#{{ item.id }}" data-toggle="tab">{{ item.title }}</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    <div class="tab-content">
+      {% for item in items %}
+        <div class="{{ journal3.classes(item.classes) }}" id="{{ item.id }}">
+          <div class="block-body expand-block">
+            <div class="block-wrapper">
+              <div class="block-content {% if item.expandButton %}expand-content{% endif %}">
+                {{ item.content }}
+                {% if item.expandButton %}
+                  <div class="block-expand-overlay"><a class="block-expand btn" role="button" aria-label="{{ journal3.get('globalExpandButtonText') }}"></a></div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% elseif display == 'accordion' %}
+  <div class="panel-group {{ journal3.classes(classes) }}">
+    {% for item in items %}
+      <div class="{{ journal3.classes(item.classes) }}">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a href="#{{ item.id }}" class="accordion-toggle collapsed" data-toggle="collapse" aria-expanded="false">
+              {{ item.title }}
+              <i class="fa fa-caret-down"></i>
+            </a>
+          </h4>
+        </div>
+        <div class="{{ journal3.classes(item.panel_classes) }}" id="{{ item.id }}">
+          <div class="block-body expand-block">
+            <div class="block-wrapper">
+              <div class="panel-body block-content {% if item.expandButton %}expand-content{% endif %}">
+                {{ item.content }}
+                {% if item.expandButton %}
+                  <div class="block-expand-overlay"><a class="block-expand btn" role="button" aria-label="{{ journal3.get('globalExpandButtonText') }}"></a></div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <div class="{{ journal3.classes(classes) }}">
+    {% for item in items %}
+      <div class="{{ journal3.classes(item.classes) }}">
+        {% if item.popup %}
+          <button data-open-popup="#{{ item.id }}-popup" class="btn product-blocks-popup-btn">{{ item.title }}</button>
+          <template id="{{ item.id }}-popup">
+            <div class="popup-wrapper popup-block {{ journal3.classes(item.popup_classes) }}">
+              <div class="journal-loading"><em class="fa fa-spinner fa-spin"></em></div>
+              <div class="popup-container">
+                <div class="popup-body">
+                  <div class="popup-inner-body">
+                    <button class="btn popup-close"></button>
+                    <div class="block-body popup-content">
+                      <div class="block-wrapper">
+                        <div class="block-content">
+                          {{ item.content }}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="popup-bg popup-bg-closable"></div>
+            </div>
+          </template>
+        {% else %}
+          {% if item.title %}
+            <h3 class="title module-title">{{ item.title }}</h3>
+          {% endif %}
+          <div class="block-body expand-block">
+            <div class="block-wrapper">
+              <div class="block-content {% if item.expandButton %}expand-content{% endif %}">
+                {{ item.content }}
+                {% if item.expandButton %}
+                  <div class="block-expand-overlay"><a class="block-expand btn" role="button" aria-label="{{ journal3.get('globalExpandButtonText') }}"></a></div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}

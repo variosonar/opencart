@@ -1,0 +1,68 @@
+<div class="{{ journal3.classes(classes) }}">
+  <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+  <div class="journal-loading"><em class="fa fa-spinner fa-spin"></em></div>
+  {% if staticText and staticTextLink.href %}
+    <a href="{{ staticTextLink.href }}" class="slider-static-text static-text-1"><span>{{ staticText }}</span></a>
+  {% elseif staticText %}
+    <div class="slider-static-text static-text-1"><span>{{ staticText }}</span></div>
+  {% endif %}
+  {% if static2Text and static2TextLink.href %}
+    <a href="{{ static2TextLink.href }}" class="slider-static-text static-text-2"><span>{{ static2Text }}</span></a>
+  {% elseif static2Text %}
+    <div class="slider-static-text static-text-2"><span>{{ static2Text }}</span></div>
+  {% endif %}
+  <img src="{{ lazyload_placeholder }}" alt="{{ first_alt }}" width="{{ width }}" height="{{ height }}" />
+  <div class="master-slider ms-skin-minimal" data-options='{{ options|json_encode(constant('JSON_FORCE_OBJECT')) }}' {% if parallaxMode %}data-parallax="{{ parallax }}"{% endif %}>
+    {% for item in items %}
+      <div class="{{ journal3.classes(item.classes) }}" {% if item.delay %}data-delay="{{ item.delay }}"{% endif %}>
+        {% if lazyLoad or not loop.first %}
+        <img class="lazyload" src="{{ lazyload_placeholder }}" data-srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" width="{{ width }}" height="{{ height }}" alt="{{ item.alt }}" title="{{ item.alt }}"/>
+        {% else %}
+        <img src="{{ item.image }}" srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" width="{{ width }}" height="{{ height }}" alt="{{ item.alt }}" title="{{ item.alt }}"/>
+        {% endif %}
+
+        {% if thumbnails and item.thumb %}
+          <img src="{{ item.thumb }}" {% if item.thumb2x %}srcset="{{ item.thumb }} 1x, {{ item.thumb2x }} 2x"{% endif %} alt="{{ item.alt }}" class="ms-thumb"/>
+        {% endif %}
+
+        {% if item.link.href %}
+          <a href="{{ item.link.href }}" {{ journal3.linkAttrs(item.link) }} aria-hidden="true" tabindex="-1"></a>
+        {% endif %}
+
+        {% if item.type == 'video' %}
+          {% if item.videoType == 'html5' %}
+            <video autoplay playsinline muted data-src="{{ item.videoSrc }}"></video>
+          {% elseif item.videoType == 'youtube' %}
+            <a href="https://www.youtube.com/embed/{{ item.videoSrc }}?hd=1&wmode=opaque&controls=1&showinfo=0&autoplay=1" data-type="video"></a>
+          {% elseif item.videoType == 'vimeo' %}
+            <a href="https://player.vimeo.com/video/{{ item.videoSrc }}" data-type="video"></a>
+          {% endif %}
+        {% endif %}
+
+        {% for subitem in item.items %}
+          {% if subitem.type == 'text' %}
+            <div class="{{ journal3.classes(subitem.classes) }}" {{ subitem.data|join(' ') }}>{{ subitem.text }}</div>
+          {% elseif subitem.type == 'hotspot' %}
+            <div class="{{ journal3.classes(subitem.classes) }}" {{ subitem.data|join(' ') }}><div class="product-tt">{{ subitem.text }}</div></div>
+          {% elseif subitem.type == 'shape' %}
+            <img class="{{ journal3.classes(subitem.classes) }}" {{ subitem.data|join(' ') }} src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="{{ subitem.alt }}"/>
+          {% elseif subitem.type == 'button' %}
+            <a class="{{ journal3.classes(subitem.classes) }}" {{ subitem.data|join(' ') }} {% if subitem.link.href %}href="{{ subitem.link.href }}" {{ journal3.linkAttrs(subitem.link) }} {% else %}href="javascript:;"{% endif %}><span>{{ subitem.text }}</span></a>
+          {% elseif subitem.type == 'image' %}
+            <img class="{{ journal3.classes(subitem.classes) }}" {{ subitem.data|join(' ') }} src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{ subitem.image }}" alt="{{ subitem.alt }}" width="{{ subitem.width }}" height="{{ subitem.height }}"/>
+          {% elseif subitem.type == 'video' %}
+            <div class="{{ journal3.classes(subitem.classes) }}" {{ subitem.data|join(' ') }}>
+              {% if subitem.videoType == 'html5' %}
+                <video autoplay playsinline muted controls data-src="{{ subitem.videoSrc }}"></video>
+              {% elseif subitem.videoType == 'youtube' %}
+                <iframe data-src="https://www.youtube.com/embed/{{ subitem.videoSrc }}?hd=1&wmode=opaque&controls=1&showinfo=0"></iframe>
+              {% elseif subitem.videoType == 'vimeo' %}
+                <iframe data-src="https://player.vimeo.com/video/{{ subitem.videoSrc }}"></iframe>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+</div>

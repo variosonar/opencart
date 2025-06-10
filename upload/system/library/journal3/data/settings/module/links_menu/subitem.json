@@ -1,0 +1,27 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Subitem"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "title": {
+    "type": "InputLang",
+    "php": true
+  },
+  "link": {
+    "type": "Link",
+    "php": true
+  },
+  "icon": {
+    "type": "Icon",
+    "selector": "div.links-menu-%s .link-%s .sublink-%s > a::before"
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

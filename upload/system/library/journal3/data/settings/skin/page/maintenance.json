@@ -1,0 +1,127 @@
+{
+  "maintenanceHeader": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".maintenance-page header": "display: block !important"
+      },
+      "false": {
+        ".maintenance-page header": "display: none !important"
+      }
+    }
+  },
+
+  "maintenanceFooter": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".maintenance-page footer": "display: block !important"
+      },
+      "false": {
+        ".maintenance-page footer": "display: none !important"
+      }
+    }
+  },
+  "fullwidth": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".maintenance-page .site-wrapper > .container": "max-width: 100%",
+        ".maintenance-page .module-grid > .grid-row > .grid-cols-wrapper": "max-width: 100%"
+      }
+    }
+  },
+  "maintenanceAlign": {
+    "type": "Radio",
+    "value": "left",
+    "rules": {
+      "left": {
+        "#common-maintenance > .content": "text-align: left"
+      },
+      "center": {
+        "#common-maintenance > .content": "text-align: center"
+      },
+      "right": {
+        "#common-maintenance > .content": "text-align: right"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        "#common-maintenance > .content": "text-align: right"
+      },
+      "center": {
+        "#common-maintenance > .content": "text-align: center"
+      },
+      "right": {
+        "#common-maintenance > .content": "text-align: left"
+      }
+    }
+  },
+  "maintenanceFont": {
+    "type": "Font",
+    "selector": "#common-maintenance"
+  },
+  "maintenanceBackground": {
+    "type": "Background",
+    "selector": "#common-maintenance"
+  },
+  "maintenanceBackgroundBody-hold": {
+    "type": "Background",
+    "selector": ".maintenance-page"
+  },
+  "maintenancePadding": {
+    "type": "Padding",
+    "selector": "#common-maintenance",
+    "value": {
+      "padding":"40"
+    }
+  },
+  "maintenanceMetaTitle": {
+    "type": "InputLang",
+    "value": "Maintenance",
+    "php": true
+  },
+  "maintenanceContent": {
+    "type": "InputLang",
+    "value": "We are currently performing some scheduled maintenance. Please check back soon.",
+    "php": true
+  },
+  "maintenanceTypography": {
+    "type": "Variable",
+    "variable": "typography",
+    "selector_prefix": "#common-maintenance"
+  },
+  "maintenanceGridModule": {
+    "type": "Module",
+    "php": true
+  },
+  "imageStyles": {
+    "include": "common",
+    "selector_prefix": "#common-maintenance > .content img"
+  },
+  "imageBlend": {
+    "value": "",
+    "type": "Select",
+    "selector": "#common-maintenance > .content img",
+    "property": "mix-blend-mode"
+  },
+  "imageMaxWidth": {
+    "value": "",
+    "type": "InputNumber",
+    "selector": "#common-maintenance > .content img",
+    "property": "max-width: min(%spx, 100%)"
+  },
+  "maintenanceContentVisibility": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "true": {
+        "#common-maintenance > .content": "display: block"
+      },
+      "false": {
+        "#common-maintenance > .content": "display: none"
+      }
+    }
+  }
+}

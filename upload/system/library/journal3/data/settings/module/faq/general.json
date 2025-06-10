@@ -1,0 +1,107 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New FAQ Module"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "schedule": {
+    "type": "Range",
+    "php": true
+  },
+  "title": {
+    "type": "InputLang",
+    "php": true
+  },
+  "default": {
+    "type": "Select",
+    "value": "",
+    "php": true
+  },
+  "counterStatus": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".module-faq-%s .panel-title::before": "display: block"
+      },
+      "false": {
+        ".module-faq-%s .panel-title::before": "display:none"
+      }
+    }
+  },
+  "counterFont": {
+    "type": "Font",
+    "selector": ".module-faq-%s .panel-group .panel-title::before"
+  },
+  "counterFontHover": {
+    "type": "Font",
+    "selector": ".module-faq-%s .panel-group .panel:hover .panel-title::before"
+  },
+  "counterFontActive": {
+    "type": "Font",
+    "selector": ".module-faq-%s .panel-group .panel.panel-active .panel-title::before"
+  },
+  "fontQ": {
+    "type": "Font",
+    "selector": ".module-faq-%s .panel-group .panel .panel-heading a, .module-faq-%s .panel-title::before"
+  },
+  "fontQHover": {
+    "type": "Font",
+    "selector": ".module-faq-%s .panel-group .panel:hover .panel-heading a, .module-faq-%s .panel:hover .panel-title::before"
+  },
+  "fontQActive": {
+    "type": "Font",
+    "selector": ".module-faq-%s .panel-group .panel.panel-active .panel-heading a, .module-faq-%s .panel.panel-active .panel-title::before",
+    "important": "true"
+  },
+  "fontA": {
+    "type": "Font",
+    "selector": ".module-faq-%s .block-content",
+    "important": "true"
+  },
+  "accordionStyle": {
+    "type": "Variable",
+    "variable": "accordion",
+    "selector_prefix": ".module-faq-%s"
+  },
+  "moduleTitle": {
+    "type": "Variable",
+    "variable": "title",
+    "selector_prefix": ".module-faq-%s .module-title"
+  },
+  "titleAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        "div.module-faq-%s .module-title":"text-align:start",
+        "div.module-faq-%s .module-title::after": "margin-inline-start:0; margin-inline-end:auto;"
+      },
+      "center": {
+        "div.module-faq-%s .module-title":"text-align:center",
+        "div.module-faq-%s .module-title::after": "margin-inline-start:auto; margin-inline-end:auto;"
+      },
+      "right": {
+        "div.module-faq-%s .module-title":"text-align:end",
+        "div.module-faq-%s .module-title::after": "margin-inline-start:auto; margin-inline-end:0;"
+      }
+    }
+  },
+  "moduleMaxWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "rules":{
+      "@":{
+        ".module.module-faq-%s": "width: 100%; max-width:%spx"
+      }
+    }
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

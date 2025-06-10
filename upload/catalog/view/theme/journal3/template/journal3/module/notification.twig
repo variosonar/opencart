@@ -1,0 +1,12 @@
+<div class="notification-wrapper notification-wrapper-bottom">
+  <div class="{{ journal3.classes(classes) }}" data-options='{{ options|json_encode }}'>
+    <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+    <div class="notification-content">
+      <div>
+        <div class="notification-title">{{ title }}</div>
+        <div class="notification-text">{{ text }}</div>
+      </div>
+    </div>
+    <button class="btn notification-close">{{ notificationCloseText }}</button>
+  </div>
+</div>

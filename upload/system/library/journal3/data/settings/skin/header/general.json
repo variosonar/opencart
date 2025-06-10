@@ -1,0 +1,84 @@
+{
+  "headerDesktop": {
+    "type": "Module",
+    "php": true
+  },
+  "headerDesktopLogoImage": {
+    "type": "Radio",
+    "value": "default",
+    "rules": {
+      "default": {
+        ".header-logo": "display:block;",
+        ".header-logo-alternate": "display:none;"
+      },
+      "alternate": {
+        ".header-logo": "display:none;",
+        ".header-logo-alternate": "display:block;"
+      }
+    }
+  },
+  "headerMobileLogoImage": {
+    "type": "Radio",
+    "value": "default",
+    "rules": {
+      "default": {
+        ".mobile-header .header-logo": "display:block;",
+        ".mobile-header .header-logo-alternate": "display:none;"
+      },
+      "alternate": {
+        ".mobile-header .header-logo": "display:none;",
+        ".mobile-header .header-logo-alternate": "display:block;"
+      }
+    }
+  },
+  "headerMobile": {
+    "type": "Module",
+    "php": true
+  },
+  "mobileHeaderAt": {
+    "type": "InputValue",
+    "value": "1024",
+    "variableType": "breakpoint",
+    "js": true
+  },
+  "mobileHeaderTablet": {
+    "type": "Toggle",
+    "value": "true",
+    "php": true
+  },
+  "logo": {
+    "type": "ImageLang",
+    "value": "",
+    "php": true
+  },
+  "logo2x": {
+    "type": "ImageLang",
+    "value": "",
+    "php": true
+  },
+  "logoAlternate": {
+    "type": "ImageLang",
+    "value": "",
+    "php": true
+  },
+  "logo2xAlternate": {
+    "type": "ImageLang",
+    "value": "",
+    "php": true
+  },
+  "logoMobile2x": {
+    "type": "ImageLang",
+    "value": "",
+    "php": true
+  },
+  "logoMobile2xAlternate": {
+    "type": "ImageLang",
+    "value": "",
+    "php": true
+  },
+  "logoSocialShare": {
+    "type": "ImageLang",
+    "value": "",
+    "php": true
+  }
+}

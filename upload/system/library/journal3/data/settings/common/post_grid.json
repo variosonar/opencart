@@ -1,0 +1,661 @@
+{
+  "Background": {
+    "type": "Background",
+    "selector": ".post-thumb"
+  },
+  "BackgroundHover": {
+    "type": "Background",
+    "selector": ".post-thumb:hover"
+  },
+  "Shadow": {
+    "type": "Shadow",
+    "selector": ".post-thumb"
+  },
+  "ShadowHover": {
+    "type": "Shadow",
+    "selector": ".post-thumb:hover"
+  },
+  "Border": {
+    "type": "Border",
+    "selector": ".post-thumb"
+  },
+  "BorderHover": {
+    "type": "Color",
+    "property": "border-color:%s",
+    "selector": ".post-thumb:hover"
+  },
+  "BorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".post-thumb"
+  },
+  "FirstBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".post-layout:first-child .post-thumb"
+  },
+  "LastBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".post-layout:last-child .post-thumb"
+  },
+  "ItemPadding": {
+    "type": "Padding",
+    "selector": ".post-thumb"
+  },
+  "ImageBorder": {
+    "type": "Border",
+    "selector": ".post-thumb .image a img"
+  },
+  "ImageBorderHover": {
+    "type": "Color",
+    "property": "border-color:%s",
+    "selector": ".post-thumb:hover .image a img"
+  },
+  "ButtonWidth": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "auto": {
+        ".post-thumb .btn-read-more": "width: auto;"
+      },
+      "full": {
+        ".post-thumb .btn-read-more": "width: 100%"
+      }
+    }
+  },
+
+  "ImageBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".post-thumb .image a"
+  },
+  "ImageShadow": {
+    "type": "Shadow",
+    "selector": ".post-thumb .image a"
+  },
+  "ImageShadowHover": {
+    "type": "Shadow",
+    "selector": ".post-thumb:hover .image a"
+  },
+  "Grayscale": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "none": {
+        ".post-thumb .image img": "filter: grayscale(0)"
+      },
+      "always": {
+        ".post-thumb .image img": "filter: grayscale(1)"
+      },
+      "hover": {
+        ".post-thumb .image img": "filter: grayscale(1)",
+        ".post-thumb:hover .image img": "filter: grayscale(0)"
+      }
+    }
+  },
+  "ImageOverlay": {
+    "type": "Toggle",
+    "value": false,
+    "rules": {
+      "true": {
+        ".post-thumb .image a::before": "display:block"
+      },
+      "false": {
+        ".post-thumb .image a::before": "display:none;"
+      }
+    }
+  },
+  "ImagePosition": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "before": {
+        ".post-thumb .image": "order:0"
+      },
+      "after": {
+        ".post-thumb .image": "order:2;"
+      }
+    }
+  },
+  "ImagePositionEven": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "before": {
+        ".post-layout:nth-child(even) .post-thumb .image": "order:0"
+      },
+      "after": {
+        ".post-layout:nth-child(even) .post-thumb .image": "order:2;"
+      }
+    }
+  },
+  "ImageOverlayBG": {
+    "type": "Background",
+    "selector": ".post-thumb .image a::before"
+  },
+  "ImageOverlayOpacity": {
+    "type": "Input",
+    "property": "opacity:%s",
+    "selector": ".post-thumb .image a::before"
+  },
+  "ImageOverlayBlend": {
+    "value": "",
+    "type": "Select",
+    "selector": ".post-thumb .image a::before",
+    "property": "mix-blend-mode"
+  },
+  "ImageScaleFactor": {
+    "type": "InputNumber",
+    "property": "--scale-factor:calc(%s / 100)",
+    "selector": ".post-thumb .image img"
+  },
+  "ImageScaleSpeed": {
+    "type": "InputNumber",
+    "property": "--scale-speed: %sms",
+    "selector": ".post-thumb .image img"
+  },
+  "ImageScale": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".post-thumb:hover .image img": "transform:scale(var(--scale-factor, 1.1))"
+      },
+      "false": {
+        ".post-thumb:hover .image img": "transform:scale(1)"
+      }
+    }
+  },
+  "DetailsPosition": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "image": {
+        ".post-layout .post-thumb": "flex-direction: row"
+      },
+      "bottom": {
+        ".post-layout .post-thumb": "flex-direction: column"
+      }
+    }
+  },
+  "DetailsAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "@": {
+        ".post-layout .post-thumb .caption": "justify-content: %s"
+      }
+    }
+  },
+  "ImageWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "rules": {
+      "@": {
+        ".post-layout .post-thumb": "flex-direction: row; flex-wrap: wrap; --image-width: %s%"
+      }
+    }
+  },
+  "ImageStack": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".post-layout .post-thumb",
+    "property": "--stack: %spx"
+  },
+  "DetailsGap": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "property": "--details-gap: %s",
+    "selector": "div.post-layout .post-thumb"
+  },
+  "DetailsBG": {
+    "type": "Background",
+    "selector": ".post-thumb .caption"
+  },
+  "DetailsBGHover": {
+    "type": "Background",
+    "selector": ".post-thumb:hover .caption"
+  },
+  "DetailsShadow": {
+    "type": "Shadow",
+    "selector": ".post-thumb .caption"
+  },
+  "DetailsShadowHover": {
+    "type": "Shadow",
+    "selector": ".post-thumb:hover .caption"
+  },
+  "DetailsBorder": {
+    "type": "Border",
+    "selector": ".post-thumb .caption"
+  },
+  "DetailsBorderHover": {
+    "type": "Color",
+    "property": "border-color:%s",
+    "selector": ".post-thumb:hover .caption"
+  },
+  "DetailsBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".post-thumb .caption"
+  },
+  "DetailsPadding": {
+    "type": "Padding",
+    "selector": ".post-thumb .caption"
+  },
+  "DetailsMargin": {
+    "type": "Margin",
+    "selector": ".post-thumb .caption"
+  },
+  "NameStatus": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "true": {
+        ".post-thumb .name": "display:flex"
+      },
+      "false": {
+        ".post-thumb .name": "display:none"
+      }
+    }
+  },
+  "NameOverflow": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".post-thumb .name a": "white-space: nowrap; overflow: hidden; text-overflow: ellipsis"
+      },
+      "false": {
+        ".post-thumb .name a": "white-space: normal; overflow: initial; text-overflow: initial"
+      },
+      "multi": {
+        ".post-thumb .name a": " display: -webkit-box; -webkit-box-orient: vertical;  -webkit-line-clamp: 2; overflow:hidden"
+      }
+    }
+  },
+  "TruncateLines": {
+    "type": "Input",
+    "value": "2",
+    "rules": {
+      "@": {
+        ".post-thumb .name a": "-webkit-line-clamp: %s"
+      }
+    }
+  },
+  "NameFont": {
+    "type": "Font",
+    "selector": ".post-thumb .name a"
+  },
+  "NameFontHover": {
+    "type": "Font",
+    "selector": ".post-thumb .name a:hover"
+  },
+  "NameWidth": {
+    "type": "Radio",
+    "value": "auto",
+    "rules": {
+      "auto": {
+        ".post-thumb .name": "width:auto; margin-inline-start: auto; margin-inline-end: auto"
+      },
+      "full": {
+        ".post-thumb .name": "width:100%; margin-inline-start: 0; margin-inline-end: 0"
+      }
+    }
+  },
+  "NameAlign": {
+    "type": "Radio",
+    "value": "start",
+    "rules": {
+      "start": {
+        ".post-thumb .name": "justify-content:flex-start; margin-inline-start: 0; margin-inline-end: auto"
+      },
+      "center": {
+        ".post-thumb .name": "justify-content:center; margin-inline-start: auto; margin-inline-end: auto"
+      },
+      "end": {
+        ".post-thumb .name": "justify-content:flex-end; margin-inline-start: auto; margin-inline-end: 0"
+      }
+    }
+  },
+  "NameContainer": {
+    "include": "common",
+    "selector_prefix": ".post-thumb .name"
+  },
+  "DescriptionStatus": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".post-thumb .description": "display: var(--display);"
+      },
+      "false": {
+        ".post-thumb .description": "display: none;"
+      }
+    }
+  },
+  "DescriptionOverflow": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".post-thumb .description": "--display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis"
+      },
+      "false": {
+        ".post-thumb .description": "--display: block; white-space: normal; overflow: initial; text-overflow: initial"
+      },
+      "multi": {
+        ".post-thumb .description": "--display: -webkit-box; -webkit-box-orient: vertical;  -webkit-line-clamp: var(--description-lines, 2); overflow:hidden"
+      }
+    }
+  },
+  "DescriptionTruncateLines": {
+    "type": "Input",
+    "value": "",
+    "rules": {
+      "@": {
+        ".post-thumb .description": "--description-lines: %s"
+      }
+    }
+  },
+  "DescriptionFont": {
+    "type": "Font",
+    "selector": ".post-thumb .description"
+  },
+  "DescriptionContainer": {
+    "include": "common",
+    "selector_prefix": ".post-thumb .description"
+  },
+  "ButtonStatus": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".post-thumb .button-group": "display:flex"
+      },
+      "false": {
+        ".post-thumb .button-group": "display:none"
+      }
+    }
+  },
+  "ButtonStatusText": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".post-thumb .button-group .btn-text": "display:inline-block"
+      },
+      "false": {
+        ".post-thumb .button-group .btn-text": "display:none"
+      }
+    }
+  },
+  "ButtonAlign": {
+    "type": "Radio",
+    "value": "start",
+    "rules": {
+      "start": {
+        ".post-thumb .button-group": "justify-content:flex-start"
+      },
+      "center": {
+        ".post-thumb .button-group": "justify-content:center"
+      },
+      "end": {
+        ".post-thumb .button-group": "justify-content:flex-end"
+      }
+    }
+  },
+  "ButtonDisplay": {
+    "type": "Radio",
+    "value": "icon",
+    "rules": {
+      "icon": {
+        ".post-thumb .btn-read-more .btn-text": "display:none",
+        ".post-thumb .btn-read-more::before": "display:inline-flex",
+        ".post-thumb .btn-read-more::after": "display:inline-flex"
+      },
+      "text": {
+        ".post-thumb .btn-read-more::before": "display:none",
+        ".post-thumb .btn-read-more::after": "display:none",
+        ".post-thumb .btn-read-more .btn-text": "display:inline-block; padding:0;"
+      },
+      "both": {
+        ".post-thumb .btn-read-more::before": "display:inline-flex",
+        ".post-thumb .btn-read-more::after": "display:inline-flex",
+        ".post-thumb .btn-read-more .btn-text": "display:inline-block; padding:0 .4em"
+      }
+    },
+    "php": true
+  },
+  "ButtonIcon": {
+    "type": "Icon",
+    "selector": ".post-thumb .btn-read-more::before"
+  },
+  "ButtonIconHover": {
+    "type": "Color",
+    "property": "color:%s",
+    "selector": ".post-thumb .btn-read-more:hover::before"
+  },
+  "ButtonRightIcon": {
+    "type": "Icon",
+    "selector": ".post-thumb .btn-read-more::after"
+  },
+  "ButtonRightIconHover": {
+    "type": "Color",
+    "property": "color:%s",
+    "selector": ".post-thumb .btn-read-more:hover::after"
+  },
+  "ButtonButton": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": ".post-thumb .btn-read-more&"
+  },
+  "ButtonContainer": {
+    "include": "common",
+    "selector_prefix": ".post-thumb .button-group"
+  },
+  "ButtonTooltipStatus": {
+    "type": "Toggle",
+    "php": true
+  },
+  "ButtonTooltipPosition": {
+    "type": "Radio",
+    "value": "top",
+    "php": true
+  },
+  "ButtonTooltip": {
+    "type": "Variable",
+    "variable": "tooltip",
+    "selector_prefix": "&.read-more-tooltip"
+  },
+  "StatStatus": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".post-thumb .post-stats": "display:flex"
+      },
+      "false": {
+        ".post-thumb .post-stats": "display:none"
+      }
+    }
+  },
+  "StatFont": {
+    "type": "Font",
+    "selector": ".post-thumb .post-stats"
+  },
+  "StatAlign": {
+    "type": "Radio",
+    "value": "start",
+    "rules": {
+      "start": {
+        ".post-thumb .post-stats": "justify-content:flex-start"
+      },
+      "center": {
+        ".post-thumb .post-stats": "justify-content:center"
+      },
+      "end": {
+        ".post-thumb .post-stats": "justify-content:flex-end"
+      }
+    }
+  },
+  "StatsGap": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "--post-stats-gap: %spx",
+    "selector": ".post-thumb .post-stats"
+  },
+  "StatPosition": {
+    "type": "Radio",
+    "value": "default",
+    "rules": {
+      "image": {
+        ".post-thumb .post-stats": "position:absolute; top: 0; left: 0; right: 0; transform: translateY(-100%);"
+      },
+      "default": {
+        ".post-thumb .post-stats": "position:static; transform: translateY(0); top: auto;"
+      }
+    }
+  },
+  "PostDateImagePositionSize": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "selector": ".post-thumb .p-date-image",
+    "property": "--p-date-size:%s"
+  },
+  "DateImagePosition": {
+    "type": "Radio",
+    "value": "ts",
+    "rules": {
+      "ts": {
+        ".post-thumb .p-date-image": "inset: 0 auto auto 0; width: var(--p-date-size, auto); height: var(--p-date-size, auto);"
+      },
+      "te": {
+        ".post-thumb .p-date-image": "inset: 0 0 auto 0; width: var(--p-date-size, auto); height: var(--p-date-size, auto);"
+      },
+      "bs": {
+        ".post-thumb .p-date-image": "inset:auto auto 0 0; width: var(--p-date-size, auto); height: var(--p-date-size, auto);"
+      },
+      "be": {
+        ".post-thumb .p-date-image": "inset:auto 0 0 auto; width: var(--p-date-size, auto); height: var(--p-date-size, auto);"
+      },
+      "full": {
+        ".post-thumb .p-date-image": "inset: 0; width: 100%; height: 100%; margin: 0"
+      }
+    }
+  },
+  "IconsColor": {
+    "type": "Color",
+    "property": "color",
+    "selector": ".post-thumb .post-stats span::before"
+  },
+  "IconsSize": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "font-size: %spx",
+    "selector": ".post-thumb .post-stats span::before"
+  },
+  "AuthorIcon": {
+    "type": "Icon",
+    "selector": ".post-thumb .post-stats .p-author::before"
+  },
+  "DateIcon": {
+    "type": "Icon",
+    "selector": ".post-thumb .post-stats .p-date::before"
+  },
+  "CommentsIcon": {
+    "type": "Icon",
+    "selector": ".post-thumb .post-stats .p-comment::before"
+  },
+  "StatContainer": {
+    "include": "common",
+    "selector_prefix": ".post-thumb .post-stats"
+  },
+  "AuthorVisibility": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".post-thumb .post-stats .p-author": "display:flex"
+      },
+      "false": {
+        ".post-thumb .post-stats .p-author": "display:none"
+      }
+    }
+  },
+  "ImageVisibility": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".post-thumb .image": "display:block"
+      },
+      "false": {
+        ".post-thumb .image": "display:none"
+      }
+    }
+  },
+  "DateVisibility": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".post-thumb .p-date": "display:flex"
+      },
+      "false": {
+        ".post-thumb .p-date": "display:none"
+      }
+    }
+  },
+  "CommentsVisibility": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".post-thumb .post-stats .p-comment": "display:flex"
+      },
+      "false": {
+        ".post-thumb .post-stats .p-comment": "display:none"
+      }
+    }
+  },
+  "ViewsVisibility": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".post-thumb .post-stats .p-view": "display:flex"
+      },
+      "false": {
+        ".post-thumb .post-stats .p-view": "display:none"
+      }
+    }
+  },
+  "ViewsIcon": {
+    "type": "Icon",
+    "selector": ".post-thumb .post-stats .p-view::before"
+  },
+  "DateDayFont": {
+    "type": "Font",
+    "selector": ".post-thumb .p-date-image"
+  },
+  "DateMonthFont": {
+    "type": "Font",
+    "selector": ".post-thumb .p-date-image em"
+  },
+  "DateBox": {
+    "include": "common",
+    "selector_prefix": ".post-thumb .p-date-image"
+  },
+  "ButtonPadding": {
+    "type": "Padding",
+    "selector": ".post-thumb .btn-read-more",
+    "important": true
+  },
+  "ButtonFont": {
+    "type": "Font",
+    "selector": "div.post-thumb .btn-read-more.btn, div.post-thumb .btn-read-more.btn:visited",
+    "important": true
+  },
+  "ButtonFontHover": {
+    "type": "Font",
+    "selector": "div.post-thumb:hover .btn-read-more.btn, div.post-thumb:hover .btn-read-more.btn:visited",
+    "important": true
+  },
+  "ButtonRadius": {
+    "type": "BorderRadius",
+    "selector": ".post-thumb .button-group .btn.btn-read-more",
+    "important": true
+  }
+}

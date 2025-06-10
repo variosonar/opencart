@@ -1,0 +1,93 @@
+{
+  "mobile_header_logo_color_scheme": {
+    "type": "ColorScheme",
+    "php": true
+  },
+  "headerMobileLogoBG": {
+    "type": "Background",
+    "selector": ".mobile-header-active .mobile-default .mobile-logo-wrapper, .mobile-header-active .mobile-3 .mobile-bar"
+  },
+  "headerMobileLogoPadding": {
+    "type": "Padding",
+    "selector": ".mobile-header-active #logo a"
+  },
+  "headerMobileLogoOffset": {
+    "type": "InputPair",
+    "selector": ".mobile-header-active #logo img",
+    "properties": {
+      "first": "left: %spx",
+      "second": "top: %spx"
+    },
+    "rtlProperties": {
+      "first": "right: %spx",
+      "second": "top: %spx"
+    }
+  },
+  "headerMobileLogoMaxWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "--logo-max-width:%spx",
+    "selector": ".mobile-header-active #logo"
+  },
+  "headerMobileLogoHeight": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "--mobile-logo-wrapper:%spx",
+    "selector": ".mobile-header-active"
+  },
+
+  "logoCenter": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".mobile-header-active .mobile-2 .mobile-bar .mobile-logo-wrapper": "justify-content: center; order: initial",
+        ".mobile-header-active .mobile-1 div.mobile-logo-wrapper": "position: absolute; margin:0; left: 50%; transform: translate3d(-50%,0,0);"
+      },
+      "false": {
+        ".mobile-header-active .mobile-2 .mobile-bar .mobile-logo-wrapper": "justify-content: start; order: -1",
+        ".mobile-header-active .mobile-1 div.mobile-logo-wrapper": "position: var(--position); margin: var(--margin); left: 0; right:auto; transform: none;",
+        "html[dir='rtl'].mobile-header-active .mobile-1 div.mobile-logo-wrapper": "position: var(--position); margin: var(--margin); left: auto; right:0; transform: none;"
+      }
+    }
+  },
+
+  "mobileMainMenuPosition": {
+    "type": "Radio",
+    "value": "group",
+    "rules": {
+      "logo": {
+        ".mobile-header-active .mobile-2 .mobile-bar .menu-trigger": "order: -1",
+        ".mobile-header-active .mobile-1 div.mobile-bar-group": "width: 100%;",
+        ".mobile-header-active .mobile-1 a.menu-trigger": "position: relative; margin: 0 auto 0 0;",
+        ".mobile-header-active .mobile-1 div.mobile-logo-wrapper": "--margin: 0 0 0 50px; --position: absolute",
+        "html[dir='rtl'].mobile-header-active .mobile-1 div.mobile-logo-wrapper": "--margin: 0 50px 0 0; --position: absolute",
+        "html[dir='rtl'].mobile-header-active .mobile-1 a.menu-trigger": "position: relative; margin: 0 0 0 auto;"
+      }
+    }
+  },
+
+  "mobileMainMenuPositionOffset": {
+    "type": "InputNumber",
+    "value": "",
+    "rules": {
+      "@": {
+        ".mobile-header-active .mobile-bar .menu-trigger": "position: relative; inset-inline-start: %spx"
+      }
+    }
+  },
+  "mobileLogoType": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "default": {
+        ".mobile-header-active .mobile-header .header-logo": "display:block;",
+        ".mobile-header-active .mobile-header .header-logo-alternate": "display:none;"
+      },
+      "alternate": {
+        ".mobile-header-active .mobile-header .header-logo": "display:none;",
+        ".mobile-header-active .mobile-header .header-logo-alternate": "display:block;"
+      }
+    }
+  }
+}

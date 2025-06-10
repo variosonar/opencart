@@ -1,0 +1,151 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Image"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "schedule": {
+    "type": "Range",
+    "php": true
+  },
+  "title": {
+    "type": "InputLang",
+    "php": true
+  },
+  "titleStyle": {
+    "type": "Variable",
+    "variable": "title",
+    "selector_prefix": ".module-image-%s .module-title"
+  },
+  "type": {
+    "type": "Select",
+    "value": "image",
+    "php": true
+  },
+  "fillType": {
+    "type": "Radio",
+    "value": "auto",
+    "rules": {
+      "auto": {
+        ".module-image-%s > .module-body > a": "width: auto;",
+        ".module-image-%s > .module-body > a img": "width: initial; height:initial; object-fit: contain;"
+      },
+      "fill": {
+        ".module-image-%s > .module-body > a": "width: 100%;",
+        ".module-image-%s > .module-body > a img": "width: 100%; height: 100%; object-fit: cover;"
+      }
+    }
+  },
+  "ImageScale": {
+    "type": "InputPair",
+    "selector": ".module-image-%s > .module-body > a",
+    "properties": {
+      "first": "--scale-hover: %s",
+      "second": "--scale-active: %s"
+    },
+    "rules": {
+      "@": {
+        ".module-image-%s > .module-body > a:hover": "transform: scale(var(--scale-hover, 1));",
+        ".module-image-%s > .module-body > a:active": "transform: scale(var(--scale-active, 1));"
+      }
+    }
+  },
+  "imageAlign": {
+    "type": "Radio",
+    "value": "start",
+    "rules": {
+      "start": {
+        ".module-image-%s": "text-align: start",
+        ".module-image-%s > .module-body > a img": "margin-inline-start: 0; margin-inline-end: auto"
+      },
+      "center": {
+        ".module-image-%s": "text-align: center",
+        ".module-image-%s > .module-body > a img": "margin-inline-start: auto; margin-inline-end: auto"
+      },
+      "end": {
+        ".module-image-%s": "text-align: end",
+        ".module-image-%s > .module-body > a img": "margin-inline-start: auto; margin-inline-end: 0"
+      }
+    }
+  },
+  "icon": {
+    "type": "Icon",
+    "selector": ".module-image-%s .image-icon::before"
+  },
+  "iconHover": {
+    "type": "Color",
+    "selector": ".module-image-%s .image-icon:hover::before",
+    "property": "color"
+  },
+  "image": {
+    "type": "ImageLang"
+  },
+  "image_logo": {
+    "type": "Radio",
+    "value": "default",
+    "php": true
+  },
+  "imageDimensions": {
+    "type": "ImageDimensions",
+    "value": {
+      "resize": "fill",
+      "tablet_resize": "fill",
+      "phone_resize": "fill"
+    }
+  },
+  "caption": {
+    "type": "InputLang",
+    "value": "",
+    "php": true
+  },
+  "alt": {
+    "type": "InputLang",
+    "value": "Image",
+    "php": true
+  },
+  "link": {
+    "type": "Link",
+    "php": true
+  },
+  "lazyLoad": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "containerStyle": {
+    "type": "Variable",
+    "variable": "container",
+    "selector_prefix": ".module-image-%s > .module-body > a"
+  },
+  "containerStyleCaption": {
+    "type": "Variable",
+    "variable": "container",
+    "selector_prefix": ".module-image-%s > .module-body .image-caption"
+  },
+  "imageBackground": {
+    "type": "Background",
+    "selector": ".module-image-%s > .module-body > a img"
+  },
+  "maxWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "max-width:%spx",
+    "selector": ".module-image-%s > .module-body > a"
+  },
+  "styleOverride": {
+    "include": "common_hover",
+    "selector_prefix": ".module-image-%s > .module-body > a"
+  },
+  "styleOverrideCaption": {
+    "include": "common_hover",
+    "selector_prefix": ".module-image-%s > .module-body .image-caption"
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Menu Item"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "dropdown_color_scheme": {
+    "type": "ColorScheme",
+    "php": true
+  },
+  "title": {
+    "type": "InputLang",
+    "php": true
+  },
+  "label": {
+    "type": "InputLang",
+    "php": true
+  },
+  "labelStyle": {
+    "type": "Variable",
+    "variable": "menu_label",
+    "selector_prefix": ".flyout-menu-%s > ul.j-menu > li.flyout-menu-item-%s > a"
+  },
+  "icon": {
+    "type": "Icon",
+    "selector": ".flyout-menu-%s > ul.j-menu > li.flyout-menu-item-%s > a::before",
+    "important": true
+  },
+  "megaMenuAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "static": {
+        ".flyout-menu-%s .flyout-menu-item-%s.mega-menu": "position: static",
+        ".flyout-menu-%s .flyout-menu-item-%s.mega-menu > .j-dropdown": "top: 0"
+      },
+      "relative": {
+        ".flyout-menu-%s .flyout-menu-item-%s.mega-menu": "position: relative",
+        ".flyout-menu-%s .flyout-menu-item-%s.mega-menu > .j-dropdown": "top: calc(var(--menu-item-gap, 0px) / 2)"
+      }
+    }
+  },
+  "megaMenuBorder": {
+    "type": "Border",
+    "selector": "div.flyout-menu-%s >.j-menu .dropdown.flyout-menu-item-%s.mega-menu .mega-menu-content",
+    "important": "true"
+  },
+  "megaMenuBackground": {
+    "type": "Background",
+    "selector": "div.flyout-menu-%s >.j-menu .dropdown.flyout-menu-item-%s.mega-menu .mega-menu-content",
+    "important": "true"
+  },
+  "megaMenuPadding": {
+    "type": "Padding",
+    "selector": "div.flyout-menu-%s >.j-menu .dropdown.flyout-menu-item-%s.mega-menu .mega-menu-content",
+    "important": "true"
+  },
+  "iconHover": {
+    "type": "Color",
+    "selector": ".flyout-menu-%s > ul.j-menu > li.flyout-menu-item-%s:hover > a::before",
+    "property": "color",
+    "important": true
+  },
+  "image": {
+    "type": "ImageLang"
+  },
+  "font": {
+    "type": "Icon",
+    "selector": ".flyout-menu-%s > ul.j-menu > li.flyout-menu-item-%s > a",
+    "important": true
+  },
+  "fontHover": {
+    "type": "Font",
+    "selector": ".flyout-menu-%s > ul.j-menu > li.flyout-menu-item-%s:hover > a",
+    "important": true
+  },
+  "ItemPadding": {
+    "type": "Padding",
+    "selector": ".flyout-menu-%s > ul.j-menu > li.flyout-menu-item-%s > a"
+  },
+  "ItemPaddingImage": {
+    "type": "Padding",
+    "selector": ".flyout-menu-%s > ul.j-menu > li.flyout-menu-item-%s.has-image > a"
+  },
+  "Divider": {
+    "type": "Divider",
+    "selector": ".flyout-menu-%s > ul.j-menu > li.flyout-menu-item-%s"
+  },
+  "bg": {
+    "type": "Background",
+    "selector": ".flyout-menu-%s > ul.j-menu > li.flyout-menu-item-%s > a",
+    "important": true
+  },
+  "bgHover": {
+    "type": "Background",
+    "selector": ".flyout-menu-%s > ul.j-menu > li.flyout-menu-item-%s:hover > a",
+    "important": true
+  },
+  "fontDesktop": {
+    "type": "Icon",
+    "selector": ".global-wrapper .flyout-menu-%s > ul.j-menu > li.flyout-menu-item-%s > a",
+    "important": true
+  },
+  "fontHoverDesktop": {
+    "type": "Font",
+    "selector": ".global-wrapper .flyout-menu-%s > ul.j-menu > li.flyout-menu-item-%s:hover > a",
+    "important": true
+  },
+  "bgDesktop": {
+    "type": "Background",
+    "selector": ".global-wrapper .flyout-menu-%s > ul.j-menu > li.flyout-menu-item-%s > a",
+    "important": true
+  },
+  "bgHoverDesktop": {
+    "type": "Background",
+    "selector": ".global-wrapper .flyout-menu-%s > ul.j-menu > li.flyout-menu-item-%s:hover > a",
+    "important": true
+  },
+  "link": {
+    "type": "Link",
+    "php": true
+  },
+  "categoryImage": {
+    "type": "Toggle",
+    "value": "false"
+  },
+  "subcategories": {
+    "type": "Toggle"
+  },
+  "subcategoriesImages": {
+    "type": "Toggle",
+    "value": "false"
+  },
+  "type": {
+    "type": "Radio",
+    "value": "multilevel",
+    "php": true
+  },
+  "flyout": {
+    "type": "Module"
+  },
+  "position": {
+    "type": "Radio",
+    "value": "left",
+    "php": true
+  },
+  "flyoutMegaMenuWidth": {
+    "type": "InputNumber",
+    "selector": ".flyout-menu-%s .mega-menu.flyout-menu-item-%s .dropdown-menu",
+    "property": "--flyout-mega-menu: %spx",
+    "value": ""
+  },
+  "flyoutMegaMenuBG": {
+    "type": "Background",
+    "selector": ".flyout-menu-%s .mega-menu.flyout-menu-item-%s .dropdown-menu"
+  },
+  "flyoutMegaMenuBorder": {
+    "type": "Border",
+    "selector": ".flyout-menu-%s .mega-menu.flyout-menu-item-%s .dropdown-menu"
+  },
+  "flyoutMegaMenuShadow": {
+    "type": "Shadow",
+    "selector": ".flyout-menu-%s .mega-menu.flyout-menu-item-%s .dropdown-menu"
+  },
+  "flyoutMultiLevelPosition": {
+    "type": "Radio",
+    "value": "right",
+    "rules": {
+      "left": {
+        ".desktop-header-active .flyout-menu-%s .flyout-menu-item-%s.multi-level .dropdown-menu": "left:0%; transform: translateX(-100%);"
+      },
+      "right": {
+        ".desktop-header-active .flyout-menu-%s .flyout-menu-item-%s.multi-level .dropdown-menu": "left:100%"
+      }
+    },
+    "rtlRules": {
+      "right": {
+        ".desktop-header-active .flyout-menu-%s .flyout-menu-item-%s.multi-level .dropdown-menu": "right:100%"
+      },
+      "left": {
+        ".desktop-header-active .flyout-menu-%s .flyout-menu-item-%s.multi-level .dropdown-menu": "right:0; transform: translateX(100%);"
+      }
+    }
+  },
+  "flyoutMultiLevelOffset": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".desktop-header-active .flyout-menu-%s .flyout-menu-item-%s.multi-level .dropdown-menu": "margin-inline-start:%spx"
+      }
+    },
+    "rtlRules": {
+      "@": {
+        ".desktop-header-active .flyout-menu-%s .flyout-menu-item-%s.multi-level .dropdown-menu": "margin-inline-end:%spx"
+      }
+    }
+  },
+  "flyoutMultiLevelDropdownWidth": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".desktop-header-active .flyout-menu-%s .flyout-menu-item-%s.multi-level .dropdown-menu": "width:%spx"
+      }
+    }
+  },
+  "DropdownColumns": {
+    "type": "InputNumber",
+    "value": "",
+    "rules": {
+      "@": {
+        ".desktop-header-active .flyout-menu-%s .flyout-menu-item-%s.multi-level > .j-dropdown > .j-menu": "--dropdown-cols: %s !important"
+      }
+    }
+  },
+  "DropdownColumns2": {
+    "type": "InputNumber",
+    "value": "",
+    "rules": {
+      "@": {
+        ".desktop-header-active .flyout-menu-%s .flyout-menu-item-%s.multi-level > .j-dropdown > .j-menu > .dropdown > .j-dropdown > .j-menu": "--dropdown-cols: %s !important"
+      }
+    }
+  },
+  "DropdownColumns3": {
+    "type": "InputNumber",
+    "value": "",
+    "rules": {
+      "@": {
+        ".desktop-header-active .flyout-menu-%s .flyout-menu-item-%s.multi-level > .j-dropdown > .j-menu > .dropdown > .j-dropdown > .j-menu > .dropdown > .j-dropdown > .j-menu": "--dropdown-cols: %s !important"
+      }
+    }
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

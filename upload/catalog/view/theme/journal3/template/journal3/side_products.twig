@@ -1,0 +1,79 @@
+{% for product in products %}
+  <div class="product-layout {{ journal3.classes(product.classes) }} {{ color_scheme_content }}">
+    <div class="side-product">
+      <div class="image">
+        <a href="{{ product.href }}" class="product-img" title="{{ product.name }}">
+          {% if journal3.get('performanceLazyLoadImagesStatus') %}
+            <img src="{{ dummy_image }}" data-src="{{ product.thumb }}" {% if product.thumb2x %}data-srcset="{{ product.thumb }} 1x, {{ product.thumb2x }} 2x" {% endif %} width="{{ image_width }}" height="{{ image_height }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-first lazyload"/>
+          {% else %}
+            <img src="{{ product.thumb }}" {% if product.thumb2x %}srcset="{{ product.thumb }} 1x, {{ product.thumb2x }} 2x" {% endif %} width="{{ image_width }}" height="{{ image_height }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-first"/>
+          {% endif %}
+        </a>
+
+        {% if journal3.get('quickviewStatus') %}
+          <div class="quickview-button">
+            <a class="btn btn-quickview" role="button" aria-label="{{ journal3.get('quickviewText') }}" {% if journal3.is_desktop and  journal3.getIn('SideProductQuickviewTooltipStatus', _context) %}data-toggle="tooltip-hover" data-tooltip-class="{{ 'module-side_products-' ~ module_id }} quickview-tooltip" data-placement="{{ journal3.getIn('SideProductQuickviewTooltipPosition', _context) }}" title="{{ journal3.get('quickviewText') }}"{% endif %} onclick="quickview('{{ product.product_id }}')"><span class="btn-text">{{ journal3.get('quickviewText') }}</span></a>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="caption">
+        <div class="name"><a href="{{ product.href }}">{{ product.name }}</a></div>
+
+        {% if product.price %}
+          <div class="price">
+            {% if product.special %}
+              <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+            {% else %}
+              <span class="price-normal">{{ product.price }}</span>
+            {% endif %}
+          </div>
+          {% if product.tax %}
+            <div class="price-tax">{{ text_tax }}{{ product.tax }}</div>
+          {% endif %}
+        {% endif %}
+
+        {% if product.rating %}
+          <div class="rating">
+            <div class="rating-stars">
+              {% for i in 1..5 %}
+                {% if product.rating < i %}
+                  <span class="fa fa-stack"><em class="fa fa-star-o fa-stack-2x"></em></span>
+                {% else %}
+                  <span class="fa fa-stack"><em class="fa fa-star fa-stack-2x"></em><em class="fa fa-star-o fa-stack-2x"></em></span>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        {% else %}
+          <div class="rating no-rating">
+            <div class="rating-stars">
+              {% for i in 1..5 %}
+                {% if product.rating < i %}
+                  <span class="fa fa-stack"><em class="fa fa-star-o fa-stack-2x"></em></span>
+                {% else %}
+                  <span class="fa fa-stack"><em class="fa fa-star fa-stack-2x"></em><em class="fa fa-star-o fa-stack-2x"></em></span>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+
+        {% if journal3.get('catalogCartStatus') or journal3.get('catalogWishlistStatus') or journal3.get('catalogCompareStatus') %}
+          <div class="button-group">
+            {% if journal3.get('catalogCartStatus') %}
+              <a class="btn btn-cart" role="button" aria-label="{{ product.button_cart }}" {% if journal3.is_desktop and  journal3.getIn('SideProductCartTooltipStatus', _context) %} data-toggle="tooltip-hover" data-tooltip-class="{{ 'module-side_products-' ~ module_id }} cart-tooltip" data-placement="{{ journal3.getIn('SideProductCartTooltipPosition', _context) }}" title="{{ product.button_cart }}" {% endif %} onclick="cart.add('{{ product.product_id }}', $(this).closest('.product-thumb').find('.button-group input[name=\'quantity\']').val());" data-loading-text="<span class='btn-text'>{{ product.button_cart }}</span>"><span class="btn-text">{{ product.button_cart }}</span></a>
+            {% endif %}
+            {% if journal3.get('catalogWishlistStatus') %}
+              <a class="btn btn-wishlist" role="button" aria-label="{{ button_wishlist }}" {% if journal3.is_desktop and  journal3.getIn('SideProductWishlistTooltipStatus', _context) %} data-toggle="tooltip-hover" data-tooltip-class="{{ 'module-side_products-' ~ module_id }} wishlist-tooltip" data-placement="{{ journal3.getIn('SideProductWishlistTooltipPosition', _context) }}" title="{{ button_wishlist }}" {% endif %} onclick="wishlist.add('{{ product.product_id }}')"><span class="btn-text">{{ button_wishlist }}</span></a>
+            {% endif %}
+            {% if journal3.get('catalogCompareStatus') %}
+              <a class="btn btn-compare" role="button" aria-label="{{ button_compare }}" {% if journal3.is_desktop and  journal3.getIn('SideProductCompareTooltipStatus', _context) %} data-toggle="tooltip-hover" data-tooltip-class="{{ 'module-side_products-' ~ module_id }} compare-tooltip" data-placement="{{ journal3.getIn('SideProductCompareTooltipPosition', _context) }}" title="{{ button_compare }}" {% endif %} onclick="compare.add('{{ product.product_id }}')"><span class="btn-text">{{ button_compare }}</span></a>
+            {% endif %}
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+{% endfor %}

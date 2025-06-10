@@ -1,0 +1,30 @@
+{
+  "ScrollBarColor": {
+    "type": "Color",
+    "property": "color",
+    "selector": "::-webkit-scrollbar-track"
+  },
+  "ScrollBarThumbColor": {
+    "type": "Color",
+    "property": "color",
+    "selector": "::-webkit-scrollbar-thumb"
+  },
+  "ScrollBarThumbColorHover": {
+    "type": "Color",
+    "property": "color",
+    "selector": "::-webkit-scrollbar-thumb:hover"
+  },
+  "ScrollBarBorder": {
+    "type": "Border",
+    "selector": "::-webkit-scrollbar-thumb"
+  },
+  "ScrollBarBorderHover": {
+    "type": "Color",
+    "selector": "::-webkit-scrollbar-thumb:hover",
+    "property": "border-color"
+  },
+  "ScrollBarBorderRadius": {
+    "type": "BorderRadius",
+    "selector": "::-webkit-scrollbar-thumb"
+  }
+}

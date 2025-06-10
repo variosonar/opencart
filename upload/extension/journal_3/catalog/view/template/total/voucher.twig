@@ -1,0 +1,20 @@
+<div class="panel panel-default panel-voucher">
+  <div class="panel-heading">
+    <h4 class="panel-title"><a href="#collapse-voucher" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion">{{ heading_title }} <i class="fa fa-caret-down"></i></a></h4>
+  </div>
+  <div id="collapse-voucher" class="panel-collapse collapse">
+    <div class="panel-body">
+      <form id="form-voucher" action="{{ save }}" method="post" data-oc-toggle="ajax" data-oc-load="{{ list }}" data-oc-target="#shopping-cart">
+        <div class="row mb-3 form-group">
+          <label for="input-voucher" class="control-label col-md-4 col-form-label">{{ entry_voucher }}</label>
+          <div class="input-group">
+            <input type="text" name="voucher" value="{{ voucher }}" placeholder="{{ entry_voucher }}" id="input-voucher" class="form-control" >
+            <span class="input-group-btn">
+              <button id="button-voucher" type="submit" class="btn btn-primary">{{ button_voucher }}</button>
+            </span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,173 @@
+{% macro renderBlocks(context, item) %}
+  {% set journal3 = context.journal3 %}
+  {% if item.blockLink.href %}
+    <a class="block-link" href="{{ item.blockLink.href }}" {{ journal3.linkAttrs(item.blockLink) }} aria-hidden="true" tabindex="-1"></a>
+  {% endif %}
+  {% if context.display == 'grid' and item.title and context.titlePosition == 'block' %}
+    <h3 class="title module-title block-title">{{ item.title }}</h3>
+  {% endif %}
+  <div class="block-body expand-block">
+    {% if item.header == 'image' or item.header == 'category_image' %}
+      {% if journal3.get('performanceLazyLoadImagesStatus') and context.lazyLoad %}
+        <div class="block-header block-head-image">
+          {% if item.blockHeaderLink.href %}
+            <a class="block-header-link" href="{{ item.blockHeaderLink.href }}" {{ journal3.linkAttrs(item.blockHeaderLink) }} aria-hidden="true" tabindex="-1">
+              <img src="{{ context.dummy_image }}" data-src="{{ item.image }}" {% if item.image2x %}data-srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" {% endif %} alt="{{ item.alt }}" width="{{ context.imageDimensions.width }}" height="{{ context.imageDimensions.height }}" class="block-image lazyload"/>
+            </a>
+          {% else %}
+          <img src="{{ context.dummy_image }}" data-src="{{ item.image }}" {% if item.image2x %}data-srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" {% endif %} alt="{{ item.alt }}" width="{{ context.imageDimensions.width }}" height="{{ context.imageDimensions.height }}" class="block-image lazyload"/>
+          {% endif %}
+          {% if context.display == 'grid' and item.title and context.titlePosition == 'before' %}
+            <h3 class="title module-title block-title">{{ item.title }}</h3>
+          {% endif %}
+        </div>
+      {% else %}
+        <div class="block-header block-head-image">
+          {% if item.blockHeaderLink.href %}
+            <a class="block-header-link" href="{{ item.blockHeaderLink.href }}" {{ journal3.linkAttrs(item.blockHeaderLink) }} aria-hidden="true" tabindex="-1">
+              <img src="{{ item.image }}" {% if item.image2x %}srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" {% endif %} alt="{{ item.alt }}" width="{{ context.imageDimensions.width }}" height="{{ context.imageDimensions.height }}" class="block-image"/>
+            </a>
+          {% else %}
+              <img src="{{ item.image }}" {% if item.image2x %}srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" {% endif %} alt="{{ item.alt }}" width="{{ context.imageDimensions.width }}" height="{{ context.imageDimensions.height }}" class="block-image"/>
+          {% endif %}
+          {% if context.display == 'grid' and item.title and context.titlePosition == 'before' %}
+            <h3 class="title module-title block-title">{{ item.title }}</h3>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% elseif item.header == 'icon' %}
+      <div class="block-header block-head-icon">
+        <em class="icon icon-block"></em>
+        {% if context.display == 'grid' and item.title and context.titlePosition == 'before' %}
+          <h3 class="title module-title block-title">{{ item.title }}</h3>
+        {% endif %}
+      </div>
+    {% elseif item.header == 'text' %}
+      <div class="block-header block-head-text">
+        <span class="block-header-text">{{ item.text }}</span>
+        {% if context.display == 'grid' and item.title and context.titlePosition == 'before' %}
+          <h3 class="title module-title block-title">{{ item.title }}</h3>
+        {% endif %}
+      </div>
+    {% endif %}
+    <div class="block-wrapper">
+      {% if context.display == 'grid' and item.title and context.titlePosition == 'body' %}
+        <h3 class="title module-title block-title">{{ item.title }}</h3>
+      {% endif %}
+      <div class="block-content {% if item.expandButton %}expand-content{% endif %} block-{{ item.contentType }}">
+        {% if item.contentType == 'map' %}
+        <div class="journal-loading"><em class="fa fa-spinner fa-spin"></em></div>
+        {% endif %}
+        {{ item.content }}
+        {% if item.expandButton %}
+          <div class="block-expand-overlay"><a class="block-expand btn" href="javascript:;" aria-hidden="true"></a></div>
+        {% endif %}
+        {% if item.gallery %}
+        <div class="block-gallery">{{ item.gallery }}</div>
+        {% endif %}
+      </div>
+      {% if item.footer == 'text' %}
+        <div class="block-footer">{{ item.footerText }}</div>
+      {% elseif item.footer == 'button' %}
+        <div class="block-footer"><a class="btn" href="{{ item.footerButtonLink.href }}" {{ journal3.linkAttrs(item.footerButtonLink) }}>{{ item.footerButton }}</a></div>
+      {% endif %}
+    </div>
+  </div>
+{% endmacro %}
+<div class="{{ journal3.classes(classes) }}">
+  <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+  {% if title %}
+    <h3 class="title module-title">{{ title }}</h3>
+  {% endif %}
+  <div class="module-body">
+  {# grid #}
+  {% if display == 'grid' %}
+    {% if gridType == 'ipr' and carousel %}
+      <div class="swiper" data-items-per-row='{{ itemsPerRow|json_encode(constant('JSON_FORCE_OBJECT')) }}' data-options='{{ carouselOptions|json_encode(constant('JSON_FORCE_OBJECT')) }}'>
+        <div class="swiper-container" {% if journal3.is_rtl %}dir="rtl"{% endif %}>
+          <div class="swiper-wrapper ipr-grid">
+            {% for item in items %}
+              <div class="{{ journal3.classes(item.classes) }}">
+                {{ _self.renderBlocks(_context, item) }}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="swiper-buttons">
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    {% else %}
+      <div class="blocks-grid no-scroll {{ gridType }}-grid">
+        {% if gridType == 'auto' %}
+          <div class="auto-grid-items">
+            {% for item in items %}
+              <div class="{{ journal3.classes(item.classes) }}">
+                {{ _self.renderBlocks(_context, item) }}
+              </div>
+            {% endfor %}
+          </div>
+          <div class="auto-carousel-bar auto-carousel-controls"><div class="auto-carousel-thumb"></div><div class="auto-carousel-fill"></div></div>
+          <div class="auto-carousel-buttons auto-carousel-controls"><div class="auto-carousel-prev"><span></span></div><div class="auto-carousel-next"><span></span></div></div>
+        {% else %}
+          {% for item in items %}
+            <div class="{{ journal3.classes(item.classes) }}">
+              {{ _self.renderBlocks(_context, item) }}
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+    {% endif %}
+  {% endif %}
+  {# tabs #}
+  {% if display == 'tabs' %}
+    <div class="tab-container">
+      <div class="full-tabs-bg"></div>
+      <ul class="nav nav-tabs">
+        {% for item in items %}
+          <li class="{{ journal3.classes(item.tab_classes) }}">
+            {% if item.tabType == 'link' %}
+              <a href="{{ item.link.href }}" {{ journal3.linkAttrs(item.link) }}>{{ item.title }}</a>
+            {% else %}
+              <a href="#{{ id }}-tab-{{ loop.index }}" data-toggle="tab">{{ item.title }}</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="tab-content">
+        {% for item in items %}
+          {% if item.tabType != 'link' %}
+            <div class="{{ journal3.classes(item.classes) }}" id="{{ id }}-tab-{{ loop.index }}">
+              {{ _self.renderBlocks(_context, item) }}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+  {# accordion #}
+  {% if display == 'accordion' %}
+    <div class="panel-group" id="{{ id }}-collapse">
+      {% for item in items %}
+        <div class="{{ journal3.classes(item.classes) }}">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a href="#{{ id }}-collapse-{{ loop.index }}" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#{{ id }}-collapse" aria-expanded="false">
+                {{ item.title }}
+                <i class="fa fa-caret-down"></i>
+              </a>
+            </h4>
+          </div>
+          <div class="{{ journal3.classes(item.panel_classes) }}" id="{{ id }}-collapse-{{ loop.index }}">
+            <div class="panel-body">
+              {{ _self.renderBlocks(_context, item) }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+  </div>
+</div>

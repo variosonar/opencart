@@ -1,0 +1,149 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Menu"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "title": {
+    "type": "InputLang",
+    "value": "Sub Menu Item",
+    "php": true
+  },
+  "link": {
+    "type": "Link",
+    "php": true
+  },
+  "image": {
+    "type": "Image"
+  },
+  "type": {
+    "type": "Radio",
+    "value": "category"
+  },
+  "itemBackground": {
+    "type": "Background",
+    "selector": ".module-catalog-%s .module-item-%s .item-content"
+  },
+  "ImageWidthNew": {
+    "type": "InputPair",
+    "selector": ".module-catalog-%s .module-item-%s .item-assets",
+    "properties": {
+      "first": "--image-max-width: %s%",
+      "second": "--image-min-width: %spx"
+    }
+  },
+  "PositionOverride": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        "div.module-catalog-%s .module-item-%s .item-content .item-assets": "flex-direction:row; flex-wrap: wrap",
+        "div.module-catalog-%s .module-item-%s .item-content .catalog-image": "order:0; display:flex"
+      },
+      "top": {
+        "div.module-catalog-%s .module-item-%s .item-content .item-assets": "flex-direction:column; flex-wrap: nowrap",
+        "div.module-catalog-%s .module-item-%s .item-content .catalog-image": "order: 0; display:flex;"
+      },
+      "bottom": {
+        "div.module-catalog-%s .module-item-%s .item-content .item-assets": "flex-direction:column; flex-wrap: nowrap",
+        "div.module-catalog-%s .module-item-%s .item-content .catalog-image": "order:2; display:flex"
+      },
+      "right": {
+        "div.module-catalog-%s .module-item-%s .item-content .item-assets": "flex-direction:row; flex-wrap: wrap",
+        "div.module-catalog-%s .module-item-%s .item-content .catalog-image": "order:2; display:flex"
+      },
+      "under": {
+        "div.module-catalog-%s .module-item-%s .item-content .subitems": "position:absolute; inset:0; z-index: 2"
+      },
+      "none": {
+        "div.module-catalog-%s .module-item-%s .item-content .catalog-image": "display:none"
+      }
+    }
+  },
+  "AutoPositionGap": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "selector": ".module-catalog-%s .module-item-%s .item-assets",
+    "property": "--catalog-gap: %s !important"
+  },
+  "ImageBackground": {
+    "type": "Background",
+    "selector": ".module-catalog-%s .module-item-%s .catalog-image img, .module-catalog-%s .module-item-%s .catalog-image::before",
+    "important": true
+  },
+  "ImageBackgroundHover": {
+    "type": "Background",
+    "selector": ".module-catalog-%s .module-item-%s .catalog-image img, .module-catalog-%s .module-item-%s .catalog-image::before",
+    "important": true
+  },
+  "ImageOverlay": {
+    "type": "Background",
+    "selector": "div.module-catalog-%s .module-item-%s .catalog-image::after"
+  },
+  "ImageOverlayHover": {
+    "type": "Background",
+    "selector": "div.module-catalog-%s .module-item-%s .catalog-image:hover::after"
+  },
+  "ImageOverlayOpacity": {
+    "type": "Input",
+    "property": "opacity",
+    "selector": "div.module-catalog-%s .module-item-%s .catalog-image::after"
+  },
+  "ImageOverlayOpacityHover": {
+    "type": "Input",
+    "property": "opacity",
+    "selector": "div.module-catalog-%s .module-item-%s .catalog-image:hover::after"
+  },
+  "ImageOverlayBlend": {
+    "value": "",
+    "type": "Select",
+    "selector": "div.module-catalog-%s .module-item-%s .catalog-image::after",
+    "property": "mix-blend-mode"
+  },
+  "subitemIcon": {
+    "type": "Icon",
+    "selector": ".module-catalog-%s .module-item-%s .subitem::before"
+  },
+  "subitemIconHover": {
+    "type": "Color",
+    "selector": ".module-catalog-%s .module-item-%s .subitem:hover::before",
+    "property": "color"
+  },
+  "subitemFont": {
+    "type": "Font",
+    "selector": ".module-catalog-%s .module-item-%s .subitem a"
+  },
+  "subitemFontHover": {
+    "type": "Font",
+    "selector": ".module-catalog-%s .module-item-%s .subitem:hover a"
+  },
+
+  "subtype": {
+    "type": "Radio",
+    "value": "category"
+  },
+  "category": {
+    "type": "Catalog"
+  },
+  "manufacturer": {
+    "type": "Catalog"
+  },
+  "limit": {
+    "type": "Input",
+    "value": "",
+    "php": true
+  },
+  "icon": {
+    "type": "Icon",
+    "selector": ".module-catalog-%s .module-item-%s .catalog-image::before"
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "rippleStatus": {
+    "type": "Toggle",
+    "value": "false",
+    "js": true
+  },
+  "rippleSelectors": {
+    "type": "Input",
+    "value": ".btn",
+    "js": true
+  }
+}

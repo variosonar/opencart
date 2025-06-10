@@ -1,0 +1,206 @@
+<div class="{{ journal3.classes(classes) }}">
+  <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+  <div class="slider-wrapper {% if slidesPerView == 'auto' %}slider-carousel{% endif %}">
+    <div class="swiper-container" {% if syncWith %}data-sync-with="{{ syncWith }}"{% endif %}>
+      <div class="journal-loading"><em class="fa fa-spinner fa-spin"></em></div>
+      {% if parallax_bg %}
+        {% if lazyLoad %}
+          <div class="parallax-bg lazyload-bg lazyload" data-swiper-parallax="{{ parallaxValue | trim('px') }}"></div>
+        {% else %}
+          <div class="parallax-bg lazyload-bg" data-swiper-parallax="{{ parallaxValue | trim('px') }}"></div>
+        {% endif %}
+      {% endif %}
+      <div class="swiper-wrapper" data-options='{{ options|json_encode(constant('JSON_FORCE_OBJECT')) }}'>
+        {% for item in items %}
+          <div class="{{ journal3.classes(item.classes) }} {% if loop.first %}swiper-slide-active{% endif %}">
+            <div class="slide-content slide-content-{{ item.type == "custom" ? "image" : item.type }}" {% if slideParallaxOffsetX %}data-swiper-parallax-x="{{ slideParallaxOffsetX }}"{% endif %} {% if slideParallaxOffsetY %}data-swiper-parallax-y="{{ slideParallaxOffsetY }}"{% endif %} {% if slideParallaxOpacity %}data-swiper-parallax-opacity="{{ slideParallaxOpacity }}"{% endif %} {% if slideParallaxScale %}data-swiper-parallax-scale="{{ slideParallaxScale }}"{% endif %} {% if slideParallaxDuration %}data-swiper-parallax-duration="{{ slideParallaxDuration }}"{% endif %}>
+              {% if item.type == 'image' or item.type == 'category' or item.type == 'product' %}
+                {% if lazyLoad or not loop.first %}
+                  <img class="lazyload" src="{{ lazyload_placeholder }}" data-srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" width="{{ width }}" height="{{ height }}" alt="{{ item.alt }}" title="{{ item.alt }}"/>
+                {% else %}
+                  <img src="{{ item.image }}" srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" width="{{ width }}" height="{{ height }}" alt="{{ item.alt }}" title="{{ item.alt }}"/>
+                {% endif %}
+              {% elseif item.type == 'video' %}
+                <video autoplay playsinline muted data-src="{{ item.videoSrc }}" {% if item.videoPoster %}poster="{{ item.videoPoster }}"{% endif %}></video>
+              {% endif %}
+
+              {% if item.link.href %}
+                <a class="slide-link" href="{{ item.link.href }}" {{ journal3.linkAttrs(item.link) }} aria-hidden="true" tabindex="-1"></a>
+              {% endif %}
+
+              {% if item.items %}
+              <div class="slide-cols">
+                {% for col in ['left', 'right'] %}
+                  {% if item['items_' ~ col] %}
+                    <div class="slide-col slide-col-{{ col }}" {% if colParallaxOffsetX %}data-swiper-parallax-x="{{ colParallaxOffsetX }}"{% endif %} {% if colParallaxOffsetY %}data-swiper-parallax-y="{{ colParallaxOffsetY }}"{% endif %} {% if colParallaxOpacity %}data-swiper-parallax-opacity="{{ colParallaxOpacity }}"{% endif %} {% if colParallaxScale %}data-swiper-parallax-scale="{{ colParallaxScale }}"{% endif %} {% if colParallaxDuration %}data-swiper-parallax-duration="{{ colParallaxDuration }}"{% endif %}>
+
+                      <div class="slide-layers">
+                        {% for subitem in item['items_' ~ col] %}
+                          {% if subitem.type == 'text' %}
+                            <div class="{{ journal3.classes(subitem.classes) }}" {% if subitem.layerParallaxOffsetX %}data-swiper-parallax-x="{{ subitem.layerParallaxOffsetX }}"{% endif %} {% if subitem.layerParallaxOffsetY %}data-swiper-parallax-y="{{ subitem.layerParallaxOffsetY }}"{% endif %} {% if subitem.layerParallaxOpacity %}data-swiper-parallax-opacity="{{ subitem.layerParallaxOpacity }}"{% endif %} {% if subitem.layerParallaxScale %}data-swiper-parallax-scale="{{ subitem.layerParallaxScale }}"{% endif %} {% if subitem.layerParallaxDuration %}data-swiper-parallax-duration="{{ subitem.layerParallaxDuration }}"{% endif %}>
+                              <div class="slide-text-item"><span>{{ subitem.text }}</span></div>
+                            </div>
+                          {% elseif subitem.type == 'svg' %}
+                            <div class="{{ journal3.classes(subitem.classes) }}" {% if subitem.layerParallaxOffsetX %}data-swiper-parallax-x="{{ subitem.layerParallaxOffsetX }}"{% endif %} {% if subitem.layerParallaxOffsetY %}data-swiper-parallax-y="{{ subitem.layerParallaxOffsetY }}"{% endif %} {% if subitem.layerParallaxOpacity %}data-swiper-parallax-opacity="{{ subitem.layerParallaxOpacity }}"{% endif %} {% if subitem.layerParallaxScale %}data-swiper-parallax-scale="{{ subitem.layerParallaxScale }}"{% endif %} {% if subitem.layerParallaxDuration %}data-swiper-parallax-duration="{{ subitem.layerParallaxDuration }}"{% endif %}>
+                              <div class="svg-layer">{{ subitem.svgCode }}</div>
+                            </div>
+                          {% elseif subitem.type == 'button' %}
+                            <div class="{{ journal3.classes(subitem.classes) }}" {% if subitem.layerParallaxOffsetX %}data-swiper-parallax-x="{{ subitem.layerParallaxOffsetX }}"{% endif %} {% if subitem.layerParallaxOffsetY %}data-swiper-parallax-y="{{ subitem.layerParallaxOffsetY }}"{% endif %} {% if subitem.layerParallaxOpacity %}data-swiper-parallax-opacity="{{ subitem.layerParallaxOpacity }}"{% endif %} {% if subitem.layerParallaxScale %}data-swiper-parallax-scale="{{ subitem.layerParallaxScale }}"{% endif %} {% if subitem.layerParallaxDuration %}data-swiper-parallax-duration="{{ subitem.layerParallaxDuration }}"{% endif %}>
+                              <div class="slide-button-group">
+                                {% if subitem.button_1_text %}
+                                  <a class="btn slide-button-1" {% if subitem.button_1_link.href %}href="{{ subitem.button_1_link.href }}" {{ journal3.linkAttrs(subitem.button_1_link) }} {% else %}href="javascript:;"{% endif %}><span>{{ subitem.button_1_text }}</span></a>
+                                {% endif %}
+                                {% if subitem.button_2_text %}
+                                  <a class="btn slide-button-2" {% if subitem.button_2_link.href %}href="{{ subitem.button_2_link.href }}" {{ journal3.linkAttrs(subitem.button_2_link) }} {% else %}href="javascript:;"{% endif %}><span>{{ subitem.button_2_text }}</span></a>
+                                {% endif %}
+                              </div>
+                            </div>
+                          {% elseif subitem.type == 'image' %}
+                            <figure class="{{ journal3.classes(subitem.classes) }}" {% if subitem.layerParallaxOffsetX %}data-swiper-parallax-x="{{ subitem.layerParallaxOffsetX }}"{% endif %} {% if subitem.layerParallaxOffsetY %}data-swiper-parallax-y="{{ subitem.layerParallaxOffsetY }}"{% endif %} {% if subitem.layerParallaxOpacity %}data-swiper-parallax-opacity="{{ subitem.layerParallaxOpacity }}"{% endif %} {% if subitem.layerParallaxScale %}data-swiper-parallax-scale="{{ subitem.layerParallaxScale }}"{% endif %} {% if subitem.layerParallaxDuration %}data-swiper-parallax-duration="{{ subitem.layerParallaxDuration }}"{% endif %}>
+                              <img class="" src="{{ subitem.image }}" srcset="{{ subitem.image }} 1x, {{ subitem.image2x }} 2x" alt="{{ subitem.alt }}" width="{{ subitem.width }}" height="{{ subitem.height }}">
+                              {% if subitem.caption %}
+                                <figcaption><span>{{ subitem.caption }}</span></figcaption>
+                              {% endif %}
+                              {% if subitem.imageLink.href %}
+                                <a class="slide-layer-image-link" href="{{ subitem.imageLink.href }}" {{ journal3.linkAttrs(subitem.imageLink) }} aria-hidden="true" tabindex="-1"></a>
+                              {% endif %}
+                              {% if subitem.hotspot1 or subitem.hotspot2 or subitem.hotspot3 %}
+                                <div class="hotspot-container">
+                                  {% if subitem.hotspot1 %}
+                                    {% if subitem.hotspot1Type == "link" %}
+                                      <a href="{{ subitem.hotspot1Link.href }}" {{ journal3.linkAttrs(subitem.hotspot1Link) }} aria-hidden="true" tabindex="-1" class="hotspot hotspot-1" data-toggle="tooltip-hover" data-html="true" data-tooltip-class="hotspot-tooltip hotspot-tooltip-1" title="{{ subitem.hotspot1Content }}"><span></span></a>
+                                    {% elseif subitem.hotspot1Type == "product" %}
+                                      <a role="button" aria-hidden="true" tabindex="-1" class="hotspot hotspot-1" data-toggle="tooltip-hover" data-html="true" data-tooltip-class="hotspot-tooltip hotspot-tooltip-1" title="{{ subitem.hotspot1Content }}" {% if subitem.hotspot1Product %}onclick="quickview('{{ subitem.hotspot1Product }}')"{% endif %}><span></span></a>
+                                    {% endif %}
+                                  {% endif %}
+                                  {% if subitem.hotspot2 %}
+                                    {% if subitem.hotspot2Type == "link" %}
+                                      <a href="{{ subitem.hotspot2Link.href }}" {{ journal3.linkAttrs(subitem.hotspot2Link) }} aria-hidden="true" tabindex="-1" class="hotspot hotspot-2" data-toggle="tooltip-click" data-html="true" data-tooltip-class="hotspot-tooltip hotspot-tooltip-1" title="{{ subitem.hotspot2Content }}"><span></span></a>
+                                    {% elseif subitem.hotspot2Type == "product" %}
+                                      <a role="button" aria-hidden="true" tabindex="-1" class="hotspot hotspot-2" data-toggle="tooltip-hover" data-tooltip-class="hotspot-tooltip hotspot-tooltip-2" data-html="true" title="{{ subitem.hotspot2Content }}" {% if subitem.hotspot2Product %}onclick="quickview('{{ subitem.hotspot2Product }}')"{% endif %}><span></span></a>
+                                    {% endif %}
+                                  {% endif %}
+                                  {% if subitem.hotspot3 %}
+                                    {% if subitem.hotspot3Type == "link" %}
+                                      <a href="{{ subitem.hotspot3Link.href }}" {{ journal3.linkAttrs(subitem.hotspot3Link) }} aria-hidden="true" tabindex="-1" class="hotspot hotspot-3" data-toggle="tooltip-hover" data-html="true" data-tooltip-class="hotspot-tooltip hotspot-tooltip-1" title="{{ subitem.hotspot3Content }}"><span></span></a>
+                                    {% elseif subitem.hotspot3Type == "product" %}
+                                      <a role="button" aria-hidden="true" tabindex="-1" class="hotspot hotspot-3" {% if subitem.hotspot3Product %}onclick="quickview('{{ subitem.hotspot3Product }}')"{% endif %} data-toggle="tooltip-hover" data-html="true" data-tooltip-class="hotspot-tooltip hotspot-tooltip-3" title="{{ subitem.hotspot3Content }}"><span></span></a>
+                                    {% endif %}
+                                  {% endif %}
+                                </div>
+                              {% endif %}
+                            </figure>
+                          {% elseif subitem.type == 'video' %}
+                            <div class="{{ journal3.classes(subitem.classes) }}" {% if subitem.layerParallaxOffsetX %}data-swiper-parallax-x="{{ subitem.layerParallaxOffsetX }}"{% endif %} {% if subitem.layerParallaxOffsetY %}data-swiper-parallax-y="{{ subitem.layerParallaxOffsetY }}"{% endif %} {% if subitem.layerParallaxOpacity %}data-swiper-parallax-opacity="{{ subitem.layerParallaxOpacity }}"{% endif %} {% if subitem.layerParallaxScale %}data-swiper-parallax-scale="{{ subitem.layerParallaxScale }}"{% endif %} {% if subitem.layerParallaxDuration %}data-swiper-parallax-duration="{{ subitem.layerParallaxDuration }}"{% endif %}>
+                              {% if subitem.videoType == 'html5' %}
+                                <video class="lazyload" autoplay playsinline muted controls data-src="{{ subitem.videoSrc }}"></video>
+                              {% elseif subitem.videoType == 'youtube' %}
+                                <iframe class="lazyload" src="https://www.youtube.com/embed/{{ subitem.videoSrc }}?hd=1&wmode=opaque&controls=1&showinfo=0&autoplay=1&mute=1"></iframe>
+                              {% elseif subitem.videoType == 'vimeo' %}
+                                <iframe class="lazyload" data-src="https://player.vimeo.com/video/{{ subitem.videoSrc }}?autoplay=1&muted=1"></iframe>
+                              {% endif %}
+                            </div>
+                          {% elseif subitem.type == 'icon' %}
+                            <div class="{{ journal3.classes(subitem.classes) }}" {% if subitem.layerParallaxOffsetX %}data-swiper-parallax-x="{{ subitem.layerParallaxOffsetX }}"{% endif %} {% if subitem.layerParallaxOffsetY %}data-swiper-parallax-y="{{ subitem.layerParallaxOffsetY }}"{% endif %} {% if subitem.layerParallaxOpacity %}data-swiper-parallax-opacity="{{ subitem.layerParallaxOpacity }}"{% endif %} {% if subitem.layerParallaxScale %}data-swiper-parallax-scale="{{ subitem.layerParallaxScale }}"{% endif %} {% if subitem.layerParallaxDuration %}data-swiper-parallax-duration="{{ subitem.layerParallaxDuration }}"{% endif %}>
+                              <div class="can-rotate">
+                                <span class="has-icon"></span>
+
+                                {% if subitem.shapeType == 'icon' %}
+                                {% endif %}
+                                {#                        {% if subitem.iconSVGCode and subitem.shapeType == 'svg' %} #}
+                                {#                          <span class="has-svg">{{ subitem.iconSVGCode }}</span> #}
+                                {#                        {% endif %} #}
+                                {% if subitem.iconText %}
+                                  <span class="has-text">{{ subitem.iconText }}</span>
+                                {% endif %}
+                              </div>
+                            </div>
+                          {% endif %}
+                        {% endfor %}
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+                {% for subitem in item['items_absolute'] %}
+                  {% if subitem.type == 'icon' %}
+                    <div class="{{ journal3.classes(subitem.classes) }}" {% if subitem.layerParallaxOffsetX %}data-swiper-parallax-x="{{ subitem.layerParallaxOffsetX }}"{% endif %} {% if subitem.layerParallaxOffsetY %}data-swiper-parallax-y="{{ subitem.layerParallaxOffsetY }}"{% endif %} {% if subitem.layerParallaxOpacity %}data-swiper-parallax-opacity="{{ subitem.layerParallaxOpacity }}"{% endif %} {% if subitem.layerParallaxScale %}data-swiper-parallax-scale="{{ subitem.layerParallaxScale }}"{% endif %} {% if subitem.layerParallaxDuration %}data-swiper-parallax-duration="{{ subitem.layerParallaxDuration }}"{% endif %}>
+                      <div class="can-rotate">
+                        <span class="has-icon"></span>
+
+                        {% if subitem.shapeType == 'icon' %}
+                        {% endif %}
+                        {#                        {% if subitem.iconSVGCode and subitem.shapeType == 'svg' %} #}
+                        {#                          <span class="has-svg">{{ subitem.iconSVGCode }}</span> #}
+                        {#                        {% endif %} #}
+                        {% if subitem.iconText %}
+                          <span class="has-text">{{ subitem.iconText }}</span>
+                        {% endif %}
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      {% if staticText or staticText2 %}
+        <div class="static-text-wrapper">
+          {% if staticText and staticTextLink.href %}
+            <a href="{{ staticTextLink.href }}" class="slider-static-text static-text-1"><span>{{ staticText }}</span></a>
+          {% elseif staticText %}
+            <div class="slider-static-text static-text-1"><span>{{ staticText }}</span></div>
+          {% endif %}
+          {% if static2Text and static2TextLink.href %}
+            <a href="{{ static2TextLink.href }}" class="slider-static-text static-text-2"><span>{{ static2Text }}</span></a>
+          {% elseif static2Text %}
+            <div class="slider-static-text static-text-2"><span>{{ static2Text }}</span></div>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+    {% if buttonsStatus %}
+      <div class="swiper-buttons slider-navigation">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    {% endif %}
+    {% if pagination != 'none' %}
+      <div class="swiper-pagination-wrapper">
+        <div class="swiper-pagination {% if pagination == 'bullets' and bulletsType == 'dots' %}swiper-pagination-dots{% endif %}"></div>
+      </div>
+    {% endif %}
+    {% if autoplay and timerPlacement == 'slider' %}
+      <div class="slider-timer">
+        <div class="swiper-timeline"></div>
+      </div>
+    {% endif %}
+    {% if scrollbar %}
+      <div class="swiper-scrollbar"></div>
+    {% endif %}
+  </div>
+  {% if thumbnails %}
+    <div class="slider-thumbs">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          {% for item in items %}
+            <div class="{{ journal3.classes(item.thumb_classes) }} {% if loop.first %}swiper-slide-active{% endif %}" data-index="{{ loop.index0 }}">
+              {% if lazyLoad %}
+                <img class="lazyload" src="{{ lazyload_thumb_placeholder }}" data-srcset="{{ item.thumb }} 1x, {{ item.thumb2x }} 2x" width="{{ thumbnailsDimensions.width }}" height="{{ thumbnailsDimensions.height }}" alt="{{ item.alt }}" title="{{ item.alt }}"/>
+              {% else %}
+                <img src="{{ item.thumb }}" srcset="{{ item.thumb }} 1x, {{ item.thumb2x }} 2x" width="{{ thumbnailsDimensions.width }}" height="{{ thumbnailsDimensions.height }}" alt="{{ item.alt }}" title="{{ item.alt }}"/>
+              {% endif %}
+              <div class="thumb-text">{{ item.thumbText }}</div>
+              {% if autoplay and timerPlacement == 'thumbs' %}
+                <div class="slider-timer">
+                  <div class="swiper-timeline"></div>
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>

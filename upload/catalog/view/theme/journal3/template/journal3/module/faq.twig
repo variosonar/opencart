@@ -1,0 +1,37 @@
+<div class="{{ journal3.classes(classes) }}">
+  <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+  {% if title %}
+    <h3 class="title module-title">{{ title }}</h3>
+  {% endif %}
+  <div class="module-body">
+    <div class="panel-group" id="{{ id }}-collapse">
+      {% for item in items %}
+        <div class="{{ journal3.classes(item.classes) }}">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a href="#{{ id }}-collapse-{{ loop.index }}" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#{{ id }}-collapse" aria-expanded="false">
+                {{ item.title }}
+                <i class="fa fa-caret-down"></i>
+              </a>
+            </h4>
+          </div>
+          <div class="{{ journal3.classes(item.panel_classes) }}" id="{{ id }}-collapse-{{ loop.index }}">
+            <div class="panel-body">
+              <div class="block-body expand-block">
+                {% if item.has_icon %}
+                <div class="block-header"><em class="icon icon-block"></em></div>
+                {% endif %}
+                <div class="block-wrapper">
+                  <div class="block-content">
+                    {{ item.content }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  {{ faq_schema }}
+</div>

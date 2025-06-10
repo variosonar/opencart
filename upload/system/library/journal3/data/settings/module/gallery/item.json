@@ -1,0 +1,140 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Gallery Item"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "title": {
+    "type": "InputLang",
+    "php": true,
+    "value": "Title",
+    "selector":".module-gallery-%s .module-item-%s > a::before",
+    "property": "content:'%s'"
+  },
+  "icon": {
+    "type": "Icon",
+    "selector": "div.module-gallery-%s .module-body div.module-item-%s > a::after"
+  },
+
+  "itemShadow": {
+    "type": "Shadow",
+    "selector": ".module-gallery-%s .module-body div.module-item-%s > a"
+  },
+  "itemShadowHover": {
+    "type": "Shadow",
+    "selector": ".module-gallery-%s .module-body div.module-item-%s > a"
+  },
+  "itemOffset": {
+    "type": "InputPair",
+    "selector": ".module-gallery-%s .module-item-%s",
+    "properties": {
+      "first": "--item-offset-x: %s%",
+      "second": "--item-offset-y: %s%"
+    },
+    "value": {
+      "first": "",
+      "second": ""
+    }
+  },
+  "iconAlways": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        "div.module-gallery-%s .module-body div.module-item-%s > a::after": "display: flex; opacity: 1; transform: scale(1);"
+      },
+      "false": {
+        "div.module-gallery-%s .module-body div.module-item-%s > a::after": "display: var(--display); opacity: var(--opacity); transform: scale(var(--scale));"
+      }
+    }
+  },
+  "ImageShapeClipPath": {
+    "type": "Text",
+    "value": "",
+    "rules": {
+      "@": {
+        "div.module-gallery-%s div.module-item-%s > a": "%s"
+      }
+    }
+  },
+  "grayscale": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "none": {
+        "div.module-gallery-%s div.module-item-%s > a img": "filter: grayscale(0)"
+      },
+      "always": {
+        "div.module-gallery-%s div.module-item-%s > a img": "filter: grayscale(1)"
+      },
+      "hover": {
+        "div.module-gallery-%s div.module-item-%s > a img": "filter: grayscale(1)",
+        "div.module-gallery-%s div.module-item-%s > a:hover img": "filter: grayscale(0)"
+      }
+    }
+  },
+  "iconPosition": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "tl": {
+        "div.module-gallery-%s .module-body div.module-item-%s > a::after": "align-items:flex-start; justify-content: flex-start;"
+      },
+      "tc": {
+        "div.module-gallery-%s .module-body div.module-item-%s > a::after": "align-items:flex-start; justify-content: center;"
+      },
+      "tr": {
+        "div.module-gallery-%s .module-body div.module-item-%s > a::after": "align-items:flex-start; justify-content: flex-end;"
+      },
+      "c": {
+        "div.module-gallery-%s .module-body div.module-item-%s > a::after": "align-items:center; justify-content: center;"
+      },
+      "bl": {
+        "div.module-gallery-%s .module-body div.module-item-%s > a::after": "align-items:flex-end; justify-content: flex-start;"
+      },
+      "bc": {
+        "div.module-gallery-%s .module-body div.module-item-%s > a::after": "align-items:flex-end; justify-content: center;"
+      },
+      "br": {
+        "div.module-gallery-%s .module-body div.module-item-%s > a::after": "align-items:flex-end; justify-content: flex-end;"
+      }
+    }
+  },
+  "type": {
+    "type": "Radio",
+    "value": "image",
+    "php": true
+  },
+  "image": {
+    "type": "ImageLang"
+  },
+  "videoType": {
+    "type": "Radio",
+    "value": "html5",
+    "php": true
+  },
+  "videoHtml5Url": {
+    "type": "Input"
+  },
+  "videoYoutubeUrl": {
+    "type": "Input"
+  },
+  "videoVimeoUrl": {
+    "type": "Input"
+  },
+  "videoImage": {
+    "type": "Image"
+  },
+  "link": {
+    "type": "Link",
+    "php": true
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

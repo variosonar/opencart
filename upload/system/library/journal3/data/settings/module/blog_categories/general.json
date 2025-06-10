@@ -1,0 +1,99 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Blog Categories"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "schedule": {
+    "type": "Range",
+    "php": true
+  },
+  "title": {
+    "type": "InputLang",
+    "php": true
+  },
+  "linkSpacing": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".module-blog_categories-%s a + a",
+    "property": "margin-top: %spx"
+  },
+  "moduleTitle": {
+    "type": "Variable",
+    "variable": "title",
+    "selector_prefix": ".module-blog_categories-%s .module-title"
+  },
+  "linkPadding": {
+    "type": "Padding",
+    "selector": ".module-blog_categories-%s a"
+  },
+  "linkBackground": {
+    "type": "Background",
+    "selector": ".module-blog_categories-%s a"
+  },
+  "linkBackgroundHover": {
+    "type": "Background",
+    "selector": ".module-blog_categories-%s a:hover"
+  },
+  "linkFont": {
+    "type": "Font",
+    "selector": ".module-blog_categories-%s a span"
+  },
+  "linkFontHover": {
+    "type": "Font",
+    "selector": ".module-blog_categories-%s a:hover span"
+  },
+  "linkIcon": {
+    "type": "Icon",
+    "selector": ".module-blog_categories-%s a::before"
+  },
+  "linkIconHover": {
+    "type": "Color",
+    "selector": ".module-blog_categories-%s a:hover::before",
+    "property": "color"
+  },
+  "linkDivider": {
+    "type": "Divider",
+    "selector": ".module-blog_categories-%s a + a"
+  },
+  "linkTruncate": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".module-blog_categories-%s span": "white-space: nowrap; overflow: hidden; text-overflow: ellipsis"
+      },
+      "false": {
+        ".module-blog_categories-%s span": "white-space: normal; overflow: initial; text-overflow: initial"
+      }
+    }
+  },
+  "modulePadding": {
+    "type": "Padding",
+    "selector": ".module-blog_categories-%s .module-body"
+  },
+  "moduleBackground": {
+    "type": "Background",
+    "selector": ".module-blog_categories-%s .module-body"
+  },
+  "moduleBorder": {
+    "type": "Border",
+    "selector": ".module-blog_categories-%s .module-body"
+  },
+  "moduleShadow": {
+    "type": "Shadow",
+    "selector": ".module-blog_categories-%s .module-body"
+  },
+  "moduleBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-blog_categories-%s .module-body"
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

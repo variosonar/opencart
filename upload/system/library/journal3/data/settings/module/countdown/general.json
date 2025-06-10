@@ -1,0 +1,287 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Countdown Module"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "schedule": {
+    "type": "Range",
+    "php": true
+  },
+  "date": {
+    "type": "Input",
+    "value": ""
+  },
+  "countdownStyle": {
+    "type": "Variable",
+    "variable": "countdown",
+    "selector_prefix": ".module-countdown-%s"
+  },
+  "countdownFont": {
+    "type": "Font",
+    "selector": "div.module-countdown-%s .countdown > div"
+  },
+  "countdownFontDays": {
+    "type": "Font",
+    "selector": "div.module-countdown-%s .countdown > div > span"
+  },
+  "countdownSpacing": {
+    "type": "Margin",
+    "selector": "div.module-countdown-%s .countdown > div + div"
+  },
+  "countdownItemBackground": {
+    "type": "Background",
+    "selector": "div.module-countdown-%s .countdown > div"
+  },
+  "countdownItemBorderRadius": {
+    "type": "BorderRadius",
+    "selector": "div.module-countdown-%s .countdown > div"
+  },
+  "countdownItemSize": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "rules": {
+      "@": {
+        "div.module-countdown-%s .countdown > div": "--custom-item-size: %s; aspect-ratio: 1"
+      }
+    }
+  },
+  "countdownPosition": {
+    "type": "Radio",
+    "selector": ".module-countdown-%s .countdown",
+    "value": "initial",
+    "property": "order: %s"
+  },
+  "countdownItemFill": {
+    "type": "Radio",
+    "value": "fill",
+    "rules": {
+      "fill": {
+        ".module-countdown-%s > .module-body > .countdown > div": "width: calc(25% - var(--element-margin-inline-start, 0px));"
+      },
+      "auto": {
+        ".module-countdown-%s > .module-body > .countdown > div": "width: var(--custom-item-size, auto);"
+      }
+    }
+  },
+  "countdownAlign": {
+    "type": "Radio",
+    "value": "flex-start",
+    "rules": {
+      "flex-start": {
+        ".module-countdown-%s > .module-body > .countdown": "justify-content: flex-start;",
+        ".module-countdown-%s .countdown-text": "margin-inline: 0 auto",
+        ".module-countdown-%s > .module-body .module-text::before": "align-self: %s",
+        ".module-countdown-%s > .module-body .module-text": "align-items: %s; text-align: start"
+      },
+      "center": {
+        ".module-countdown-%s > .module-body > .countdown": "justify-content: center;",
+        ".module-countdown-%s .countdown-text": "margin-inline: auto",
+        ".module-countdown-%s > .module-body .module-text::before": "align-self: %s",
+        ".module-countdown-%s > .module-body .module-text": "align-items: %s; text-align: center"
+      },
+      "flex-end": {
+        ".module-countdown-%s > .module-body > .countdown": "justify-content: flex-end;",
+        ".module-countdown-%s .countdown-text": "margin-inline: auto 0",
+        ".module-countdown-%s > .module-body .module-text::before": "align-self: %s",
+        ".module-countdown-%s > .module-body .module-text": "align-items: %s; text-align: end"
+      }
+    }
+  },
+  "Font": {
+    "type": "Font",
+    "selector": ".countdown"
+  },
+  "Days": {
+    "type": "Font",
+    "selector": ".countdown div span"
+  },
+  "title": {
+    "type": "InputLang",
+    "php": true
+  },
+  "moduleTitle": {
+    "type": "Variable",
+    "variable": "title",
+    "selector_prefix": ".module-countdown-%s .module-text > div > .module-title"
+  },
+  "titleFont": {
+    "type": "Font",
+    "selector": "div.module-countdown-%s .module-text > div > .module-title",
+    "important": true
+  },
+  "titleMargin": {
+    "type": "Margin",
+    "selector": "div.module-countdown-%s .module-text > div > .module-title",
+    "important": true
+  },
+  "titleDivider": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        "div.module-countdown-%s .title.module-title::after": "display: block"
+      },
+      "false": {
+        "div.module-countdown-%s .title.module-title::after": "display: none"
+      }
+    }
+  },
+  "titleAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        "div.module-countdown-%s .module-text": "text-align:left",
+        "div.module-countdown-%s .module-text > div > .title.module-title::after": "margin-inline-start:0; margin-inline-end:auto; transform: none"
+      },
+      "center": {
+        "div.module-countdown-%s .module-text": "text-align:center",
+        "div.module-countdown-%s .module-text > div > .title.module-title::after": "left: 50%; right:initial; transform: translate3d(-50%,0,0);"
+      },
+      "right": {
+        "div.module-countdown-%s .module-text": "text-align:right",
+        "div.module-countdown-%s .module-text > div > .title.module-title::after": "margin-inline-start:auto; margin-inline-end:0; transform:none"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        "div.module-countdown-%s .module-text": "text-align:left",
+        "div.module-countdown-%s .module-text > div > .title.module-title::after": "margin-inline-start:auto; margin-inline-end:0; transform: none"
+      },
+      "center": {
+        "div.module-countdown-%s .module-text": "text-align:center",
+        "div.module-countdown-%s .module-text > div > .title.module-title::after": "left: 50%; right:initial; transform: translate3d(-50%,0,0);"
+      },
+      "right": {
+        "div.module-countdown-%s .module-text": "text-align:right",
+        "div.module-countdown-%s .module-text > div > .title.module-title::after": "margin-inline-start:0; margin-inline-end:auto; transform:none"
+      }
+    }
+  },
+  "iconAlign": {
+    "type": "",
+    "value": "",
+    "rules": {
+      "side": {
+        ".module-countdown-%s > .module-body .module-text::before": "margin-inline-end: 12px; margin-bottom: 0",
+        ".module-countdown-%s > .module-body .module-text": "flex-direction: row"
+      },
+      "top": {
+        ".module-countdown-%s > .module-body .module-text::before": "margin-inline-end: 0; margin-bottom: 12px",
+        ".module-countdown-%s > .module-body .module-text": "flex-direction: column"
+      }
+    }
+  },
+  "icon": {
+    "type": "Icon",
+    "selector": ".module-countdown-%s > .module-body .module-text::before"
+  },
+  "iconBackground": {
+    "type": "Background",
+    "selector": ".module-countdown-%s > .module-body .module-text::before"
+  },
+  "iconMargin": {
+    "type": "Margin",
+    "selector": ".module-countdown-%s > .module-body .module-text::before"
+  },
+  "iconPadding": {
+    "type": "Padding",
+    "selector": ".module-countdown-%s > .module-body .module-text::before"
+  },
+  "iconBorder": {
+    "type": "Border",
+    "selector": ".module-countdown-%s > .module-body .module-text::before"
+  },
+  "iconBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-countdown-%s > .module-body .module-text::before"
+  },
+  "text": {
+    "type": "InputLang",
+    "php": true
+  },
+  "countdownTextStyles": {
+    "include": "common",
+    "selector_prefix": ".module-countdown-%s > .module-body .module-text"
+  },
+  "countdownModuleStyles": {
+    "include": "common",
+    "selector_prefix": ".module-countdown-%s"
+  },
+  "moduleMaxWidth": {
+    "type": "Radio",
+    "value": "100%",
+    "selector": ".module-countdown-%s",
+    "property": "width: %s;"
+  },
+  "textMinHeight": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".module-countdown-%s > .module-body",
+    "property": "min-height: %spx"
+  },
+  "textMaxWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".module-countdown-%s .countdown-text",
+    "property": "max-width: %spx"
+  },
+  "countdownTextGap": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "selector": ".module-countdown-%s",
+    "property": "--gap: %s"
+  },
+  "countdownTextSplit": {
+    "type": "InputPair",
+    "selector": ".module-countdown-%s",
+    "properties": {
+      "first": "--text-max-width: %s%",
+      "second": "--text-min-width: %spx"
+    }
+  },
+  "productsFaderColor": {
+    "type": "Color",
+    "property": "--fader-color: %s",
+    "selector": ".module-countdown-%s .module-products .auto-grid .auto-grid-items::before, .module-countdown-%s .module-products .auto-grid .auto-grid-items::after"
+  },
+  "productsBackground": {
+    "type": "Background",
+    "selector": ".module-countdown-%s .module-products"
+  },
+  "productsMargin": {
+    "type": "Margin",
+    "selector": ".module-countdown-%s .module-products"
+  },
+  "productsPadding": {
+    "type": "Padding",
+    "selector": ".module-countdown-%s .module-products"
+  },
+  "productsBorder": {
+    "type": "Border",
+    "selector": ".module-countdown-%s .module-products"
+  },
+  "productsBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-countdown-%s .module-products"
+  },
+  "productsShadow": {
+    "type": "Shadow",
+    "selector": ".module-countdown-%s .module-products"
+  },
+  "productsModule": {
+    "type": "Module",
+    "php": true
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

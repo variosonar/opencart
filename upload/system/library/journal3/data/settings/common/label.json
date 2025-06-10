@@ -1,0 +1,87 @@
+{
+  "LabelFont": {
+    "type": "Font",
+    "selector":"strong",
+    "value": {
+      "color": "rgba(255,255,255)"
+    }
+  },
+  "LabelBackground": {
+    "type": "Background",
+    "selector":"strong",
+    "value": {
+      "background-size":"contain",
+      "background-repeat":"no-repeat",
+      "background-color": "rgba(0,0,0,.85)"
+    }
+  },
+  "LabelBorder": {
+    "type": "Border",
+    "selector":"strong"
+  },
+  "LabelBorderRadius": {
+    "type": "BorderRadius",
+    "selector":"strong"
+  },
+  "LabelPadding": {
+    "type": "Padding",
+    "selector":"strong, strong > a"
+  },
+  "LabelMargin": {
+    "type": "Margin",
+    "selector": "&.product-label"
+  },
+  "LabelIcon": {
+    "type": "Icon",
+    "selector": "&.product-label strong::before"
+  },
+  "LabelShadow": {
+    "type": "Shadow",
+    "selector":"strong"
+  },
+  "LabelSize": {
+    "type": "InputPair",
+    "selector": "&.product-label-default strong",
+    "properties": {
+      "first": "min-width:%spx",
+      "second": "min-height:%spx"
+    }
+  },
+  "LinkFont": {
+    "type": "Font",
+    "selector":"strong a[href]"
+  },
+  "LinkFontHover": {
+    "type": "Font",
+    "selector":"strong:hover a[href]"
+  },
+  "LinkFontActive": {
+    "type": "Color",
+    "property": "color",
+    "selector":"strong:active a[href]"
+  },
+  "LinkBackground": {
+    "type": "Background",
+    "selector":"strong a[href]"
+  },
+  "LinkBackgroundHover": {
+    "type": "Background",
+    "selector":"strong:hover a[href]"
+  },
+  "LinkBackgroundActive": {
+    "type": "Background",
+    "selector":"strong:active a[href]"
+  },
+  "Scale": {
+    "type": "InputPair",
+    "selector": "strong",
+    "value": {
+      "first": "",
+      "second": ""
+    },
+    "properties": {
+      "first": "--scale-hover: %s;",
+      "second": "--scale-active: %s"
+    }
+  }
+}

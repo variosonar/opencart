@@ -1,0 +1,65 @@
+{% macro renderBanners(context) %}
+  {% set journal3 = context.journal3 %}
+  {% set index = 0 %}
+  {% for item in context.items %}
+    <div class="{{ journal3.classes(item.classes) }}">
+      <a {% if item.link.href %}href="{{ item.link.href }}"{% endif %} {{ journal3.linkAttrs(item.link) }}>
+        {% if journal3.get('performanceLazyLoadImagesStatus') and context.lazyLoad %}
+          <img src="{{ context.dummy_image }}" data-src="{{ item.image }}" {% if item.image2x %}data-srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" {% endif %} alt="{{ item.alt }}" width="{{ item.image_width }}" height="{{ item.image_height }}" class="lazyload"/>
+        {% else %}
+          <img src="{{ item.image }}" {% if item.image2x %}srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" {% endif %} alt="{{ item.alt }}" width="{{ item.image_width }}" height="{{ item.image_height }}"/>
+        {% endif %}
+        {% if item.title %}
+          <div class="banner-text banner-caption"><span>{{ item.title }}</span></div>
+        {% endif %}
+        {% if item.title2 %}
+          <div class="banner-text banner-caption-2"><span>{{ item.title2 }}</span></div>
+        {% endif %}
+      </a>
+      {% if item.title3 %}
+        <div class="banner-caption-3"><span>{{ item.title3 }}</span></div>
+      {% endif %}
+    </div>
+  {% endfor %}
+{% endmacro %}
+<div id="{{ id }}" class="{{ journal3.classes(classes) }}">
+  <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+  {% if title %}
+    <h3 class="title module-title">{{ title }}</h3>
+  {% endif %}
+  <div class="module-body">
+    {# grid #}
+    {% if gridType == 'ipr' and carousel %}
+      <div class="swiper" data-items-per-row='{{ itemsPerRow|json_encode(constant('JSON_FORCE_OBJECT')) }}' data-options='{{ carouselOptions|json_encode }}'>
+        <div class="swiper-container" {% if journal3.is_rtl %}dir="rtl"{% endif %}>
+          <div class="swiper-wrapper ipr-grid">
+            {{ _self.renderBanners(_context) }}
+          </div>
+        </div>
+        <div class="swiper-buttons">
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    {% else %}
+      <div class="banners-grid no-scroll {{ gridType }}-grid">
+        {% if gridType == 'auto' %}
+          <div class="auto-grid-items">
+            {{ _self.renderBanners(_context) }}
+          </div>
+          <div class="auto-carousel-bar auto-carousel-controls">
+            <div class="auto-carousel-thumb"></div>
+            <div class="auto-carousel-fill"></div>
+          </div>
+          <div class="auto-carousel-buttons auto-carousel-controls">
+            <div class="auto-carousel-prev"><span></span></div>
+            <div class="auto-carousel-next"><span></span></div>
+          </div>
+        {% else %}
+          {{ _self.renderBanners(_context) }}
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>

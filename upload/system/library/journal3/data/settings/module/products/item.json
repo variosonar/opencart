@@ -1,0 +1,71 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Section"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "title": {
+    "type": "InputLang",
+    "php": true
+  },
+  "tabType": {
+    "type": "Radio",
+    "value": "content",
+    "php": true
+  },
+  "link": {
+    "type": "Link",
+    "php": true
+  },
+  "filter": {
+    "type": "ProductFilter",
+    "php": true
+  },
+  "itemFont": {
+    "type": "Font",
+    "selector": "div.module-products-%s div.module-body ul.nav-tabs > li.tab-%s > a:not(.item-all-link)"
+  },
+  "itemFontHover": {
+    "type": "Font",
+    "selector": "div.module-products-%s div.module-body ul.nav-tabs > li.tab-%s:not(.active):hover > a:not(.item-all-link)"
+  },
+  "itemFontActive": {
+    "type": "Font",
+    "selector": "div.module-products-%s div.module-body ul.nav-tabs > li.tab-%s.active > a:not(.item-all-link)"
+  },
+  "icon": {
+    "type": "Icon",
+    "selector": ".module-products-%s .nav-tabs > .tab-%s > a::before"
+  },
+  "iconHover": {
+    "type": "Color",
+    "selector": ".module-products-%s .nav-tabs > .tab-%s:not(.active):hover > a::before",
+    "property": "color"
+  },
+  "iconRight": {
+    "type": "Icon",
+    "selector": ".module-products-%s .nav-tabs > .tab-%s > a::after"
+  },
+  "iconRightHover": {
+    "type": "Color",
+    "selector": ".module-products-%s .nav-tabs > .tab-%s:not(.active):hover > a::after",
+    "property": "color"
+  },
+  "iconActive": {
+    "type": "Icon",
+    "selector": ".module-products-%s .nav-tabs > .tab-%s.active > a::before"
+  },
+  "iconActiveHover": {
+    "type": "Color",
+    "selector": ".module-products-%s .nav-tabs > .tab-%s.active:hover > a::before",
+    "property": "color"
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

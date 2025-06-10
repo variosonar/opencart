@@ -1,0 +1,171 @@
+{
+  "headerTopBarHeight": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        "html": "--desktop-top-bar:%spx"
+      }
+    },
+    "php": true,
+    "js": true
+  },
+
+  "headerTopBarBG": {
+    "type": "Background",
+    "selector": ".top-bar",
+    "important": "true"
+  },
+
+  "topBarItemsFullHeight": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".top-bar .language-currency > div > div form .dropdown": "height: 100%;",
+        ".top-bar .top-menu > ul > li": "height: 100%;"
+      },
+      "false": {
+        ".top-bar .language-currency > div > div form .dropdown": "height: auto;",
+        ".top-bar .top-menu > ul > li": "height: auto;"
+      }
+    }
+  },
+
+
+  "topBarMenuStyle": {
+    "type": "Variable",
+    "variable": "menu",
+    "selector_prefix": ".top-bar"
+  },
+  "topBarDropdownStyle": {
+    "type": "Variable",
+    "variable": "dropdown",
+    "selector_prefix": ".top-bar .drop-menu"
+  },
+
+  "topBarDropdownAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        "div.top-bar .drop-menu > .j-dropdown": "left: calc(var(--menu-item-gap, 0px) / 2); right: auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "div.top-bar .drop-menu:first-child > .j-dropdown": "left: 0px; right: auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "div.top-bar .drop-menu:last-child > .j-dropdown": "left: calc(var(--menu-item-gap, 0px) / 2); right: auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "div.top-bar .drop-menu > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      },
+      "center": {
+        "div.top-bar .drop-menu > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "div.top-bar .drop-menu:first-child > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "div.top-bar .drop-menu:last-child > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "div.top-bar .drop-menu > .j-dropdown::before": "--triangle-right: 0px; --triangle-left: 0px"
+      },
+      "right": {
+        "div.top-bar .drop-menu > .j-dropdown": "right:calc(var(--menu-item-gap, 0px) / 2); left:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "div.top-bar .drop-menu:first-child > .j-dropdown": "right:calc(var(--menu-item-gap, 0px) / 2); left:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "div.top-bar .drop-menu:last-child > .j-dropdown": "right:0px; left:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "div.top-bar .drop-menu > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        "div.top-bar .drop-menu > .j-dropdown": "left: auto; right: calc(var(--menu-item-gap, 0px) / 2); transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "div.top-bar .drop-menu:first-child > .j-dropdown": "left: auto; right: 0px; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "div.top-bar .drop-menu:last-child > .j-dropdown": "left: auto; right: calc(var(--menu-item-gap, 0px) / 2); transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-start",
+        "div.top-bar .drop-menu > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      },
+      "center": {
+        "div.top-bar .drop-menu > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "div.top-bar .drop-menu:first-child > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "div.top-bar .drop-menu:last-child > .j-dropdown": "left:50%; right:auto; transform: translate3d(-50%, var(--dropdown-from), 0); align-items: center",
+        "div.top-bar .drop-menu > .j-dropdown::before": "--triangle-right: 0px; --triangle-left: 0px"
+      },
+      "right": {
+        "div.top-bar .drop-menu > .j-dropdown": "left:calc(var(--menu-item-gap, 0px) / 2); right:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "div.top-bar .drop-menu:first-child > .j-dropdown": "left:calc(var(--menu-item-gap, 0px) / 2); right:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "div.top-bar .drop-menu:last-child > .j-dropdown": "left:0px; right:auto; transform: translate3d(0, var(--dropdown-from), 0); align-items: flex-end",
+        "div.top-bar .drop-menu > .j-dropdown::before": "--triangle-right: var(--triangle-right-offset, 0px); --triangle-left: var(--triangle-left-offset, 0px)"
+      }
+    }
+  },
+
+  "topBarPadding": {
+    "type": "Padding",
+    "selector": ".header .top-bar"
+  },
+
+  "headerTopBarFullBG": {
+    "type": "Background",
+    "selector": ".top-bar::before"
+  },
+
+  "headerTopBarFullBorder": {
+    "type": "Border",
+    "selector": ".top-bar::before"
+  },
+  "headerTopBarFullBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".top-bar::before"
+  },
+  "headerTopBarFullShadow": {
+    "type": "Shadow",
+    "selector": "html:not(.header-sticky) .top-bar::before"
+  },
+
+  "topBarMaxWidth": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".header .top-bar": "--max-width: %spx !important"
+      }
+    }
+  },
+  "gutterSubtractTopBar": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".header .top-bar": "max-width: min(calc(100% - var(--content-gutter, 0px) * 2), calc(var(--max-width, var(--content-max-width, 100%)) - var(--content-gutter, 0px) * 2))",
+        ".header-slim-wrapper .top-bar": "width: 100%; margin-inline: auto"
+      },
+      "false": {
+        ".header .top-bar": "max-width: calc(var(--max-width, var(--content-max-width, 100%)) - var(--content-gutter, 0px) * 2)"
+
+      }
+    }
+  },
+  "topBarStatus": {
+    "type": "Toggle",
+    "php": true,
+    "js": true,
+    "rules": {
+      "false": {
+        ".desktop-header-active .top-bar": "display: none",
+        "html": "--desktop-top-bar:0px !important"
+      }
+    }
+  },
+
+  "menuFont": {
+    "type": "Font",
+    "selector": ".top-bar .j-menu > .menu-item > a, .top-bar .j-menu > .menu-item > a > .links-text, .top-bar .language-currency button"
+  },
+  "menuFontHover": {
+    "type": "Font",
+    "selector": ".top-bar .j-menu > .menu-item:hover > a, .top-bar .j-menu > .menu-item:hover > a > .links-text, .top-bar .j-menu > .menu-item.active > a > .links-text, .top-bar .j-menu > .menu-item.open > a > .links-text, .top-bar .language-currency button:hover"
+  },
+  "TopBarCountBadge": {
+    "type": "Variable",
+    "variable": "count_badge",
+    "selector_prefix": ".desktop-header-active .top-bar .j-menu > .menu-item"
+  },
+  "menuIcon": {
+    "type": "Color",
+    "property": "color",
+    "selector": ".top-bar .j-menu > .menu-item > a::before"
+  },
+  "menuIconHover": {
+    "type": "Color",
+    "property": "color",
+    "selector": ".top-bar .j-menu > .menu-item:hover > a::before"
+  }
+}

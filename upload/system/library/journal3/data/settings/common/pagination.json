@@ -1,0 +1,200 @@
+{
+  "Font": {
+    "type": "Font",
+    "selector": ".pagination-results"
+  },
+  "Background": {
+    "type": "Background",
+    "selector": ".pagination-results"
+  },
+  "Margin": {
+    "type": "Margin",
+    "selector": ".pagination-results"
+  },
+  "Padding": {
+    "type": "Padding",
+    "value": "10",
+    "selector": ".pagination-results"
+  },
+  "Border": {
+    "type": "Border",
+    "selector": ".pagination-results"
+  },
+  "BorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".pagination-results"
+  },
+  "Shadow": {
+    "type": "Shadow",
+    "selector": ".pagination-results"
+  },
+  "Results": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".pagination-results .text-right": "display: block"
+      },
+      "false": {
+        ".pagination-results .text-right": "display: none"
+      }
+    }
+  },
+  "LinksAlign": {
+    "type": "Radio",
+    "value": "apart",
+    "rules": {
+      "left": {
+        ".pagination-results": "justify-content: flex-start"
+      },
+      "center": {
+        ".pagination-results": "justify-content: center"
+      },
+      "right": {
+        ".pagination-results": "justify-content: flex-end"
+      },
+      "apart": {
+        ".pagination-results": "justify-content: space-between"
+      }
+    }
+  },
+  "LinksPosition": {
+    "type": "Radio",
+    "value": "row",
+    "rules": {
+      "row": {
+        ".pagination-results": "flex-direction: row"
+      },
+      "column": {
+        ".pagination-results": "flex-direction: column"
+      }
+    }
+  },
+
+  "Link": {
+    "type": "Font",
+    "selector": "ul.pagination > li > a, ul.pagination > li > span"
+  },
+
+  "LinkHover": {
+    "type": "Font",
+    "selector": "ul.pagination > li > a:hover",
+    "value": {
+      "text-decoration": "none"
+    }
+  },
+
+  "LinkActive": {
+    "type": "Font",
+    "selector": "ul.pagination > li.active > span, ul.pagination > li.active > span:hover, ul.pagination > li > a:focus"
+  },
+
+  "LinkBackground": {
+    "type": "Background",
+    "selector": "ul.pagination > li a, ul.pagination > li span"
+  },
+
+  "LinkPadding": {
+    "type": "Padding",
+    "selector": "ul.pagination > li > a, ul.pagination > li > span"
+  },
+
+  "LinkBackgroundHover": {
+    "type": "Background",
+    "selector": "ul.pagination > li > a:hover"
+  },
+
+  "LinkBackgroundActive": {
+    "type": "Background",
+    "selector": "ul.pagination > li.active > span, ul.pagination > li.active > span:hover, ul.pagination > li > a:focus"
+  },
+
+  "LinkShadow": {
+    "type": "Shadow",
+    "selector": "ul.pagination > li a"
+  },
+
+  "LinkShadowHover": {
+    "type": "Shadow",
+    "selector": "ul.pagination > li:hover a"
+  },
+
+  "LinkShadowActive": {
+    "type": "Shadow",
+    "selector": "ul.pagination > li.active a"
+  },
+
+  "LinkBorderRadius": {
+    "type": "BorderRadius",
+    "selector": "ul.pagination > li > *",
+    "important": "true"
+  },
+
+  "FirstIcon": {
+    "type": "Icon",
+    "selector": "ul.pagination > li:first-child a::before, ul.pagination > li:last-child a::before",
+    "value": {
+      "icon": {
+        "name": "skip_previous",
+        "code": "e045"
+      }
+    }
+  },
+
+  "PrevIconHover": {
+    "type": "Color",
+    "selector": "ul.pagination > li:first-child:hover a::before, ul.pagination > li:last-child:hover a::before",
+    "property": "color"
+  },
+
+  "NextIcon": {
+    "type": "Icon",
+    "selector": "ul.pagination > li .prev::before, ul.pagination > li .next::before",
+    "value": {
+      "icon": {
+        "name": "arrow_back",
+        "code": "e5c4"
+      }
+    }
+  },
+  "LastIconHover": {
+    "type": "Color",
+    "selector": "ul.pagination > li:hover .prev::before, ul.pagination > li:hover .next::before",
+    "property": "color"
+  },
+
+  "GroupBackground": {
+    "type": "Background",
+    "selector": "ul.pagination"
+  },
+
+  "GroupBorder": {
+    "type": "Border",
+    "selector": "ul.pagination"
+  },
+
+  "GroupBorderRadius": {
+    "type": "BorderRadius",
+    "selector": "ul.pagination"
+  },
+
+  "GroupShadow": {
+    "type": "Shadow",
+    "selector": "ul.pagination"
+  },
+
+  "GroupPadding": {
+    "type": "Padding",
+    "selector": "ul.pagination"
+  },
+
+  "Divider": {
+    "type": "Divider",
+    "selector": "ul.pagination > li::before"
+  },
+
+  "SpaceBetween": {
+    "type": "Input",
+    "property": "--pagination-gap: %spx",
+    "selector": ".pagination"
+  }
+}

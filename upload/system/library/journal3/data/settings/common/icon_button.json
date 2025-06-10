@@ -1,0 +1,58 @@
+{
+  "Icon": {
+    "type": "Icon",
+    "selector": ".auto-carousel-buttons span::before, .swiper-buttons > div::before, .scroll-top em::before, .lg-content .lg-icon::before"
+  },
+  "IconColorHover": {
+    "type": "Color",
+    "property": "color",
+    "selector": ".auto-carousel-buttons span:hover::before, .swiper-buttons > div:hover::before, .scroll-top em:hover::before, .lg-content .lg-icon:hover::before"
+  },
+  "IconColorActive": {
+    "type": "Color",
+    "property": "color",
+    "selector": ".auto-carousel-buttons span:active::before, .swiper-buttons > div:active::before, .scroll-top em:active::before, .lg-content .lg-icon:active::before"
+  },
+  "IconBackground": {
+    "type": "Background",
+    "selector": ".auto-carousel-buttons span, .swiper-buttons > div, .scroll-top em, .lg-content .lg-icon"
+  },
+  "IconBackgroundHover": {
+    "type": "Background",
+    "selector": ".auto-carousel-buttons span:hover, .swiper-buttons > div:hover, .scroll-top em:hover, .lg-content .lg-icon:hover"
+  },
+  "IconBackgroundActive": {
+    "type": "Background",
+    "selector": ".auto-carousel-buttons span:active, .swiper-buttons > div:active, .scroll-top em:active, .lg-content .lg-icon:active"
+  },
+  "IconBorder": {
+    "type": "Border",
+    "selector": ".auto-carousel-buttons span, .swiper-buttons > div, .scroll-top em, .lg-content .lg-icon"
+  },
+  "IconBorderHover": {
+    "type": "Color",
+    "property": "border-color",
+    "selector": ".auto-carousel-buttons span:hover, .swiper-buttons > div:hover, .scroll-top em:hover, .lg-content .lg-icon:hover"
+  },
+  "IconBorderActive": {
+    "type": "Color",
+    "property": "border-color",
+    "selector": ".auto-carousel-buttons span:active, .swiper-buttons > div:active, .scroll-top em:active, .lg-content .lg-icon:active"
+  },
+  "IconBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".auto-carousel-buttons span, .swiper-buttons > div, .scroll-top em, .lg-content .lg-icon"
+  },
+  "IconShadow": {
+    "type": "Shadow",
+    "selector": ".auto-carousel-buttons span, .swiper-buttons > div, .scroll-top em, .lg-content .lg-icon"
+  },
+  "IconShadowHover": {
+    "type": "Shadow",
+    "selector": ".auto-carousel-buttons span:hover, .swiper-buttons > div:hover, .scroll-top em:hover, .lg-content .lg-icon:hover"
+  },
+  "IconShadowActive": {
+    "type": "Shadow",
+    "selector": ".auto-carousel-buttons span:active, .swiper-buttons > div:active, .scroll-top em:active, .lg-content .lg-icon:active"
+  }
+}

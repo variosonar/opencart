@@ -1,0 +1,173 @@
+{
+  "header_logo_color_scheme": {
+    "type": "ColorScheme",
+    "php": true
+  },
+  "headerLogoWidth": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".desktop-header-active .header": "--desktop-logo-wrapper: %spx",
+        ".desktop-header-active .header .desktop-logo-wrapper": "min-width: %spx",
+        ".desktop-header-active .header-classic .mid-bar .desktop-logo-wrapper": "min-width: %spx"
+      }
+    }
+  },
+  "headerLogoMaxWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "--logo-max-width:%spx",
+    "selector": "#logo"
+  },
+  "headerLogoAlign": {
+    "type": "Radio",
+    "selector": ".header #logo a, .desktop-logo-wrapper",
+    "property": "justify-content",
+    "value": "flex-start"
+  },
+
+  "headerLogoPadding": {
+    "type": "Padding",
+    "selector": ".header #logo a"
+  },
+
+  "headerLogoBorder": {
+    "type": "Border",
+    "selector": ".header #logo a"
+  },
+
+  "headerLogoRadius": {
+    "type": "BorderRadius",
+    "selector": ".desktop-header-active .header #logo a"
+  },
+  "headerLogoBG": {
+    "type": "Background",
+    "selector": ".header #logo a, .header-slim-new #logo"
+  },
+
+  "headerLogoBGHover": {
+    "type": "Background",
+    "selector": ".header #logo a:hover"
+  },
+
+  "headerLogoOffset": {
+    "type": "InputPair",
+    "selector": ".header #logo img",
+    "properties": {
+      "first": "left: %spx",
+      "second": "top: %spx"
+    },
+    "rtlProperties": {
+      "first": "right: %spx",
+      "second": "top: %spx"
+    }
+  },
+  "slimLogoPosition": {
+    "type": "Radio",
+    "value": "inside",
+    "php": true
+  },
+
+  "headerLogoPosition": {
+    "type": "Radio",
+    "value": "side",
+    "rules": {
+      "left": {
+        ".desktop-header-active .header-classic .mid-bar .desktop-logo-wrapper": "order:0; position: relative; inset-inline: auto; transform: none;",
+        ".desktop-header-active .header-classic .mid-bar .desktop-search-wrapper": "order:2; flex-grow:1;",
+        ".desktop-header-active .header-classic .desktop-logo-wrapper":"width:auto",
+        ".desktop-header-active .header-classic .desktop-search-wrapper":"width:auto",
+        ".desktop-header-active .header-classic .classic-cart-wrapper":"width:auto; margin-inline-start: auto",
+        ".desktop-header-active header:not(.header-slim) .header-compact .mid-bar": "justify-content: flex-start",
+        ".desktop-header-active header:not(.header-slim) .header-compact .mid-bar .desktop-main-menu-wrapper": "max-width: none",
+        ".desktop-header-active header:not(.header-slim) .header-compact .mid-bar .desktop-logo-wrapper": "position: relative; left: 0; transform: translateX(0)",
+        ".desktop-header-active .header-mega .mid-bar .desktop-logo-wrapper": "position: relative; inset-inline: initial; transform: none;",
+        ".desktop-header-active .header-mega .mid-bar .secondary-menu": "flex-grow: 1;max-width: none"
+      },
+      "center": {
+        ".desktop-header-active .header-classic .mid-bar .desktop-logo-wrapper": "position: absolute; inset-inline: 50%; transform: translate3d(-50%,0,0);",
+        ".desktop-header-active .header-classic .mid-bar .desktop-search-wrapper": "order:1; flex-grow:0; margin:0",
+        ".desktop-header-active .header-classic .mid-bar .classic-cart-wrapper": "order:3",
+        ".desktop-header-active .header-classic .desktop-logo-wrapper":"width:33%",
+        ".desktop-header-active .header-classic .desktop-search-wrapper":"width:33%",
+        ".desktop-header-active .header-classic .classic-cart-wrapper":"width:33%; margin-inline-start: auto",
+        ".desktop-header-active header:not(.header-slim) .header-compact .mid-bar": "justify-content: space-between",
+        ".desktop-header-active header:not(.header-slim) .header-compact .mid-bar .desktop-main-menu-wrapper": "max-width: calc(50% - var(--desktop-logo-wrapper, 0px) / 2)",
+        ".desktop-header-active header:not(.header-slim) .header-compact .mid-bar .desktop-logo-wrapper": "position: absolute; inset-inline: 50%; transform: translate3d(-50%,0,0);",
+        ".desktop-header-active .header-mega .mid-bar .desktop-logo-wrapper": "position: absolute; inset-inline: 50%; transform: translate3d(-50%,0,0);",
+        ".desktop-header-active .header-mega .mid-bar .secondary-menu": "flex-grow: 0;max-width: calc(50% - var(--desktop-logo-wrapper, 0px) / 2)"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        ".desktop-header-active .header-classic .mid-bar .desktop-logo-wrapper": "order:0; position: relative; inset-inline: auto; transform: none;",
+        ".desktop-header-active .header-classic .mid-bar .desktop-search-wrapper": "order:2; flex-grow:1;",
+        ".desktop-header-active .header-classic .desktop-logo-wrapper":"width:auto",
+        ".desktop-header-active .header-classic .desktop-search-wrapper":"width:auto",
+        ".desktop-header-active .header-classic .classic-cart-wrapper":"width:auto; margin-inline-start: auto",
+        ".desktop-header-active header:not(.header-slim) .header-compact .mid-bar": "justify-content: flex-start",
+        ".desktop-header-active header:not(.header-slim) .header-compact .mid-bar .desktop-main-menu-wrapper": "max-width: none",
+        ".desktop-header-active header:not(.header-slim) .header-compact .mid-bar .desktop-logo-wrapper": "position: relative; left: 0; transform: none",
+        ".desktop-header-active .header-mega .mid-bar .desktop-logo-wrapper": "position: relative; inset-inline: initial; transform: none;",
+        ".desktop-header-active .header-mega .mid-bar .secondary-menu": "flex-grow: 1;max-width: none"
+      },
+      "center": {
+        ".desktop-header-active .header-classic .mid-bar .desktop-logo-wrapper": "position: absolute; inset-inline: 50%; transform: translate3d(50%,0,0);",
+        ".desktop-header-active .header-classic .mid-bar .desktop-search-wrapper": "order:1; flex-grow:0; margin:0",
+        ".desktop-header-active .header-classic .mid-bar .classic-cart-wrapper": "order:3",
+        ".desktop-header-active .header-classic .desktop-logo-wrapper":"width:33%",
+        ".desktop-header-active .header-classic .desktop-search-wrapper":"width:33%",
+        ".desktop-header-active .header-classic .classic-cart-wrapper":"width:33%; margin-inline-start: auto",
+        ".desktop-header-active header:not(.header-slim) .header-compact .mid-bar": "justify-content: space-between",
+        ".desktop-header-active header:not(.header-slim) .header-compact .mid-bar .desktop-main-menu-wrapper": "max-width: calc(50% - var(--desktop-logo-wrapper, 0px) / 2)",
+        ".desktop-header-active header:not(.header-slim) .header-compact .mid-bar .desktop-logo-wrapper": "position: absolute; inset-inline: 50%; transform: translate3d(50%,0,0);",
+        ".desktop-header-active .header-mega .mid-bar .desktop-logo-wrapper": "position: absolute; inset-inline: 50%; transform: translate3d(50%,0,0);",
+        ".desktop-header-active .header-mega .mid-bar .secondary-menu": "flex-grow: 0;max-width: calc(50% - var(--desktop-logo-wrapper, 0px) / 2)"
+      }
+    }
+  },
+
+  "Scale": {
+    "type": "InputPair",
+    "selector": "#logo a",
+    "properties": {
+      "first": "--scale-hover: %s",
+      "second": "--scale-active: %s"
+    },
+    "rules": {
+      "@": {
+        "#logo a:hover img": "transform: scale(var(--scale-hover));",
+        "#logo a:active img": "transform: scale(var(--scale-active, var(--scale-hover)));"
+      }
+    }
+  },
+
+  "desktopLogoType": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "default": {
+        ".desktop-header-active .header .header-logo": "display:block;",
+        ".desktop-header-active .header .header-logo-alternate": "display:none;"
+      },
+      "alternate": {
+        ".desktop-header-active .header .header-logo": "display:none;",
+        ".desktop-header-active .header .header-logo-alternate": "display:block;"
+      }
+    }
+  },
+  "desktopLogoTypeHome": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "default": {
+        ".desktop-header-active.route-common-home .header .header-logo": "display:block;",
+        ".desktop-header-active.route-common-home .header .header-logo-alternate": "display:none;"
+      },
+      "alternate": {
+        ".desktop-header-active.route-common-home .header .header-logo": "display:none;",
+        ".desktop-header-active.route-common-home .header .header-logo-alternate": "display:block;"
+      }
+    }
+  }
+}

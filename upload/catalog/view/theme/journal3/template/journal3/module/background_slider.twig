@@ -1,0 +1,22 @@
+<div class="{{ journal3.classes(classes) }}">
+  <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+  <div class="slider-wrapper">
+    <div class="swiper-container" {% if syncWith %}data-sync-with="{{ syncWith }}"{% endif %}>
+      <div class="swiper-wrapper" data-options='{{ options|json_encode(constant('JSON_FORCE_OBJECT')) }}'>
+        {% for item in items %}
+          <div class="{{ journal3.classes(item.classes) }}">
+            <div class="slide-content slide-content-{{ item.type }}">
+              {% if item.type == 'image' %}
+                {% if lazyLoad or not loop.first %}
+                  <img class="lazyload" src="{{ lazyload_placeholder }}" data-srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" width="{{ width }}" height="{{ height }}" alt="{{ item.alt }}" title="{{ item.alt }}"/>
+                {% else %}
+                  <img src="{{ item.image }}" srcset="{{ item.image }} 1x, {{ item.image2x }} 2x" width="{{ width }}" height="{{ height }}" alt="{{ item.alt }}" title="{{ item.alt }}"/>
+                {% endif %}
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

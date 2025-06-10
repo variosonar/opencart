@@ -1,0 +1,57 @@
+# Config and Htaccess Files
+/upload/.htaccess
+/upload/config.php
+/upload/adm/config.php
+
+# Install Files
+/upload/install.lock
+
+# Catalog JSON Files
+/upload/catalog/view/data/*
+!/upload/catalog/view/data/index.html
+
+# Catalog HTML Files
+/upload/catalog/view/html/*
+!/upload/catalog/view/html/index.html
+
+# Image Cache Files
+/upload/image/cache/*
+!/upload/image/cache/index.html
+
+# Backup Files
+/storage/backup/*
+!/storage/backup/index.html
+
+# System Cache Files
+/storage/cache/*
+!/storage/cache/index.html
+
+# Download Files
+/storage/download/*
+!/storage/download/index.html
+
+# Log Files
+/storage/logs/*
+!/storage/logs/index.html
+
+# Marketplace Files
+/storage/marketplace/*
+!/storage/marketplace/index.html
+
+# Session Files
+/storage/session/*
+!/storage/session/index.html
+
+# Upload Files
+/storage/upload/*
+!/storage/upload/index.html
+
+# CSS Files
+/upload/catalog/view/stylesheet/stylesheet.css
+
+# IDE Project files
+/upload/.idea/*
+/.idea/*
+/.DS_Store
+/.cache
+/.php-cs-fixer.cache

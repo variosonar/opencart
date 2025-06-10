@@ -1,0 +1,45 @@
+{
+  "Status": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        "> .j-dropdown:not(#cart-content)::before": "display: block; opacity: 1",
+        "> .j-dropdown > .mega-menu-content": "--triangle-size: 10px; --dropdown-triangle: calc(var(--triangle-size, 10px) + var(--triangle-top-distance, 0px))",
+        "> .j-dropdown > .mega-menu-content::before": "top: var(--triangle-size-overlay, 0px); height: calc(100% - var(--triangle-size-overlay, 0px));",
+        "> .tt-menu::before": "display: block; --dropdown-triangle: calc(var(--triangle-size, 10px) + var(--triangle-top-distance, 0px))",
+        "&#cart-content::before": "display: block"
+      },
+      "false": {
+        "> .j-dropdown:not(#cart-content)::before": "display: none; opacity: 0",
+        "> .j-dropdown > .mega-menu-content": "--dropdown-triangle: 0px; --triangle-size: 0px",
+        "> .j-dropdown > .mega-menu-content::before": "top: 0; height: 100%",
+        "> .tt-menu::before": "display: none; --dropdown-triangle: 0px",
+        "&#cart-content::before": "display: none"
+      }
+    }
+  },
+  "Color": {
+    "type": "Color",
+    "selector": "> .j-dropdown::before, > .tt-menu::before, &#cart-content::before",
+    "property": "border-bottom-color"
+  },
+  "Offset": {
+    "type": "InputPair",
+    "selector": "> .j-dropdown::before, > .tt-menu::before, &#cart-content::before",
+    "properties": {
+      "first": "--triangle-left-offset: %spx",
+      "second": "top: %spx"
+    },
+    "rtlProperties": {
+      "first": "--triangle-right-offset: %spx",
+      "second": "top: %spx"
+    }
+  },
+  "MarginNew": {
+    "type": "InputNumber",
+    "selector": "",
+    "property": "--triangle-top-distance:%spx",
+    "value": ""
+  }
+}

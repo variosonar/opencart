@@ -1,0 +1,442 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Title Module "
+  },
+  "status": {
+    "type": "Status"
+  },
+  "schedule": {
+    "type": "Range",
+    "php": true
+  },
+  "type": {
+    "type": "Radio",
+    "value": "custom",
+    "php": true
+  },
+  "title": {
+    "type": "InputLang",
+    "php": true
+  },
+  "label": {
+    "type": "InputLang",
+    "php": true
+  },
+  "subtitle": {
+    "type": "InputLang",
+    "php": true
+  },
+  "titleStyle": {
+    "type": "Variable",
+    "variable": "title",
+    "selector_prefix": ".module-title-%s .title-wrapper h3"
+  },
+  "MaxWidth": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        "div.module-title-%s.title-module .title-wrapper": "max-width:%spx"
+      }
+    }
+  },
+  "style": {
+    "type": "Variable",
+    "variable": "title_module",
+    "selector_prefix": ".module-title-%s"
+  },
+  "font": {
+    "type": "Font",
+    "selector": ".module-title-%s .title-wrapper h3"
+  },
+  "font2": {
+    "type": "Font",
+    "selector": ".module-title-%s .title-wrapper .subtitle"
+  },
+  "bg": {
+    "type": "Background",
+    "selector": "div.module-title-%s"
+  },
+  "pad": {
+    "type": "Padding",
+    "selector": "div.module-title-%s"
+  },
+  "mar": {
+    "type": "Margin",
+    "selector": "div.module-title-%s"
+  },
+  "Border": {
+    "type": "Border",
+    "selector": "div.module-title-%s"
+  },
+  "BorderRadius": {
+    "type": "BorderRadius",
+    "selector": "div.module-title-%s"
+  },
+  "Shadow": {
+    "type": "Shadow",
+    "selector": "div.module-title-%s"
+  },
+  "Outline": {
+    "type": "Outline",
+    "selector": "div.module-title-%s"
+  },
+  "Container": {
+    "include": "common",
+    "selector_prefix": "div.module-title-%s"
+  },
+  "accentTitle": {
+    "type": "InputLang",
+    "rules": {
+      "@": {
+        ".module-title-%s .title-main::before": "content:'%s'"
+      }
+    }
+  },
+  "accentTitleFont": {
+    "type": "Font",
+    "selector": ".module-title-%s .title-main::before"
+  },
+  "accentTitleMargin": {
+    "type": "Margin",
+    "selector": ".module-title-%s .title-main::before"
+  },
+  "accentTitleOffset": {
+    "type": "InputPair",
+    "selector": ".module-title-%s .title-main::before",
+    "properties": {
+      "first": "margin-inline-start: %spx",
+      "second": "margin-top: %spx"
+    }
+  },
+  "accentTitleOpacity": {
+    "type": "InputNumber",
+    "value": "",
+    "rules": {
+      "@": {
+        ".module-title-%s .title-main::before": "opacity:%s"
+      }
+    }
+  },
+  "VerticalGap": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "property": "margin-top: %s",
+    "selector": "div.module-title-%s .title-wrapper > div:not(:first-child):not(:empty), div.module-title-%s .title-wrapper > .title-divider"
+  },
+  "subtitleVisibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-title-%s .title-wrapper .subtitle": "display: inline-block"
+      },
+      "false": {
+        ".module-title-%s .title-wrapper .subtitle": "display: none"
+      }
+    }
+  },
+  "accentTitleVisibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-title-%s .title-main::before": "display: block"
+      },
+      "false": {
+        ".module-title-%s .title-main::before": "display: none"
+      }
+    }
+  },
+  "dividerVisibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-title-%s .title-divider": "display: block"
+      },
+      "false": {
+        ".module-title-%s .title-divider": "display: none"
+      }
+    }
+  },
+
+  "align": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        "div.module.title-module.module-title-%s": "align-self: flex-start !important",
+        "div.module-title-%s .title-wrapper": "text-align:start; align-self: flex-start",
+        "div.module-title-%s .title-main": "justify-content: flex-start; flex-direction: row",
+        "div.module-title-%s .title-wrapper .title-label": "margin-inline: 0 auto",
+        "div.module-title-%s .title-divider": "margin-inline: 0 auto",
+        "div.module-title-%s .subtitle": "margin-inline: 0 auto",
+        "div.module-title-%s .title-main::before": "text-align: start",
+        "div.module-title-%s .title-wrapper .title-buttons": "justify-content: start"
+      },
+      "center": {
+        "div.module.title-module.module-title-%s": "align-self: center !important",
+        "div.module-title-%s .title-wrapper": "text-align:center; align-self: center",
+        "div.module-title-%s .title-main": "justify-content: center; flex-direction: column",
+        "div.module-title-%s .title-wrapper .title-label": "margin-inline: auto",
+        "div.module-title-%s .title-divider": "margin-inline: auto",
+        "div.module-title-%s .subtitle": "margin-inline: auto",
+        "div.module-title-%s .title-main::before": "text-align: center",
+        "div.module-title-%s .title-wrapper .title-buttons": "justify-content: center"
+      },
+      "right": {
+        "div.module.title-module.module-title-%s": "align-self: flex-end !important",
+        "div.module-title-%s .title-main": "justify-content: flex-end; flex-direction: row",
+        "div.module-title-%s .title-wrapper": "text-align:end; align-self: flex-end",
+        "div.module-title-%s .title-wrapper .title-label": "margin-inline: auto 0",
+        "div.module-title-%s .title-divider": "margin-inline: auto 0",
+        "div.module-title-%s .subtitle": "margin-inline: auto 0",
+        "div.module-title-%s .title-main::before": "text-align: end",
+        "div.module-title-%s .title-wrapper .title-buttons": "justify-content: end"
+      }
+    }
+  },
+  "alignV": {
+    "type": "Radio",
+    "value": "top",
+    "rules": {
+      "top": {
+        ".module-title-%s": "justify-content: start"
+      },
+      "center": {
+        ".module-title-%s": "justify-content: center"
+      }
+    }
+  },
+  "ButtonsContainer": {
+    "include": "common",
+    "selector_prefix": ".module-title-%s div.title-wrapper > div:not(:first-child):not(:empty).title-buttons"
+  },
+  "inline_button_text": {
+    "type": "InputLang",
+    "value": "",
+    "php": true
+  },
+  "inline_button_link": {
+    "type": "Link",
+    "php": true
+  },
+  "inlineButtonStyle": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": ".module-title-%s .title-main .title-inline-btn&"
+  },
+  "inlineButtonIconLeft": {
+    "type": "Icon",
+    "selector": ".module-title-%s .title-main .title-inline-btn::before"
+  },
+  "inlineButtonIconLeftHover": {
+    "type": "Color",
+    "property": "color",
+    "selector": ".module-title-%s .title-main .title-inline-btn:hover::before"
+  },
+  "inlineButtonIconRight": {
+    "type": "Icon",
+    "selector": ".module-title-%s .title-main .title-inline-btn::after"
+  },
+  "inlineButtonIconRightHover": {
+    "type": "Color",
+    "property": "color",
+    "selector": ".module-title-%s .title-main .title-inline-btn:hover::after"
+  },
+  "inlineButtonFont": {
+    "type": "Font",
+    "selector": ".module-title-%s .title-main .title-inline-btn",
+    "important": true
+  },
+  "inlineButtonFontHover": {
+    "type": "Font",
+    "selector": ".module-title-%s .title-main .title-inline-btn",
+    "important": true
+  },
+  "inlineButtonPadding": {
+    "type": "Padding",
+    "selector": ".module-title-%s .title-main .title-inline-btn",
+    "important": true
+  },
+  "inlineButtonRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-title-%s .title-main .title-inline-btn",
+    "important": true
+  },
+  "inline_button_visibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-title-%s .title-main .title-inline-btn": "display: inline-flex"
+      },
+      "false": {
+        ".module-title-%s .title-main .title-inline-btn": "display: none"
+      }
+    }
+  },
+
+  "button_1_text": {
+    "type": "InputLang",
+    "value": "",
+    "php": true
+  },
+  "button_1_link": {
+    "type": "Link",
+    "php": true
+  },
+  "button_2_text": {
+    "type": "InputLang",
+    "value": "",
+    "php": true
+  },
+  "button_2_link": {
+    "type": "Link",
+    "php": true
+  },
+  "button1Style": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": ".module-title-%s .title-btn-1&"
+  },
+  "button1IconLeft": {
+    "type": "Icon",
+    "selector": ".module-title-%s .title-btn-1::before"
+  },
+  "button1IconLeftHover": {
+    "type": "Color",
+    "property": "color",
+    "selector": ".module-title-%s .title-btn-1:hover::before"
+  },
+  "button1IconRight": {
+    "type": "Icon",
+    "selector": ".module-title-%s .title-btn-1::after"
+  },
+  "button1IconRightHover": {
+    "type": "Color",
+    "property": "color",
+    "selector": ".module-title-%s .title-btn-1:hover::after"
+  },
+  "button1Font": {
+    "type": "Font",
+    "selector": ".module-title-%s .title-btn-1",
+    "important": true
+  },
+  "button1FontHover": {
+    "type": "Font",
+    "selector": ".module-title-%s .title-btn-1",
+    "important": true
+  },
+  "button1Padding": {
+    "type": "Padding",
+    "selector": ".module-title-%s .title-btn-1",
+    "important": true
+  },
+  "button1Radius": {
+    "type": "BorderRadius",
+    "selector": ".module-title-%s .title-btn-1",
+    "important": true
+  },
+  "button_1_visibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-title-%s .title-buttons .title-btn-1": "display: inline-flex"
+      },
+      "false": {
+        ".module-title-%s .title-buttons .title-btn-1": "display: none"
+      }
+    }
+  },
+  "button2Style": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": ".module-title-%s .title-btn-2&"
+  },
+  "button2IconLeft": {
+    "type": "Icon",
+    "selector": ".module-title-%s .title-btn-2::before"
+  },
+  "button2IconLeftHover": {
+    "type": "Color",
+    "property": "color",
+    "selector": ".module-title-%s .title-btn-2:hover::before"
+  },
+  "button2IconRight": {
+    "type": "Icon",
+    "selector": ".module-title-%s .title-btn-2::after"
+  },
+  "button2IconRightHover": {
+    "type": "Color",
+    "property": "color",
+    "selector": ".module-title-%s .title-btn-2:hover::after"
+  },
+  "button2Font": {
+    "type": "Font",
+    "selector": ".module-title-%s .title-btn-2",
+    "important": true
+  },
+  "button2FontHover": {
+    "type": "Font",
+    "selector": ".module-title-%s .title-btn-2",
+    "important": true
+  },
+  "button2Padding": {
+    "type": "Padding",
+    "selector": ".module-title-%s .title-btn-2",
+    "important": true
+  },
+  "button2Radius": {
+    "type": "BorderRadius",
+    "selector": ".module-title-%s .title-btn-2",
+    "important": true
+  },
+  "button_2_visibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".title-buttons .title-btn-2": "display: inline-flex"
+      },
+      "false": {
+        ".title-buttons .title-btn-2": "display: none"
+      }
+    }
+  },
+
+  "moduleBackground": {
+    "type": "Background",
+    "selector": ".module-title-%s .module-body"
+  },
+  "modulePadding": {
+    "type": "Padding",
+    "selector": ".module-title-%s .module-body"
+  },
+  "moduleMargin": {
+    "type": "Margin",
+    "selector": ".module-title-%s .module-body"
+  },
+  "moduleBorder": {
+    "type": "Border",
+    "selector": ".module-title-%s .module-body"
+  },
+  "moduleBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-title-%s .module-body"
+  },
+  "moduleShadow": {
+    "type": "Shadow",
+    "selector": ".module-title-%s .module-body"
+  },
+
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

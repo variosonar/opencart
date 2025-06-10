@@ -1,0 +1,116 @@
+{
+  "Font": {
+    "type": "Font",
+    "selector": ".countdown > div"
+  },
+  "Days": {
+    "type": "Font",
+    "selector": ".countdown > div > span"
+  },
+  "Background": {
+    "type": "Background",
+    "selector": ".countdown"
+  },
+  "Shadow": {
+    "type": "Shadow",
+    "selector": ".countdown"
+  },
+  "Border": {
+    "type": "Border",
+    "selector": ".countdown"
+  },
+  "Margin": {
+    "type": "Margin",
+    "selector": ".countdown"
+  },
+  "Padding": {
+    "type": "Padding",
+    "selector": ".countdown"
+  },
+  "Outline": {
+    "type": "Outline",
+    "selector": ".countdown"
+  },
+  "BorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".countdown"
+  },
+  "Divider": {
+    "type": "Divider",
+    "selector": ".countdown > div"
+  },
+  "Width": {
+    "type": "Input",
+    "property": "max-width:%s%",
+    "selector": ".countdown"
+  },
+  "DaysSpacing": {
+    "type": "Input",
+    "property": "margin-top:%spx",
+    "selector": ".countdown > div span"
+  },
+  "Spacing": {
+    "type": "Margin",
+    "selector": ".countdown > div + div"
+  },
+  "ItemBackground": {
+    "type": "Background",
+    "selector": ".countdown > div"
+  },
+  "ItemShadow": {
+    "type": "Shadow",
+    "selector": ".countdown > div"
+  },
+  "ItemBorder": {
+    "type": "Border",
+    "selector": ".countdown > div"
+  },
+  "ItemPadding": {
+    "type": "Padding",
+    "selector": ".countdown > div"
+  },
+  "ItemOutline": {
+    "type": "Outline",
+    "selector": ".countdown > div"
+  },
+  "ItemBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".countdown > div"
+  },
+  "DaysPosition": {
+    "type": "Radio",
+    "value": "center",
+    "selector": ".countdown > div",
+    "property": "justify-content: %s"
+  },
+  "ItemSize": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "rules": {
+      "@": {
+        ".countdown > div": "--custom-item-size: %s; aspect-ratio: 1"
+      }
+    }
+  },
+  "DaysBackground": {
+    "type": "Background",
+    "selector": ".countdown > div > span"
+  },
+  "DaysMargin": {
+    "type": "Margin",
+    "selector": ".countdown > div > span"
+  },
+  "DaysPadding": {
+    "type": "Padding",
+    "selector": ".countdown > div > span"
+  },
+  "DaysBorder": {
+    "type": "Border",
+    "selector": ".countdown > div > span"
+  },
+  "DaysBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".countdown > div > span"
+  }
+}

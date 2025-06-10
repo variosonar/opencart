@@ -1,0 +1,112 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Slide"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "type": {
+    "type": "Radio",
+    "value": "image",
+    "php": true
+  },
+  "custom": {
+    "type": "Background",
+    "selector": ".module-background_slider-%s .module-item-%s .slide-content-image",
+    "value": {
+      "background-size": "cover",
+      "background-position": "center center"
+    }
+  },
+  "image": {
+    "type": "ImageLang"
+  },
+  "icon": {
+    "type": "Icon",
+    "selector": ".module-background_slider-%s .module-item.module-item-%s::after"
+  },
+  "iconOpacity": {
+    "type": "Input",
+    "value": "",
+    "selector": ".module-background_slider-%s .module-item.module-item-%s::after",
+    "property": "opacity: %s"
+  },
+  "iconEdgePosition": {
+    "type": "Select",
+    "value": "",
+    "rules": {
+      "tl": {
+        ".module-background_slider-%s .module-item.module-item-%s": "align-items: flex-start; justify-content: flex-start"
+      },
+      "tc": {
+        ".module-background_slider-%s .module-item.module-item-%s": "align-items: flex-start; justify-content: center"
+      },
+      "tr": {
+        ".module-background_slider-%s .module-item.module-item-%s": "align-items: flex-start; justify-content: flex-end"
+      },
+      "cl": {
+        ".module-background_slider-%s .module-item.module-item-%s": "align-items: center; justify-content: flex-start"
+      },
+      "cc": {
+        ".module-background_slider-%s .module-item.module-item-%s": "align-items: center; justify-content: center"
+      },
+      "cr": {
+        ".module-background_slider-%s .module-item.module-item-%s": "align-items: center; justify-content: flex-end"
+      },
+      "bl": {
+        ".module-background_slider-%s .module-item.module-item-%s": "align-items: flex-end; justify-content: flex-start"
+      },
+      "bc": {
+        ".module-background_slider-%s .module-item.module-item-%s": "align-items: flex-end; justify-content: center"
+      },
+      "br": {
+        ".module-background_slider-%s .module-item.module-item-%s": "align-items: flex-end; justify-content: flex-end"
+      }
+    }
+  },
+  "iconEdgeMargin": {
+    "type": "Margin",
+    "selector": ".module-background_slider-%s .module-item.module-item-%s::after"
+  },
+  "alt": {
+    "type": "InputLang",
+    "php": true
+  },
+  "slideOpacity": {
+    "type": "Input",
+    "property": "opacity",
+    "selector": ".module-background_slider-%s .module-item-%s.swiper-slide img"
+  },
+  "overlayStatus": {
+    "type": "Toggle",
+    "value": "",
+    "true": {
+      ".module-background_slider-%s .module-item-%s.swiper-slide::before": "display:block"
+    },
+    "false": {
+      ".module-background_slider-%s .module-item-%s.swiper-slide::before": "display:none"
+    }
+  },
+  "overlayBackground": {
+    "type": "Background",
+    "selector": ".module-background_slider-%s .module-item-%s.swiper-slide::before"
+  },
+  "overlayOpacity": {
+    "type": "Input",
+    "property": "opacity",
+    "selector": ".module-background_slider-%s .module-item-%s.swiper-slide::before"
+  },
+  "overlayBlend": {
+    "value": "",
+    "type": "Select",
+    "selector": ".module-background_slider-%s .module-item-%s.swiper-slide::before",
+    "property": "mix-blend-mode"
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

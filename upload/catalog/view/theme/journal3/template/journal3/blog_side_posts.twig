@@ -1,0 +1,26 @@
+{% for post in posts %}
+  <div class="post-layout {{ journal3.classes(post.classes) }}">
+    <div class="post-thumb">
+      <div class="image">
+        <a href="{{ post.href }}">
+          {% if journal3.get('performanceLazyLoadImagesStatus') %}
+            <img src="{{ dummy_image }}" data-src="{{ post.thumb }}" {% if post.thumb2x %}data-srcset="{{ post.thumb }} 1x, {{ post.thumb2x }} 2x" {% endif %} width="{{ image_width }}" height="{{ image_height }}" alt="{{ post.name | escape }}" title="{{ post.name | escape }}" class="img-responsive lazyload"/>
+          {% else %}
+            <img src="{{ post.thumb }}" {% if post.thumb2x %}data-srcset="{{ post.thumb }} 1x, {{ post.thumb2x }} 2x" {% endif %} width="{{ image_width }}" height="{{ image_height }}" alt="{{ post.name | escape }}" title="{{ post.name | escape }}" class="img-responsive"/>
+          {% endif %}
+        </a>
+      </div>
+
+      <div class="caption">
+
+        <div class="name"><a href="{{ post.href }}">{{ post.name }}</a></div>
+
+        <div class="post-stats">
+          <span class="p-date">{{ post.date }}</span>
+          <span class="p-comment">{{ post.comments }}</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+{% endfor %}

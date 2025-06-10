@@ -1,0 +1,128 @@
+{
+  "QtyInput": {
+    "type": "Variable",
+    "variable": "form_input",
+    "selector_prefix": ".stepper input.form-control"
+  },
+  "QtyInputWidth": {
+    "type": "InputNumber",
+    "selector": ".stepper",
+    "value": "36",
+    "property": "--stepper-min-width: %spx"
+  },
+  "QtyInputWidthMax": {
+    "type": "InputNumber",
+    "selector": ".stepper",
+    "value": "100",
+    "property": "--stepper-max-width: %spx"
+  },
+  "QtyButtonsBorder": {
+    "type": "Radio",
+    "value": "yes",
+    "rules": {
+      "yes": {
+        ".stepper": "--stepper-border: 1px"
+      },
+      "no": {
+        ".stepper": "--stepper-border: 0"
+      }
+    }
+  },
+  "QtyBtnWidth": {
+    "type": "InputNumber",
+    "property": "--stepper-button-width: %s"
+  },
+  "QtyInputLayout": {
+    "type": "Radio",
+    "value": "default",
+    "rules": {
+      "default": {
+        ".stepper": "max-width: var(--stepper-max-width, 100%)",
+        ".stepper button": "position: absolute; width:calc(var(--stepper-button-width, 40) * 1%); height:50%; min-height:auto; inset-inline: auto 0",
+        ".stepper .form-control": "max-width: calc(100% - var(--stepper-button-width, 40) * 1%) !important;",
+        ".stepper button.fa-angle-up": "border-inline-width: var(--stepper-border, 0) 0; border-block-width: 0",
+        ".stepper button.fa-angle-down": "border-block-width: var(--stepper-border, 0) 0; border-inline-width: var(--stepper-border, 0) 0;"
+      },
+      "sides": {
+        ".stepper": "max-width:var(--stepper-max-width, 100%)",
+        ".stepper button": "position: static; width:calc(var(--stepper-button-width, 30) * 1px * 3); height: 100%; min-height:36px;",
+        ".stepper button.fa-angle-up": "border-inline-width: var(--stepper-border, 0) 0; border-block-width: 0",
+        ".stepper button.fa-angle-down": "border-inline-width: 0 var(--stepper-border, 0); border-block-width: 0",
+        ".stepper .form-control": "max-width: 100% !important;"
+      }
+    }
+  },
+  "QtyIconDownNew": {
+    "type": "Icon",
+    "selector": ".stepper .fa-angle-down::before",
+    "value": {
+      "icon": {
+        "name": "angle-down-arrow",
+        "code": "f107"
+      },
+      "size": "20"
+    }
+  },
+  "QtyIconUpNew": {
+    "type": "Icon",
+    "selector": ".stepper .fa-angle-up::before",
+    "value": {
+      "icon": {
+        "name": "angle-up",
+        "code": "f106"
+      },
+      "size": "20"
+    }
+  },
+  "QtyInputHeight": {
+    "type": "InputNumber",
+    "selector": ".stepper",
+    "property": "--stepper-height: %spx"
+  },
+  "QtyDivider": {
+    "type": "Divider",
+    "selector": ".stepper"
+  },
+  "QtyDividerHover": {
+    "type": "Color",
+    "property": "border-color:%s",
+    "selector": ".stepper:hover"
+  },
+  "QtyBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".stepper"
+  },
+  "QtyBtnColor": {
+    "type": "Color",
+    "property": "color:%s",
+    "selector": ".stepper button::before"
+  },
+  "QtyBtnColorHover": {
+    "type": "Color",
+    "property": "color:%s",
+    "selector": ".stepper button:hover::before"
+  },
+  "QtyBtnColorActive": {
+    "type": "Color",
+    "property": "color:%s",
+    "selector": ".stepper button:active::before",
+    "important": "true"
+  },
+
+  "QtyBtnBG": {
+    "type": "Color",
+    "property": "background-color:%s",
+    "selector": ".stepper button"
+  },
+  "QtyBtnBGHover": {
+    "type": "Color",
+    "property": "background-color:%s",
+    "selector": ".stepper button:hover"
+  },
+  "QtyBtnBGActive": {
+    "type": "Color",
+    "property": "background-color:%s",
+    "selector": ".stepper button:active",
+    "important": "true"
+  }
+}

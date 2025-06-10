@@ -1,0 +1,697 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Catalog Block"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "category": {
+    "type": "Catalog"
+  },
+  "subtype": {
+    "type": "Radio",
+    "value": "category",
+    "php": true
+  },
+  "title": {
+    "type": "InputLang"
+  },
+  "tabType": {
+    "type": "Radio",
+    "value": "content",
+    "php": true
+  },
+  "itemBackground": {
+    "type": "Background",
+    "selector": "div.module-catalog_blocks-%s div.module-item-%s .block-body > .block-wrapper"
+  },
+  "itemContentSize": {
+    "type": "InputPair",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-body > .block-wrapper",
+    "properties": {
+      "first": "--catalog-item-initial-width:%s%",
+      "second": "--catalog-item-min-width:%spx"
+    }
+  },
+  "itemBackgroundOverlay": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        "div.module-catalog_blocks-%s div.module-item-%s .block-body > .block-wrapper::before": "display:block"
+      },
+      "false": {
+        "div.module-catalog_blocks-%s div.module-item-%s .block-body > .block-wrapper::before": "display:none"
+      }
+    }
+  },
+  "itemBackgroundOverlayBackground": {
+    "type": "Background",
+    "selector": "div.module-catalog_blocks-%s div.module-item-%s .block-body > .block-wrapper::before"
+  },
+  "itemBackgroundOverlayOpacity": {
+    "type": "Input",
+    "value": "",
+    "property": "opacity: %s",
+    "selector": "div.module-catalog_blocks-%s div.module-item-%s .block-body > .block-wrapper::before"
+  },
+  "itemBackgroundOverlayBlend": {
+    "type": "Select",
+    "value": "",
+    "property": "mix-blend-mode: %s",
+    "selector": "div.module-catalog_blocks-%s div.module-item-%s .block-body > .block-wrapper::before"
+  },
+  "link": {
+    "type": "Link",
+    "php": true
+  },
+  "blockLink": {
+    "type": "Link",
+    "php": true
+  },
+  "products": {
+    "type": "Module",
+    "value": "",
+    "php": true
+  },
+  "manufacturers": {
+    "type": "Module",
+    "value": "",
+    "php": true
+  },
+  "catalog": {
+    "type": "Module",
+    "value": "",
+    "php": true
+  },
+  "tabIcon": {
+    "type": "Icon",
+    "selector": ".module-catalog_blocks-%s .tab-%s > a::before"
+  },
+  "tabIconHover2": {
+    "type": "Color",
+    "selector": ".module-catalog_blocks-%s .tab-%s:not(.active):hover > a::before",
+    "property": "color"
+  },
+  "catalogBoxStyles": {
+    "include": "common_hover",
+    "selector_prefix": ".module-catalog_blocks-%s .module-item-%s .block-body"
+  },
+  "itemBoxStyles": {
+    "include": "common_hover",
+    "selector_prefix": ".module-catalog_blocks-%s .module-item-%s .block-products .module-body"
+  },
+  "brandBoxStyles": {
+    "include": "common_hover",
+    "selector_prefix": ".module-catalog_blocks-%s .module-item-%s .block-manufacturers"
+  },
+  "itemFont": {
+    "type": "Font",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-body .block-content"
+  },
+  "titleFont": {
+    "type": "Font",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .module-title"
+  },
+  "header": {
+    "type": "Radio",
+    "value": "image",
+    "php": true
+  },
+  "blockHeaderLink": {
+    "type": "Link",
+    "php": true
+  },
+  "text": {
+    "type": "InputLang",
+    "value": "",
+    "php": true
+  },
+  "textHeadStyle": {
+    "type": "Variable",
+    "variable": "container",
+    "selector_prefix": ".module-catalog_blocks-%s .module-item-%s .block-header-text"
+  },
+  "image": {
+    "type": "Image"
+  },
+  "alt": {
+    "type": "InputLang",
+    "value": "",
+    "php": true
+  },
+  "imagePosition": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "top": {
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-header": "float:none; order:-1;",
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-body": "--display: block;",
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-body::after": "display:none"
+      },
+      "side": {
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-header": "float:none; order:-1;",
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-body": "--display: flex;",
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-body::after": "display:none"
+      },
+      "side2": {
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-header": "float:none; order:2;",
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-body": "--display: flex;",
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-body::after": "display:none"
+      },
+      "left": {
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-header": "float:left;",
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-body": "--display: block",
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-body::after": "display:table"
+      },
+      "right": {
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-header": "float:right;",
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-body": "--display: block",
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-body::after": "display:table"
+      }
+    },
+    "rtlRules": {
+      "top": {
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-header": "float:none; order:-1;",
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-body": "--display: block;",
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-body::after": "display:none"
+      },
+      "side": {
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-header": "float:none; order:-1;",
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-body": "--display: flex;",
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-body::after": "display:none"
+      },
+      "side2": {
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-header": "float:none; order:2;",
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-body": "--display: flex;",
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-body::after": "display:none"
+      },
+      "left": {
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-header": "float:right;",
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-body": "--display: block",
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-body::after": "display:table"
+      },
+      "right": {
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-header": "float:left;",
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-body": "--display: block",
+        "div.module-catalog_blocks-%s > .module-body .block-item.module-item-%s .block-body::after": "display:table"
+      }
+    }
+  },
+  "headerAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        ".module-catalog_blocks-%s .module-item-%s .block-header": "align-items:flex-start;"
+      },
+      "center": {
+        ".module-catalog_blocks-%s .module-item-%s .block-header": "align-items:center;"
+      },
+      "right": {
+        ".module-catalog_blocks-%s .module-item-%s .block-header": "align-items:flex-end;"
+      }
+    }
+  },
+  "headerAlignV": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "top": {
+        ".module-catalog_blocks-%s .module-item-%s .block-header": "justify-content:flex-start"
+      },
+      "center": {
+        ".module-catalog_blocks-%s .module-item-%s .block-header": "justify-content:center"
+      },
+      "bottom": {
+        ".module-catalog_blocks-%s .module-item-%s .block-header": "justify-content:flex-end"
+      }
+    }
+  },
+  "imageMargin": {
+    "type": "Margin",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-header"
+  },
+  "imageBorder": {
+    "type": "Border",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-header img"
+  },
+  "imageBorderHover": {
+    "type": "Color",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-body:hover .block-header img",
+    "property": "border-color"
+  },
+  "imageBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-header img"
+  },
+  "imageShadow": {
+    "type": "Shadow",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-header img"
+  },
+  "imageShadowHover": {
+    "type": "Shadow",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-body .block-header img:hover"
+  },
+  "icon": {
+    "type": "Icon",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-header em::before"
+  },
+  "iconHover": {
+    "type": "Color",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-body:hover .block-header em::before",
+    "property": "color"
+  },
+  "iconSize": {
+    "type": "InputPair",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-header em",
+    "properties": {
+      "first": "width:%spx",
+      "second": "height:%spx"
+    }
+  },
+  "iconBG": {
+    "type": "Background",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-header em"
+  },
+  "iconBGHover": {
+    "type": "Background",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-body:hover .block-header em"
+  },
+  "iconMargin": {
+    "type": "Margin",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-header em"
+  },
+  "iconBorder": {
+    "type": "Border",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-header em"
+  },
+  "iconBorderHover": {
+    "type": "Color",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-header em",
+    "property": "border-color"
+  },
+  "iconBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-header em"
+  },
+  "iconShadow": {
+    "type": "Shadow",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-header em"
+  },
+  "iconShadowHover": {
+    "type": "Shadow",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-body:hover .block-header em"
+  },
+  "CategoryNameVisibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-catalog_blocks-%s .module-item-%s .block-category-name": "display:block;"
+      },
+      "false": {
+        ".module-catalog_blocks-%s .module-item-%s .block-category-name": "display:none"
+      }
+    }
+  },
+  "CategoryNameOverImage": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-catalog_blocks-%s .module-item-%s .block-category-name": "--over: -100%; position:absolute; transform: translate3d(0,var(--over),0);"
+      },
+      "false": {
+        ".module-catalog_blocks-%s .module-item-%s .block-category-name": "--over: 0; position:static; transform: translate3d(0,var(--over),0);"
+      }
+    }
+  },
+  "CategoryNameAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "start": {
+        ".module-catalog_blocks-%s .module-item-%s .block-category-name": "align-self: flex-start; left:0; right:auto;"
+      },
+      "center": {
+        ".module-catalog_blocks-%s .module-item-%s .block-category-name": "align-self: center; left:50%; transform: translate3d(-50%,var(--over),0); right:auto;"
+      },
+      "end": {
+        ".module-catalog_blocks-%s .module-item-%s .block-category-name": "align-self: flex-end; left:auto; right:0;"
+      }
+    }
+  },
+  "CategoryNameBoxStyles": {
+    "include": "common",
+    "selector_prefix": ".module-catalog_blocks-%s .module-item-%s .block-category-name"
+  },
+  "contentType": {
+    "type": "Select",
+    "value": "text",
+    "php": true
+  },
+  "content": {
+    "type": "InputLang"
+  },
+  "shortDescriptionLimit": {
+    "type": "Input",
+    "value": "",
+    "php": true
+  },
+  "dynamic": {
+    "type": "Input",
+    "value": "journal3/blocks_example",
+    "php": true
+  },
+  "module": {
+    "type": "Module",
+    "value": "",
+    "php": true
+  },
+  "contentWidgetHeight": {
+    "type": "Input",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-content:not(.block-html):not(.block-text)",
+    "property": "height: %spx"
+  },
+  "contentPadding": {
+    "type": "Padding",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-content"
+  },
+  "contentBG": {
+    "type": "Background",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-content"
+  },
+  "contentBGHover": {
+    "type": "Background",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-body:hover .block-content"
+  },
+  "contentBorder": {
+    "type": "Border",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-content"
+  },
+  "contentBorderHover2": {
+    "type": "Color",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-body:hover .block-content",
+    "property": "border-color"
+  },
+  "contentShadow": {
+    "type": "Shadow",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-content"
+  },
+  "contentShadowHover": {
+    "type": "Shadow",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-body:hover .block-content"
+  },
+  "contentBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-content"
+  },
+  "contentTypography": {
+    "type": "Variable",
+    "variable": "typography",
+    "selector_prefix": ".module-catalog_blocks-%s .module-item-%s .block-content"
+  },
+  "itemContentWidth": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".module-catalog_blocks-%s .module-item-%s .block-body": "max-width:%spx; margin:0 auto"
+      }
+    }
+  },
+  "gallery": {
+    "type": "Gallery",
+    "value": "",
+    "php": true
+  },
+  "contentAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        ".module-catalog_blocks-%s .module-item-%s .block-content": "text-align:left"
+      },
+      "center": {
+        ".module-catalog_blocks-%s .module-item-%s .block-content": "text-align:center"
+      },
+      "right": {
+        ".module-catalog_blocks-%s .module-item-%s .block-content": "text-align:right"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        ".module-catalog_blocks-%s .module-item-%s .block-content": "text-align:right"
+      },
+      "center": {
+        ".module-catalog_blocks-%s .module-item-%s .block-content": "text-align:center"
+      },
+      "right": {
+        ".module-catalog_blocks-%s .module-item-%s .block-content": "text-align:left"
+      }
+    }
+  },
+  "contentAlignV": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        ".module-catalog_blocks-%s .module-item-%s .block-wrapper": "justify-content:flex-start"
+      },
+      "center": {
+        ".module-catalog_blocks-%s .module-item-%s .block-wrapper": "justify-content:center"
+      },
+      "right": {
+        ".module-catalog_blocks-%s .module-item-%s .block-wrapper": "justify-content:flex-end"
+      }
+    }
+  },
+  "expandButton": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".module-catalog_blocks-%s .module-item-%s .expand-content": "overflow:hidden"
+      },
+      "false": {
+        ".module-catalog_blocks-%s .module-item-%s .expand-content": "max-height:100%; overflow:visible"
+      }
+    },
+    "php": true
+  },
+  "expandHeight": {
+    "type": "InputNumber",
+    "value": "70",
+    "rules": {
+      "@": {
+        ".module-catalog_blocks-%s .module-item-%s .expand-content": "max-height:%spx"
+      }
+    }
+  },
+  "expandButtonStyle": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": ".module-catalog_blocks-%s .module-item-%s .block-expand&"
+  },
+  "expandButtonText": {
+    "type": "InputLang",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-expand::after",
+    "property": "content:'%s'"
+  },
+  "expandButtonTextLess": {
+    "type": "InputLang",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-expanded .block-expand::after",
+    "property": "content:'%s'"
+  },
+  "expandIcon": {
+    "type": "Icon",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-expand::before"
+  },
+  "expandIconHover": {
+    "type": "Color",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-expand:hover::before",
+    "property": "color"
+  },
+  "expandIconUp": {
+    "type": "Icon",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-expanded .block-expand::before"
+  },
+  "expandIconHoverUp": {
+    "type": "Color",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-expanded .block-expand:hover::before",
+    "property": "color"
+  },
+  "expandOverlayColor": {
+    "type": "Color",
+    "rules": {
+      "@": {
+        ".module-catalog_blocks-%s .module-item-%s .block-expand-overlay": "--expand-overlay: %s"
+      }
+    }
+  },
+  "blocksColumns": {
+    "type": "Radio",
+    "value": "initial",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-content",
+    "property": "column-count:%s"
+  },
+  "blocksColumnGap": {
+    "type": "InputNumber",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-content",
+    "property": "column-gap:%spx",
+    "value": ""
+  },
+  "blocksColumnDividerColor": {
+    "type": "Color",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-content",
+    "property": "column-rule-color:%s"
+  },
+  "blocksColumnDividerWidth": {
+    "type": "InputNumber",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-content",
+    "property": "column-rule-width:%spx",
+    "value": ""
+  },
+  "blocksColumnDividerStyle": {
+    "type": "Select",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-content",
+    "property": "column-rule-style",
+    "value": ""
+  },
+  "footer": {
+    "type": "Radio",
+    "value": "button",
+    "php": true
+  },
+  "footerText": {
+    "type": "InputLang",
+    "php": true
+  },
+  "footerTextFont": {
+    "type": "Font",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-footer"
+  },
+  "footerTextFontHover": {
+    "type": "Font",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-body:hover .block-footer"
+  },
+  "footerBoxStyles": {
+    "include": "common",
+    "selector_prefix": ".module-catalog_blocks-%s .module-item-%s .block-footer"
+  },
+  "footerButton": {
+    "type": "InputLang",
+    "value": "See all products",
+    "php": true
+  },
+  "footerButtonLink": {
+    "type": "Link",
+    "php": true
+  },
+  "footerButtonWidth": {
+    "type": "Radio",
+    "value": "",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-footer .btn",
+    "property": "width:%s"
+  },
+  "footerTextAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "left": {
+        ".module-catalog_blocks-%s .module-item-%s .block-footer": "justify-content:flex-start"
+      },
+      "center": {
+        ".module-catalog_blocks-%s .module-item-%s .block-footer": "justify-content:center"
+      },
+      "right": {
+        ".module-catalog_blocks-%s .module-item-%s .block-footer": "justify-content:flex-end"
+      }
+    }
+  },
+  "footerButtonStyle": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": ".module-catalog_blocks-%s .module-item-%s .block-footer"
+  },
+  "buttonIcon": {
+    "type": "Icon",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-footer .btn::before"
+  },
+  "buttonIconHover": {
+    "type": "Color",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-footer .btn:hover::before",
+    "property": "color"
+  },
+  "buttonIconRight": {
+    "type": "Icon",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-footer .btn::after"
+  },
+  "buttonIconHoverRight": {
+    "type": "Color",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-footer .btn:hover::after",
+    "property": "color"
+  },
+  "itemTypographyStyles": {
+    "type": "Variable",
+    "variable": "typography",
+    "selector_prefix": ".module-catalog_blocks-%s .module-item-%s.block-item .block-body"
+  },
+  "itemFormStyles": {
+    "type": "Variable",
+    "variable": "form",
+    "selector_prefix": ".module-catalog_blocks-%s .module-item-%s .block-content"
+  },
+  "itemTableStyles": {
+    "type": "Variable",
+    "variable": "table",
+    "selector_prefix": ".module-catalog_blocks-%s .module-item-%s .block-content"
+  },
+  "scale": {
+    "type": "InputSlider",
+    "value": "100",
+    "rules": {
+      "@": {
+        ".module-catalog_blocks-%s .module-item-%s .block-footer .btn": "transform: scale(calc(%s / 100))"
+      }
+    }
+  },
+  "scaleOrigin": {
+    "type": "Radio",
+    "value": "center",
+    "rules": {
+      "tl": {
+        ".module-catalog_blocks-%s .module-item-%s .block-footer .btn": "transform-origin: top left"
+      },
+      "tr": {
+        ".module-catalog_blocks-%s .module-item-%s .block-footer .btn": "transform-origin: top right"
+      },
+      "center": {
+        ".module-catalog_blocks-%s .module-item-%s .block-footer .btn": "transform-origin: center"
+      },
+      "bl": {
+        ".module-catalog_blocks-%s .module-item-%s .block-footer .btn": "transform-origin: bottom left"
+      },
+      "br": {
+        ".module-catalog_blocks-%s .module-item-%s .block-footer .btn": "transform-origin: bottom right"
+      }
+    }
+  },
+  "borderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-catalog_blocks-%s .module-item-%s .block-footer .btn",
+    "important": true
+  },
+  "limit": {
+    "type": "Input",
+    "value": "",
+    "php": true
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

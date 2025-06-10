@@ -1,0 +1,28 @@
+<div class="{{ journal3.classes(classes) }}">
+  <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+  <div class="title-wrapper">
+    {% if label %}
+      <div class="title-label">{{ label }}</div>
+    {% endif %}
+    {% if title %}
+      <div class="title-main">
+        <h3>{{ title }}</h3>
+        {% if inline_button_text %}
+          <a class="btn title-inline-btn" href="{{ inline_button_link.href }}" {{ journal3.linkAttrs(inline_button_link) }}><span>{{ inline_button_text }}</span></a>
+        {% endif %}
+      </div>
+    {% endif %}
+    <div class="title-divider"></div>
+    <div class="subtitle">{{ subtitle }}</div>
+    {% if button_1_text or button_2_text %}
+    <div class="title-buttons">
+      {% if button_1_text %}
+      <a class="btn title-btn-1" href="{{ button_1_link.href }}" {{ journal3.linkAttrs(button_1_link) }}><span>{{ button_1_text }}</span></a>
+      {% endif %}
+      {% if button_2_text %}
+      <a class="btn title-btn-2" href="{{ button_2_link.href }}" {{ journal3.linkAttrs(button_2_link) }}><span>{{ button_2_text }}</span></a>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+</div>

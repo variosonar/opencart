@@ -1,0 +1,81 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Item"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "type": {
+    "type": "Radio",
+    "value": "title",
+    "php": true
+  },
+  "title": {
+    "type": "InputLang",
+    "php": true
+  },
+  "image": {
+    "type": "ImageLang"
+  },
+  "icon": {
+    "type": "Icon",
+    "selector": ".module-marquee-%s .marquee-slider .marquee-items .module-item-%s > span::before"
+  },
+  "itemPadding": {
+    "type": "Padding",
+    "selector": ".module-marquee-%s .marquee-slider .marquee-items .module-item-%s > span"
+  },
+  "iconHover": {
+    "type": "Color",
+    "selector": ".module-marquee-%s .marquee-slider .marquee-items a.module-item-%s:hover > span::before",
+    "property": "color"
+  },
+  "link": {
+    "type": "Link",
+    "php": true
+  },
+  "itemBackground": {
+    "type": "Background",
+    "selector": ".module-marquee-%s .marquee-slider .marquee-items .module-item-%s > span"
+  },
+  "itemBackgroundHover": {
+    "type": "Background",
+    "selector": ".module-marquee-%s .marquee-slider .marquee-items a.module-item-%s:hover > span"
+  },
+  "itemFont": {
+    "type": "Font",
+    "selector": ".module-marquee-%s .marquee-slider .marquee-items .module-item-%s > span"
+  },
+  "itemFontHover": {
+    "type": "Font",
+    "selector": ".module-marquee-%s .marquee-slider .marquee-items a.module-item-%s:hover > span"
+  },
+  "itemShadow": {
+    "type": "Shadow",
+    "selector": ".module-marquee-%s .marquee-slider .marquee-items .module-item-%s > span"
+  },
+  "itemShadowHover": {
+    "type": "Shadow",
+    "selector": ".module-marquee-%s .marquee-slider .marquee-items a.module-item-%s:hover > span"
+  },
+  "itemBorder": {
+    "type": "Border",
+    "selector": ".module-marquee-%s .marquee-slider .marquee-items .module-item-%s > span"
+  },
+  "itemBorderHover": {
+    "type": "Color",
+    "property": "border-color",
+    "selector": ".module-marquee-%s .marquee-slider .marquee-items a.module-item-%s:hover > span"
+  },
+  "itemBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-marquee-%s .marquee-slider .marquee-items .module-item-%s > span"
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

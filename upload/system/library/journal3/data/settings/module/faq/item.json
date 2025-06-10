@@ -1,0 +1,48 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New FAQ Item"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "icon": {
+    "type": "Icon",
+    "selector": ".module-faq-%s .module-item-%s .block-header em::before"
+  },
+  "iconHover": {
+    "type": "Color",
+    "selector": ".module-faq-%s .module-item-%s .block-body:hover .block-header em::before",
+    "property": "color"
+  },
+  "accordionIcon": {
+    "type": "Icon",
+    "selector": ".module-faq-%s .module-item-%s .panel-heading::before"
+  },
+  "accordionIconHover": {
+    "type": "Color",
+    "selector": ".module-faq-%s .module-item-%s:hover .panel-heading::before",
+    "property": "color"
+  },
+  "title": {
+    "type": "InputLang",
+    "value": "",
+    "php": true
+  },
+  "contentType": {
+    "type": "Select",
+    "value": "text",
+    "php": true
+  },
+  "content": {
+    "type": "InputLang",
+    "value": "",
+    "php": true
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

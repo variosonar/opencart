@@ -1,0 +1,215 @@
+{
+  "BreadcrumbsVisibility": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".breadcrumbs": "display: flex"
+      },
+      "false": {
+        ".breadcrumbs": "display: none"
+      }
+    }
+  },
+  "BreadcrumbsHomeText": {
+    "type": "InputLang",
+    "selector": ".breadcrumb em.fa-home::after",
+    "property": "content: '%s'"
+  },
+  "BreadcrumbsAlign": {
+    "type": "Radio",
+    "value": "left",
+    "rules": {
+      "left": {
+        ".breadcrumb": "  text-align:left"
+      },
+      "center": {
+        ".breadcrumb": "  text-align:center"
+      },
+      "right": {
+        ".breadcrumb": "  text-align:right"
+      }
+    },
+    "rtlRules": {
+      "left": {
+        ".breadcrumb": "  text-align:right"
+      },
+      "center": {
+        ".breadcrumb": "  text-align:center"
+      },
+      "right": {
+        ".breadcrumb": "  text-align:left"
+      }
+    }
+  },
+  "GutterSubtract": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".breadcrumb": "padding-inline-start:var(--content-gutter, 0px); padding-inline-end: var(--content-gutter-right, var(--content-gutter, 0px)); max-width: var(--content-max-width, 100%);"
+      },
+      "false": {
+        ".breadcrumb": "padding-inline-start:0; padding-inline-end: 0; max-width: calc(var(--content-max-width, 100%) - var(--content-gutter, 0px) * 2);"
+      }
+    }
+  },
+  "BreadcrumbsBackground": {
+    "type": "Background",
+    "selector": ".breadcrumbs::before"
+  },
+  "BreadcrumbsFullBackground": {
+    "type": "Background",
+    "selector": ".breadcrumbs"
+  },
+  "BreadcrumbsPadding": {
+    "type": "Padding",
+    "selector": "ul.breadcrumb"
+  },
+  "FullBreadcrumbsShadow": {
+    "type": "Shadow",
+    "selector": ".breadcrumbs"
+  },
+  "BreadcrumbsMargin": {
+    "type": "Margin",
+    "selector": ".breadcrumbs"
+  },
+  "BreadcrumbsBorder": {
+    "type": "Border",
+    "selector": ".breadcrumbs::before"
+  },
+  "FullBreadcrumbsBorder": {
+    "type": "Border",
+    "selector": ".breadcrumbs"
+  },
+  "BreadcrumbsBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".breadcrumbs::before"
+  },
+  "BreadcrumbsHomeIcon": {
+    "type": "Icon",
+    "selector": ".breadcrumb li:first-of-type a .fa::before"
+  },
+  "BreadcrumbsHomeIconHover": {
+    "type": "Color",
+    "selector": ".breadcrumb li:first-of-type a:hover .fa::before",
+    "property": "color"
+  },
+  "BreadcrumbsFont": {
+    "type": "Font",
+    "selector": ".breadcrumb li a, .breadcrumb em.fa-home::after"
+  },
+  "BreadcrumbsFontHover": {
+    "type": "Font",
+    "selector": ".breadcrumb li:hover a, .breadcrumb li:hover em.fa-home::after"
+  },
+  "BreadcrumbsFontHome": {
+    "type": "Font",
+    "selector": ".breadcrumb > li:first-child em.fa-home::after"
+  },
+  "BreadcrumbsFontHomeHover": {
+    "type": "Font",
+    "selector": ".breadcrumb > li:first-child:hover em.fa-home::after"
+  },
+  "BreadcrumbsFontActive": {
+    "type": "Font",
+    "selector": ".breadcrumb li:last-of-type a"
+  },
+  "BreadcrumbsSymbolPadding": {
+    "type": "Padding",
+    "selector": ".breadcrumb > li + li:before"
+  },
+  "BreadcrumbsSymbol": {
+    "type": "Input",
+    "selector": ".breadcrumb > li + li:before",
+    "property": "content: '%s'"
+  },
+  "BreadcrumbsSymbolColor": {
+    "type": "Color",
+    "selector": ".breadcrumb > li + li:before",
+    "property": "color"
+  },
+  "BreadcrumbsSymbolOffset": {
+    "type": "InputPair",
+    "selector": ".breadcrumb > li + li:before",
+    "properties": {
+      "first": "left: %spx",
+      "second": "top: %spx"
+    }
+  },
+  "BreadcrumbMinHeight": {
+    "type": "InputNumber",
+    "value": "",
+    "rules":{
+      "@":{
+        ".breadcrumbs": "--min-height: %spx"
+      }
+    }
+  },
+  "BreadcrumbAfterTopPosition": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".breadcrumbs ~ #top": "order: -10"
+      },
+      "false": {
+        ".breadcrumbs ~ #top": "order: initial"
+      }
+    }
+  },
+
+  "BreadcrumbScroll": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".breadcrumb": "white-space: nowrap; flex-wrap:nowrap; overflow-x: auto; overflow-y: hidden"
+      },
+      "false": {
+        ".breadcrumb": "white-space: normal; flex-wrap:wrap; overflow-x: initial; overflow-y: initial"
+      }
+    }
+  },
+  "DefaultScrollbarStyle": {
+    "type": "Variable",
+    "variable": "default_scrollbar",
+    "selector_prefix": "ul.breadcrumb"
+  },
+  "BreadcrumbTrackHeight": {
+    "type": "InputNumber",
+    "value": "",
+    "rules":{
+      "@":{
+        "ul.breadcrumb::-webkit-scrollbar": "height:%spx; width: %spx"
+      }
+    }
+  },
+  "BreadcrumbTrackColor": {
+    "type": "Color",
+    "selector": "ul.breadcrumb::-webkit-scrollbar",
+    "property": "--scrollbar-track-color: %s"
+  },
+  "BreadcrumbScrollColor": {
+    "type": "Color",
+    "selector": "ul.breadcrumb::-webkit-scrollbar-thumb",
+    "property": "--scrollbar-thumb-color: %s"
+  },
+  "ScrollColorHover": {
+    "type": "Color",
+    "selector": "ul.breadcrumb::-webkit-scrollbar-thumb",
+    "property": "--scrollbar-thumb-color-hover: %s"
+  },
+  "ScrollColorActive": {
+    "type": "Color",
+    "selector": "ul.breadcrumb::-webkit-scrollbar-thumb",
+    "property": "--scrollbar-thumb-color-active: %s"
+  },
+  "TrackBorder": {
+    "type": "Border",
+    "selector": "ul.breadcrumb::-webkit-scrollbar-thumb"
+  },
+  "TrackBorderRadius": {
+    "type": "BorderRadius",
+    "selector": "ul.breadcrumb::-webkit-scrollbar-thumb"
+  }
+}

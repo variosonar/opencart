@@ -1,0 +1,31 @@
+{% if journal3.get('catalogSearchStatus') %}
+{% macro renderSearchCategories(context, categories, category_id, index) %}
+  {% set journal3 = context.journal3 %}
+  {% for category in categories %}
+    {% set classes = {'selected': category.category_id == category_id} %}
+    <li data-category_id="{{ category.category_id }}" class="{{ journal3.classes(classes) }} category-level-{{ index }} menu-item"><a href="javascript:;">{{ category.title }}</a></li>
+    {{ _self.renderSearchCategories(context, category.items, category_id, index + 1) }}
+  {% endfor %}
+{% endmacro %}
+<div id="search" class="dropdown search-dropdown-{{ journal3.get('headerMiniSearchDisplay') }}">
+  <button class="dropdown-toggle search-trigger" data-toggle="dropdown" title="{{ journal3.get('searchStyleSearchPlaceholder') }}"><span class="menu-icon"></span></button>
+  <div class="dropdown-menu j-dropdown color-scheme-__SEARCH_COLOR_SCHEME__">
+    <div class="header-search">
+      {% if journal3.get('searchStyleSearchCategoriesSelectorStatus') and categories %}
+        <div class="search-categories dropdown drop-menu">
+          <div class="search-categories-button dropdown-toggle" data-toggle="dropdown">{{ category_id ? category : journal3.get('searchStyleSearchCategories') }}</div>
+          <div class="dropdown-menu j-dropdown color-scheme-__SEARCH_CATEGORIES_COLOR_SCHEME__">
+            <ul class="j-menu">
+              <li data-category_id="0" class="category-level-1 menu-item"><a href="javascript:;">{{ journal3.get('searchStyleSearchCategories') }}</a></li>
+              {{ _self.renderSearchCategories(_context, categories, category_id, 1) }}
+            </ul>
+          </div>
+        </div>
+      {% endif %}
+      <label class="sr-only" for="search-input-el">{{ journal3.get('searchStyleSearchPlaceholder') }}</label>
+      <input id="search-input-el" type="search" name="search" value="{{ search }}" placeholder="{{ journal3.get('searchStyleSearchPlaceholder') }}" class="search-input" data-category_id="{{ category_id }}"/>
+      <button type="button" class="search-button" title="{{ journal3.get('searchStyleSearchPlaceholder') }}"></button>
+    </div>
+  </div>
+</div>
+{% endif %}

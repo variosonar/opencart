@@ -1,0 +1,50 @@
+{% if journal3.get('catalogCurrencyStatus') %}
+{% if currencies|length > 1 %}
+<div id="currency" class="currency">
+  <form id="form-currency" action="{{ action }}" method="post" {% if language.href %}enctype="multipart/form-data"{% else %}data-oc-toggle="ajax"{% endif %}>
+    <div class="dropdown drop-menu">
+      <button type="button" class="dropdown-toggle" data-toggle="dropdown">
+        <span class="currency-symbol-title">
+          {% for currency in currencies %}
+          {% if currency.symbol_left and currency.code == code %}
+          <span class="symbol">{{ currency.symbol_left }}</span>
+          <span class="currency-title">{{ currency.title }}</span>
+          <span class="currency-code">{{ currency.code }}</span>
+          {% elseif currency.symbol_right and currency.code == code %}
+          <span class="symbol">{{ currency.symbol_right }}</span>
+          <span class="currency-title">{{ currency.title }}</span>
+          <span class="currency-code">{{ currency.code }}</span>
+          {% endif %}
+          {% endfor %}
+        </span>
+      </button>
+      <div class="dropdown-menu j-dropdown">
+      <ul class="j-menu">
+        {% for currency in currencies %}
+        {% if currency.symbol_left %}
+        <li class="menu-item">
+          <a class="currency-select dropdown-item" data-name="{{ currency.code }}" role="button">
+            <span class="currency-symbol">{{ currency.symbol_left }}</span>
+            <span class="currency-title-dropdown">{{ currency.title }}</span>
+            <span class="currency-code-dropdown">{{ currency.code }}</span>
+          </a>
+        </li>
+        {% else %}
+        <li class="menu-item">
+          <a class="currency-select dropdown-item" data-name="{{ currency.code }}" role="button">
+            <span class="currency-symbol">{{ currency.symbol_right }}</span>
+            <span class="currency-title-dropdown">{{ currency.title }}</span>
+            <span class="currency-code-dropdown">{{ currency.code }}</span>
+          </a>
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+      </div>
+    </div>
+    <input type="hidden" name="code" value="" />
+    <input type="hidden" name="redirect" value="{{ redirect }}" />
+  </form>
+</div>
+{% endif %} 
+{% endif %}

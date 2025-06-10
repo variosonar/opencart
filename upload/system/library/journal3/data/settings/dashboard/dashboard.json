@@ -1,0 +1,10 @@
+{
+  "dashboard_user": {
+    "type": "Input",
+    "php": true
+  },
+  "dashboard_key": {
+    "type": "Input",
+    "php": true
+  }
+}

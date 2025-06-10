@@ -1,0 +1,224 @@
+{
+  "Font": {
+    "type": "Font",
+    "selector": "table td"
+  },
+  "FontOdd": {
+    "type": "Font",
+    "selector": "table tbody tr:nth-child(even) td"
+  },
+  "FontHover": {
+    "type": "Font",
+    "selector": "table tbody tr:hover td"
+  },
+
+  "Link": {
+    "type": "Font",
+    "selector": "table a"
+  },
+  "LinkHover": {
+    "type": "Font",
+    "selector": "table a:hover"
+  },
+  "Background": {
+    "type": "Background",
+    "selector": "table"
+  },
+
+  "BackgroundOdd": {
+    "type": "Background",
+    "selector": "table tbody tr:nth-child(even)"
+  },
+
+  "BackgroundHover": {
+    "type": "Background",
+    "selector": "table tbody tr:hover"
+  },
+
+  "Divider": {
+    "type": "Divider",
+    "selector": "table td, table th",
+    "important": true
+  },
+
+  "BorderH": {
+    "type": "Border",
+    "selector": "table tbody td",
+    "important": true
+  },
+
+  "Spacing": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        "table": "margin-bottom:%spx !important"
+      }
+    }
+  },
+
+  "Border": {
+    "type": "Border",
+    "selector": "table",
+    "important": true
+  },
+
+  "Padding": {
+    "type": "Padding",
+    "selector": "table td",
+    "important": true
+  },
+
+  "HeadFont": {
+    "type": "Font",
+    "selector": "table thead td",
+    "important": true
+  },
+  "HeadBackground": {
+    "type": "Background",
+    "selector": "table thead"
+  },
+  "HeadPadding": {
+    "type": "Padding",
+    "selector": "table thead td",
+    "important": true
+  },
+  "HeadDivider": {
+    "type": "Divider",
+    "selector": "table thead td, table thead th",
+    "important": true
+  },
+  "HeadHBorder": {
+    "type": "Border",
+    "selector": "table thead td, table thead th",
+    "important": true
+  },
+
+
+  "FootFont": {
+    "type": "Font",
+    "selector": "table tfoot td",
+    "important": true
+  },
+  "FootBackground": {
+    "type": "Background",
+    "selector": "table tfoot td"
+  },
+  "FootPadding": {
+    "type": "Padding",
+    "selector": "table tfoot td",
+    "important": true
+  },
+  "FootDivider": {
+    "type": "Divider",
+    "selector": "table tfoot td, table tfoot th",
+    "important": true
+  },
+  "FootHBorder": {
+    "type": "Border",
+    "selector": "table tfoot td, table tfoot th",
+    "important": true
+  },
+  "TableResponsiveBorder": {
+    "type": "Border",
+    "selector": ".table-responsive"
+  },
+  "ResponsiveBorder": {
+    "type": "Border",
+    "selector": ".table-responsive > table",
+    "important": true
+  },
+  "DefaultScrollbarStyle": {
+    "type": "Variable",
+    "variable": "default_scrollbar",
+    "selector_prefix": "div.table-responsive"
+  },
+  "TrackColor": {
+    "type": "Color",
+    "selector": "div.table-responsive::-webkit-scrollbar",
+    "property": "--scrollbar-track-color: %s"
+  },
+  "ScrollColor": {
+    "type": "Color",
+    "selector": "div.table-responsive::-webkit-scrollbar-thumb",
+    "property": "--scrollbar-thumb-color: %s"
+  },
+  "ScrollColorHover": {
+    "type": "Color",
+    "selector": "div.table-responsive::-webkit-scrollbar-thumb",
+    "property": "--scrollbar-thumb-color-hover: %s"
+  },
+  "ScrollColorActive": {
+    "type": "Color",
+    "selector": "div.table-responsive::-webkit-scrollbar-thumb",
+    "property": "--scrollbar-thumb-color-active: %s"
+  },
+  "ThumbBorder": {
+    "type": "Border",
+    "selector": "div.table-responsive::-webkit-scrollbar-thumb"
+  },
+  "ThumbBorderRadius": {
+    "type": "BorderRadius",
+    "selector": "div.table-responsive::-webkit-scrollbar-thumb"
+  },
+  "TrackHeight": {
+    "type": "InputNumber",
+    "value": "",
+    "rules":{
+      "@":{
+        "div.table-responsive::-webkit-scrollbar": "height:%spx; width: %spx"
+      }
+    }
+  },
+  "ScrollTextStatus": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".table-responsive.table-scroll::before": "display: block"
+      },
+      "false": {
+        ".table-responsive.table-scroll::before": "display: none;"
+      }
+    }
+  },
+  "MinWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "min-width: %spx",
+    "selector": "table tbody td"
+  },
+  "WhiteSpace": {
+    "type": "Radio",
+    "value": "",
+    "selector": "table td, .table-responsive>.table>tbody>tr>td, .table-responsive>.table>tbody>tr>th, .table-responsive>.table>tfoot>tr>td, .table-responsive>.table>tfoot>tr>th, .table-responsive>.table>thead>tr>td, .table-responsive>.table>thead>tr>th.table-responsive>.table>tbody>tr>td, .table-responsive>.table>tbody>tr>th, .table-responsive>.table>tfoot>tr>td, .table-responsive>.table>tfoot>tr>th, .table-responsive>.table>thead>tr>td, .table-responsive>.table>thead>tr>th",
+    "property": "white-space: %s"
+  },
+  "ScrollText": {
+    "type": "InputLang",
+    "value": "Scroll ➝",
+    "selector": ".table-responsive.table-scroll::before",
+    "property": "content: '%s'"
+  },
+  "ScrollTextFont": {
+    "type": "Font",
+    "selector": ".table-responsive.table-scroll::before"
+  },
+  "ScrollTextBackground": {
+    "type": "Background",
+    "selector": ".table-responsive.table-scroll::before"
+  },
+  "ScrollTextBorder": {
+    "type": "Border",
+    "selector": ".table-responsive.table-scroll::before"
+  },
+  "scrollTextBorder": {
+    "type": "Border",
+    "selector": ".table-responsive.table-scroll::before"
+  },
+  "ScrollTextSpacing-hold": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".table-responsive.table-scroll",
+    "property": "margin-top: %spx"
+  }
+}

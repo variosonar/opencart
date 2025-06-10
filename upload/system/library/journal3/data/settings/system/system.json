@@ -1,0 +1,61 @@
+{
+  "adminEditor": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "adminDimensions": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "false": {
+        ".grid-col > .grid-items > .grid-item::before": "display: none !important"
+      }
+    }
+  },
+  "filterScrollTop": {
+    "type": "Toggle",
+    "value": "false",
+    "js": true
+  },
+  "filterAttributeValuesSeparator": {
+    "type": "Input",
+    "php": true
+  },
+  "filterUrlValuesSeparator": {
+    "type": "Input",
+    "value": ",",
+    "php": true,
+    "js": true
+  },
+  "filterCheckQuantity": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "filterCheckQuantityRelated": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "filterOrderByStock": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "filterAddToCartStock": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "filterCheckOptionsQuantity": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "filterTaxClassId": {
+    "type": "Select",
+    "value": "",
+    "php": true
+  }
+}

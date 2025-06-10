@@ -1,0 +1,242 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Header"
+  },
+  "header_color_scheme": {
+    "type": "ColorScheme",
+    "php": true,
+    "js": true
+  },
+  "header_top_color_scheme": {
+    "type": "ColorScheme",
+    "php": true
+  },
+  "header_menu_color_scheme": {
+    "type": "ColorScheme",
+    "php": true,
+    "js": true
+  },
+  "header_dropdown_color_scheme": {
+    "type": "ColorScheme",
+    "php": true,
+    "js": true
+  },
+  "header_offcanvas_color_scheme": {
+    "type": "ColorScheme",
+    "php": true,
+    "js": true
+  },
+  "header_search_color_scheme": {
+    "type": "ColorScheme",
+    "php": true,
+    "js": true
+  },
+  "header_search_categories_color_scheme": {
+    "type": "ColorScheme",
+    "php": true,
+    "js": true
+  },
+  "header_search_results_color_scheme": {
+    "type": "ColorScheme",
+    "php": true,
+    "js": true
+  },
+  "headerBG": {
+    "type": "Background",
+    "selector": ".desktop-header-active .header .mid-bar, .desktop-header-active .header-slim-new > div"
+  },
+  "header_home_color_scheme": {
+    "type": "ColorScheme",
+    "php": true,
+    "js": true
+  },
+  "HeaderCountBadge": {
+    "type": "Variable",
+    "variable": "count_badge",
+    "selector_prefix": ".desktop-header-active header .count-badge&"
+  },
+  "headerBGHome": {
+    "type": "Background",
+    "selector": ".desktop-header-active.route-common-home .header .mid-bar, .desktop-header-active.route-common-home .header-slim-new > div"
+  },
+  "headerStickyDistance": {
+    "type": "InputNumber",
+    "value": "calc(var(--desktop-sticky, 80px) + var(--desktop-main-menu, 40px) + var(--content-gutter, 20px))",
+    "property": "--sticky-top-distance: %spx",
+    "selector": ".desktop-header-active"
+  },
+  "headerMenuStyle": {
+    "type": "Variable",
+    "variable": "menu",
+    "selector_prefix": "header"
+  },
+  "headerDropdownStyle": {
+    "type": "Variable",
+    "variable": "dropdown",
+    "selector_prefix": "header .dropdown"
+  },
+  "headerPadding": {
+    "type": "Padding",
+    "selector": ".desktop-header-active .header .mid-bar"
+  },
+  "headerPaddingHome": {
+    "type": "Padding",
+    "selector": ".desktop-header-active.route-common-home .header .mid-bar"
+  },
+  "midBarRadius": {
+    "type": "BorderRadius",
+    "selector": ".desktop-header-active .header .mid-bar"
+  },
+  "midBarRadiusHome": {
+    "type": "BorderRadius",
+    "selector": ".desktop-header-active.route-common-home .header .mid-bar"
+  },
+  "headerFullwidthBG": {
+    "type": "Background",
+    "selector": ".desktop-header-active .header, .desktop-header-active .header-slim-new::before"
+  },
+  "headerFullwidthBGMenu": {
+    "type": "Background",
+    "selector": ".desktop-header-active:not(.header-sticky) .menu-open .header, .desktop-header-active:not(.header-sticky) .menu-open .header-slim-new::before"
+  },
+  "headerFullwidthBorder": {
+    "type": "Border",
+    "selector": ".desktop-header-active .header"
+  },
+  "headerFullwidthBGHome": {
+    "type": "Background",
+    "selector": ".desktop-header-active.route-common-home .header"
+  },
+  "headerFullwidthBGHomeMenu": {
+    "type": "Background",
+    "selector": ".desktop-header-active.route-common-home:not(.header-sticky) .menu-open .header"
+  },
+  "headerShadow": {
+    "type": "Shadow",
+    "selector": ".desktop-header-active .header"
+  },
+  "shadow": {
+    "type": "Shadow",
+    "selector": ".desktop-header-active .mid-bar"
+  },
+  "headerShadowHome": {
+    "type": "Shadow",
+    "selector": ".desktop-header-active.route-common-home .header"
+  },
+  "shadowHome": {
+    "type": "Shadow",
+    "selector": ".desktop-header-active.route-common-home .mid-bar"
+  },
+  "headerHeight": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ":root": "--desktop-header:%spx"
+      }
+    },
+    "php": true,
+    "js": true
+  },
+  "headerMaxWidth": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".desktop-header-active .header > div": "--max-width: %spx"
+      }
+    }
+  },
+  "headerMaxWidthHome": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".desktop-header-active.route-common-home .header > div": "--max-width: %spx"
+      }
+    }
+  },
+  "gutterSubtract": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "true": {
+        ".header > div": "max-width: min(calc(100% - var(--content-gutter, 0px) * 2), calc(var(--max-width, var(--content-max-width, 100%)) - var(--content-gutter, 0px) * 2))"
+      },
+      "false": {
+        ".header > div": "max-width: calc(var(--max-width, var(--content-max-width, 100%)) - var(--content-gutter, 0px) * 2)"
+      }
+    }
+  },
+  "cartDropdownOverlay": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".desktop-header-active .cart-open .site-overlay": "display: block; visibility: visible; opacity: var(--site-overlay-opacity, .5)"
+      }
+    }
+  },
+  "searchDropdownOverlay": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".desktop-header-active.search-page-open .site-overlay": "display: block; visibility: visible; opacity: var(--site-overlay-opacity, .5)"
+      }
+    }
+  },
+  "searchCategoriesDropdownOverlay": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".desktop-header-active .search-open .site-overlay": "display: block; visibility: visible; opacity: var(--site-overlay-opacity, .5)"
+      }
+    }
+  },
+  "headerSiteOverlay": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".desktop-header-active .menu-open .site-overlay": "display: block; visibility: visible; opacity: var(--site-overlay-opacity, .5)"
+      }
+    }
+  },
+  "headerSiteOverlayOpacity": {
+    "type": "Input",
+    "value": "",
+    "rules": {
+      "@": {
+        ".desktop-header-active": "--site-overlay-opacity: %s"
+      }
+    }
+  },
+  "headerSiteOverlayOffset": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".desktop-header-active .site-overlay": "--site-overlay-offset: %spx"
+      }
+    }
+  },
+  "headerOverlaySideOffset": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".desktop-header-active .site-overlay": "inset-inline-start: %spx"
+      }
+    }
+  },
+  "headerSiteOverlayBG": {
+    "type": "Color",
+    "property": "background-color",
+    "selector": ".desktop-header-active .site-overlay"
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}
+

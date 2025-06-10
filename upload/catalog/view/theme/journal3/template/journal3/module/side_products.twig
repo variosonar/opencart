@@ -1,0 +1,108 @@
+{% macro renderSideProductsItem(context, item) %}
+  {% set journal3 = context.journal3 %}
+  {% if context.gridType == 'ipr' and context.swiper_carousel %}
+    <div class="swiper" data-items-per-row='{{ context.itemsPerRow|json_encode(constant('JSON_FORCE_OBJECT')) }}' data-options='{{ context.carouselOptions|json_encode(constant('JSON_FORCE_OBJECT')) }}'>
+      <div class="swiper-container" {% if journal3.is_rtl %}dir="rtl"{% endif %}>
+        <div class="swiper-wrapper side-products ipr-grid">
+          {{ item.products }}
+        </div>
+      </div>
+      <div class="swiper-buttons">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  {% else %}
+    <div class="side-products no-scroll {{ context.gridType }}-grid">
+      {% if context.gridType == 'auto' %}
+        <div class="auto-grid-items">
+          {{ item.products }}
+        </div>
+        <div class="auto-carousel-bar auto-carousel-controls"><div class="auto-carousel-thumb"></div><div class="auto-carousel-fill"></div></div>
+        <div class="auto-carousel-buttons auto-carousel-controls"><div class="auto-carousel-prev"><span></span></div><div class="auto-carousel-next"><span></span></div></div>
+      {% else %}
+        {{ item.products }}
+      {% endif %}
+    </div>
+  {% endif %}
+{% endmacro %}
+<div class="{{ journal3.classes(classes) }}">
+  <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+  {% if title %}
+    <h3 class="title module-title">{{ title }}</h3>
+  {% endif %}
+  <div class="module-body side-products-{{ sectionsDisplay }}">
+    {# grid #}
+    {% if sectionsDisplay == 'blocks' %}
+      {% for item in items %}
+        <div class="{{ journal3.classes(item.classes) }}">
+          {% if item.title %}
+            <h3 class="title module-title">{{ item.title }}</h3>
+          {% endif %}
+          {{ _self.renderSideProductsItem(_context, item) }}
+        </div>
+      {% endfor %}
+    {% endif %}
+    {# tabs #}
+    {% if sectionsDisplay == 'tabs' %}
+      <div class="tab-container">
+        <div class="full-tabs-bg"></div>
+        <ul class="nav nav-tabs">
+          {% for item in items %}
+            <li class="{{ journal3.classes(item.tab_classes) }}">
+              {% if item.tabType == 'link' %}
+                <a href="{{ item.link.href }}">{{ item.title }}</a>
+              {% else %}
+                <a href="#{{ id }}-tab-{{ item.index }}" data-toggle="tab">{{ item.title }}</a>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+        <div class="tab-content">
+          {% for item in items %}
+            {% if item.tabType != 'link' %}
+              {% if item.active %}
+                <div class="{{ journal3.classes(item.classes) }}" id="{{ id }}-tab-{{ item.index }}">
+                  {{ _self.renderSideProductsItem(_context, item) }}
+                </div>
+              {% else %}
+                <template class="{{ journal3.classes(item.classes) }}" id="{{ id }}-tab-{{ item.index }}">
+                  {{ _self.renderSideProductsItem(_context, item) }}
+                </template>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+    {# accordion #}
+    {% if sectionsDisplay == 'accordion' %}
+      <div class="panel-group" id="{{ id }}-collapse">
+        {% for item in items %}
+          <div class="{{ journal3.classes(item.classes) }}">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a href="#{{ id }}-collapse-{{ item.index }}" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#{{ id }}-collapse" aria-expanded="false">
+                  {{ item.title }}
+                  <i class="fa fa-caret-down"></i>
+                </a>
+              </h4>
+            </div>
+            <div class="{{ journal3.classes(item.panel_classes) }}" id="{{ id }}-collapse-{{ item.index }}">
+              {% if item.active %}
+                <div class="panel-body">
+                  {{ _self.renderSideProductsItem(_context, item) }}
+                </div>
+              {% else %}
+                <template class="panel-body">
+                  {{ _self.renderSideProductsItem(_context, item) }}
+                </template>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,162 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "Banner"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "color_scheme": {
+    "type": "ColorScheme",
+    "php": true
+  },
+  "title": {
+    "type": "InputLang",
+    "value":  "",
+    "php": true
+  },
+  "title2": {
+    "type": "InputLang",
+    "value":  "",
+    "php": true
+  },
+  "title3": {
+    "type": "InputLang",
+    "value":  "",
+    "php": true
+  },
+  "colspan-hold": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".module-banners-%s .module-item-%s",
+    "property": "grid-column:span %s"
+  },
+  "flexItemCustom": {
+    "type": "InputPair",
+    "selector": ".module-banners-%s .banners-grid.flex-grid > .module-item-%s",
+    "properties": {
+      "first": "--flex-grid-width: %spx",
+      "second": "--flex-grid-max-col: calc((100% - (%s - 1) * var(--flex-grid-gap, 0px)) / %s)"
+    },
+    "value": {
+      "first": "",
+      "second": ""
+    }
+  },
+  "itemSpanRows": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".module-banners-%s .banners-grid.auto-grid > .auto-grid-items > .module-item-%s": "grid-row-end: span var(--grid-rows, 1)"
+      },
+      "false": {
+        ".module-banners-%s .banners-grid.auto-grid > .auto-grid-items > .module-item-%s": "grid-row-end: auto"
+      }
+    }
+  },
+  "itemOrder": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": ".module-banners-%s .auto-grid .module-item-%s",
+    "property": "order: %s"
+  },
+  "image": {
+    "type": "ImageLang"
+  },
+  "imageDimensions": {
+    "type": "ImageDimensions",
+    "value": {
+      "resize": "fill"
+    }
+  },
+  "alt": {
+    "type": "InputLang",
+    "value":  "",
+    "php": true
+  },
+  "link": {
+    "type": "Link",
+    "php": true
+  },
+  "itemIcon": {
+    "type": "Icon",
+    "selector": ".module-banners-%s div.module-item-%s > a::after"
+  },
+  "iconDisplay": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "hover": {
+        "div.module-banners-%s div.module-item-%s a::after": "opacity:0",
+        ".desktop div.module-banners-%s div.module-item-%s:hover a::after": "opacity:1"
+      },
+      "always": {
+        "div.module-banners-%s div.module-item-%s a::after": "opacity:1"
+      }
+    }
+  },
+  "iconPosition": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "tl": {
+        "div.module-banners-%s div.module-item-%s > a::after": "top:0; left:0; right:auto; bottom: auto; transform: translate3d(0, 0, 0)"
+      },
+      "tc": {
+        "div.module-banners-%s div.module-item-%s > a::after": "top:0; left:50%; right:auto; bottom: auto; transform: translate3d(var(--transform-50-rtl, -50%), 0, 0)"
+      },
+      "tr": {
+        "div.module-banners-%s div.module-item-%s > a::after": "top:0; left:auto; right:0; bottom: auto; transform: translate3d(0, 0, 0)"
+      },
+      "cl": {
+        "div.module-banners-%s div.module-item-%s > a::after": "top:50%; left:0; right:auto; bottom: auto; transform: translate3d(0, -50%, 0)"
+      },
+      "center": {
+        "div.module-banners-%s div.module-item-%s > a::after": "top:50%; left:50%; right:auto; bottom: auto; transform: translate3d(-50%, -50%, 0)"
+      },
+      "cr": {
+        "div.module-banners-%s div.module-item-%s > a::after": "top:50%; left:auto; right:0; bottom: auto; transform: translate3d(0, -50%, 0)"
+      },
+      "bl": {
+        "div.module-banners-%s div.module-item-%s > a::after": "top:auto; left:0; right:auto; bottom: 0; transform: translate3d(0, 0, 0)"
+      },
+      "bc": {
+        "div.module-banners-%s div.module-item-%s > a::after": "top:auto; left:50%; right:auto; bottom: 0; transform: translate3d(var(--transform-50-rtl, -50%), 0, 0)"
+      },
+      "br": {
+        "div.module-banners-%s div.module-item-%s > a::after": "top:auto; left:auto; right:0; bottom: 0; transform: translate3d(0, 0, 0)"
+      }
+    }
+  },
+  "iconMargin": {
+    "type": "Margin",
+    "selector": "div.module-banners-%s div.module-item-%s a::after"
+  },
+  "iconMarginHover": {
+    "type": "Margin",
+    "selector": ".desktop div.module-banners-%s div.module-item-%s:hover a::after"
+  },
+  "background": {
+    "type": "Background",
+    "selector": "div.module-banners-%s div.module-item-%s > a"
+  },
+  "backgroundHover": {
+    "type": "Background",
+    "selector": "div.module-banners-%s div.module-item-%s:hover > a"
+  },
+  "margin": {
+    "type": "InputValue",
+    "rules": {
+      "@": {
+        ".grid-row-%s-%s": "margin-bottom:%spx"
+      }
+    }
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

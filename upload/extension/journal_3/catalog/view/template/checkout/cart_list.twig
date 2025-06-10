@@ -1,0 +1,86 @@
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td class="text-center td-image">{{ column_image }}</td>
+        <td class="text-start td-name">{{ column_name }}</td>
+        <td class="text-center td-model">{{ column_model }}</td>
+        <td class="text-center td-qty">{{ column_quantity }}</td>
+        <td class="text-center td-price">{{ column_price }}</td>
+        <td class="text-center td-total">{{ column_total }}</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for product in products %}
+        <tr>
+          <td class="text-center td-image">{% if product.thumb %} <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-thumbnail"/></a> {% endif %}</td>
+          <td class="text-start text-wrap td-name"><a href="{{ product.href }}">{{ product.name }}</a>{% if not product.stock %} <span class="text-danger">***</span>{% endif %}
+            {% if product.option %}
+              {% for option in product.option %}
+                <br/>
+                <small> - {{ option.name }}: {{ option.value }}</small>
+              {% endfor %}
+            {% endif %}
+            {% if product.reward %}
+              <br/>
+              <small>{{ text_points }}: {{ product.reward }}</small>
+            {% endif %}
+            {% if product.subscription %}
+              <br/>
+              <small>{{ text_subscription }}: {{ product.subscription }}</small>
+            {% endif %}
+          </td>
+          <td class="text-center td-model">{{ product.model }}</td>
+          <td class="text-center td-qty">
+            <form method="post" data-oc-target="#shopping-cart">
+              <div class="input-group">
+                <div class="stepper">
+                  <button aria-label="-" class="fa fa-angle-down" type="button"></button>
+                  <input type="text" name="quantity" value="{{ product.quantity }}" size="1" class="form-control"> <input type="hidden" name="key" value="{{ product.cart_id }}">
+                  <button aria-label="+" class="fa fa-angle-up" type="button"></button>
+                </div>
+                <span class="input-group-btn">
+                {% if edit %}
+                  <button type="submit" formaction="{{ edit }}" data-toggle="tooltip-hover" title="{{ button_update }}" class="btn btn-update"><i class="fa fa-refresh"></i></button>
+                  <button type="submit" formaction="{{ product.remove }}" data-toggle="tooltip-hover" title="{{ button_remove }}" class="btn btn-remove"><i class="fa fa-times-circle"></i></button>
+                {% else %}
+                  <button type="submit" formaction="{{ product_edit }}" data-toggle="tooltip-hover" title="{{ button_update }}" class="btn btn-update"><i class="fa fa-refresh"></i></button>
+                  <button type="submit" formaction="{{ product_remove }}" data-toggle="tooltip-hover" title="{{ button_remove }}" class="btn btn-remove"><i class="fa fa-times-circle"></i></button>
+                {% endif %}
+                </span>
+              </div>
+            </form>
+          </td>
+          <td class="text-center td-price">{{ product.price }}</td>
+          <td class="text-center td-total">{{ product.total }}</td>
+        </tr>
+      {% endfor %}
+      {% for voucher in vouchers %}
+        <tr>
+          <td></td>
+          <td class="text-start text-wrap">{{ voucher.description }}</td>
+          <td class="text-start"></td>
+          <td class="text-center">
+            <form method="post" data-oc-target="#shopping-cart">
+              <div class="input-group">
+                <input type="text" name="quantity" value="1" size="1" class="form-control" disabled/>
+                <button type="submit" formaction="{{ voucher_remove }}" data-bs-toggle="tooltip" title="{{ button_remove }}" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i></button>
+              </div>
+              <input type="hidden" name="key" value="{{ voucher.key }}"/>
+            </form>
+          </td>
+          <td class="text-center">{{ voucher.amount }}</td>
+          <td class="text-center">{{ voucher.amount }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+    <tfoot id="checkout-total">
+      {% for total in totals %}
+        <tr>
+          <td colspan="5" class="text-end"><strong>{{ total.title }}</strong></td>
+          <td class="text-center">{{ total.text }}</td>
+        </tr>
+      {% endfor %}
+    </tfoot>
+  </table>
+</div>

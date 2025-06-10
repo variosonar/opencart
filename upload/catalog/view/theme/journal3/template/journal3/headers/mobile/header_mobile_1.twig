@@ -1,0 +1,60 @@
+<div class="mobile-header mobile-default mobile-1 {{ journal3.classes(journal3.get('mobileHeaderClasses')) }} {{ journal3.get('header_mobile_color_scheme') }}">
+  <div class="mobile-top-bar {{ journal3.get('header_mobile_top_color_scheme') }}">
+    <div class="mobile-top-menu-wrapper">
+      {{ journal3.get('mobile_top_menu') }}
+    </div>
+    {% if journal3.get('mobileLangPosition') == 'top' %}
+    <div class="language-currency top-menu">
+      <div class="mobile-language-wrapper">
+        {{ journal3.get('mobile_header_active') ? language : '' }}
+      </div>
+      <div class="mobile-currency-wrapper">
+        {{ journal3.get('mobile_header_active') ? currency : '' }}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+  <div class="mobile-bar sticky-bar">
+    <div class="mobile-logo-wrapper {{ journal3.get('mobile_header_logo_color_scheme') }}">
+      {% if journal3.get('mobile_header_active') %}
+        <div id="logo">
+          {% if journal3.get('mobile_logo_src') or journal3.get('mobile_logo_alternate_src') %}
+            <a href="{{ home }}">
+              <img class="header-logo" src="{{ journal3.get('mobile_logo_src') }}" {% if journal3.get('mobile_logo_src2x') %}srcset="{{ journal3.get('mobile_logo_src') }} 1x, {{ journal3.get('mobile_logo_src2x') }} 2x"{% endif %} width="{{ journal3.get('mobile_logo_width') }}" height="{{ journal3.get('mobile_logo_height') }}" alt="{{ name }}" title="{{ name }}"/>
+              <img class="header-logo-alternate" src="{{ journal3.get('mobile_logo_alternate_src') }}" {% if journal3.get('mobile_logo_alternate_src2x') %}srcset="{{ journal3.get('mobile_logo_alternate_src') }} 1x, {{ journal3.get('mobile_logo_alternate_src2x') }} 2x"{% endif %} width="{{ journal3.get('mobile_logo_alternate_width') }}" height="{{ journal3.get('mobile_logo_alternate_height') }}" alt="{{ name }}" title="{{ name }}"/>
+            </a>
+          {% else %}
+            <h1><a href="{{ home }}">{{ name }}</a></h1>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+    <div class="mobile-bar-group">
+      <a href="javascript:;" class="menu-trigger" data-off-canvas="mobile-main-menu-container" title="{{ journal3.get('headerMobileMenuTitle') }}"><span class="menu-icon"></span></a>
+      {% if journal3.get('mobileCustomMenuStatus1') %}
+      <a class="mobile-custom-menu mobile-custom-menu-1" href="{{ journal3.get('mobileCustomMenuLink1.href') }}" {{ journal3.linkAttrs(journal3.get('mobileCustomMenuLink1.attrs')) }}>
+        {{ journal3.countBadge(journal3.get('mobileCustomMenuLink1.name'), journal3.get('mobileCustomMenuLink1.total'), journal3.get('mobileCustomMenuLink1.classes')) }}
+      </a>
+      {% endif %}
+      {% if journal3.get('mobileCustomMenuStatus2') %}
+      <a class="mobile-custom-menu mobile-custom-menu-2" href="{{ journal3.get('mobileCustomMenuLink2.href') }}" {{ journal3.linkAttrs(journal3.get('mobileCustomMenuLink2.attrs')) }}>
+        {{ journal3.countBadge(journal3.get('mobileCustomMenuLink2.name'), journal3.get('mobileCustomMenuLink2.total'), journal3.get('mobileCustomMenuLink2.classes')) }}
+      </a>
+      {% endif %}
+      <div class="mobile-search-wrapper mini-search">
+        {{ journal3.get('mobile_header_active') ? search | replace({
+          'color-scheme-__SEARCH_COLOR_SCHEME__': (journal3.get('header_mobile_search_color_scheme') ?: 'color-scheme-'),
+          'color-scheme-__SEARCH_CATEGORIES_COLOR_SCHEME__': journal3.get('header_mobile_search_categories_color_scheme')
+        }) : '' }}
+      </div>
+      <div class="mobile-cart-wrapper mini-cart">
+        {{ journal3.get('mobile_header_active') ? cart : '' }}
+      </div>
+    </div>
+  </div>
+  {% if journal3.get('mobile_secondary_menu') %}
+    <div class="mobile-secondary-menu {{ journal3.get('header_mobile_secondary_menu_color_scheme') }}">
+      {{ journal3.get('mobile_secondary_menu') }}
+    </div>
+  {% endif %}
+</div>

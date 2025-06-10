@@ -1,0 +1,146 @@
+{
+  "cartStyle": {
+    "type": "Variable",
+    "variable": "cart",
+    "selector_prefix": ".desktop-cart-wrapper"
+  },
+  "cartVisibility": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "true": {
+        "#cart": "display: flex"
+      },
+      "false": {
+        "#cart": "display: none"
+      }
+    }
+  },
+  "cartIcon": {
+    "type": "Icon",
+    "selector": ".desktop-header-active .desktop-cart-wrapper #cart > a > em::before"
+  },
+  "cartIconRadius": {
+    "type": "BorderRadius",
+    "selector": ".desktop-header-active div.desktop-cart-wrapper #cart > a > em"
+  },
+  "cartBorder": {
+    "type": "Border",
+    "selector": ".desktop-header-active .desktop-cart-wrapper #cart"
+  },
+  "cartRadius": {
+    "type": "BorderRadius",
+    "selector": ".desktop-header-active div.desktop-cart-wrapper #cart"
+  },
+  "cartMenuPadding": {
+    "type": "Padding",
+    "selector": ".desktop-cart-wrapper #cart"
+  },
+  "headerMiniCartIconSize": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".desktop-cart-wrapper #cart > a": "min-width:%spx;"
+      }
+    }
+  },
+  "cartMobileWrapperStyle": {
+    "type": "Variable",
+    "variable": "mobile_wrapper",
+    "selector_prefix": ".desktop.mobile-cart-content-container-open"
+  },
+  "cartScale": {
+    "type": "InputPair",
+    "selector": "#cart",
+    "properties": {
+      "first": "--scale-hover: %s",
+      "second": "--scale-active: %s"
+    }
+  },
+  "cartFullHeight": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".desktop-cart-wrapper": "height: 100%",
+        "#cart > a > em": "height: 100%"
+      },
+      "false": {
+        ".desktop-cart-wrapper": "height: initial",
+        "#cart > a > em": "height: 100%"
+      }
+    }
+  },
+  "cartContentStyle": {
+    "type": "Variable",
+    "variable": "cart_content"
+  },
+  "CartMargin": {
+    "type": "Margin",
+    "selector": ".desktop-header-active #cart"
+  },
+  "CartBackground-hold": {
+    "type": "Background",
+    "selector": ".desktop-header-active #cart"
+  },
+  "CartBackgroundHover-hold": {
+    "type": "Background",
+    "selector": ".desktop-header-active #cart:hover"
+  },
+  "cartPosition": {
+    "type": "Radio",
+    "value": "top",
+    "php": true
+  },
+  "cartWidth": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        ".desktop-header-active #cart": "max-width:%spx"
+      }
+    }
+  },
+  "cartHeight": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        ".desktop-header-active #cart": "height:%spx"
+      }
+    }
+  },
+
+  "searchPosition": {
+    "type": "Radio",
+    "value": "before",
+    "rules": {
+      "after": {
+        ".desktop-header-active .header-classic .mid-bar .desktop-search-wrapper": "order:20 !important",
+        ".desktop-header-active .header-classic .mid-bar .classic-cart-wrapper": "order:0 !important; justify-content:flex-start"
+      }
+    }
+  },
+  "cartDropdown": {
+    "type": "Toggle",
+    "value": "true",
+    "js": true,
+    "rules": {
+      "false": {
+        ".desktop-header-active .site-wrapper::before": "display: block",
+        ".desktop-header-active .cart-open .site-overlay": "display: none !important; opacity: 0;"
+      }
+    }
+  },
+  "CartCountBadge": {
+    "type": "Variable",
+    "variable": "count_badge",
+    "selector_prefix": ".desktop-header-active .header #cart-items&"
+  },
+  "CartCountBadgeOffset": {
+    "type": "InputPair",
+    "selector": ".desktop-header-active .header #cart-items",
+    "properties": {
+      "first": "--x: %spx",
+      "second": "--margin-top:%spx"
+    }
+  }
+}

@@ -1,0 +1,887 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Gallery "
+  },
+  "status": {
+    "type": "Status"
+  },
+  "color_scheme": {
+    "type": "ColorScheme",
+    "php": true
+  },
+  "schedule": {
+    "type": "Range",
+    "php": true
+  },
+  "title": {
+    "type": "InputLang",
+    "php": true
+  },
+  "dynamic": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "dynamicPath": {
+    "type": "Input",
+    "value": "",
+    "php": true
+  },
+  "productImages": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+  "moduleTitle": {
+    "type": "Variable",
+    "variable": "title",
+    "selector_prefix": ".module-gallery-%s .module-title"
+  },
+  "moduleTitleFont": {
+    "type": "Font",
+    "selector": ".module-gallery-%s .module-title",
+    "important": "true"
+  },
+  "moduleSubtitleFont": {
+    "type": "Font",
+    "selector": ".module-gallery-%s .module-subtitle",
+    "important": "true"
+  },
+  "carousel": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true,
+    "device": true
+  },
+  "carouselTablet": {
+    "type": "Toggle",
+    "value": "",
+    "php": true
+  },
+  "carouselPhone": {
+    "type": "Toggle",
+    "value": "",
+    "php": true
+  },
+  "carouselStyle": {
+    "type": "Variable",
+    "variable": "carousel",
+    "selector_prefix": ".module-gallery-%s"
+  },
+  "itemsPerRow": {
+    "type": "ItemsPerRow",
+    "selector": ".module-gallery-%s .ipr-grid .module-item",
+    "php": true
+  },
+  "source": {
+    "type": "Radio",
+    "value": "local",
+    "php": true
+  },
+  "instagramPage": {
+    "type": "Input",
+    "php": true
+  },
+  "containerMargin": {
+    "type": "Margin",
+    "selector": ".module-gallery-%s:not(.carousel-mode) .module-body .ipr-grid"
+  },
+  "carouselGutter": {
+    "type": "Padding",
+    "selector": ".module-gallery-%s.carousel-mode .swiper-container"
+  },
+  "background": {
+    "type": "Background",
+    "selector": ".module-gallery-%s"
+  },
+  "galleryModuleStyle": {
+    "type": "Variable",
+    "variable": "gallery_module",
+    "selector_prefix": ".module-gallery-%s"
+  },
+  "thumbsLimit": {
+    "type": "InputNumber",
+    "value": "10",
+    "php": true,
+    "device": true
+  },
+  "thumbsLimitTablet": {
+    "type": "InputNumber",
+    "php": true
+  },
+  "thumbsLimitPhone": {
+    "type": "InputNumber",
+    "php": true
+  },
+  "thumbDimensions": {
+    "type": "ImageDimensions",
+    "php": true,
+    "value": {
+      "resize": "fill",
+      "tablet_resize": "fill",
+      "phone_resize": "fill"
+    }
+  },
+  "hoverType": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "icon": {
+        "div.module-gallery-%s .module-item > a::after": "--display:flex;",
+        "div.module-gallery-%s .module-item > a::before": "display:none"
+      },
+      "title": {
+        "div.module-gallery-%s .module-item > a::after": "--display:none;",
+        "div.module-gallery-%s .module-item > a::before": "display:block"
+      },
+      "none": {
+        "div.module-gallery-%s .module-item > a::after": "--display:none;",
+        "div.module-gallery-%s .module-item > a::before": "display:none"
+      }
+    }
+  },
+  "iconAlways": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-gallery-%s .module-body div.module-item > a::after": "display: flex; opacity: 1; transform: scale(1);"
+      },
+      "false": {
+        ".module-gallery-%s .module-body div.module-item > a::after": "display: var(--display); opacity: var(--opacity); transform: scale(var(--scale));"
+      }
+    }
+  },
+  "iconPosition": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "tl": {
+        "div.module-gallery-%s .module-item > a::after": "align-items:flex-start; justify-content: flex-start;"
+      },
+      "tc": {
+        "div.module-gallery-%s .module-item > a::after": "align-items:flex-start; justify-content: center;"
+      },
+      "tr": {
+        "div.module-gallery-%s .module-item > a::after": "align-items:flex-start; justify-content: flex-end;"
+      },
+      "c": {
+        "div.module-gallery-%s .module-item > a::after": "align-items:center; justify-content: center;"
+      },
+      "bl": {
+        "div.module-gallery-%s .module-item > a::after": "align-items:flex-end; justify-content: flex-start;"
+      },
+      "bc": {
+        "div.module-gallery-%s .module-item > a::after": "align-items:flex-end; justify-content: center;"
+      },
+      "br": {
+        "div.module-gallery-%s .module-item > a::after": "align-items:flex-end; justify-content: flex-end;"
+      }
+    }
+  },
+  "hoverIcon": {
+    "type": "Icon",
+    "selector": "div.module-gallery-%s .module-item > a::after"
+  },
+  "titleFont": {
+    "type": "Font",
+    "selector": "div.module-gallery-%s .module-item > a::before"
+  },
+  "hoverOverlay": {
+    "type": "Color",
+    "selector": "div.module-gallery-%s .module-item > a .gallery-image::before",
+    "property": "background-color",
+    "selector_prefix": ".no-touchevents"
+  },
+  "hoverOverlayBlend": {
+    "value": "",
+    "type": "Select",
+    "selector": "div.module-gallery-%s .module-item > a .gallery-image::before",
+    "property": "mix-blend-mode"
+  },
+  "OverlayOpacity": {
+    "value": "",
+    "type": "Input",
+    "selector": "div.module-gallery-%s .module-item > a .gallery-image::before",
+    "property": "--opacity: %s"
+  },
+  "OverlayOpacityHover": {
+    "value": "",
+    "type": "Input",
+    "selector": "div.module-gallery-%s .module-item:hover > a .gallery-image::before",
+    "property": "--opacity-hover: %s"
+  },
+  "OverlayDisplay": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "hover": {
+        "div.module-gallery-%s .module-item > a .gallery-image::before": "opacity: 0",
+        "div.module-gallery-%s .module-item:hover > a .gallery-image::before": "opacity: var(--opacity-hover, var(--opacity, 1))"
+      },
+      "always": {
+        "div.module-gallery-%s .module-item > a .gallery-image::before": "opacity: var(--opacity-hover, var(--opacity, 1))"
+      }
+    }
+  },
+
+  "thumbBorder": {
+    "type": "Border",
+    "selector": "div.module-gallery-%s .module-item > a"
+  },
+  "thumbBorderHover": {
+    "type": "Color",
+    "selector": "div.module-gallery-%s .module-item > a:active",
+    "property": "border-color"
+  },
+  "thumbOutline": {
+    "type": "Outline",
+    "selector": "div.module-gallery-%s .module-item > a img"
+  },
+  "thumbOutlineHover": {
+    "type": "Outline",
+    "selector": "div.module-gallery-%s .module-item > a:hover img"
+  },
+  "thumbBorderRadius": {
+    "type": "BorderRadius",
+    "selector": "div.module-gallery-%s .module-item > a"
+  },
+  "FirstBorderRadius": {
+    "type": "BorderRadius",
+    "selector": "div.module-gallery-%s .module-item:first-child > a"
+  },
+  "LastBorderRadius": {
+    "type": "BorderRadius",
+    "selector": "div.module-gallery-%s .module-item:last-child > a"
+  },
+  "thumbShadow": {
+    "type": "Shadow",
+    "selector": "div.module-gallery-%s .module-item > a"
+  },
+  "thumbShadowHover": {
+    "type": "Shadow",
+    "selector": "div.module-gallery-%s .module-item > a:hover"
+  },
+  "thumbPadding": {
+    "type": "Padding",
+    "selector": "div.module-gallery-%s .module-item > a"
+  },
+  "thumbBackground": {
+    "type": "Background",
+    "selector": "div.module-gallery-%s .module-item > a"
+  },
+  "thumbBackgroundHover": {
+    "type": "Background",
+    "selector": "div.module-gallery-%s .module-item > a:hover"
+  },
+  "grayscale": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "none": {
+        "div.module-gallery-%s .module-item > a img": "filter: grayscale(0)"
+      },
+      "always": {
+        "div.module-gallery-%s .module-item > a img": "filter: grayscale(1)"
+      },
+      "hover": {
+        "div.module-gallery-%s .module-item > a img": "filter: grayscale(1)",
+        "div.module-gallery-%s .module-item > a:hover img": "filter: grayscale(0)"
+      }
+    }
+  },
+  "ImageScale": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        "div.module-gallery-%s .module-item > a:hover img": "transform:scale(1.12)"
+      },
+      "false": {
+        "div.module-gallery-%s .module-item > a img": "transform:scale(1)"
+      }
+    }
+  },
+  "ImageShapeClipPath": {
+    "type": "Text",
+    "value": "",
+    "rules": {
+      "@": {
+        "div.module-gallery-%s .module-item > a": "%s"
+      }
+    }
+  },
+  "ImageTitleThumbs": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        "div.module-gallery-%s .gallery-image-caption": "display:block"
+      },
+      "false": {
+        "div.module-gallery-%s .gallery-image-caption": "display:none"
+      }
+    }
+  },
+  "ImageTitleThumbsFont": {
+    "type": "Font",
+    "selector": "div.module-gallery-%s .gallery-image-caption"
+  },
+  "moduleContainer": {
+    "include": "common",
+    "selector_prefix": "div.module-gallery-%s"
+  },
+  "moduleGallery": {
+    "type": "Variable",
+    "variable": "gallery",
+    "selector_prefix": ".lg-%s"
+  },
+  "popupImageDimensions": {
+    "type": "ImageDimensions",
+    "php": true
+  },
+  "popupThumbDimensions": {
+    "type": "ImageDimensions",
+    "value": {
+      "width": "90",
+      "height": "85",
+      "resize": "fill"
+    },
+    "php": true,
+    "selector": ".lg-%s",
+    "properties": {
+      "width": "--thumb-width: %spx",
+      "height": "--thumb-height: %spx"
+    }
+  },
+  "thumbAlign": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "top": {
+        ".module-gallery-%s .module-body .module-item": "display: flex; align-items: flex-start"
+      },
+      "center": {
+        ".module-gallery-%s .module-body .module-item": "display: flex; align-items: center"
+      },
+      "bottom": {
+        ".module-gallery-%s .module-body .module-item": "display: flex; align-items: flex-end"
+      }
+    }
+  },
+  "button": {
+    "type": "Toggle",
+    "value": "false",
+
+    "rules": {
+      "true": {
+        ".module-gallery-%s:not(.carousel-mode) .module-body": "margin:0"
+      }
+    },
+    "php": true
+  },
+  "buttonText": {
+    "type": "InputLang",
+    "value": "Open Gallery",
+    "php": true
+  },
+  "buttonStyle": {
+    "type": "Variable",
+    "variable": "button",
+    "selector_prefix": "div.module-gallery-%s .open-btn&"
+  },
+  "buttonAlign": {
+    "type": "Radio",
+    "value": "left",
+    "rules": {
+      "left": {
+        ".module-gallery-%s .module-body": "justify-content:flex-start"
+      },
+      "center": {
+        ".module-gallery-%s .module-body": "justify-content:center"
+      },
+      "right": {
+        ".module-gallery-%s .module-body": "justify-content:end"
+      }
+    }
+  },
+  "scale": {
+    "type": "InputSlider",
+    "value": "100",
+    "rules": {
+      "@": {
+        ".module-gallery-%s .open-btn": "transform: scale(calc(%s / 100))"
+      }
+    }
+  },
+  "scaleOrigin": {
+    "type": "Radio",
+    "value": "tl",
+    "rules": {
+      "tl": {
+        ".module-gallery-%s .open-btn": "transform-origin: top left"
+      },
+      "tr": {
+        ".module-gallery-%s .open-btn": "transform-origin: top right"
+      },
+      "center": {
+        ".module-gallery-%s .open-btn": "transform-origin: center"
+      },
+      "bl": {
+        ".module-gallery-%s .open-btn": "transform-origin: bottom left"
+      },
+      "br": {
+        ".module-gallery-%s .open-btn": "transform-origin: bottom right"
+      }
+    }
+  },
+  "iconLeft": {
+    "type": "Icon",
+    "selector": ".module-gallery-%s .open-btn::before"
+  },
+  "iconLeftHover": {
+    "type": "Color",
+    "selector": ".module-gallery-%s .open-btn:hover::before",
+    "property": "color"
+  },
+  "iconRight": {
+    "type": "Icon",
+    "selector": ".module-gallery-%s .open-btn::after"
+  },
+  "iconRightHover": {
+    "type": "Color",
+    "selector": ".module-gallery-%s .open-btn:hover::after",
+    "property": "color"
+  },
+  "margin": {
+    "type": "Margin",
+    "selector": ".module-gallery-%s .open-btn"
+  },
+  "padding": {
+    "type": "Padding",
+    "selector": ".module-gallery-%s .open-btn"
+  },
+  "borderRadius": {
+    "type": "BorderRadius",
+    "selector": ".module-gallery-%s .open-btn",
+    "important": true
+  },
+  "gridType": {
+    "type": "Radio",
+    "value": "ipr",
+    "php": true
+  },
+  "flexItems": {
+    "type": "InputPair",
+    "selector": ".module-gallery-%s .flex-grid",
+    "properties": {
+      "first": "--flex-grid-width: %spx",
+      "second": "--flex-grid-max-col: calc((100% - (%s - 1) * var(--flex-grid-gap, 0px)) / %s)"
+    },
+    "value": {
+      "first": "",
+      "second": ""
+    }
+  },
+  "flexItemGap": {
+    "type": "Gap",
+    "variableType": "gap",
+    "selector": ".module-gallery-%s .flex-grid",
+    "property": "--flex-grid-gap:%s"
+  },
+  "flexGrow": {
+    "type": "Radio",
+    "value": "1",
+    "selector": ".module-gallery-%s .flex-grid > *",
+    "property": "flex-grow: %s"
+  },
+  "flexAlign": {
+    "type": "Radio",
+    "value": "",
+    "selector": ".module-gallery-%s .flex-grid",
+    "property": "justify-content: %s"
+  },
+  "autoGridStyle": {
+    "type": "Variable",
+    "variable": "auto_grid",
+    "selector_prefix": ".module-gallery-%s .auto-grid "
+  },
+  "autoGrid": {
+    "type": "InputTriple",
+    "selector": "div.module-gallery-%s .auto-grid",
+    "properties": {
+      "first": "--grid-min-width: %spx",
+      "minCol": "--grid-min-col: %s",
+      "second": "--grid-max-col: %s",
+      "third": "--grid-gap: %s",
+      "fourth": "--auto-grow-type: auto-%s; --item-width: var(--item-%s)"
+    },
+    "value": {
+      "first": "",
+      "minCol": "",
+      "second": "",
+      "third": "",
+      "fourth": ""
+    }
+  },
+  "centerInsufficient": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".module-gallery-%s": "--center-insufficient: var(--center-insufficient-carousel, initial); --inline-margin: auto"
+      },
+      "false": {
+        ".module-gallery-%s": "--center-insufficient: initial; --inline-margin: initial"
+      }
+    }
+  },
+  "autoCarousel": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        ".module-gallery-%s": "--center-insufficient-carousel: max-content; --align-to-content-title: max(0px, calc(50% - var(--content-max-width) / 2 + var(--content-gutter))); --align-to-content: max(var(--content-gutter), calc((100vw - var(--scrollW, 0px) - var(--content-max-width)) / 2) + var(--content-gutter, 0px)); --align-to-content-cancel: calc(var(--align-to-content) * -1 + var(--content-gutter, 0px));",
+        ".module-gallery-%s .auto-grid": "margin-inline-start: calc(0px - var(--scroll-padding, 0px)); margin-inline-end: calc(0px - var(--scroll-padding, 0px)); --fr: var(--item-width)",
+        ".module-gallery-%s .auto-grid .auto-grid-items": "cursor: var(--cursor); grid-auto-flow: column; overflow-x:auto; overflow-y:hidden; padding-inline-start:var(--scroll-padding, 0px); padding-inline-end: var(--scroll-padding, 0px); padding-top:var(--top-padding, 0px); padding-bottom: var(--bottom-padding, 0px)",
+        ".module-gallery-%s .auto-grid .auto-carousel-controls": "display:flex;",
+        ".module-gallery-%s .auto-grid .auto-carousel-items::after": "display:block;",
+        ".module-gallery-%s .auto-grid .auto-grid-items.is-gliding a": "pointer-events: none"
+      },
+      "false": {
+        ".module-gallery-%s": "--center-insufficient-carousel: initial;",
+        ".module-gallery-%s .auto-grid": "margin-inline-start: unset; margin-inline-end: unset; --fr: 1fr",
+        ".module-gallery-%s .auto-grid .auto-grid-items": "grid-auto-flow: row dense; overflow-x:initial; padding-inline-start:unset; padding-inline-end: unset",
+        ".module-gallery-%s .auto-grid .auto-carousel-controls": "display:none;",
+        ".module-gallery-%s .auto-grid .auto-carousel-items::after": "display:none;",
+        ".module-gallery-%s .auto-grid .auto-grid-items.is-gliding a": "pointer-events: auto"
+      }
+    }
+  },
+  "autoCarouselRows": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".module-gallery-%s .auto-grid .auto-grid-items": " --grid-rows: %s"
+      }
+    }
+  },
+  "AutoCarouselButtonsVisibility": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "true": {
+        ".module-gallery-%s .auto-grid > .auto-carousel-buttons": "visibility: visible;"
+      },
+      "false": {
+        ".module-gallery-%s .auto-grid > .auto-carousel-buttons": "visibility: hidden;"
+      }
+    }
+  },
+  "FaderStatus": {
+    "type": "Radio",
+    "value": "off",
+    "rules": {
+      "off": {
+        ".module-gallery-%s .auto-grid > .auto-grid-items::before": "--fader-status: 0; display: none",
+        ".module-gallery-%s .auto-grid > .auto-grid-items::after": "--fader-status: 0; display: none"
+      },
+      "both": {
+        ".module-gallery-%s .auto-grid > .auto-grid-items::before": "--fader-status: 1; display: block",
+        ".module-gallery-%s .auto-grid > .auto-grid-items::after": "--fader-status: 1; display: block"
+      },
+      "start": {
+        ".module-gallery-%s .auto-grid > .auto-grid-items::before": "--fader-status: 1; display: block",
+        ".module-gallery-%s .auto-grid > .auto-grid-items::after": "--fader-status: 0; display: none"
+      },
+      "end": {
+        ".module-gallery-%s .auto-grid > .auto-grid-items::before": "--fader-status: 0; display: none",
+        ".module-gallery-%s .auto-grid > .auto-grid-items::after": "--fader-status: 1; display: block"
+      }
+    }
+  },
+  "FaderColor": {
+    "type": "Color",
+    "selector": ".module-gallery-%s .auto-grid .auto-grid-items::before, .module-gallery-%s .auto-grid .auto-grid-items::after",
+    "property": "--fader-color: %s"
+  },
+  "FaderWidth": {
+    "type": "InputPair",
+    "selector": ".module-gallery-%s .auto-grid .auto-grid-items::before, .module-gallery-%s .auto-grid .auto-grid-items::after",
+    "properties": {
+      "first": "--fader-width-left:%spx",
+      "second": "--fader-width-right:%spx",
+      "value": {
+        "first": "",
+        "second": ""
+      }
+    }
+  },
+  "autoCarouselStyle": {
+    "type": "Variable",
+    "variable": "auto_carousel",
+    "selector_prefix": ".module-gallery-%s "
+  },
+  "AutoCarouselScrollerType": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "custom": {
+        "div.module-gallery-%s .auto-grid": "--scrollbar-top-space: var(--scrollbar-top-spacing, 0px); --scrollbar-bottom-space: var(--scrollbar-bottom-spacing, 0px)",
+        "div.module-gallery-%s .auto-carousel-bar": "display:flex; margin: var(--scrollbar-top-spacing, 0) max(0px, var(--scroll-padding, 0px)) var(--scrollbar-bottom-spacing, 0) max(0px, var(--scroll-padding, 0px))",
+        "div.module-gallery-%s .auto-carousel-controls.auto-carousel-bar": "max-height: none"
+      },
+      "none": {
+        "div.module-gallery-%s .auto-grid": "--scrollbar-top-space: 0px; --scrollbar-bottom-space: 0px",
+        "div.module-gallery-%s .auto-carousel-bar": "display:none; margin: 0;",
+        "div.module-gallery-%s .auto-carousel-controls.auto-carousel-bar": "max-height: 0"
+      }
+    }
+  },
+  "AutoCarouselButtonPosition": {
+    "type": "Select",
+    "value": "",
+    "rules": {
+      "tl": {
+        "div.module-gallery-%s .auto-grid > .auto-carousel-buttons": "align-items:center; justify-content:flex-start; flex-direction:row; position:relative; height:0; transform: translate3d(0,calc(var(--auto-carousel-button-height,40px) / 2 * -1), 0); top:0; margin-top: 0px;",
+        "div.module-gallery-%s .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        "div.module-gallery-%s .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "tc": {
+        "div.module-gallery-%s .auto-grid > .auto-carousel-buttons": "align-items:center; justify-content:center; flex-direction:row; position:relative; height:0; transform: translate3d(0,calc(var(--auto-carousel-button-height,40px) / 2 * -1), 0); top:0; margin-top: 0px;",
+        "div.module-gallery-%s .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        "div.module-gallery-%s .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "tr": {
+        "div.module-gallery-%s .auto-grid > .auto-carousel-buttons": "align-items:center; justify-content:flex-end; flex-direction:row; position:relative; height:0; transform: translate3d(0,calc(var(--auto-carousel-button-height,40px) / 2 * -1), 0); top:0; margin-top: 0px;",
+        "div.module-gallery-%s .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        "div.module-gallery-%s .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "ta": {
+        "div.module-gallery-%s .auto-grid > .auto-carousel-buttons": "align-items:center; justify-content:space-between; flex-direction:row; position:relative; height:0; transform: translate3d(0,calc(var(--auto-carousel-button-height,40px) / 2 * -1), 0); top:0; margin-top: 0px;",
+        "div.module-gallery-%s .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        "div.module-gallery-%s .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(calc(var(--auto-carousel-button-x, 0px) * -1), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "cl": {
+        "div.module-gallery-%s .auto-grid > .auto-carousel-buttons": "align-items:flex-start; justify-content:flex-start; flex-direction:column; position:absolute; top:50%; height:auto; transform: translate3d(0,-50%,0); margin-top: var(--buttons-offset, 0px)",
+        "div.module-gallery-%s .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        "div.module-gallery-%s .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "cr": {
+        "div.module-gallery-%s .auto-grid > .auto-carousel-buttons": "align-items:flex-end; justify-content:flex-start; flex-direction:column; position:absolute; top:50%; height:auto; transform: translate3d(0,-50%,0); margin-top: var(--buttons-offset, 0px)",
+        "div.module-gallery-%s .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 2; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        "div.module-gallery-%s .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      },
+      "ca": {
+        "div.module-gallery-%s .auto-grid > .auto-carousel-buttons": "align-items:center; justify-content:space-between; flex-direction:row; position:absolute; top:50%; height:auto; transform: translate3d(0,-50%,0); margin-top: var(--buttons-offset, 0px)",
+        "div.module-gallery-%s .auto-grid > .auto-carousel-buttons .auto-carousel-prev": "order: 0; transform: translate3d(var(--auto-carousel-button-x, 0px), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))",
+        "div.module-gallery-%s .auto-grid > .auto-carousel-buttons .auto-carousel-next": "order: 2; transform: translate3d(calc(var(--auto-carousel-button-x, 0px) * -1), var(--auto-carousel-button-y, 0px), 0) scale(var(--scale, 1))"
+      }
+    }
+  },
+  "AutoCarouselButtonOffset": {
+    "type": "InputPair",
+    "selector": "div.module-gallery-%s .auto-grid",
+    "properties": {
+      "first": "--auto-carousel-button-x: %spx",
+      "second": "--auto-carousel-button-y: %spx"
+    },
+    "rtlProperties": {
+      "first": "--auto-carousel-button-x: calc(%spx * -1)",
+      "second": "--auto-carousel-button-y: %spx"
+    }
+  },
+  "AutoCarouselPadding": {
+    "type": "InputPair",
+    "selector": "div.module-gallery-%s .auto-grid",
+    "properties": {
+      "first": "--top-padding:%spx",
+      "second": "--bottom-padding:%spx",
+      "value": {
+        "first": "",
+        "second": ""
+      }
+    }
+  },
+  "AutoCarouselSnapAlign": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "start": {
+        "div.module-gallery-%s .auto-grid-items:not(.is-dragging) > *": "scroll-snap-align:start"
+      },
+      "center": {
+        "div.module-gallery-%s .auto-grid-items:not(.is-dragging) > *": "scroll-snap-align:center"
+      },
+      "end": {
+        "div.module-gallery-%s .auto-grid-items:not(.is-dragging) > *": "scroll-snap-align:end"
+      },
+      "none": {
+        "div.module-gallery-%s .auto-grid-items:not(.is-dragging) > *": "scroll-snap-align:none"
+      }
+    },
+    "touchevents": true
+  },
+  "AutoCarouselSnapPaddingCustom": {
+    "type": "Gap",
+    "variableType": "gap",
+    "value": "",
+    "selector": "div.module-gallery-%s .auto-grid",
+    "property": "--scroll-padding-custom: %s;"
+  },
+  "AutoCarouselSnapPadding": {
+    "type": "Radio",
+    "value": "",
+    "rules": {
+      "auto": {
+        "div.module-gallery-%s .auto-grid": "--scroll-padding: var(--scroll-padding-custom, var(--element-padding, 0px));"
+      },
+      "gap": {
+        "div.module-gallery-%s .auto-grid": "--scroll-padding: var(--scroll-padding-custom, var(--grid-gap, 0px));"
+      },
+      "true": {
+        "div.module-gallery-%s .auto-grid": "--scroll-padding: var(--scroll-padding-custom, var(--content-gutter, 0px));"
+      },
+      "false": {
+        "div.module-gallery-%s .auto-grid": "--scroll-padding: var(--scroll-padding-custom, 0px);"
+      }
+    }
+  },
+  "AutoCarouselScrollBy": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": "div.module-gallery-%s .auto-grid .auto-grid-items",
+    "property": "--scroll-by:%s"
+  },
+  "AutoScrollbarStyle": {
+    "type": "Variable",
+    "variable": "auto_scrollbar",
+    "selector_prefix": ".module-gallery-%s "
+  },
+  "AutoScrollbarTrackSpacing": {
+    "type": "InputPair",
+    "selector": "div.module-gallery-%s .auto-grid",
+    "properties": {
+      "first": "--scrollbar-top-spacing: %spx",
+      "second": "--scrollbar-bottom-spacing: %spx"
+    },
+    "value": {
+      "first": "",
+      "second": ""
+    }
+  },
+  "AutoCarouselButtonsWidth-hold": {
+    "type": "Toggle",
+    "value": "content",
+    "rules": {
+      "full": {
+        "div.module-gallery-%s": "--auto-carousel-controls-max-width: calc(100% - var(--scroll-padding, 0px) * 2) !important"
+      },
+      "content": {
+        "div.module-gallery-%s": "--auto-carousel-controls-max-width: min(min(var(--content-max-width, 100%) - var(--scroll-padding, 0px) * 2, var(--content-max-width, 100%) - var(--content-gutter, 0) * 2), 100% - var(--scroll-padding, 0px) * 2)"
+      }
+    }
+  },
+  "AutoScrollbarAlign": {
+    "type": "Toggle",
+    "value": "",
+    "rules": {
+      "start": {
+        "div.module-gallery-%s .auto-carousel-bar": "margin-inline-start:max(0px, var(--scroll-padding,0px)); margin-inline-end: auto;"
+      },
+      "center": {
+        "div.module-gallery-%s .auto-carousel-bar": "margin-inline-start:auto; margin-inline-end: auto;"
+      },
+      "end": {
+        "div.module-gallery-%s .auto-carousel-bar": "margin-inline-start:auto; margin-inline-end: max(0px, var(--scroll-padding,0px));"
+      }
+    }
+  },
+  "AutoScrollbarTrackMaxWidth": {
+    "type": "InputNumber",
+    "value": "",
+    "selector": "div.module-gallery-%s .auto-carousel-bar",
+    "property": "--auto-scroll-max-width:%spx"
+  },
+  "AutoScrollbarTrackWidth": {
+    "type": "InputNumber",
+    "selector": "div.module-gallery-%s .auto-carousel-bar",
+    "value": "",
+    "property": "--width-reduction:%spx"
+  },
+  "autoGridContainerAlignToContentTitle-hold": {
+    "type": "Toggle",
+    "value": "false",
+    "rules": {
+      "true": {
+        "div.module-gallery-%s.align-to-content": "--align-to-content-title: 0px !important"
+      }
+    }
+  },
+  "autoGridContainerAlignToContent": {
+    "type": "Toggle",
+    "value": "false"
+  },
+  "autoGridContainerPadding-hold": {
+    "type": "Padding",
+    "selector": "div.module-gallery-%s .auto-grid .auto-grid-items"
+  },
+  "autoGridContainerMargin": {
+    "type": "Margin",
+    "selector": "div.module-gallery-%s .auto-grid"
+  },
+  "autoGridContainerBackground": {
+    "type": "Background",
+    "selector": "div.module-gallery-%s .auto-grid .auto-grid-items"
+  },
+  "autoGridContainerShadow": {
+    "type": "Shadow",
+    "selector_prefix": "div.module-gallery-%s .auto-grid .auto-grid-items"
+  },
+  "autoGridContainerWidthOuter": {
+    "type": "InputNumber",
+    "value": "",
+    "property": "max-width: %spx",
+    "selector_prefix": "div.module-gallery-%s .auto-grid"
+  },
+  "autoGridContainerMarginOuter": {
+    "type": "Margin",
+    "selector_prefix": "div.module-gallery-%s .auto-grid"
+  },
+  "autoGridContainerPaddingOuter": {
+    "type": "Padding",
+    "selector_prefix": "div.module-gallery-%s .auto-grid"
+  },
+
+  "masonryColumns": {
+    "type": "InputPair",
+    "selector": ".module-gallery-%s .masonry-grid",
+    "properties": {
+      "first": "--masonry-cols-width: %spx",
+      "second": "--masonry-cols-max: %s"
+    },
+    "value": {
+      "first": "",
+      "second": ""
+    }
+  },
+  "masonryColumnsGap": {
+    "type": "Gap",
+    "variableType": "gap",
+    "selector": ".module-gallery-%s .masonry-grid",
+    "property": "--masonry-cols-gap:%s"
+  },
+  "evenItemStagger": {
+    "type": "Gap",
+    "variableType": "gap",
+    "selector": ".module-gallery-%s",
+    "property": "--stagger-item-even:%s"
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

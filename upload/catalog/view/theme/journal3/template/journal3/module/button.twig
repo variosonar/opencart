@@ -1,0 +1,8 @@
+<div class="{{ journal3.classes(classes) }}">
+  <button aria-label="Edit" class="admin-edit" type="button" data-edit="{{ edit }}"><em class="fa fa-pencil" data-placement="auto" data-toggle="tooltip-hover" data-tooltip-class="admin-edit-tooltip" title="Edit {{ name }}"></em></button>
+  {% if link.href %}
+    <a class="btn" href="{{ link.href }}" {{ journal3.linkAttrs(link) }}>{{ title }}</a>
+  {% else %}
+    <a class="btn">{{ title }}</a>
+  {% endif %}
+</div>

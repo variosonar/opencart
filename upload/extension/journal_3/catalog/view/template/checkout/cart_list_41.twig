@@ -1,0 +1,122 @@
+{% if products %}
+  {% if error_warning %}
+    <div class="alert alert-danger alert-dismissible"><i class="fa-solid fa-circle-exclamation"></i> {{ error_warning }} <button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>
+  {% endif %}
+  {% if error_stock %}
+    <div class="alert alert-danger alert-dismissible"><i class="fa-solid fa-circle-exclamation"></i> {{ error_stock }} <button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>
+  {% endif %}
+  {% if success %}
+    <div class="alert alert-success alert-dismissible"><i class="fa-solid fa-circle-check"></i> {{ success }} <button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>
+  {% endif %}
+  {% if attention %}
+    <div class="alert alert-info"><i class="fa-solid fa-circle-info"></i> {{ attention }} <button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>
+  {% endif %}
+  {% if journal3.get('pageTitlePosition') == 'default' %}
+    <h1 class="title page-title {{ journal3.get('title_color_scheme') }}">{{ heading_title }}{% if weight %}&nbsp;({{ weight }}){% endif %}</h1>
+  {% endif %}
+  <div id="output-cart" class="cart-table">
+    <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th class="text-center td-image">{{ column_image }}</th>
+          <th class="td-name">{{ column_name }}</th>
+          <th class="td-qty">{{ column_quantity }}</th>
+          <th class="text-end td-price">{{ column_price }}</th>
+          <th class="text-end td-total">{{ column_total }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for product in products %}
+          <tr>
+            <td class="text-center td-image">{% if product.thumb %}<a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-thumbnail"/></a>{% endif %}</td>
+            <td class="text-start text-wrap td-name"><a href="{{ product.href }}">{{ product.name }}</a>{% if not product.stock %} <span class="text-danger">***</span>{% endif %}
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <small> - {{ text_model }}: {{ product.model }}</small>
+                </li>
+                {% for option in product.option %}
+                  <li>
+                    <small> - {{ option.name }}: {{ option.value }}</small>
+                  </li>
+                {% endfor %}
+                {% if product.subscription %}
+                  <li>
+                    <small> - {{ text_subscription }}: {{ product.subscription }}</small>
+                  </li>
+                {% endif %}
+                {% if product.reward %}
+                  <li>
+                    <small> - {{ text_points }}: {{ product.reward }}</small>
+                  </li>
+                {% endif %}
+              </ul>
+            </td>
+            <td class="td-qty">
+              <form method="post" data-oc-target="#shopping-cart">
+                <div class="input-group">
+                  <div class="stepper">
+                    <button aria-label="-" class="fa fa-angle-down" type="button"></button>
+                    <input type="text" name="quantity" value="{{ product.quantity }}" size="1" class="form-control{% if product.minimum %} is-invalid{% endif %}"/>
+                    <input type="hidden" name="key" value="{{ product.cart_id }}"/>
+                    <button aria-label="+" class="fa fa-angle-up" type="button"></button>
+                  </div>
+                  <span class="input-group-btn">
+                  <button type="submit" formaction="{{ edit }}" data-toggle="tooltip-hover" title="{{ button_update }}" class="btn btn-update"><i class="fa fa-refresh"></i></button>
+                  <a href="{{ product.remove }}" data-toggle="tooltip-hover" title="{{ button_remove }}" class="btn btn-danger btn-remove"><i class="fa fa-times-circle"></i></a>
+                  </span>
+                </div>
+              </form>
+              {% if product.minimum %}
+                <small class="invalid-feedback d-block">{{ product.minimum }}</small>
+              {% endif %}
+            </td>
+            <td class="text-end td-price">{{ product.price }}</td>
+            <td class="text-end td-total">{{ product.total }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot id="checkout-total">
+        {% for total in totals %}
+          <tr>
+            <td colspan="4" class="text-end"><strong>{{ total.title }}</strong></td>
+            <td class="text-end">{{ total.text }}</td>
+          </tr>
+        {% endfor %}
+      </tfoot>
+    </table>
+    </div>
+  </div>
+
+  <div class="cart-bottom">
+    <div class="panels-total">
+      {% if modules %}
+        <div class="panels-total">
+          {% if modules and journal3.get('cartPanelsStatus') %}
+            <div class="cart-panels">
+              <h2 class="title">{{ text_next }}</h2>
+              <p>{{ text_next_choice }}</p>
+              <div class="panel-group" id="accordion">
+                {% for module in modules %}
+                  {{ module }}
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+    <div class="buttons row">
+      <div class="col pull-left"><a href="{{ continue }}" class="btn btn-default">{{ button_shopping }}</a></div>
+      <div class="col pull-right text-end"><a href="{{ checkout }}" class="btn btn-primary">{{ button_checkout }}</a></div>
+    </div>
+  </div>
+{% else %}
+  {% if journal3.get('pageTitlePosition') == 'default' %}
+    <h1 class="title page-title {{ journal3.get('title_color_scheme') }}">{{ heading_title }}{% if weight %}&nbsp;({{ weight }}){% endif %}</h1>
+  {% endif %}
+  <p>{{ text_no_results }}</p>
+  <div class="buttons">
+    <div class="text-end pull-right"><a href="{{ continue }}" class="btn btn-primary">{{ button_continue }}</a></div>
+  </div>
+{% endif %}

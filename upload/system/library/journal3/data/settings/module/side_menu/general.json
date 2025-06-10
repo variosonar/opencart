@@ -1,0 +1,235 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "Side Menu"
+  },
+  "status": {
+    "type": "Status"
+  },
+  "color_scheme": {
+    "type": "ColorScheme",
+    "php": true
+  },
+  "Visibility": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".side-menu-%s": "display: block"
+      },
+      "false": {
+        ".side-menu-%s": "display: none"
+      }
+    }
+  },
+  "width": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".side-menu-%s > ul > li > a": "width: %spx"
+      }
+    }
+  },
+  "textWidth": {
+    "type": "InputNumber",
+    "rules": {
+      "@": {
+        ".side-menu-%s > ul > li .links-text": "max-width: %spx"
+      }
+    }
+  },
+  "offset": {
+    "type": "InputNumber",
+    "value": "200",
+    "rules": {
+      "@": {
+        ".side-menu-%s": "margin-top: %spx"
+      }
+    }
+  },
+  "positionV": {
+    "type": "Radio",
+    "value": "top",
+    "rules": {
+      "top": {
+        ".side-menu-%s": "top: 0; bottom: auto; transform: translate3d(0,0,0);"
+      },
+      "center": {
+        ".side-menu-%s": "top: 50vh; bottom: auto; transform: translate3d(0,-50%,0);"
+      },
+      "bottom": {
+        ".side-menu-%s": "top: auto; bottom: 0; transform: translate3d(0,0,0);"
+      }
+    }
+  },
+  "iconP": {
+    "type": "Radio",
+    "value": "top",
+    "rules": {
+      "top": {
+        ".side-menu-%s > ul > li > a": "flex-direction: column;"
+      },
+      "side": {
+        ".side-menu-%s > ul > li > a": "flex-direction: row;"
+      }
+    }
+  },
+  "rotation": {
+    "type": "Radio",
+    "value": "default",
+    "rules": {
+      "default": {
+        ".side-menu-%s > ul > li": "writing-mode: horizontal-tb;"
+      },
+      "vertical": {
+        ".side-menu-%s > ul > li": "writing-mode: vertical-lr;"
+      }
+    }
+  },
+  "padding": {
+    "type": "Padding",
+    "selector": ".side-menu-%s > ul > li > a"
+  },
+  "itemMargin": {
+    "type": "Margin",
+    "selector": ".side-menu-%s > ul > li"
+  },
+  "itemGap": {
+    "type": "Margin",
+    "selector": ".side-menu-%s > ul > li:not(first-child)"
+  },
+  "itemBorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".side-menu-%s > ul > li > a"
+  },
+  "iconMargin": {
+    "type": "Margin",
+    "selector": ".side-menu-%s>ul>li>a::before"
+  },
+  "position": {
+    "type": "Radio",
+    "value": "right",
+    "rules": {
+      "right": {
+        ".side-menu-%s": "left:initial; right:0"
+      },
+      "left": {
+        ".side-menu-%s": "left:0; right:initial"
+      }
+    },
+    "rtlRules": {
+      "right": {
+        ".side-menu-%s": "left:0; right:initial"
+      },
+      "left": {
+        ".side-menu-%s": "left:initial; right:0"
+      }
+    }
+  },
+  "iconSize": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        ".side-menu-%s li > a::before": "font-size:%spx"
+      }
+    }
+  },
+  "divider": {
+    "type": "Divider",
+    "selector": ".side-menu-%s > ul > li + li"
+  },
+  "textVisibility": {
+    "type": "Toggle",
+    "value": "true",
+    "rules": {
+      "true": {
+        ".side-menu-%s > ul > li .links-text": "display: block"
+      },
+      "false": {
+        ".side-menu-%s > ul > li .links-text": "display: none"
+      }
+    }
+  },
+  "icons": {
+    "type": "Color",
+    "selector": ".side-menu-%s > ul > li > a::before",
+    "property": "color"
+  },
+  "iconsHover": {
+    "type": "Color",
+    "selector": ".side-menu-%s > ul > li > a:hover::before",
+    "property": "color"
+  },
+  "iconsActive": {
+    "type": "Color",
+    "selector": ".side-menu-%s > ul > li > a:active::before",
+    "property": "color"
+  },
+  "font": {
+    "type": "Font",
+    "selector": ".side-menu-%s > ul > li > a"
+  },
+  "fontHover": {
+    "type": "Font",
+    "selector": ".side-menu-%s > ul > li > a:hover"
+  },
+  "fontActive": {
+    "type": "Font",
+    "selector": ".side-menu-%s > ul > li > a:active"
+  },
+  "background": {
+    "type": "Background",
+    "selector": ".side-menu-%s > ul > li > a"
+  },
+  "backgroundHover": {
+    "type": "Background",
+    "selector": ".side-menu-%s > ul > li > a[href]:hover"
+  },
+  "backgroundActive": {
+    "type": "Background",
+    "selector": ".side-menu-%s > ul > li > a[href]:active"
+  },
+  "Shadow": {
+    "type": "Shadow",
+    "selector": ".side-menu-%s"
+  },
+  "BorderRadius": {
+    "type": "BorderRadius",
+    "selector": ".side-menu-%s"
+  },
+  "countBadge": {
+    "type": "Variable",
+    "variable": "count_badge",
+    "selector_prefix": ".j-menu li"
+  },
+
+  "countBadgeOffset": {
+    "type": "InputPair",
+    "selector": ".side-menu-%s > ul > li > a .count-badge",
+    "properties": {
+      "first": "--x: %spx",
+      "second": "margin-top:%spx"
+    },
+    "rtlProperties":{
+      "first": "--x: calc(0px - %spx)",
+      "second": "margin-top:%spx"
+    }
+  },
+
+  "countBadgeVisibility": {
+    "type": "Toggle",
+    "rules": {
+      "true": {
+        ".side-menu-%s > ul > li > a .count-badge": "display: inline-flex"
+      },
+      "false": {
+        ".side-menu-%s > ul > li > a .count-badge": "display: none"
+      }
+    }
+  },
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}

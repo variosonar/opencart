@@ -1,0 +1,209 @@
+{
+  "name": {
+    "type": "Input",
+    "value": "New Accordion Menu"
+  },
+
+  "status": {
+    "type": "Status"
+  },
+
+  "imageDimensions": {
+    "type": "ImageDimensions",
+    "value": {
+      "width": "40",
+      "height": "40",
+      "resize": "fill",
+      "tablet_resize": "fill",
+      "phone_resize": "fill"
+    }
+  },
+  "categoryImage": {
+    "type": "Toggle",
+    "value": "false",
+    "php": true
+  },
+
+  "menuStyle": {
+    "type": "Variable",
+    "variable": "menu",
+    "selector_prefix": ".grid-item div.accordion-menu.accordion-menu-%s"
+  },
+  "menuStyle2": {
+    "type": "Variable",
+    "variable": "menu",
+    "selector_prefix": ".grid-item div.accordion-menu.accordion-menu-%s .j-menu"
+  },
+
+  "menuItemSpacing": {
+    "type": "Gap",
+    "variableType": "gap",
+    "property": "--menu-item-gap:%s",
+    "selector": ".grid-item div.accordion-menu.accordion-menu-%s > ul.j-menu > li.accordion-menu-item"
+  },
+
+  "ItemDivider": {
+    "type": "Divider",
+    "selector": "div.accordion-menu-%s > .j-menu > li.accordion-menu-item.is-divider"
+  },
+
+  "schedule": {
+    "type": "Range",
+    "php": true
+  },
+
+  "title": {
+    "type": "InputLang",
+    "php": true
+  },
+
+  "moduleMaxHeight": {
+    "type": "InputNumber",
+    "value": "",
+    "rules": {
+      "@": {
+        ".accordion-menu-%s > .j-menu": "max-height: %spx; overflow-y: auto"
+      }
+    }
+  },
+
+  "moduleTitle": {
+    "type": "Variable",
+    "variable": "title",
+    "selector_prefix": ".accordion-menu-%s .title"
+  },
+
+  "menuModule": {
+    "type": "Variable",
+    "variable": "accordion_menu_module",
+    "selector_prefix": ".accordion-menu-%s"
+  },
+
+  "icon": {
+    "type": "Icon",
+    "selector": "div.accordion-menu-%s > .j-menu > li > a::before"
+  },
+
+  "iconHover": {
+    "type": "Color",
+    "selector": "div.accordion-menu-%s > .j-menu > li:hover > a::before",
+    "property": "color"
+  },
+
+  "iconWidth": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        "div.accordion-menu-%s > .j-menu > li.accordion-menu-item > a::before": "min-width:%spx"
+      }
+    }
+  },
+
+  "iconSize": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        "div.accordion-menu-%s > .j-menu > li.accordion-menu-item > a::before": "font-size:%spx !important"
+      }
+    }
+  },
+
+  "iconMargin": {
+    "type": "Margin",
+    "selector":"div.accordion-menu-%s > ul.j-menu > li.accordion-menu-item > a::before"
+  },
+
+  "subIconAlign": {
+    "type": "Radio",
+    "selector": "div.accordion-menu-%s.accordion-menu > .j-menu > li > a::before",
+    "property": "align-self",
+    "value": ""
+  },
+
+  "menu": {
+    "type": "Variable",
+    "variable": "accordion_menu",
+    "selector_prefix": "div.accordion-menu-%s"
+  },
+
+  "border": {
+    "type": "Border",
+    "selector": "div.accordion-menu-%s > .j-menu"
+  },
+
+  "padding": {
+    "type": "Padding",
+    "selector": "div.accordion-menu-%s > .j-menu"
+  },
+
+  "background": {
+    "type": "Background",
+    "selector": "div.accordion-menu-%s > .j-menu"
+  },
+  "borderRadius": {
+    "type": "BorderRadius",
+    "selector": "div.accordion-menu-%s > .j-menu"
+  },
+  "moduleShadow": {
+    "type": "Shadow",
+    "selector": "div.accordion-menu-%s > .j-menu"
+  },
+
+  "ModuleBorder": {
+    "type": "Border",
+    "selector": "div.accordion-menu-%s"
+  },
+  "ModulePadding": {
+    "type": "Padding",
+    "selector": "div.accordion-menu-%s"
+  },
+  "ModuleBackground": {
+    "type": "Background",
+    "selector": "div.accordion-menu-%s"
+  },
+  "ModuleBorderRadius": {
+    "type": "BorderRadius",
+    "selector": "div.accordion-menu-%s"
+  },
+  "ModuleModuleShadow": {
+    "type": "Shadow",
+    "selector": "div.accordion-menu-%s"
+  },
+
+  "subIcon": {
+    "type": "Icon",
+    "selector": "div.accordion-menu-%s.accordion-menu > .j-menu > li.accordion-menu-item li > a::before"
+  },
+  "subIconHover": {
+    "type": "Color",
+    "selector": "div.accordion-menu-%s.accordion-menu > .j-menu > li.accordion-menu-item li:hover > a::before",
+    "property": "color"
+  },
+  "subIconWidth": {
+    "type": "InputNumber",
+    "rules":{
+      "@":{
+        "div.accordion-menu-%s.accordion-menu > .j-menu > li.accordion-menu-item li > a::before": "min-width:%spx"
+      }
+    }
+  },
+  "subIconPosition": {
+    "type": "Radio",
+    "value": "start",
+    "rules": {
+      "start": {
+        "": ""
+      },
+      "end": {
+        "": ""
+      }
+    }
+  },
+
+  "customClass": {
+    "type": "Input"
+  },
+  "customCss": {
+    "type": "Input"
+  }
+}
